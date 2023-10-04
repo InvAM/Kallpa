@@ -1,0 +1,188 @@
+body {
+	font-family: Arial, sans-serif;
+	background: url("https://d2bqn2kyidxvh4.cloudfront.net/wp-content/uploads/2021/09/NP2-1-808x454.jpeg");
+	background-size: cover;
+	background-position: center;
+
+	position: relative;
+}
+::-webkit-scrollbar {
+	display: none;
+}
+
+.titleBox {
+	margin-right: 280px;
+}
+
+
+body::before {
+	content: "";
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(26, 35, 126, 0.7);
+	z-index: -1;
+	background-clip: content-box;
+}
+legend{
+      font-size: 16px; /* Tamaño de la fuente */
+      font-weight: bold; /* Grosor de la fuente */
+      color: white; /* Color del texto */
+      border: 1px solid #ccc; /* Borde */
+      padding: 5px 10px; /* Espaciado interno */
+      background-color: #1a237e; /* Color de fondo */
+      border-radius: 10px; /* Bordes redondeados */
+      margin-bottom: 10px; /* Espaciado inferior */
+}
+
+.container {
+  display: flex;
+}
+
+.column {
+  width: 50%; /* Cada columna ocupa el 50% del ancho del contenedor */
+  padding: 10px; /* Añade relleno si es necesario */
+  box-sizing: border-box; /* Asegura que el relleno no afecte el ancho total */
+}
+
+label{
+    color:#1a237e;
+    font-weight: bold;
+}
+
+.column i {
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  display: inline-block;
+  margin-right: 10px; 
+  color: #1a237e/* Espacio entre el ícono y el texto */
+}
+
+#contenedor {
+	width: 1200px;
+	background-color: white;
+	margin: 0 auto;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	box-shadow: 0 0 30px white; 
+	margin-top: 80px;
+	z-index: 1; /* Colocar encima del difuminado */
+}
+
+.icon {
+	margin-right: 10px;
+}
+
+.center-vertically {
+	display: flex;
+	align-items: center;
+}
+
+.check {
+	text-align: left;
+	font-size: 12px;
+	color: #1a237e;
+}
+
+.cajita1 {
+	text-align: center;
+	border-radius: 1rem;
+	border: 0px solid white;
+	padding: 20px;
+	max-width: 800px;
+}
+
+.titulo {
+	color: #1a237e;
+}
+
+.cajas{
+    width: 1100px;
+    border-color: #1a237e;
+    border-radius: 10px;
+}
+
+input {
+	width: 500px; /* Ajustar el ancho del input */
+	padding: 10px;
+	margin-bottom: 10px;
+	color: #1a237e;
+	border-radius: 10px;
+        border: 2px solid #1a237e;
+}
+.Especial{
+       width: 1060px;
+}
+
+input[type="checkbox"] {
+	text-align: left;
+	width: auto;
+}
+.Botones{
+    width: 380px;
+    background-color: #1a237e;
+	border-radius: 5px;
+	color: white;
+	border-width: 0px;
+	cursor: pointer;
+}
+
+.Botones:hover{
+    background-color: white;
+    color: #1a237e;
+}
+
+input[type="text"]:hover {
+	background-color: #e3f2fd;
+	color: #1a237e;
+}
+input[type="password"]:hover {
+	background-color: #e3f2fd;
+	color: #1a237e;
+}
+.txtarea {
+	resize: none;
+	width: 440px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #1a237e;
+  border-radius: 5px;
+  background-color: white;
+  color: #333;
+}
+
+/* Estilizar las opciones del select */
+select option {
+  padding: 10px;
+  font-size: 16px;
+  background-color: white; /* Color de fondo de las opciones */
+  color: #333; /* Color del texto de las opciones */
+}
+
+.textarea-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px; /* Espacio entre el textarea y el siguiente elemento */
+}
+
+.textarea-container label {
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 10px; /* Espacio entre el label y el textarea */
+}
+
+.textarea-container textarea {
+  resize: none; 
+  width: 1063px; 
+  padding: 30px;
+  border: 2px solid #1a237e;
+  border-radius: 5px;
+}

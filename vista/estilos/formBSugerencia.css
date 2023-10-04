@@ -1,0 +1,16 @@
+
+fieldset{
+   width:600px;
+   border-color:red;    
+}
+
+.container {
+  display: flex;
+}
+
+.column {
+  width: 50%; /* Cada columna ocupa el 50% del ancho del contenedor */
+  padding: 10px; /* Añade relleno si es necesario */
+  box-sizing: border-box; /* Asegura que el relleno no afecte el ancho total */
+}
+

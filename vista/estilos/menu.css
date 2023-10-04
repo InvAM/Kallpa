@@ -1,0 +1,119 @@
+.menu .texto-derecha {
+	text-align: right;
+}
+.menu .texto-center {
+	text-align: center;
+}
+
+.menu .kallpa-image {
+	margin-top: 35px;
+}
+
+.menu .titulo-bienvenido {
+	margin-top: 30px;
+	font-size: 45px;
+	margin-left: 350px;
+	font-family: Tahoma !important;
+	color: #ffffff;
+}
+.menu .titulo-btn {
+	text-align: center;
+	margin-top: 5px;
+	font-size: 20px;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif !important;
+	color: #000000;
+}
+.menu .texcolor {
+	color: #ffffff;
+	font-family: Tahoma !important;
+}
+.menu .titulo-bien {
+	font-size: 50px;
+	font-family: Tahoma !important;
+	color: #032f76;
+	margin-top: 1px;
+}
+.menu .titulo-nom {
+	font-size: 20px;
+	font-family: Tahoma !important;
+	color: #032f76;
+}
+.menu .titulo-acc {
+	font-size: 20px;
+	font-family: Tahoma !important;
+	color: #ffffff;
+}
+
+.menu .border-btnA {
+	border: 4px white;
+	background: #033076 !important;
+	padding: 4px;
+	display: inline-flex;
+	border-radius: 20px;
+}
+
+.menu .border-bien {
+	background-color: #032f76;
+	border: 3px solid #033076;
+	padding: 10px;
+	display: fixed;
+	border-radius: 20px;
+}
+
+.menu .floating-rectan {
+	position: absolute;
+	left: 15%;
+	transform: translateX(-50%);
+	top: 0%;
+	width: 450px;
+	height: 700px;
+	background-color: #ffffff;
+	padding: 10px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.floating-rectan-boton {
+	position: absolute;
+	right: auto; /* Alinea el botón a la derecha con un espacio de 20px */
+	top: 0%;
+	width: 1460px; /* Ancho del botón */
+	height: 700px;
+	background-color: #33cc33;
+	padding: 10px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.floating-rectan-titulo {
+	position: absolute;
+	right: auto; /* Alinea el título a la derecha con un espacio de 20px */
+	top: 0%;
+	width: 1450px; /* Ancho del título (el mismo que el del botón) */
+	height: 150px;
+	background-color: #033076;
+	padding: 10px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.accesos-rapidos {
+	text-align: center; /* Centrar los elementos horizontalmente */
+}
+
+.accesos-rapidos a {
+	text-decoration: none; /* Eliminar la decoración del enlace */
+}
+
+.accesos-rapidos div {
+	display: inline-block; /* Mostrar los elementos en línea */
+	margin: 0 10px; /* Agregar margen horizontal para separar los elementos */
+}
+
+.btnAcceso {
+	width: 55px; /* Establecer un ancho fijo para todos los iconos */
+	height: 50px; /* Establecer una altura fija para todos los iconos */
+	text-align: center;
+	margin-left: 10px; /* Centrar el contenido del div */
+}
+
+.btnAcceso img {
+	max-width: 100%; /* Asegurarse de que la imagen se ajuste al 100% del ancho del div */
+	max-height: 100%; /* Asegurarse de que la imagen se ajuste al 100% de la altura del div */
+}
