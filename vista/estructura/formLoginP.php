@@ -13,10 +13,10 @@
     <div id="contenedor">
         <form method="POST" action="procesaLogin.php">
 
-            <fieldset class="cajita1">
+            <fieldset class="cajita1"><br><br>
                 <div>
                     <img src="../../Img/Kallpa.png" alt="Logo_Kallpa" class="imagen">
-                </div>
+                </div><br><br>
                 <h2>Identificarse</h2>
                 <h2 class="titulo">Bienvenido</h2>
                 <img class="Centro1"
