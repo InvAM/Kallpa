@@ -1,0 +1,83 @@
+.registrar-cli .cliente {
+    margin: 20px;
+    max-width: 30%;
+}
+.registrar-cli .button-1 {
+    background: #033076;
+    color: #ffffff;
+    border-color: #232323;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 3px 3px 3px 3px;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: right;
+    margin: 20px;
+    width: 200px;
+    height: 1000px;
+}
+.registrar-cli .my-container {
+    width: 500px;
+    height: 450px;
+    padding: 10px 10px 10px 10px;
+    border-color: #72bb53;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 23px 23px 23px 23px;
+    position: relative;
+    z-index: 1;
+    margin-top: -0px;
+}
+.registrar-cli .btn-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.registrar-cli .btn1 {
+    margin-right: 990px;
+}
+
+.registrar-cli .btn3 {
+    margin-top: -65px;
+    margin-left: 540px; /* Ajusta el valor del margen según tus preferencias */
+}
+.registrar-cli .custom-text-field {
+    width: 470px;
+    height: 50px;
+    padding: 8px 4px 8px 4px;
+    background: #ffffff;
+    color: #c0c0c0;
+
+    text-align: left;
+    margin-bottom: 60px;
+}
+.registrar-cli .my-container-2 {
+    width: 890px;
+    height: 530px;
+    padding: 10px 10px 10px 10px;
+    border-color: #72bb53;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 23px 23px 23px 23px;
+    position: relative;
+    z-index: 1;
+    margin-left: 550px;
+    margin-top: -550px;
+}
+.v-application .info {
+    background-color: white !important;
+    border-color: white !important;
+}
+.registrar-cli .info {
+    display: flex;
+    align-items: center;
+}
+.registrar-cli .image-container {
+    margin-right: 300px;
+}
+.registrar-cli .text h4 {
+    margin-bottom: 12px;
+}
+.registrar-cli .kallpa-image {
+    margin-top: 35px;
+}
