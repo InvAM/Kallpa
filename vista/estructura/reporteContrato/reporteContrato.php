@@ -18,11 +18,7 @@
             <img src="../../../Img/usuario (3).png" alt="Usuario" class="user-image">
         </header>
 
-        <footer class="footer">
-            <div class="text-footer">
-                &copy; 2023 KALLPA. Todos los derechos reservados.
-            </div>
-        </footer>
+
 
         <div style="margin-top: 28px">
             <h1 class="text-center titulo">
@@ -49,37 +45,72 @@
             <h2>Filtros</h2>
 
             <div>
-                <p>Estado Contrato</p>
-                <div>
-                    <!-- Inserta aquí tus opciones de radio buttons -->
-                </div>
+                <form action="" method="post">
+                    <fieldset class="estadoC">
+                        <legend>Estado Contrato</legend>
+                        <select name="estado_contrato" id="estadoC" class="cbxEstado">
+                            <option value="revisado">Revisado</option>
+                            <option value="pendiente">Pendiente</option>
+                        </select>
+                    </fieldset>
+                    <fieldset class="asesor">
+                        <legend>Asesor</legend>
+                        <select name="asesor" id="asesor" class="cbxAsesor">
+                            <option value="asesores">Freddy</option>
+                        </select>
+                    </fieldset>
+                </form>
+
             </div>
 
-            <div>
-                <p>Asesor</p>
-                <div>
-                    <!-- Inserta aquí tu combobox -->
-                </div>
-            </div>
+
 
             <div>
-                <button onclick="generarReporte()" class="btn-container btn-generar">Generar Reporte</button>
-                <button onclick="atras()" class="btn-container btn-atras">Atras</button>
+                <button onclick="generarReporte()" class="btn-generar">Generar Reporte</button>
+                <button onclick="atras()" class="btn-atras">Atras</button>
             </div>
         </div>
 
-        <div class="tabla fill-height ">
-            <table class="custom-table">
+        <div class="tabla">
+            <h2 class="titulo-tabla">Lista de Reporte de Contratos </h2>
+            <table>
                 <thead>
                     <tr>
-                        <!-- Inserta aquí tus encabezados de tabla -->
+                        <th>ID Contrato</th>
+                        <th>Fecha Contrato</th>
+                        <th>N° Radicado</th>
+                        <th>Punto Instalacion</th>
+                        <th>Estado</th>
+                        <th>DNI Cliente</th>
+                        <th>DNI Empleado</th>
+                        <th>Categoria Gabinete</th>
+                        <th>Tipo Instalacion</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Inserta aquí tus filas de tabla -->
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <button class="boton">Seleccionar</button>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
+        <footer class="footer">
+            <div class="text-footer">
+                &copy; 2023 KALLPA. Todos los derechos reservados.
+            </div>
+        </footer>
     </div>
 
 </body>
