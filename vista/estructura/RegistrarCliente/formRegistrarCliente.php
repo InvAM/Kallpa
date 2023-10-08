@@ -4,109 +4,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Login</title>
-    <link rel="stylesheet" href="../RegistrarClienteEstyle/formRegistrarCliente.css">
+    <title>Registrar Cliente</title>
+    <link rel="stylesheet" href="../../estilos/RegistrarClienteEstyle/formRegistrarCliente.css">
 </head>
 
 <body>
     <div class="registrar-cli">
-        <div class="app-bar" color="white" dense dark height="110">
-            <div class="toolbar-title">
-                <img src="../../views/Img/Kallpa.png" alt="Kallpa" style="max-height: 300px; max-width: 200px;"
-                    class="kallpa-image">
+
+        <div class="cabecera">
+            <div>
+                <img src="../../../Img/Kallpa.png" class="imagen-kallpa">
             </div>
-            <div class="spacer"></div>
-            <img src="../../views/Img/usuario (3).png" alt="Usuario" style="max-height: 100px; max-width: 50px;">
-        </div>
-        <div class="footer" color="#33cc33" app height="60">
-            <div class="row" align="center" justify="center">
-                <div class="col" style="text-align: center; color: white;">
-                    &copy; 2023 KALLPA. Todos los derechos reservados.
-                </div>
+            <div>
+                <img src="../../../Img/usuario (3).png" class="imagen-usuario">
             </div>
         </div>
-        <div class="d-flex" style="justify-content: center">
-            <h2 style="color: rgba(0, 0, 129, 0.829); margin-right: 10px; font-size: 30px; font-weight: bold">
-                Registrar
-            </h2>
-            <h2 style="color: rgb(62, 207, 62); font-size: 30px; font-weight: bold">
-                Cliente
-            </h2>
-        </div>
-        <form name="registrarCliente">
-            <div class="cliente">
-                <div class="d-flex" style="align-items: center">
-                    <div class="mr-4">
-                        <input type="text" label="ID Domicilio" placeholder="Ingrese el código de domicilio"
-                            style="width: 180px;">
+
+        <div class="contenedor-principal">
+
+            <div class="titulo">
+                <h2 class="titulo-1">Registro de</h2>
+                <h2 class="titulo-2">Clientes</h2>
+            </div>
+            
+            <div class="parte_izquierda">
+
+                <div>
+
+                    <div class="posicion-letra">
+                        <p>ID Domicilio</p>
+                        <input type="text" label="idDomicilio" placeholder="Escribir...">
                     </div>
-                    <div
-                        style="display: flex; flex-direction: row-reverse; align-items: center;">
-                        <button class="button-1 mt-0" style="background-color: primary;">Registrar Domicilios</button>
-                        <i style="align-items: center; display: flex; margin-bottom: 30px; font-size: 70px; color: green;">mdi-home-analytics</i>
+
+                    <img src="../../../Img/Casa.jpeg" class="imagen-casa">
+
+                    <div class="posicion-boton">
+                        <button class="boton-registrar">Registrar Domicilio</button>
                     </div>
+
                 </div>
-                <div class="my-container">
-                    <div class="custom-text-field">
-                        <input type="text" label="Nombre Cliente" placeholder="Ingresa el nombre del Cliente">
-                        <input type="text" label="Apellido Cliente" placeholder="Ingrese los apellidos del Cliente">
-                        <div>
-                            <input type="text" label="DNI Cliente" placeholder="Ingresa el DNI del Cliente">
-                            <input type="text" label="Fecha de Nacimiento" placeholder="Ejemplo: 2023-07-08">
-                            <select>
-                                <option>Selecciona el Género</option>
-                                <!-- Agrega aquí las opciones de género -->
-                            </select>
-                        </div>
-                        <div>
-                            <input type="text" label="N° Celular" placeholder="Ingrese el número de celular del Cliente">
-                            <select>
-                                <option>Selecciona la Nacionalidad</option>
-                                <!-- Agrega aquí las opciones de nacionalidad -->
-                            </select>
-                            <select>
-                                <option>Selecciona el Estado Civil</option>
-                                <!-- Agrega aquí las opciones de estado civil -->
-                            </select>
-                        </div>
-                    </div>
+
+            </div>
+            
+            <h3 class="subtitulo-cliente">Datos Generales</h3>
+
+            <div class="contenedor-datos">
+
+                <div class="input-todo">
+                    <p>Nombre del Cliente</p>
+                    <input type="text" label="Nombre_Cliente" placeholder="Escribir...">
+                    <p>Apellido del Cliente</p>
+                    <input type="text" label="Apellido_Cliente" placeholder="Escribir...">
                 </div>
+
+                <div class="datos_izquierda">
+                    <p>Dni del Cliente</p>
+                    <input type="text" label="Dni" placeholder="Escribir...">
+                    <p>Fecha de Nacimiento</p>
+                    <input type="text" label="FechaNacimiento" placeholder="Ejemplo: 2023-07-08">
+                    <p>Género</p>
+                    <select>
+                        <option value="">Escoger...</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="masculino">Masculino</option>
+                        <!-- Seguir con opciones -->
+                    </select>
+                </div>
+
+                <div class="datos_derecha">
+                    <p>Celular</p>
+                    <input type="text" label="celular" placeholder="Escribir...">
+                    <p>Nacionalidad</p>
+                    <select>
+                        <option value="">Escoger...</option>
+                        <option value="per">Peruano</option>
+                        <option value="ven">Venezolano</option>
+                        <!-- Seguir con opciones -->
+                    </select>
+                    <p>Estado Civil</p>
+                    <select>
+                        <option value="">Escoger...</option>
+                        <option value="sol">Soltero</option>
+                        <option value="cas">Casado</option>
+                        <!-- Seguir con opciones -->
+                    </select>
+                </div>
+
             </div>
 
-            <div class="resumen">
-                <div class="my-container-2">
-                    <div class="info">
-                        <div class="image-container">
-                            <img src="../../views/Img/Kallpa.png" alt="Kallpa" style="max-height: 300px; max-width: 200px;">
-                        </div>
-                        <h3>Fecha: <!-- Agrega aquí la fecha --></h3>
+            <div class="contenedor-botones">
+                <button type="submit" class="boton-datos">Registrar Cliente</button>
+                <button class="boton-datos">Limpiar</button>
+            </div>
+
+            <div class="contenedor-info">
+
+                <div class="linea">
+                    <div>
+                        <img src="../../../Img/Kallpa.png" class="imagen-kallpainfo">
                     </div>
+                    <h3>Fecha: 07/10/2023</h3>
+                </div>
+
+                <div class="espacio">
 
                     <h3>Datos del usuario:</h3>
                     <hr>
-                    <div class="text">
-                        <h4>Nombres : <!-- Agrega aquí los nombres del cliente --></h4>
-                        <h4>Apellidos : <!-- Agrega aquí los apellidos del cliente --></h4>
-                        <h4>DNI : <!-- Agrega aquí el DNI del cliente --></h4>
-                        <h4>Fecha Nacimiento : <!-- Agrega aquí la fecha de nacimiento del cliente --></h4>
-                        <h4>Género : <!-- Agrega aquí el género del cliente --></h4>
-                        <h4>Nacionalidad : <!-- Agrega aquí la nacionalidad del cliente --></h4>
-                        <h4>Estado Civil : <!-- Agrega aquí el estado civil del cliente --></h4>
-                        <h4>Celular : <!-- Agrega aquí el número de celular del cliente --></h4>
+                    <div>
+                        <h4>Nombres : <!-- Dato --></h4>
+                        <h4>Apellidos : <!-- Dato --></h4>
+                        <h4>DNI : <!-- Dato --></h4>
+                        <h4>Fecha Nacimiento : <!-- Dato --></h4>
+                        <h4>Género : <!-- Dato --></h4>
+                        <h4>Nacionalidad : <!-- Dato --></h4>
+                        <h4>Estado Civil : <!-- Dato --></h4>
+                        <h4>Celular : <!-- Dato --></h4>
                     </div>
+
                 </div>
-            </div>
-            <div class="btn-container">
-                <div class="btn1">
-                    <button type="submit" class="button-1 mt-2" style="background-color: primary;">Registrar Cliente</button>
-                    <button class="button-1 mt-2" style="background-color: #47d847;" onclick="resetForm();" dark>Limpiar</button>
+
+                <div>
+                    <button class="boton-atras">Atras</button>
                 </div>
+
             </div>
 
-            <div class="btn3">
-                <button class="button-1 mt-2 btn-atras" style="background-color: primary;" onclick="volverMenu();">Atras</button>
-            </div>
-        </form>
+        </div>
+
+        <div class="pie-pagina">
+            <p>&copy; 2023 KALLPA. Todos los derechos reservados.</p>
+        </div>
+
     </div>
 </body>
 

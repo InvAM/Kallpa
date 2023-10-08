@@ -80,6 +80,7 @@ body{
     border-radius: 5px;          /*Agrega bordes redondeados */
     color: #333;               /*Cambia el color del texto */
     font-size: 14px;             /*Ajusta el tamaño de fuente */
+    font-family: 'Times New Roman'; /*Fuente de letra*/
 }
 
 .registrar-e .contenedor-empleado select{
@@ -90,6 +91,7 @@ body{
     border-radius: 5px;          /*Agrega bordes redondeados */
     color: #333;               /*Cambia el color del texto */
     font-size: 14px;             /*Ajusta el tamaño de fuente */
+    font-family: 'Times New Roman'; /*Fuente de letra*/
 }
 
 .registrar-e .contenedor-empleado p,.contenedor-credenciales p{
@@ -101,10 +103,11 @@ body{
     color: #ffffff;            /*Cambia el color del texto */
     width: 100%;                 /*Establecer ancho del objeto*/
     cursor: pointer;             /*Cambia el cursor al pasar el ratón sobre el botón */
-    font-size: 14px;             /*Ajusta el tamaño de fuente */
+    font-size: 15px;             /*Ajusta el tamaño de fuente */
     border-radius: 5px;          /*Agrega bordes redondeados */
     border: 1px solid #39a805; /*Añade un borde */
     padding: 9px;                /*Agranda espacio en el interior de los inputs*/
+    font-family: 'Times New Roman'; /*Fuente de letra*/
 }
 
 .registrar-e .parte-derecha{
@@ -162,12 +165,13 @@ tr:hover{
     color: #ffffff;            /*Cambia el color del texto */
     width: 200px;                /*Establecer ancho del objeto*/
     cursor: pointer;             /*Cambia el cursor al pasar el ratón sobre el botón */
-    font-size: 14px;             /*Ajusta el tamaño de fuente */
+    font-size: 15px;             /*Ajusta el tamaño de fuente */
     border-radius: 5px;          /*Agrega bordes redondeados */
     border: 1px solid #152c57; /*Añade un borde */
     padding: 9px;                /*Agranda espacio en el interior de los inputs*/
     margin-top: 18px;            /*Añade espacio con el elemento de arriba*/
     margin-right: 20px;          /*Añade espacio a la derecha del objeto*/
+    font-family: 'Times New Roman'; /*Fuente de letra*/
 }
 
 .registrar-e .contenedor-credenciales{
@@ -190,10 +194,11 @@ tr:hover{
     color: #ffffff;            /*Cambia el color del texto */
     width: 254px;                /*Establecer ancho del objeto*/
     cursor: pointer;             /*Cambia el cursor al pasar el ratón sobre el botón */
-    font-size: 14px;             /*Ajusta el tamaño de fuente */
+    font-size: 15px;             /*Ajusta el tamaño de fuente */
     border-radius: 5px;          /*Agrega bordes redondeados */
     border: 1px solid #39a805; /*Añade un borde */
     padding: 9px;                /*Agranda espacio en el interior de los inputs*/
+    font-family: 'Times New Roman'; /*Fuente de letra*/
 }
 
 .registrar-e .pie-pagina{
