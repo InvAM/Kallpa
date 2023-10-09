@@ -46,7 +46,7 @@
                     <p>Categoría</p>
 
                     <select>
-                    <option value="">Escoge...</option>
+                    <option value="">Escoger...</option>
                     <option value="asesor">Asesor</option>
                     <option value="tecnico">Técnico</option>
                     <!-- Seguir con opciones -->
