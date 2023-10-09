@@ -200,7 +200,9 @@ tr:hover{
     padding: 9px;                /*Agranda espacio en el interior de los inputs*/
     font-family: 'Times New Roman'; /*Fuente de letra*/
 }
-
+.registrar-e .contenedor-empleado p,.contenedor-credenciales p{
+    margin-bottom: 5px;          /*Añadir espacio con el elemento de abajo*/
+}
 .registrar-e .pie-pagina{
     position: fixed;             /*Fijar posición en la parte inferior*/
     bottom: 0;                   /*Colocar en la parte inferior*/
