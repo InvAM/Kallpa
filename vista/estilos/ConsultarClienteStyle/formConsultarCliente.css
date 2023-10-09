@@ -1,0 +1,269 @@
+/* Estilos de la clase evaluar-contrato */
+body {
+    margin: 0;
+}
+
+/* Estilos para el contenedor principal */
+.contenedor-principal {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+/* Estilos para las filas de elementos */
+.linea-1,
+.linea-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10px; /* Espaciado entre las filas */
+}
+
+/* Estilos para cada contenedor de entrada */
+.input-container {
+    flex: 1;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    max-width: calc(50% - 10px); /* Ancho máximo de un 50% con espacio entre ellos */
+}
+
+/* Estilos para el encabezado */
+.consultar-cliente .cabecera {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562);
+}
+
+.consultar-cliente .imagen-kallpa {
+    margin-top: 35px;
+    max-height: 300px;
+    max-width: 200px;
+}
+
+.consultar-cliente .imagen-usuario {
+    margin-right: 20px;
+    max-height: 100px;
+    max-width: 70px;
+}
+
+/* Estilos para el pie de página */
+.consultar-cliente .pie-pagina {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #33cc33;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para el título */
+.consultar-cliente .titulo {
+    display: flex;
+    justify-content: center;
+    margin-top: 75px;
+    font-size: 25px;
+}
+
+.consultar-cliente .titulo-1 {
+    color: #203864;
+    margin-right: 10px;
+}
+
+.consultar-cliente .titulo-2 {
+    color: rgb(62, 207, 62);
+}
+
+/* Estilos para el contenedor de cliente */
+.consultar-cliente .cliente {
+    margin: 20px;
+    max-width: 100%;
+}
+
+/* Estilos para el contenedor de búsqueda */
+.consultar-cliente .search-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #dfedd6;
+    box-shadow: 0px 4px 6px #45a049;
+    max-width: 1200px;
+    white-space: nowrap;
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px;
+    margin-top: 10px; /* Espaciado desde el título */
+}
+.consultar-cliente .contract-details::before {
+    content: "Campos del contrato seleccionado";
+    position: absolute;
+    top: -20px;
+    left: 0%;
+    transform: translateX(0%);
+    background-color: #dfedd6;
+    padding: 5px 25px;
+    border: 1px solid #dfedd6;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* Estilos para los campos de entrada y botones dentro del contenedor de búsqueda */
+.consultar-cliente .search-container .input-field {
+    flex: 1;
+    margin-right: 20px;
+    padding: 20px;
+    background-color: #fdfdfd;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+}
+
+.consultar-cliente .search-container .action-button:hover {
+    background-color: #33cc33;
+}
+
+/* Estilos para el texto en el borde superior del contenedor de búsqueda */
+.consultar-cliente .search-container::before {
+    content: "Filtros de Contratos";
+    position: absolute;
+    top: -20px;
+    left: 0%;
+    transform: translateX(0%);
+    background-color: #dfedd6;
+    padding: 5px 25px;
+    border: 1px solid #dfedd6;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.consultar-cliente .botones-derecha {
+    position: fixed;
+    top: 230px; /* Ajusta la posición vertical para que esté a la misma altura que el contenedor principal */
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Espacio vertical entre filas de botones */
+    padding: 20px; /* Ajusta el espaciado deseado */
+}
+
+/* Estilos para las filas de botones */
+.consultar-cliente .fila-botones {
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilos para los botones */
+.consultar-cliente .fila-botones .boton {
+    padding: 20px 60px;
+    background-color: #203864;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 60px; 
+    /* Agrega otros estilos de diseño según tu preferencia */
+}
+/* Estilos de la clase consultar-cliente */
+body {
+    margin: 0;
+}
+
+/* ... Estilos anteriores ... */
+
+/* Estilos para el contenedor principal */
+.consultar-cliente .contenedor-principal {
+    padding: 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos para las filas de elementos */
+.consultar-cliente .linea-1,
+.consultar-cliente .linea-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Estilos para cada contenedor de entrada */
+.consultar-cliente .input-container {
+    flex: 1;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/* Estilos para la clase tabla */
+.consultar-cliente .tabla {
+    height: 40px;               /* Tamaño de altura de la tabla */
+    overflow-y: scroll;         /* Añade barra de desplazamiento */
+}
+
+.consultar-cliente .tabla::-webkit-scrollbar {
+    width: 8px;                 /* Ancho de la barra de desplazamiento */
+}
+
+.consultar-cliente .tabla::-webkit-scrollbar-thumb {
+    background-color: #203864;  /* Color de la barra de desplazamiento */
+}
+
+.consultar-cliente .tabla::-webkit-scrollbar-track {
+    background-color: #f8f8f8; /* Color del fondo de la barra de desplazamiento */
+}
+
+/* Estilos para la tabla */
+.consultar-cliente table {
+    width: 80%;                /* Establecer ancho del objeto */
+    border-collapse: collapse;  /* Junta los campos de la tabla */
+    border: 1px solid #ddd;     /* Color del borde de la tabla */
+    margin-top: 10px;
+}
+
+.consultar-cliente th,
+.consultar-cliente td {
+    padding: 12px;              /* Agranda espacio en el interior de la celda */
+    text-align: center;         /* Alinea el texto al centro */
+}
+
+.consultar-cliente th {
+    background-color: #203864;  /* Color de la cabecera */
+    color: #f0f0f0;
+}
+
+.consultar-cliente tr:hover {
+    background-color: #dfedd6; /* Color del contenido */
+}
+/* Estilo para el botón "Seleccionar" */
+.consultar-cliente .select-button {
+    background-color: #33cc33; /* Color verde */
+    color: #fff; /* Texto en color blanco */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.consultar-cliente .select-button:hover {
+    background-color: #45a049; /* Cambia de color al pasar el mouse */
+}
+
+#buscador {
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 60%;
+    border: 1px solid #dfedd6;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 100px;
+}
