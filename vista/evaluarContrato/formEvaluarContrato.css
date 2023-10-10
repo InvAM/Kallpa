@@ -1,0 +1,307 @@
+body{
+    margin: 0;                   /*Quita espacio exterior*/
+}
+
+.evaluar-c .cabecera{
+    position: fixed;             /*Fijar posición en la parte superior*/
+    width: 100%;                 /*Ocupar todo el ancho*/
+    height: 100px;               /*Tamaño de la altura la barra*/
+    background-color: white;   /*Color de la barra*/
+    display: flex;               /*Permite alinear el contenido de la barra*/
+    justify-content: space-between; /*Separa imagen*/
+    align-items: center;         /*Centrar el texto verticalmente*/
+    box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562); /*Agregar sombra*/
+}
+.evaluar-c .imagen-kallpa{
+    margin-top: 35px;            /*Añadir esapacio con el elemento de arriba*/
+    max-height: 300px;           /*Definir altura de la imagen*/
+    max-width: 200px;            /*Definir ancho de la imagen*/
+}
+
+.evaluar-c .imagen-usuario{
+    margin-right: 20px;          /*Añadir esapacio con el elemento de la derecha*/
+    max-height: 100px;           /*Definir altura de la imagen*/
+    max-width: 70px;             /*Definir ancho de la imagen*/
+}
+.evaluar-c .pie-pagina{
+    position: fixed;             /*Fijar posición en la parte inferior*/
+    bottom: 0;                   /*Colocar en la parte inferior*/
+    width: 100%;                 /*Ocupar todo el ancho*/
+    height: 60px;                /*Tamaño de la altura la barra*/
+    background-color: #33cc33; /*Color de la barra*/
+    color: white;              /*Color de la letra*/
+    display: flex;               /*Permite alinear el contenido de la barra*/
+    justify-content: center;     /*Centrar el texto horizontalmente*/
+    align-items: center;         /*Centrar el texto verticalmente*/
+}
+.evaluar-c  .contenedor-principal{
+    padding: 20px;
+
+}
+.evaluar-c  .titulo{
+    display: flex;               /*Permite alinear el contenido en una línea*/
+    justify-content: center;     /*Centra el elemento*/
+    margin-top: 75px;            /*Añadir espacio con el elemento de arriba*/
+    font-size: 25px;             /*Establece el tamaño a la letra*/
+}
+
+.evaluar-c .titulo-1{
+    color: #203864;            /*Da color a las letras*/
+    margin-right: 10px;          /*Añadir esapacio con el elemento de la derecha*/
+}
+
+.evaluar-c .titulo-2{
+    color: rgb(62, 207, 62);   /*Da color a las letras*/
+}
+
+.evaluar-c .search-container {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    box-shadow: 0px 4px 6px #45a049;
+    max-width: 1000px;
+    white-space: nowrap; /* Evita el salto de línea en el contenedor */
+}
+
+/* Estilos para los campos de entrada y botones dentro del contenedor de búsqueda */
+.evaluar-c .search-container .input-field {
+    flex: 1;
+    margin-right: 20px;
+    padding: 20px;
+    background-color: #fdfdfd;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+}
+
+.evaluar-c .search-container .action-button:hover {
+    background-color: #33cc33;
+}
+
+/* Estilos para el contenedor de búsqueda */
+.evaluar-c .search-container {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #dfedd6;
+    box-shadow: 0px 2px 4px #33cc33;
+    max-height: 300px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el texto en el borde superior */
+.evaluar-c .search-container::before {
+    content: "Filtros de Contratos";
+    position: absolute;
+    top: -20px;
+    left: 0%;
+    transform: translateX(0%);
+    background-color: #dfedd6;
+    padding: 5px 25px;
+    border: 1px solid #dfedd6;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* Estilos para la tabla */
+
+.evaluar-c .tabla{
+    height: 40px;               /*Tamaño de altura de la tabla*/
+    overflow-y: scroll;          /*Añade barra de desplazamiento*/
+}
+
+.tabla::-webkit-scrollbar{
+    width: 8px;                  /* Ancho de la barra de desplazamiento */
+}
+
+.tabla::-webkit-scrollbar-thumb{
+    background-color: #203864  /* Color de la barra de desplazamiento */
+}
+
+.tabla::-webkit-scrollbar-track{
+    background-color: #f8f8f8; /* Color del fondo de la barra de desplazamiento */
+}
+
+table{
+    width: 100%;                 /*Establecer ancho del objeto*/
+    border-collapse: collapse;   /*Junta los campos de la tabla*/
+    border: 1px solid #ddd;    /*Color del borde de la tabla*/
+}
+
+th, td{
+    padding: 12px;               /*Agranda espacio en el interior de la celda*/
+    text-align: center;          /*Alinea el texto al centro*/
+}
+
+th{
+    background-color: #203864; /*Color de la cabecera*/
+    color: #f0f0f0;              
+}
+
+tr:hover{
+    background-color:#dfedd6;/*Color del contenido*/
+}
+
+
+
+.evaluar-c .imagen-usuario {
+    max-height: 150px;
+    max-width: 70px;
+    margin-right: 20px;
+}
+.evaluar-c .imagen-contrato {
+    max-height: 150px;
+    max-width: 130px;
+    margin-right: 20px;
+}
+
+
+.evaluar-c .contract-details {
+    display: flex;
+    align-items: center;
+    margin-top: 300px;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-shadow: 0px 2px 4px #ffffff;
+    max-width: 1000px;
+    white-space: nowrap; /* Evita el salto de línea en el contenedor */
+}
+
+/* Estilos para los campos de entrada y botones dentro del contenedor de búsqueda */
+.evaluar-c .contract-details .input-field {
+    flex: 1;
+    margin-right: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.evaluar-c .contract-details .action-button:hover {
+    background-color: #12213b;
+}
+
+/* Estilos para el contenedor de búsqueda */
+.evaluar-c .contract-details {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #dfedd6;
+    box-shadow: 0px 2px 4px #33cc33;
+    max-height: 300px;
+    margin-bottom: 20px;
+
+}
+
+/* Estilos para el texto en el borde superior */
+.evaluar-c .contract-details::before {
+        content: "Campos del contrato seleccionado"; /* Agrega el texto que desees */
+        position: absolute;
+        top: -20px;
+        left: 0%;
+        transform: translateX(0%);
+        background-color: #dfedd6;
+        padding: 5px 25px;
+        border: 1px solid #dfedd6;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        font-weight: bold;
+        color: #000000; 
+}
+
+.evaluar-c .input-fields {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+/* Estilos para las cajas de texto y el select */
+.evaluar-c .input-field {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1%;
+}
+.evaluar-c .buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    margin-top: 20px;
+}
+
+/* Estilos para el contenedor de búsqueda y botones */
+.evaluar-c .search-container,
+.evaluar-c .buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    margin-top: 20px; /* Ajusta la separación superior */
+}
+
+/* Estilos para los botones */
+.evaluar-c .action-button {
+    background-color: #203864;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 20px 40px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: -220px; /* Mueve los botones hacia arriba */
+    margin-left: 10px; /* Añade separación entre los botones */
+    margin-right: 45px; /* Añade separación entre los botones */
+}
+
+.evaluar-c .action-button:hover {
+    background-color: #12213b;
+}
+
+/* Estilo para el botón "Seleccionar" */
+.evaluar-c .select-button {
+    background-color: #33cc33; /* Color verde */
+    color: #fff; /* Texto en color blanco */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.evaluar-c .select-button:hover {
+    background-color: #45a049; /* Cambia de color al pasar el mouse */
+}
+/* Estilo para la etiqueta */
+/* Estilo para la etiqueta */
+.label-styled {
+    font-size: 16px;
+    color: #000000;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Estilo para el campo de fecha */
+#searchFecha {
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    font-size: 16px;
+    width: auto;
+    vertical-align: middle;
+}
+
+/* Estilo para el campo de fecha cuando está enfocado (focus) */
+#searchFecha:focus {
+    border-color: #45a049; /* Cambia el color del borde cuando está enfocado */
+    outline: none; /* Elimina el borde de enfoque predeterminado */
+    box-shadow: 0 0 5px #45a049; /* Agrega una sombra cuando está enfocado */
+}
