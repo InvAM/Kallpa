@@ -1,0 +1,255 @@
+body{
+    margin: 0; 
+    font-family: Arial, Helvetica, sans-serif;                
+}
+
+.generar-OH .cabecera{
+    position: fixed;           
+    width: 100%;                 
+    height: 100px;               
+    background-color: white;   
+    display: flex;               
+    justify-content: space-between; 
+    align-items: center;      
+    box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562); 
+}
+.img-OH{
+    height: 100px;              
+    display: block;              
+    margin: 0px;            
+    margin-top: 0%;            
+    margin-bottom: 0px;   
+}
+
+.generar-OH .imagen-kallpa{
+    margin-top: 35px;            
+    max-height: 300px;           
+    max-width: 200px;            
+}
+
+.generar-OH .imagen-usuario{
+    margin-right: 10px;          
+    max-height: 100px;           
+    max-width: 50px;             
+}
+
+.generar-OH .contenedor1{
+    display: flex;
+}
+.generar-OH .pie-pagina{
+    position: fixed;             
+    bottom: 0;                   
+    width: 100%;                 
+    height: 60px;                
+    background-color: #33cc33;
+    color: white;              
+    display: flex;              
+    justify-content: center;     
+    align-items: center;         
+}
+
+.generar-OH .contenedorPH{
+    padding: 20px;  
+    margin-bottom: 10px;            
+}
+
+.generar-OH .tituloS2{
+    color: #33cc33;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.generar-OH .tituloP{
+    display: flex;               
+    justify-content: center;     
+    margin-top: 75px;  
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;         
+    font-size: 20px;             
+}
+
+.generar-OH .titulo-A{
+    color: #203864;            
+    margin-right: 10px;          
+}
+
+.generar-OH .titulo-B{
+    color: rgb(62, 207, 62);  
+}
+
+.generar-OH .contenedorS{
+    width: 90%;                
+    margin-top: -10px;           
+    float: left;    
+    margin-left: 15px;             
+}
+
+.generar-OH .cajaOrdenH{
+    margin-top: -15px;           
+    border: 2px solid #abf5b7;
+    box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562); 
+    padding: 15px;           
+    height: 100px;            
+    border-radius: 0px;         
+}
+
+.imagenOH{
+    font-size: 120px;         
+    display: block;  
+    color:rgb(62, 207, 62);            
+    margin: 0 auto;    
+    margin-top: -20px;
+}
+
+.generar-OH input{
+    width: 18%;                  
+    padding: 9px;                
+    border: 1px solid #ccc;    
+    border-radius: 5px;          
+    color: #333;               
+    font-size: 14px;             
+    font-family: 'Times New Roman'; 
+}
+
+.generar-OH select{
+    margin-bottom: 22px;         
+    width: 18%;                
+    padding: 9px;                
+    border: 1px solid #ccc;    
+    border-radius: 5px;          
+    color: #333;               
+    font-size: 14px;             
+    font-family: 'Times New Roman'; 
+}
+
+.generar-OH .CajaCalendario{
+    border: 2px solid #abf5b7;
+    width: 100%;
+    padding: 15px;   
+}
+
+.generar-OH .CajaHabilitador{
+    border: 2px solid #abf5b7;
+    width: 100%;
+    padding: 15px; 
+    margin-bottom: 20px;  
+}
+
+.generar-OH .I2{
+    width: 92%;
+    margin-bottom: 10px;
+}
+
+.generar-OH .TI2{
+    font-weight: bold;
+    color: #33cc33;
+}
+
+.calendario-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  .generar-OH .calendario{
+    width: 92%;
+    border-radius: 5px rgb(37, 219, 77);
+    font-size: 16px;
+  }
+
+  .generar-OH .calendario:hover {
+    border-color: #abf5b7;
+  }
+  
+  .generar-OH .calendario:focus {
+    outline: none;
+    border-color: #abf5b7;
+  }
+
+  .generar-OH .boton{
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 98%;
+    background-color: rgb(37, 219, 77);
+    color: white; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .generar-OH .contenedorP2{
+    display: flex;
+  }
+
+  .generar-OH .contenedorS2{
+    width: 25%;
+    margin-right: 50px;
+  }
+  .generar-OH .contenedorS3{
+    width: 70%;
+  }
+
+  .generar-OH .tabla-H{
+    margin-top: 20px;
+    width: 100%;
+    border: 0px;
+}
+
+.custom-table-H {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .custom-table-H th, .custom-table-H td {
+    border: 0px solid ;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .custom-table-H th {
+    background-color: #095ba8;
+    color: white;
+    height: 32px;
+    font-size: 12px;
+  }
+  
+  .custom-table-H tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .custom-table-H tr:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .custom-table-H button {
+    padding: 5px 10px;
+    cursor: pointer;
+    border:0px;
+    width: 35px;
+    border-radius: 5px;
+    background-color: #095ba8;
+    color: white;
+  }
+  
+  .custom-table-H button:hover {
+    background-color: #0e76a8;
+  }
+  
+  .custom-table-H button i {
+    margin-right: 5px;
+  }
+
+  .generar-OH .boton-opciones-H{
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 30%;
+    background-color:#095ba8;
+    color: white; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
