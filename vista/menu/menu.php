@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../estilos/menu.css">
+    <link rel="stylesheet" href="menu.css">
 
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css" rel="stylesheet">
     <title>¡Bienvenido!</title>
@@ -22,7 +22,7 @@
             <div style="margin-top: 1px">
                 <div>
                     <div class="center-vertically">
-                        <a href="/menu/registrarEmpleado">
+                        <a>
                             <div class="border-btnA">
                                 <!-- <img src="../Img/registro (2).png" alt="Registrar Empleado" class="icon-center"> -->
                             </div>

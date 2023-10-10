@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Registrar Cliente</title>
-    <link rel="stylesheet" href="../../estilos/RegistrarClienteEstyle/formRegistrarCliente.css">
+    <link rel="stylesheet" href="formRegistrarCliente.css">
 </head>
 
 <body>
@@ -13,10 +13,10 @@
 
         <div class="cabecera">
             <div>
-                <img src="../../../Img/Kallpa.png" class="imagen-kallpa">
+                <img src="../../Img/Kallpa.png" class="imagen-kallpa">
             </div>
             <div>
-                <img src="../../../Img/usuario (3).png" class="imagen-usuario">
+                <img src="../../Img/usuario (3).png" class="imagen-usuario">
             </div>
         </div>
 
@@ -26,7 +26,7 @@
                 <h2 class="titulo-1">Registro de</h2>
                 <h2 class="titulo-2">Clientes</h2>
             </div>
-            
+
             <div class="parte_izquierda">
 
                 <div>
@@ -36,7 +36,7 @@
                         <input type="text" label="idDomicilio" placeholder="Escribir...">
                     </div>
 
-                    <img src="../../../Img/Casa.jpeg" class="imagen-casa">
+                    <img src="../../Img/Casa.jpeg" class="imagen-casa">
 
                     <div class="posicion-boton">
                         <button class="boton-registrar">Registrar Domicilio</button>
@@ -45,7 +45,7 @@
                 </div>
 
             </div>
-            
+
             <h3 class="subtitulo-cliente">Datos Generales</h3>
 
             <div class="contenedor-datos">
@@ -101,7 +101,7 @@
 
                 <div class="linea">
                     <div>
-                        <img src="../../../Img/Kallpa.png" class="imagen-kallpainfo">
+                        <img src="../../Img/Kallpa.png" class="imagen-kallpainfo">
                     </div>
                     <h3>Fecha: 07/10/2023</h3>
                 </div>

@@ -2,10 +2,10 @@
 <html>
 
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Registrar Empleado</title>
-    <link rel="stylesheet" href="../../estilos/RegistrarEmpleadoEstyle/formRegistrarEmpleado.css">
+    <link rel="stylesheet" href="formRegistrarEmpleado.css">
 </head>
 
 <body>
@@ -13,10 +13,10 @@
 
         <div class="cabecera">
             <div>
-                <img src="../../../Img/Kallpa.png" class="imagen-kallpa">
+                <img src="../../Img/Kallpa.png" class="imagen-kallpa">
             </div>
             <div>
-                <img src="../../../Img/usuario (3).png" class="imagen-usuario">
+                <img src="../../Img/usuario (3).png" class="imagen-usuario">
             </div>
         </div>
 
@@ -33,7 +33,7 @@
 
                 <div class="contenedor-empleado">
 
-                    <img src="../../../Img/perfil.png" class="imagen-foto">
+                    <img src="../../Img/perfil.png" class="imagen-foto">
 
                     <p>Dni</p>
                     <input type="text" label="DNI" placeholder="Escribir...">
@@ -46,10 +46,10 @@
                     <p>Categoría</p>
 
                     <select>
-                    <option value="">Escoger...</option>
-                    <option value="asesor">Asesor</option>
-                    <option value="tecnico">Técnico</option>
-                    <!-- Seguir con opciones -->
+                        <option value="">Escoger...</option>
+                        <option value="asesor">Asesor</option>
+                        <option value="tecnico">Técnico</option>
+                        <!-- Seguir con opciones -->
                     </select>
 
                     <button class="boton">Registrar</button>
@@ -57,7 +57,7 @@
                 </div>
 
             </div>
-            
+
             <div class="parte-derecha">
 
                 <h3 class="subtitulo-lista">Lista de Empleados</h3>
@@ -82,10 +82,10 @@
                                 <td>Chavez Paredes</td>
                                 <td>964991291</td>
                                 <td>
-                                <button class="boton">Seleccionar</button>
+                                    <button class="boton">Seleccionar</button>
                                 </td>
                             </tr>
-                                <!-- Agregar más filas -->
+                            <!-- Agregar más filas -->
                         </tbody>
                     </table>
                 </div>
@@ -95,16 +95,16 @@
                     <h3 class="subtitulo-lista">Credenciales</h3>
 
                     <div class="campo">
-                    <p>Dni</p>
-                    <input type="text" label="DNI" placeholder="Escribir...">
+                        <p>Dni</p>
+                        <input type="text" label="DNI" placeholder="Escribir...">
                     </div>
                     <div class="campo">
-                    <p>Usuario</p>
-                    <input type="text" label="Usuario" placeholder="Escribir...">
+                        <p>Usuario</p>
+                        <input type="text" label="Usuario" placeholder="Escribir...">
                     </div>
                     <div class="campo">
-                    <p>Contraseña</p>
-                    <input type="password" label="Contraseña" placeholder="Escribir...">
+                        <p>Contraseña</p>
+                        <input type="password" label="Contraseña" placeholder="Escribir...">
                     </div>
 
                     <button class="boton-credencial">Agregar credenciales</button>

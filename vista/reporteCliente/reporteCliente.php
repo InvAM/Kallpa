@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reporte de Clientes</title>
-    <link rel="stylesheet" href="../../estilos/reporteClienteStyle/reporteCliente.css">
+    <link rel="stylesheet" href="reporteCliente.css">
 
 </head>
 
@@ -13,10 +13,10 @@
     <div class="report-cli">
         <header class="app-bar">
             <div class="toolbar-title">
-                <img src="../../../Img/Kallpa.png" alt="Kallpa" class="kallpa-image">
+                <img src="../../Img/Kallpa.png" alt="Kallpa" class="kallpa-image">
             </div>
             <div class="spacer"></div>
-            <img src="../../../Img/usuario (3).png" alt="Usuario" class="user-image">
+            <img src="../../Img/usuario (3).png" alt="Usuario" class="user-image">
         </header>
 
         <div style="margin-top: 28px">

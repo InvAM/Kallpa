@@ -1,61 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consultar Contrato</title>
-    <link rel="stylesheet" href="../../estilos/ConsultarContratos/formConsultarContrato.css">
+    <link rel="stylesheet" href="formConsultarContrato.css">
 </head>
+
 <body>
     <div class="consultar-co">
 
         <div class="cabecera">
             <div>
-                <img src="../../../Img/Kallpa.png" class="imagen-kallpa">
+                <img src="../../Img/Kallpa.png" class="imagen-kallpa">
             </div>
             <div>
-                <img src="../../../Img/usuario (3).png" class="imagen-usuario">
+                <img src="../../Img/usuario (3).png" class="imagen-usuario">
             </div>
         </div>
 
-        <div class= "contenedor-principal">
+        <div class="contenedor-principal">
 
             <div class="titulo">
                 <h2 class="titulo-1">Visualización de</h2>
                 <h2 class="titulo-2">Consolidado de Contratos</h2>
             </div>
 
-            <div class="parte-izq" >
+            <div class="parte-izq">
                 <h3 class="subtitulo-lista">Contratos</h3>
 
                 <div class="tabla">
                     <table>
                         <thead>
                             <tr>
-                            <th>ID</th>
-                            <th>DNI Cliente</th>
-                            <th>DNI Empleado</th>
-                            <th>Estado</th>
-                            <th>Fecha</th>
-                            <th>Número de Suministro</th>
-                            <th>Seleccionar</th>
-                            <th>Visualizar</th>
+                                <th>ID</th>
+                                <th>DNI Cliente</th>
+                                <th>DNI Empleado</th>
+                                <th>Estado</th>
+                                <th>Fecha</th>
+                                <th>Número de Suministro</th>
+                                <th>Seleccionar</th>
+                                <th>Visualizar</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                            <td>1234567</td>
-                            <td>71341958</td>
-                            <td>72231457</td>
-                            <td>Aprobado</td>
-                            <td>14-09-2023</td>
-                            <td>12</td>
-                            <td>
-                            <button class="boton">Seleccionar</button>
-                            </td>
-                            <td>
-                            <button class="boton">xxxxx</button>
-                            </td>
+                                <td>1234567</td>
+                                <td>71341958</td>
+                                <td>72231457</td>
+                                <td>Aprobado</td>
+                                <td>14-09-2023</td>
+                                <td>12</td>
+                                <td>
+                                    <button class="boton">Seleccionar</button>
+                                </td>
+                                <td>
+                                    <button class="boton">xxxxx</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -66,7 +68,7 @@
                 <button class="boton-opciones">Orden de Habilitación</button>
             </div>
 
-            
+
 
             <div class="contenedor-info">
                 <h3 class="subtitulo-lista">Datos del Contrato</h3>
@@ -83,7 +85,7 @@
                     <input type="text" label="NumerodeRadicando" placeholder="Escribir...">
                 </div>
             </div>
-        </div>    
+        </div>
         <div class="pie-pagina">
             <p>&copy; 2023 KALLPA. Todos los derechos reservados.</p>
         </div>
@@ -91,4 +93,5 @@
     </div>
 
 </body>
+
 </html>

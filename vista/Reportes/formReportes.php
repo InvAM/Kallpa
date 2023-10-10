@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reportes</title>
-    <link rel="stylesheet" href="../../estilos/Reportes/formReportes.css"> 
+    <link rel="stylesheet" href="formReportes.css">
 </head>
+
 <body>
     <div class="reportes">
 
         <div class="cabecera">
             <div>
-                <img src="../../../Img/Kallpa.png" class="imagen-kallpa">
+                <img src="../../Img/Kallpa.png" class="imagen-kallpa">
             </div>
             <div>
-                <img src="../../../Img/usuario (3).png" class="imagen-usuario">
+                <img src="../../Img/usuario (3).png" class="imagen-usuario">
             </div>
         </div>
 
-        <div class= "contenedor-principal">
+        <div class="contenedor-principal">
 
             <div class="titulo">
                 <h2 class="titulo-1">Reporte -</h2>
                 <h2 class="titulo-2">General</h2>
             </div>
-        
+
             <!--CONTENEDOR - CALENDARIO -->
             <div class="contenedor-graficos">
 
@@ -36,9 +38,9 @@
             </div><br><br>
 
             <div class="tabla">
-                    <table>
-                        <thead>
-                            <tr>
+                <table>
+                    <thead>
+                        <tr>
                             <th>ID Contrato</th>
                             <th>Fecha</th>
                             <th>Número Radicado</th>
@@ -49,10 +51,10 @@
                             <th>Tipo Instalación</th>
                             <th>DNI Cliente</th>
                             <th>DNI Empleado</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
                             <td>CONT0001</td>
                             <td>14-09-2023</td>
                             <td>12345</td>
@@ -63,16 +65,16 @@
                             <td>XXXX</td>
                             <td>1234567</td>
                             <td>71341958</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        </tr>
+                    </tbody>
+                </table>
             </div><br><br><br><br>
             <button class="boton-opciones">GENERAR REPORTE</button>
             <button class="boton-opciones">REPORTE CONTRATOS</button>
             <button class="boton-opciones">REPORTE CLIENTES</button>
             <button class="boton-opciones">REPORTE ORDENES</button>
             <button class="boton-opciones">ATRAS</button>
-            
+
         </div>
 
 
@@ -81,6 +83,7 @@
         </div>
 
     </div>
-        
+
 </body>
+
 </html>

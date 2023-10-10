@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reporte de Contrato</title>
-    <link rel="stylesheet" href="../../estilos/reporteOrdenesStyle/reporteOrdenes.css">
+    <link rel="stylesheet" href="reporteOrdenes.css">
 </head>
 
 <body>
     <div class="report-o">
         <header class="app-bar">
             <div class="toolbar-title">
-                <img src="../../../Img/Kallpa.png" alt="Kallpa" class="kallpa-image">
+                <img src="../../Img/Kallpa.png" alt="Kallpa" class="kallpa-image">
             </div>
             <div class="spacer"></div>
-            <img src="../../../Img/usuario (3).png" alt="Usuario" class="user-image">
+            <img src="../../Img/usuario (3).png" alt="Usuario" class="user-image">
         </header>
 
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="../estilos/formBSugerencia.css">
+    <link rel="stylesheet" href="formBSugerencia.css">
 </head>
 
 <body>
