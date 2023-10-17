@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Login</title>
     <link rel="stylesheet" href="formLoginP.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.all.min.js"></script>
+
 </head>
 
 <body class="login">
 
     <div id="contenedor">
-        <form method="POST" action="procesaLogin.php">
+        <form method="POST" action="" class="" data-form="save">
 
             <fieldset class="cajita1"><br><br>
                 <div>
@@ -53,7 +56,7 @@
                 </div>
                 <br>
                 <br>
-                <input type="hidden" name="accion" value="add" />
+
                 <input type="submit" value="Ingresar">
             </fieldset>
         </form>

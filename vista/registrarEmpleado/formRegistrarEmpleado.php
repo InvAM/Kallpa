@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Registrar Empleado</title>
     <link rel="stylesheet" href="formRegistrarEmpleado.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.all.min.js"></script>
+
 </head>
 
 <body>
     <div class="registrar-e">
-
         <div class="cabecera">
             <div>
                 <img src="../../Img/Kallpa.png" class="imagen-kallpa">
@@ -28,34 +30,37 @@
             </div>
 
             <div class="caja-empleado">
+                <form action="" method="POST" autocomplete="off" class="">
+                    <h3 class="subtitulo-empleado">Datos Generales</h3>
 
-                <h3 class="subtitulo-empleado">Datos Generales</h3>
+                    <div class="contenedor-empleado">
 
-                <div class="contenedor-empleado">
+                        <img src="../../Img/perfil.png" class="imagen-foto">
 
-                    <img src="../../Img/perfil.png" class="imagen-foto">
+                        <label for="DNI_Em_reg">Dni</label>
+                        <input type="text" label="DNI" placeholder="Escribir..." name="DNI_Em_reg" id="DNI_Em_reg">
+                        <label for="Nombre_Em_reg">Nombres</label>
+                        <input type="text" label="Nombre" placeholder="Escribir..." name="Nombre_Em_reg"
+                            id="Nombre_Em_reg">
+                        <label for="Apellido_Em_reg">Apellidos</label>
+                        <input type="text" label="Apellido" placeholder="Escribir..." name="Apellido_Em_reg"
+                            id="Apellido_Em_reg">
+                        <label for="Celular_Em_reg">Celular</label>
+                        <input type="text" label="Celular" placeholder="Escribir..." name="Celular_Em_reg"
+                            id="Celular_Em_reg">
+                        <label for="IDCategoria_reg">Categoría</label>
 
-                    <p>Dni</p>
-                    <input type="text" label="DNI" placeholder="Escribir...">
-                    <p>Nombres</p>
-                    <input type="text" label="Nombre" placeholder="Escribir...">
-                    <p>Apellidos</p>
-                    <input type="text" label="Apellido" placeholder="Escribir...">
-                    <p>Celular</p>
-                    <input type="text" label="Celular" placeholder="Escribir...">
-                    <p>Categoría</p>
+                        <select name="IDCategoria_reg" id="IDCategoria_reg">
+                            <option value="0">Escoger...</option>
+                            <option value="1">Asesor</option>
+                            <option value="2">Técnico</option>
+                            <!-- Seguir con opciones -->
+                        </select>
+                        <input type="hidden" name="accion1" value="add" />
+                        <input type="submit" class="boton" value="Registrar">
 
-                    <select>
-                        <option value="">Escoger...</option>
-                        <option value="asesor">Asesor</option>
-                        <option value="tecnico">Técnico</option>
-                        <!-- Seguir con opciones -->
-                    </select>
-
-                    <button class="boton">Registrar</button>
-
-                </div>
-
+                    </div>
+                </form>
             </div>
 
             <div class="parte-derecha">
@@ -76,11 +81,11 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>71341958</td>
-                                <td>Asesor</td>
-                                <td>Paolo Ignacio</td>
-                                <td>Chavez Paredes</td>
-                                <td>964991291</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                                 <td>
                                     <button class="boton">Seleccionar</button>
                                 </td>
@@ -91,24 +96,28 @@
                 </div>
 
                 <div class="contenedor-credenciales">
+                    <form action="" class="FormularioAjax">
+                        <h3 class="subtitulo-lista">Credenciales</h3>
 
-                    <h3 class="subtitulo-lista">Credenciales</h3>
+                        <div class="campo">
+                            <label for="DNI_Em_cre">Dni</label>
+                            <input type="text" label="DNI" placeholder="Escribir..." name="DNI_Em_cre" id="DNI_Em_cre"
+                                required>
+                        </div>
+                        <div class="campo">
+                            <label for="username">Usuario</label>
+                            <input type="text" label="Usuario" placeholder="Escribir..." name="username" id="username"
+                                required>
+                        </div>
+                        <div class="campo">
+                            <label for="password">Contraseña</label>
+                            <input type="password" label="Contraseña" placeholder="Escribir..." required name="password"
+                                id="passwor">
+                        </div>
+                        <input type="hidden" name="accion2" value="add" />
 
-                    <div class="campo">
-                        <p>Dni</p>
-                        <input type="text" label="DNI" placeholder="Escribir...">
-                    </div>
-                    <div class="campo">
-                        <p>Usuario</p>
-                        <input type="text" label="Usuario" placeholder="Escribir...">
-                    </div>
-                    <div class="campo">
-                        <p>Contraseña</p>
-                        <input type="password" label="Contraseña" placeholder="Escribir...">
-                    </div>
-
-                    <button class="boton-credencial">Agregar credenciales</button>
-
+                        <input type="submit" value="Agregar Credenciales" class="boton-credencial">
+                    </form>
                 </div>
 
                 <button class="boton-opciones">Actualizar</button>
@@ -124,5 +133,6 @@
 
     </div>
 </body>
+
 
 </html>

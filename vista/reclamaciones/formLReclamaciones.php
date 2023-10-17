@@ -8,12 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css" rel="stylesheet">
-
 </head>
 
 <body>
     <div id="contenedor">
-        <form method="POST" action="procesaLogin.php">
+        <form method="POST" class="" action="" data-form="save">
             <fieldset class="cajita1">
                 <h1 class="titulo">Libro de reclamaciones</h1>
                 <fieldset class="cajas">
