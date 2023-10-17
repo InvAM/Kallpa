@@ -1,5 +1,5 @@
 <?php
-define('URL', 'http://localhost:80/KALLPA');
+define('URL', 'http://localhost:8080/KALLPA');
 
 define('HOST', 'localhost');
 
