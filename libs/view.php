@@ -4,12 +4,11 @@ class View
     function __construct()
     {
 
+        echo "<p>Vista base</p>";
     }
 
-    function render($nombre, $data = [])
+    function render($nombre)
     {
-        $this->d = $data;
-        require 'vista/' . $nombre;
+        require 'views/' . $nombre . ".php";
     }
 }
-?>

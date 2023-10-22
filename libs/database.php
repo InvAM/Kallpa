@@ -2,6 +2,7 @@
 
 class Database
 {
+
     private $host;
     private $db;
     private $user;
@@ -16,30 +17,23 @@ class Database
         $this->user = constant('USER');
         $this->password = constant('PASSWORD');
         $this->charset = constant('CHARSET');
-        $this->port = constant('PORT');
-
     }
 
-    public function conexion()
+    function connect()
     {
-        $conexion = mysqli_connect(
-            $this->host,
-            $this->user,
-            $this->password,
-            $this->db,
-            $this->port
-        );
+        try {
+            $conexion = "mysql:host=" . $this->host . ";port=" . $this->port . ";dbname=" . $this->db . ";charset=" . $this->charset;
 
-        if (!$conexion) {
-            die("La conexión a la base de datos falló: " . mysqli_connect_error());
+            $options = [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_EMULATE_PREPARES => false,
+            ];
+
+            $pdo = new PDO($conexion, $this->user, $this->password, $options);
+            return $pdo;
+        } catch (PDOException $e) {
+            print_r('Error connection: ' . $e->getMessage());
         }
-
-        // Establecer el conjunto de caracteres
-        mysqli_set_charset($conexion, $this->charset);
-
-
-        return $conexion;
     }
-
 
 }
