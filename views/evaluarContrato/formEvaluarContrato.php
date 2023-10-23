@@ -4,26 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="formEvaluarContrato.css">
+    <link rel="stylesheet" href="public/css/formEvaluarContrato.css">
     <title>Evaluar Contrato</title>
-    <link rel="icon" href="../../Img/WhatsApp Image 2023-10-08 at 12.16.04 PM.jpeg" type="image/x-icon">
+    <link rel="icon" href="public/Img/WhatsApp Image 2023-10-08 at 12.16.04 PM.jpeg" type="image/x-icon">
 </head>
 
 <body>
     <div class="evaluar-c">
 
-        <div class="cabecera">
-            <div>
-                <img src="../../Img/Kallpa.png" class="imagen-kallpa">
-            </div>
-
-            <div>
-                <img src="../../Img/usuario (3).png" class="imagen-usuario">
-            </div>
-        </div>
-        <div class="pie-pagina">
-            <p>&copy; 2023 KALLPA. Todos los derechos reservados.</p>
-        </div>
+        <?php require_once "views/header.php" ?>
         <div class="contenedor-principal">
 
             <div class="titulo">
@@ -116,6 +105,9 @@
         <div class="error-dialog" id="dialogError">
             <!-- Contenido de la ventana de error se generará dinámicamente aquí -->
         </div>
+
+
+        <?php require_once "views/footer.php" ?>
     </div>
 </body>
 

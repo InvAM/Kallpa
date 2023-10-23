@@ -4,22 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="../../Img/KallpaC.png" type="image/x-icon">
+    <link rel="icon" href="public/Img/KallpaC.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
     <title>Generar Orden Instalación</title>
-    <link rel="stylesheet" href="formGenerarOrdenI.css">
+    <link rel="stylesheet" href="public/css/formGenerarOrdenI.css">
 </head>
 
 <body>
     <div class="generar-OI">
-        <div class="cabecera">
-            <div>
-                <img src="../../Img/Kallpa.png" class="imagen-kallpa">
-            </div>
-            <div>
-                <img src="../../Img/usuario (3).png" class="imagen-usuario">
-            </div>
-        </div>
+        <?php require_once "views/header.php" ?>
 
         <div class="contenedorP">
             <div class="tituloP">
@@ -106,9 +99,8 @@
             </div>
         </div>
 
-        <div class="pie-pagina">
-            <p>&copy; 2023 KALLPA. Todos los derechos reservados.</p>
-        </div>
+
+        <?php require_once "views/footer.php" ?>
 
     </div>
 </body>

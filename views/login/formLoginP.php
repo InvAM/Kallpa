@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Login</title>
-    <link rel="stylesheet" href="formLoginP.css">
+    <link rel="stylesheet" href="public/css/formLoginP.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.all.min.js"></script>
 
@@ -18,7 +18,7 @@
 
             <fieldset class="cajita1"><br><br>
                 <div>
-                    <img src="../../Img/Kallpa.png" alt="Logo_Kallpa" class="imagen">
+                    <img src="public/Img/Kallpa.png" alt="Logo_Kallpa" class="imagen">
                 </div><br><br>
                 <h2>Identificarse</h2>
                 <h2 class="titulo">Bienvenido</h2>

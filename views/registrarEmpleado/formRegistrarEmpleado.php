@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Registrar Empleado</title>
-    <link rel="stylesheet" href="formRegistrarEmpleado.css">
+    <link rel="stylesheet" href="public/css/formRegistrarEmpleado.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.all.min.js"></script>
 
@@ -13,14 +13,7 @@
 
 <body>
     <div class="registrar-e">
-        <div class="cabecera">
-            <div>
-                <img src="../../Img/Kallpa.png" class="imagen-kallpa">
-            </div>
-            <div>
-                <img src="../../Img/usuario (3).png" class="imagen-usuario">
-            </div>
-        </div>
+        <?php require_once "views/header.php"; ?>
 
         <div class="contenedor-principal">
 
@@ -35,7 +28,7 @@
 
                     <div class="contenedor-empleado">
 
-                        <img src="../../Img/perfil.png" class="imagen-foto">
+                        <img src="public/Img/perfil.png" class="imagen-foto">
 
                         <label for="DNI_Em_reg">Dni</label>
                         <input type="text" label="DNI" placeholder="Escribir..." name="DNI_Em_reg" id="DNI_Em_reg">
@@ -127,9 +120,8 @@
 
         </div>
 
-        <div class="pie-pagina">
-            <p>&copy; 2023 KALLPA. Todos los derechos reservados.</p>
-        </div>
+
+        <?php require_once "views/footer.php"; ?>
 
     </div>
 </body>

@@ -5,11 +5,11 @@ class Main extends Controller
     {
         parent::__construct();
         $this->view->render('login/formLoginP');
-        echo "<p>Nuevo Controlador main</p>";
+        //echo "<p>Nuevo Controlador main</p>";
     }
 
     function saludo()
     {
-        echo "<p>Ejecutaste el metodo Saludo</p>";
+        //echo "<p>Ejecutaste el metodo Saludo</p>";
     }
 }

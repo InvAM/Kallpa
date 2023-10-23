@@ -5,20 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Registrar Cliente</title>
-    <link rel="stylesheet" href="formRegistrarCliente.css">
+    <link rel="stylesheet" href="public/css/formRegistrarCliente.css">
 </head>
 
 <body>
     <div class="registrar-cli">
 
-        <div class="cabecera">
-            <div>
-                <img src="../../Img/Kallpa.png" class="imagen-kallpa">
-            </div>
-            <div>
-                <img src="../../Img/usuario (3).png" class="imagen-usuario">
-            </div>
-        </div>
+        <?php require_once "views/header.php"; ?>
 
         <div class="contenedor-principal">
 
@@ -36,7 +29,7 @@
                         <input type="text" label="idDomicilio" placeholder="Escribir...">
                     </div>
 
-                    <img src="../../Img/Casa.jpeg" class="imagen-casa">
+                    <img src="public/Img/Casa.jpeg" class="imagen-casa">
 
                     <div class="posicion-boton">
                         <button class="boton-registrar">Registrar Domicilio</button>
@@ -101,7 +94,7 @@
 
                 <div class="linea">
                     <div>
-                        <img src="../../Img/Kallpa.png" class="imagen-kallpainfo">
+                        <img src="public/Img/Kallpa.png" class="imagen-kallpainfo">
                     </div>
                     <h3>Fecha: 07/10/2023</h3>
                 </div>
@@ -131,9 +124,8 @@
 
         </div>
 
-        <div class="pie-pagina">
-            <p>&copy; 2023 KALLPA. Todos los derechos reservados.</p>
-        </div>
+
+        <?php require_once "views/footer.php"; ?>
 
     </div>
 </body>

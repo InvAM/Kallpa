@@ -5,19 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reporte de Clientes</title>
-    <link rel="stylesheet" href="reporteCliente.css">
+    <link rel="stylesheet" href="public/css/reporteCliente.css">
 
 </head>
 
 <body>
     <div class="report-cli">
-        <header class="app-bar">
-            <div class="toolbar-title">
-                <img src="../../Img/Kallpa.png" alt="Kallpa" class="kallpa-image">
-            </div>
-            <div class="spacer"></div>
-            <img src="../../Img/usuario (3).png" alt="Usuario" class="user-image">
-        </header>
+
+        <?php require_once "views/header.php"; ?>
+
 
         <div style="margin-top: 28px">
             <h1 class="text-center titulo">
@@ -105,11 +101,9 @@
                 </tbody>
             </table>
         </div>
-        <footer class="footer">
-            <div class="text-footer">
-                &copy; 2023 KALLPA. Todos los derechos reservados.
-            </div>
-        </footer>
+
+
+        <?php require_once "views/footer.php"; ?>
 
     </div>
 </body>

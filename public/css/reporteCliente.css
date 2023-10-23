@@ -1,49 +1,7 @@
-/* Estilos generales */
-.report-cli {
-	position: relative;
-}
-
 .report-cli .texto-center {
 	color: #010361;
 	font-size: xx-large;
 	margin-top: 6px;
-}
-
-/* Barra de encabezado */
-.report-cli .app-bar {
-	border: 2px solid white;
-	height: 10vh;
-	width: 101%;
-	border-radius: 1px 1px 1px 1px;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-	display: flex;
-	justify-content: space-between;
-	margin-left: -15px;
-}
-
-/*Imagen de Usuario*/
-.report-cli .user-image {
-	margin-right: 38px;
-	width: 61px;
-	height: 61px;
-	margin-top: 7px;
-}
-
-/*Logo kallpa*/
-.report-cli .kallpa-image {
-	margin-top: 3px;
-	width: 200px;
-	margin-left: 25px;
-}
-/* Pie de página */
-.report-cli .footer {
-	background-color: #33cc33;
-	position: fixed;
-	bottom: 0;
-	width: 1879px;
-	height: 60px;
-	margin-left: -8px;
-	margin-bottom: -8px;
 }
 
 /* Título principal */
@@ -54,18 +12,41 @@
 	margin-top: 28px;
 }
 
-/* Contenedor de filtros */
-.report-cli .filtros {
-	border: 4px solid #010361;
-	padding: 10px;
-	margin: 0 auto;
-	top: 128%;
-	position: absolute;
-	width: 416px;
-	height: 345px;
-	color: #010361;
+.report-cli .cabecera {
+	width: 100.9%;
+	height: 100px;
+	background-color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562);
+	margin-left: -10px;
+	margin-top: -6px;
 }
 
+.report-cli .imagen-kallpa {
+	margin-top: 35px;
+	max-height: 300px;
+	max-width: 200px;
+}
+
+.report-cli .imagen-usuario {
+	margin-right: 10px;
+	max-height: 100px;
+	max-width: 50px;
+}
+/* Contenedor de filtros */
+.report-cli .pie-pagina {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	background-color: #33cc33;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 /* Contenedor de fecha */
 .report-cli .contenedor-cajas-F {
 	border: 4px solid #010361;
@@ -145,30 +126,13 @@
 .report-cli .texto-area2 {
 	display: inline; /* Hace que los spans se comporten como elementos en línea */
 }
-/*Footer*/
-.report-cli .text-footer {
-	text-align: center;
-	margin-top: 19px;
-	color: #ffffff;
-}
+
 /*Cuerpo de la tabla*/
 .report-cli .tabla {
 	width: 97%;
 	margin-left: 27px;
 	margin-top: 400px;
 	position: absolute;
-}
-
-.tabla::-webkit-scrollbar {
-	width: 8px; /* Ancho de la barra de desplazamiento */
-}
-
-.tabla::-webkit-scrollbar-thumb {
-	background-color: #203864; /* Color de la barra de desplazamiento */
-}
-
-.tabla::-webkit-scrollbar-track {
-	background-color: #f8f8f8; /* Color del fondo de la barra de desplazamiento */
 }
 
 table {
@@ -266,6 +230,5 @@ tr:hover {
 	border-radius: 5px;
 	border: 1px solid #203864;
 	padding: 9px;
-
 	margin-top: 19px;
 }

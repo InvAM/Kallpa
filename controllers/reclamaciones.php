@@ -1,5 +1,5 @@
 <?php
-class Ayuda extends Controller
+class reclamaciones extends Controller
 {
     function __construct()
     {

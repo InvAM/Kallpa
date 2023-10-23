@@ -4,22 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="../../../Img/KallpaC.png" type="image/x-icon">
+    <link rel="icon" href="public/Img/KallpaC.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
     <title>Asignar Técnico</title>
-    <link rel="stylesheet" href="formAsignarTecnico.css">
+    <link rel="stylesheet" href="public/css/formAsignarTecnico.css">
 </head>
 
 <body>
     <div class="asignar-T">
-        <div class="cabecera">
-            <div>
-                <img src="../../Img/Kallpa.png" class="imagen-kallpa">
-            </div>
-            <div>
-                <img src="../../Img/usuario (3).png" class="imagen-usuario">
-            </div>
-        </div>
+        <?php require_once "views/header.php"; ?>
 
         <div class="contenedorPT">
             <div class="tituloP">
@@ -81,9 +74,7 @@
             </div>
         </div>
 
-        <div class="pie-pagina">
-            <p>&copy; 2023 KALLPA. Todos los derechos reservados.</p>
-        </div>
+        <?php require_once "views/footer.php"; ?>
 
     </div>
 </body>
