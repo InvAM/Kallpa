@@ -1,220 +1,181 @@
-body{
-    margin: 0; 
-    font-family: Arial, Helvetica, sans-serif;                
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
-.registrar-M .cabecera{
-    position: fixed;           
-    width: 100%;                 
-    height: 100px;               
-    background-color: white;   
-    display: flex;               
-    justify-content: space-between; 
-    align-items: center;      
-    box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562); 
+.registrar-M .contenedorP {
+	padding: 20px;
+	margin-bottom: 120px;
 }
 
-.registrar-M .imagen-kallpa{
-    margin-top: 35px;            
-    max-height: 300px;           
-    max-width: 200px;            
+.registrar-M .contenedorS {
+	width: 98%;
+	margin-top: -10px;
+	margin-bottom: 10px;
+	float: left;
+	margin-left: 10px;
 }
 
-.registrar-M .imagen-usuario{
-    margin-right: 10px;          
-    max-height: 100px;           
-    max-width: 50px;             
+.registrar-M .cajaContrato {
+	margin-top: -15px;
+	border: 2px solid #abf5b7;
+	box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562);
+	padding: 15px;
+	height: 100px;
+	margin-bottom: 30px;
+	border-radius: 0px;
 }
 
-
-.registrar-M .pie-pagina{
-    position: fixed;             
-    bottom: 0;                   
-    width: 100%;                 
-    height: 60px;                
-    background-color: #33cc33;
-    color: white;              
-    display: flex;              
-    justify-content: center;     
-    align-items: center;         
+.registrar-M input {
+	width: 30%;
+	height: 25px;
+	margin-right: 10px;
+	padding: 9px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: #333;
+	font-size: 14px;
+	font-family: "Arial";
 }
 
-.registrar-M .contenedorP{
-    padding: 20px;  
-    margin-bottom: 120px;            
+.registrar-M .tituloS2 {
+	color: #33cc33;
+	font-size: 18px;
+	font-weight: bold;
 }
 
-.registrar-M .contenedorS{
-    width: 98%;                
-    margin-top: -10px;  
-    margin-bottom: 10px;         
-    float: left;    
-    margin-left: 10px;         
+.registrar-M .tituloP {
+	display: flex;
+	justify-content: center;
+	margin-top: 75px;
+	margin-bottom: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
 }
 
-.registrar-M .cajaContrato{
-    margin-top: -15px;           
-    border: 2px solid #abf5b7;
-    box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562); 
-    padding: 15px;           
-    height: 100px;  
-    margin-bottom: 30px;          
-    border-radius: 0px;         
+.registrar-M .titulo-A {
+	color: #203864;
+	margin-right: 10px;
 }
 
-.registrar-M input{
-    width: 30%;   
-    height: 25px;
-    margin-right: 10px;             
-    padding: 9px;                
-    border: 1px solid #ccc;    
-    border-radius: 5px;          
-    color: #333;               
-    font-size: 14px;             
-    font-family: 'Arial'; 
+.registrar-M .titulo-B {
+	color: rgb(62, 207, 62);
 }
 
-.registrar-M .tituloS2{
-    color: #33cc33;
-    font-size: 18px;
-    font-weight: bold;
+.registrar-M .CajaMaterial {
+	border: 2px solid #abf5b7;
+	width: 25%;
+	padding: 15px;
+	margin-bottom: 20px;
+	margin-left: 28px;
+	margin-right: 10px;
+	display: block;
 }
 
-.registrar-M .tituloP{
-    display: flex;               
-    justify-content: center;     
-    margin-top: 75px;  
-    margin-bottom: 20px;
-    font-family: Arial, Helvetica, sans-serif;         
-    font-size: 20px;             
+.registrar-M .ContenedorP1 {
+	display: flex;
 }
 
-.registrar-M .titulo-A{
-    color: #203864;            
-    margin-right: 10px;          
+.registrar-M .n1 {
+	width: 95%;
+	margin-bottom: 10px;
+}
+.registrar-M select {
+	border-radius: 5px;
+	width: 100%;
+	height: 40px;
+	padding: 9px;
+	border: 1px solid #ccc;
+	color: #333;
+	margin-bottom: 10px;
+	font-family: "Arial";
 }
 
-.registrar-M .titulo-B{
-    color: rgb(62, 207, 62);  
+.registrar-M .boton {
+	padding: 10px 20px;
+	font-size: 16px;
+	font-weight: bold;
+	width: 98%;
+	background-color: rgb(37, 219, 77);
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-bottom: 10px;
 }
 
-.registrar-M .CajaMaterial{
-    border: 2px solid #abf5b7;
-    width: 25%;
-    padding: 15px; 
-    margin-bottom: 20px; 
-    margin-left: 28px;
-    margin-right: 10px;
-    display: block;
+.registrar-M .mdi {
+	font-size: 18px;
 }
 
-.registrar-M .ContenedorP1{
-    display: flex;
+.registrar-M .CajaTabla {
+	width: 66%;
+	margin-left: 10px;
+	display: block;
 }
 
-.registrar-M .n1{
-    width: 95%;
-    margin-bottom: 10px;;
-}
-.registrar-M select{
-    border-radius: 5px;
-    width: 100%;
-    height: 40px;
-    padding: 9px;                
-    border: 1px solid #ccc;          
-    color: #333;
-    margin-bottom: 10px;
-    font-family: 'Arial';
-}
-
-.registrar-M .boton{
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    width: 98%;
-    background-color: rgb(37, 219, 77);
-    color: white; 
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 10px;
-  }
-
-  .registrar-M .mdi{
-    font-size: 18px;
-  }
-
-  .registrar-M .CajaTabla{
-    width: 66%;
-    margin-left: 10px;
-    display: block;
-  }
-
-  
-  .registrar-M .tabla {
-    margin-top: 20px;
-    width: 100%;
-    border: 0px;
+.registrar-M .tabla {
+	margin-top: 20px;
+	width: 100%;
+	border: 0px;
 }
 
 .custom-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    margin-bottom: 30px;
-  }
-  
-  .custom-table th, .custom-table td {
-    border: 0px solid ;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .custom-table th {
-    background-color: #095ba8;
-    color: white;
-    height: 32px;
-    font-size: 12px;
-  }
-  
-  .custom-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .custom-table tr:hover {
-    background-color: #e0e0e0;
-  }
-  
-  .custom-table button {
-    padding: 5px 10px;
-    cursor: pointer;
-    border:0px;
-    width: 40px;
-    border-radius: 5px;
-    background-color: #095ba8;
-    color: white;
-  }
-  
-  .custom-table button:hover {
-    background-color: #0e76a8;
-  }
-  
-  .custom-table button i {
-    margin-right: 5px;
-  }
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
 
-  
-  .registrar-M .boton-opciones{
-    padding: 10px 20px;
-    font-size: 14px;
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 30%;
-    background-color:#095ba8;
-    color: white; 
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+.custom-table th,
+.custom-table td {
+	border: 0px solid;
+	padding: 10px;
+	text-align: center;
+}
 
+.custom-table th {
+	background-color: #095ba8;
+	color: white;
+	height: 32px;
+	font-size: 12px;
+}
 
+.custom-table tr:nth-child(even) {
+	background-color: #f9f9f9;
+}
+
+.custom-table tr:hover {
+	background-color: #e0e0e0;
+}
+
+.custom-table button {
+	padding: 5px 10px;
+	cursor: pointer;
+	border: 0px;
+	width: 40px;
+	border-radius: 5px;
+	background-color: #095ba8;
+	color: white;
+}
+
+.custom-table button:hover {
+	background-color: #0e76a8;
+}
+
+.custom-table button i {
+	margin-right: 5px;
+}
+
+.registrar-M .boton-opciones {
+	padding: 10px 20px;
+	font-size: 14px;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 30%;
+	background-color: #095ba8;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}

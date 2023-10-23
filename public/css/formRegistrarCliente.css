@@ -1,241 +1,209 @@
-body{
-    margin: 0;                   /*Quita espacio exterior*/
+body {
+	margin: 0; /*Quita espacio exterior*/
 }
 
-.registrar-cli .cabecera{
-    position: fixed;             /*Fijar posición en la parte superior*/
-    width: 100%;                 /*Ocupar todo el ancho*/
-    height: 100px;               /*Tamaño de la altura la barra*/
-    background-color: white;   /*Color de la barra*/
-    display: flex;               /*Permite alinear el contenido de la barra*/
-    justify-content: space-between; /*Separa imagen*/
-    align-items: center;         /*Centrar el texto verticalmente*/
-    box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562); /*Agregar sombra*/
+.registrar-cli .contenedor-principal {
+	padding: 20px; /*Agrega espacio en el interior*/
 }
 
-.registrar-cli .imagen-kallpa{
-    margin-top: 35px;            /*Añadir esapacio con el elemento de arriba*/
-    max-height: 300px;           /*Definir altura de la imagen*/
-    max-width: 200px;            /*Definir ancho de la imagen*/
+.registrar-cli .titulo {
+	display: flex; /*Permite alinear el contenido en una línea*/
+	justify-content: center; /*Centra el elemento*/
+	margin-top: 75px; /*Añadir espacio con el elemento de arriba*/
+	font-size: 25px; /*Establece el tamaño a la letra*/
 }
 
-.registrar-cli .imagen-usuario{
-    margin-right: 10px;          /*Añadir esapacio con el elemento de la derecha*/
-    max-height: 100px;           /*Definir altura de la imagen*/
-    max-width: 50px;             /*Definir ancho de la imagen*/
+.registrar-cli .titulo-1 {
+	color: #203864; /*Da color a las letras*/
+	margin-right: 10px; /*Añadir esapacio con el elemento de la derecha*/
 }
 
-.registrar-cli .contenedor-principal{
-    padding: 20px;               /*Agrega espacio en el interior*/
+.registrar-cli .titulo-2 {
+	color: rgb(62, 207, 62); /*Da color a las letras*/
 }
 
-.registrar-cli .titulo{
-    display: flex;               /*Permite alinear el contenido en una línea*/
-    justify-content: center;     /*Centra el elemento*/
-    margin-top: 75px;            /*Añadir espacio con el elemento de arriba*/
-    font-size: 25px;             /*Establece el tamaño a la letra*/
+.registrar-cli .parte_izquierda {
+	width: 31.8%; /*Establecer ancho de la caja*/
+	margin-top: -28px; /*Eliminar espacio con el elemento de arriba*/
+	float: left; /*Posiciona el objeto a la izquierda*/
 }
 
-.registrar-cli .titulo-1{
-    color: #203864;            /*Da color a las letras*/
-    margin-right: 10px;          /*Añadir esapacio con el elemento de la derecha*/
+.registrar-cli .parte_izquierda p {
+	margin-bottom: 5px; /*Añadir espacio con el elemento de abajo*/
 }
 
-.registrar-cli .titulo-2{
-    color: rgb(62, 207, 62);   /*Da color a las letras*/
+.registrar-cli .posicion-letra {
+	float: left; /*Posiciona el objeto a la izquierda*/
+	margin-top: -5px; /*Eliminar espacio con el elemento de arriba*/
+	width: 44%; /*Establecer ancho de la caja*/
 }
 
-.registrar-cli .parte_izquierda{
-    width: 31.8%;                /*Establecer ancho de la caja*/
-    margin-top: -28px;           /*Eliminar espacio con el elemento de arriba*/
-    float: left;                 /*Posiciona el objeto a la izquierda*/
+.registrar-cli .imagen-casa {
+	margin-left: 14px; /*Añadir espacio con el elemento de la izquierda*/
+	margin-top: 12px; /*Añade espacio con el elemento de arriba*/
+	max-height: 110px; /*Definir altura de la imagen*/
+	max-width: 60px; /*Definir ancho de la imagen*/
 }
 
-.registrar-cli .parte_izquierda p{
-    margin-bottom: 5px;          /*Añadir espacio con el elemento de abajo*/
+.registrar-cli .boton-registrar {
+	background-color: #47d847; /*Color del botón*/
+	color: #ffffff; /*Cambia el color del texto */
+	width: 100%; /*Establecer ancho del objeto*/
+	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
+	font-size: 15px; /*Ajusta el tamaño de fuente */
+	border-radius: 5px; /*Agrega bordes redondeados */
+	border: 1px solid #39a805; /*Añade un borde */
+	padding: 9px; /*Agranda espacio en el interior de los inputs*/
+	font-family: "Times New Roman"; /*Fuente de letra*/
+	margin-top: 33px; /*Añade espacio con el elemento de arriba*/
 }
 
-.registrar-cli .posicion-letra{
-    float: left;                 /*Posiciona el objeto a la izquierda*/
-    margin-top: -5px;            /*Eliminar espacio con el elemento de arriba*/
-    width: 44%;                  /*Establecer ancho de la caja*/
+.registrar-cli .posicion-boton {
+	float: right; /*Posiciona el objeto a la derecha*/
+	width: 40%; /*Establecer ancho del objeto*/
 }
 
-.registrar-cli .imagen-casa{
-    margin-left: 14px;           /*Añadir espacio con el elemento de la izquierda*/
-    margin-top: 12px;            /*Añade espacio con el elemento de arriba*/
-    max-height: 110px;           /*Definir altura de la imagen*/
-    max-width: 60px;             /*Definir ancho de la imagen*/
+.registrar-cli .subtitulo-cliente {
+	margin-top: 55px; /*Añade espacio con el elemento de arriba*/
+	color: #203864; /*Da color a las letras*/
+	font-size: 22px; /*Establece el tamaño a la letra*/
 }
 
-.registrar-cli .boton-registrar{
-    background-color: #47d847; /*Color del botón*/
-    color: #ffffff;            /*Cambia el color del texto */
-    width: 100%;                 /*Establecer ancho del objeto*/
-    cursor: pointer;             /*Cambia el cursor al pasar el ratón sobre el botón */
-    font-size: 15px;             /*Ajusta el tamaño de fuente */
-    border-radius: 5px;          /*Agrega bordes redondeados */
-    border: 1px solid #39a805; /*Añade un borde */
-    padding: 9px;                /*Agranda espacio en el interior de los inputs*/
-    font-family: 'Times New Roman'; /*Fuente de letra*/
-    margin-top: 33px;            /*Añade espacio con el elemento de arriba*/
+.registrar-cli .contenedor-datos {
+	width: 30%; /*Establecer ancho de la caja*/
+	margin-top: -10px; /*Elimina espacio con el elemento de arriba*/
+	border: 2px solid #47d847; /*Línea de la caja*/
+	box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562); /*Agregar sombra*/
+	padding: 15px; /*Agrega espacio en el interior*/
+	height: 420px; /*Establece la altura del objeto*/
+	border-radius: 5px; /*Redondea las esquinas*/
 }
 
-.registrar-cli .posicion-boton{
-    float: right;                /*Posiciona el objeto a la derecha*/
-    width: 40%;                  /*Establecer ancho del objeto*/
+.registrar-cli .parte_izquierda input {
+	width: 90%; /*Establecer ancho del objeto*/
+	padding: 9px; /*Agranda espacio en el interior de los inputs*/
+	border: 1px solid #ccc; /*Añade un borde */
+	border-radius: 5px; /*Agrega bordes redondeados */
+	color: #333; /*Cambia el color del texto */
+	font-size: 14px; /*Ajusta el tamaño de fuente */
+	font-family: "Times New Roman"; /*Fuente de letra*/
 }
 
-.registrar-cli .subtitulo-cliente{
-    margin-top: 55px;            /*Añade espacio con el elemento de arriba*/
-    color: #203864;            /*Da color a las letras*/
-    font-size: 22px;             /*Establece el tamaño a la letra*/
+.registrar-cli .input-todo {
+	margin-top: 27px; /*Añade espacio con el elemento de arriba*/
 }
 
-.registrar-cli .contenedor-datos{
-    width: 30%;                  /*Establecer ancho de la caja*/
-    margin-top: -10px;           /*Elimina espacio con el elemento de arriba*/
-    border: 2px solid #47d847; /*Línea de la caja*/
-    box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562); /*Agregar sombra*/
-    padding: 15px;               /*Agrega espacio en el interior*/
-    height: 420px;               /*Establece la altura del objeto*/
-    border-radius: 5px;          /*Redondea las esquinas*/
+.registrar-cli .input-todo p,
+.datos_izquierda p,
+.datos_derecha p {
+	margin-bottom: 5px; /*Añadir espacio con el elemento de abajo*/
 }
 
-.registrar-cli .parte_izquierda input{
-    width: 90%;                  /*Establecer ancho del objeto*/
-    padding: 9px;                /*Agranda espacio en el interior de los inputs*/
-    border: 1px solid #ccc;    /*Añade un borde */
-    border-radius: 5px;          /*Agrega bordes redondeados */
-    color: #333;               /*Cambia el color del texto */
-    font-size: 14px;             /*Ajusta el tamaño de fuente */
-    font-family: 'Times New Roman'; /*Fuente de letra*/
+.registrar-cli .input-todo input,
+.datos_izquierda input {
+	width: 96.7%; /*Establecer ancho del objeto*/
+	padding: 9px; /*Agranda espacio en el interior de los inputs*/
+	border: 1px solid #ccc; /*Añade un borde */
+	border-radius: 5px; /*Agrega bordes redondeados */
+	color: #333; /*Cambia el color del texto */
+	font-size: 14px; /*Ajusta el tamaño de fuente */
+	font-family: "Times New Roman"; /*Fuente de letra*/
 }
 
-.registrar-cli .input-todo{
-    margin-top: 27px;            /*Añade espacio con el elemento de arriba*/
+.registrar-cli .datos_izquierda {
+	width: 48%; /*Establecer ancho de la caja*/
+	float: left; /*Posiciona el objeto a la izquierda*/
 }
 
-.registrar-cli .input-todo p,.datos_izquierda p,.datos_derecha p{
-    margin-bottom: 5px;          /*Añadir espacio con el elemento de abajo*/
+.registrar-cli .datos_derecha {
+	width: 48%; /*Establecer ancho de la caja*/
+	float: right; /*Posiciona el objeto a la izquierda*/
 }
 
-.registrar-cli .input-todo input,.datos_izquierda input{
-    width: 96.7%;                /*Establecer ancho del objeto*/
-    padding: 9px;                /*Agranda espacio en el interior de los inputs*/
-    border: 1px solid #ccc;    /*Añade un borde */
-    border-radius: 5px;          /*Agrega bordes redondeados */
-    color: #333;               /*Cambia el color del texto */
-    font-size: 14px;             /*Ajusta el tamaño de fuente */
-    font-family: 'Times New Roman'; /*Fuente de letra*/
+.registrar-cli .datos_derecha input {
+	width: 92.9%; /*Establecer ancho del objeto*/
+	padding: 9px; /*Agranda espacio en el interior de los inputs*/
+	border: 1px solid #ccc; /*Añade un borde */
+	border-radius: 5px; /*Agrega bordes redondeados */
+	color: #333; /*Cambia el color del texto */
+	font-size: 14px; /*Ajusta el tamaño de fuente */
+	font-family: "Times New Roman"; /*Fuente de letra*/
 }
 
-.registrar-cli .datos_izquierda{
-    width: 48%;                  /*Establecer ancho de la caja*/
-    float: left;                 /*Posiciona el objeto a la izquierda*/
+.registrar-cli .datos_izquierda select {
+	width: 104%; /*Establecer ancho del objeto*/
+	padding: 9px; /*Agranda espacio en el interior de los inputs*/
+	border: 1px solid #ccc; /*Añade un borde */
+	border-radius: 5px; /*Agrega bordes redondeados */
+	color: #333; /*Cambia el color del texto */
+	font-size: 14px; /*Ajusta el tamaño de fuente */
+	font-family: "Times New Roman"; /*Fuente de letra*/
 }
 
-.registrar-cli .datos_derecha{
-    width: 48%;                  /*Establecer ancho de la caja*/
-    float: right;                /*Posiciona el objeto a la izquierda*/
+.registrar-cli .datos_derecha select {
+	width: 100.5%; /*Establecer ancho del objeto*/
+	padding: 9px; /*Agranda espacio en el interior de los inputs*/
+	border: 1px solid #ccc; /*Añade un borde */
+	border-radius: 5px; /*Agrega bordes redondeados */
+	color: #333; /*Cambia el color del texto */
+	font-size: 14px; /*Ajusta el tamaño de fuente */
+	font-family: "Times New Roman"; /*Fuente de letra*/
 }
 
-.registrar-cli .datos_derecha input{
-    width: 92.9%;                /*Establecer ancho del objeto*/
-    padding: 9px;                /*Agranda espacio en el interior de los inputs*/
-    border: 1px solid #ccc;    /*Añade un borde */
-    border-radius: 5px;          /*Agrega bordes redondeados */
-    color: #333;               /*Cambia el color del texto */
-    font-size: 14px;             /*Ajusta el tamaño de fuente */
-    font-family: 'Times New Roman'; /*Fuente de letra*/
+.registrar-cli .contenedor-botones {
+	width: 31.8%; /*Establecer ancho del objeto*/
 }
 
-.registrar-cli .datos_izquierda select{
-    width: 104%;                 /*Establecer ancho del objeto*/
-    padding: 9px;                /*Agranda espacio en el interior de los inputs*/
-    border: 1px solid #ccc;    /*Añade un borde */
-    border-radius: 5px;          /*Agrega bordes redondeados */
-    color: #333;               /*Cambia el color del texto */
-    font-size: 14px;             /*Ajusta el tamaño de fuente */
-    font-family: 'Times New Roman'; /*Fuente de letra*/
+.registrar-cli .boton-datos {
+	background-color: #203864; /*Color del botón*/
+	color: #ffffff; /*Cambia el color del texto */
+	width: 100%; /*Establecer ancho del objeto*/
+	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
+	font-size: 15px; /*Ajusta el tamaño de fuente */
+	border-radius: 5px; /*Agrega bordes redondeados */
+	border: 1px solid #152c57; /*Añade un borde */
+	padding: 9px; /*Agranda espacio en el interior de los inputs*/
+	font-family: "Times New Roman"; /*Fuente de letra*/
+	margin-top: 17px; /*Añade espacio con el elemento de arriba*/
 }
 
-.registrar-cli .datos_derecha select{
-    width: 100.5%;               /*Establecer ancho del objeto*/
-    padding: 9px;                /*Agranda espacio en el interior de los inputs*/
-    border: 1px solid #ccc;    /*Añade un borde */
-    border-radius: 5px;          /*Agrega bordes redondeados */
-    color: #333;               /*Cambia el color del texto */
-    font-size: 14px;             /*Ajusta el tamaño de fuente */
-    font-family: 'Times New Roman'; /*Fuente de letra*/
+.registrar-cli .contenedor-info {
+	width: 65%; /*Establecer ancho de la caja*/
+	margin-top: -660px; /*Elimina espacio con el elemento de arriba*/
+	border: 2px solid #47d847; /*Línea de la caja*/
+	box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562); /*Agregar sombra*/
+	padding: 15px; /*Agrega espacio en el interior*/
+	height: 518px; /*Establece la altura del objeto*/
+	border-radius: 5px; /*Redondea las esquinas*/
+	float: right; /*Posiciona el objeto a la izquierda*/
 }
 
-.registrar-cli .contenedor-botones{
-    width: 31.8%;                /*Establecer ancho del objeto*/
+.registrar-cli .imagen-kallpainfo {
+	max-height: 300px; /*Definir altura de la imagen*/
+	max-width: 200px; /*Definir ancho de la imagen*/
 }
 
-.registrar-cli .boton-datos{
-    background-color: #203864; /*Color del botón*/
-    color: #ffffff;            /*Cambia el color del texto */
-    width: 100%;                 /*Establecer ancho del objeto*/
-    cursor: pointer;             /*Cambia el cursor al pasar el ratón sobre el botón */
-    font-size: 15px;             /*Ajusta el tamaño de fuente */
-    border-radius: 5px;          /*Agrega bordes redondeados */
-    border: 1px solid #152c57; /*Añade un borde */
-    padding: 9px;                /*Agranda espacio en el interior de los inputs*/
-    font-family: 'Times New Roman'; /*Fuente de letra*/
-    margin-top: 17px;            /*Añade espacio con el elemento de arriba*/
+.registrar-cli .linea {
+	display: flex; /*Permite alinear el contenido de la barra*/
+	justify-content: space-between; /*Separa imagen*/
+	margin-right: 15px; /*Añadir espacio con elemento de la derecha*/
 }
 
-.registrar-cli .contenedor-info{
-    width: 65%;                  /*Establecer ancho de la caja*/
-    margin-top: -660px;          /*Elimina espacio con el elemento de arriba*/
-    border: 2px solid #47d847; /*Línea de la caja*/
-    box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562); /*Agregar sombra*/
-    padding: 15px;               /*Agrega espacio en el interior*/
-    height: 518px;               /*Establece la altura del objeto*/
-    border-radius: 5px;          /*Redondea las esquinas*/
-    float: right;                /*Posiciona el objeto a la izquierda*/
+.registrar-cli .espacio {
+	margin-top: -45px; /*Elimina espacio con el elemento de arriba*/
 }
 
-.registrar-cli .imagen-kallpainfo{
-    max-height: 300px;           /*Definir altura de la imagen*/
-    max-width: 200px;            /*Definir ancho de la imagen*/
-}
-
-.registrar-cli .linea{
-    display: flex;               /*Permite alinear el contenido de la barra*/
-    justify-content: space-between; /*Separa imagen*/
-    margin-right: 15px;          /*Añadir espacio con elemento de la derecha*/
-}
-
-.registrar-cli .espacio{
-    margin-top: -45px;           /*Elimina espacio con el elemento de arriba*/
-}
-
-.registrar-cli .boton-atras{
-    background-color: #47d847; /*Color del botón*/
-    color: #ffffff;            /*Cambia el color del texto */
-    width: 20%;                  /*Establecer ancho del objeto*/
-    cursor: pointer;             /*Cambia el cursor al pasar el ratón sobre el botón */
-    font-size: 15px;             /*Ajusta el tamaño de fuente */
-    border-radius: 5px;          /*Agrega bordes redondeados */
-    border: 1px solid #39a805; /*Añade un borde */
-    padding: 9px;                /*Agranda espacio en el interior de los inputs*/
-    font-family: 'Times New Roman'; /*Fuente de letra*/
-    margin-top: 83px;            /*Añade espacio con el elemento de arriba*/
-    margin-left: -16px;          /*Elimina el espacio con el elemento izquierdo*/
-    margin-right: 35px;          /*Añadir espacio con elemento de la derecha*/
-}
-
-.registrar-cli .pie-pagina{
-    position: fixed;             /*Fijar posición en la parte inferior*/
-    bottom: 0;                   /*Colocar en la parte inferior*/
-    width: 100%;                 /*Ocupar todo el ancho*/
-    height: 60px;                /*Tamaño de la altura la barra*/
-    background-color: #33cc33; /*Color de la barra*/
-    color: white;              /*Color de la letra*/
-    display: flex;               /*Permite alinear el contenido de la barra*/
-    justify-content: center;     /*Centrar el texto horizontalmente*/
-    align-items: center;         /*Centrar el texto verticalmente*/
+.registrar-cli .boton-atras {
+	background-color: #47d847; /*Color del botón*/
+	color: #ffffff; /*Cambia el color del texto */
+	width: 20%; /*Establecer ancho del objeto*/
+	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
+	font-size: 15px; /*Ajusta el tamaño de fuente */
+	border-radius: 5px; /*Agrega bordes redondeados */
+	border: 1px solid #39a805; /*Añade un borde */
+	padding: 9px; /*Agranda espacio en el interior de los inputs*/
+	font-family: "Times New Roman"; /*Fuente de letra*/
+	margin-top: 83px; /*Añade espacio con el elemento de arriba*/
+	margin-left: -16px; /*Elimina el espacio con el elemento izquierdo*/
+	margin-right: 35px; /*Añadir espacio con elemento de la derecha*/
 }

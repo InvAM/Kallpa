@@ -5,25 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reporte de Contrato</title>
-    <link rel="stylesheet" href="reporteContrato.css">
+    <link rel="stylesheet" href="public/css/reporteContrato.css">
 </head>
 
 <body>
     <div class="report-c">
-        <header class="app-bar">
-            <div class="toolbar-title">
-                <img src="../../Img/Kallpa.png" alt="Kallpa" class="kallpa-image">
-            </div>
-            <div class="spacer"></div>
-            <img src="../../Img/usuario (3).png" alt="Usuario" class="user-image">
-        </header>
 
-
-
-        <div style="margin-top: 28px">
-            <h1 class="text-center titulo">
-                <span style="color: #32cc32">REPORTE</span>
-                <span style="color: #203864"> - CONTRATO</span>
+        <?php require_once "views/header.php"; ?>
+        <div>
+            <h1 class="text-center">
+                <span>REPORTE</span>
+                <span class="span-contrato"> - CONTRATO</span>
             </h1>
         </div>
 
@@ -41,6 +33,7 @@
                 <!-- Inserta aquí tus date pickers -->
             </div>
         </div>
+
         <div class="filtros">
             <h2>Filtros</h2>
 
@@ -60,17 +53,12 @@
                         </select>
                     </fieldset>
                 </form>
-
             </div>
-
-
-
             <div>
-                <button onclick="generarReporte()" class="btn-generar">Generar Reporte</button>
-                <button onclick="atras()" class="btn-atras">Atras</button>
+                <button class="btn-generar">Generar Reporte</button>
+                <button class="btn-atras">Atras</button>
             </div>
         </div>
-
         <div class="tabla">
             <h2 class="titulo-tabla">Lista de Reporte de Contratos </h2>
             <table>
@@ -106,13 +94,8 @@
                 </tbody>
             </table>
         </div>
-        <footer class="footer">
-            <div class="text-footer">
-                &copy; 2023 KALLPA. Todos los derechos reservados.
-            </div>
-        </footer>
+        <?php require_once "views/footer.php"; ?>
     </div>
-
 </body>
 
 </html>

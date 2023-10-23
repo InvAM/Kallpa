@@ -1,157 +1,125 @@
-	body{
-		margin: 0px;                  
-	}
-	
-	.consultar-co .cabecera{
-		position: fixed;             
-		width: 100%;                 
-		height: 100px;               
-		background-color: white;  
-		display: flex;               
-		justify-content: space-between;
-		align-items: center;         
-		box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562);
-	}
-	
-	.consultar-co .imagen-kallpa{
-		margin-top: 35px;            
-		max-height: 300px;           /*Definir altura de la imagen*/
-		max-width: 200px;            /*Definir ancho de la imagen*/
-	}
-	
-	.consultar-co .imagen-usuario{
-		margin-right: 10px;          /*Añadir esapacio con el elemento de la derecha*/
-		max-height: 100px;           /*Definir altura de la imagen*/
-		max-width: 50px;             /*Definir ancho de la imagen*/
-	}
-	.consultar-co .contenedor-principal{
-		padding: 20px;               /*Agrega espacio en el interior*/
-	}
-	.consultar-co .titulo{
-		display: flex;               /*Permite alinear el contenido en una línea*/
-		justify-content: center;     /*Centra el elemento*/
-		margin-top: 75px;            /*Añadir espacio con el elemento de arriba*/
-		font-size: 25px;             /*Establece el tamaño a la letra*/
-	}
-	
-	.consultar-co .titulo-1{
-		color: #203864;            /*Da color a las letras*/
-		margin-right: 10px;          /*Añadir esapacio con el elemento de la derecha*/
-	}
-	
-	.consultar-co .titulo-2{
-		color: rgb(62, 207, 62);   /*Da color a las letras*/
-	}
-	.consultar-co .subtitulo-lista{
-		color: #203864;            /*Da color a las letras*/
-		font-size: 22px;             /*Establece el tamaño a la letra*/
-	}
-	.consultar-co .tabla{
-		height: 520px;               /*Tamaño de altura de la tabla*/
-		overflow-y: scroll;          /*Añade barra de desplazamiento*/
-	}
-	.tabla::-webkit-scrollbar{
-		width: 8px;                  /* Ancho de la barra de desplazamiento */
-	}
-	
-	.tabla::-webkit-scrollbar-thumb{
-		background-color: #203864  /* Color de la barra de desplazamiento */
-	}
-	
-	.tabla::-webkit-scrollbar-track{
-		background-color: #f8f8f8; /* Color del fondo de la barra de desplazamiento */
-	}
-	
-	table{
-		width: 100%;                 /*Establecer ancho del objeto*/
-		border-collapse: collapse;   /*Junta los campos de la tabla*/
-		border: 1px solid #ddd;    /*Color del borde de la tabla*/
-	}
-	
-	th, td{
-		padding: 12px;               /*Agranda espacio en el interior de la celda*/
-		text-align: center;          /*Alinea el texto al centro*/
-	}
-	
-	th{
-		background-color: #203864; /*Color de la cabecera*/
-		color: white;              /*Color de la letra*/
-	}
-	
-	tr:hover{
-		background-color: #47d84738;/*Color del contenido*/
-	}
-	.consultar-co .boton{
-		background-color: #47d847; /*Color del botón*/
-		color: #ffffff;            /*Cambia el color del texto */
-		width: 100%;                 /*Establecer ancho del objeto*/
-		cursor: pointer;             /*Cambia el cursor al pasar el ratón sobre el botón */
-		font-size: 15px;             /*Ajusta el tamaño de fuente */
-		border-radius: 5px;          /*Agrega bordes redondeados */
-		border: 1px solid #39a805; /*Añade un borde */
-		padding: 9px;                /*Agranda espacio en el interior de los inputs*/
-		font-family: 'Times New Roman'; /*Fuente de letra*/
-	}
-	.consultar-co .boton-opciones{
-		background-color: #47d847; /*Color del botón*/
-		color: #ffffff;            /*Cambia el color del texto */
-		width: 15%;                 /*Establecer ancho del objeto*/
-		cursor: pointer;             /*Cambia el cursor al pasar el ratón sobre el botón */
-		font-size: 15px;             /*Ajusta el tamaño de fuente */
-		border-radius: 5px;          /*Agrega bordes redondeados */
-		border: 1px solid #39a805; /*Añade un borde */
-		padding: 9px;                /*Agranda espacio en el interior de los inputs*/
-		font-family: 'Times New Roman'; /*Fuente de letra*/
-	}
-	.consultar-co .boton-opciones1{
-		background-color: #203864; /*Color del botón*/
-		color: #ffffff;            /*Cambia el color del texto */
-		width: 15%;                 /*Establecer ancho del objeto*/
-		cursor: pointer;             /*Cambia el cursor al pasar el ratón sobre el botón */
-		font-size: 15px;             /*Ajusta el tamaño de fuente */
-		border-radius: 5px;          /*Agrega bordes redondeados */
-		border: 1px solid #152c57; /*Añade un borde */
-		padding: 9px;                /*Agranda espacio en el interior de los inputs*/
-		font-family: 'Times New Roman'; /*Fuente de letra*/
-	}
-	.consultar-co .parte-izq{
-		width: 70%;                /*Establecer ancho de la caja*/
-    	float: left;                 /*Posiciona el objeto a la izquierda*/
-	}
-	.consultar-co .contenedor{
-		width: 100%;                  /*Establecer ancho de la caja*/
-		margin-top: 20px;          /*Elimina espacio con el elemento de arriba*/
-		border: 2px solid #47d847; /*Línea de la caja*/
-		box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562); /*Agregar sombra*/
-		padding: 15px;               /*Agrega espacio en el interior*/
-		height: 518px;               /*Establece la altura del objeto*/
-		border-radius: 5px;          /*Redondea las esquinas*/
-	}
-	.consultar-co .contenedor-info{
-		width: 27%;                  /*Establecer ancho de la caja*/
-		float: right;                /*Posiciona el objeto a la izquierda*/
-		margin-right: 35px;
-	}
-	.consultar-co .contenedor p{
-		margin-bottom: 5px;          /*Añadir espacio con el elemento de abajo*/
-	}
-	.consultar-co input{
-		width: 93%;                  /*Establecer ancho del objeto*/
-		padding: 9px;                /*Agranda espacio en el interior de los inputs*/
-		border: 1px solid #ccc;    /*Añade un borde */
-		border-radius: 5px;          /*Agrega bordes redondeados */
-		color: #333;               /*Cambia el color del texto */
-		font-size: 14px;             /*Ajusta el tamaño de fuente */
-		font-family: 'Times New Roman'; /*Fuente de letra*/
-	}
-	.consultar-co .pie-pagina{
-		position: fixed;             /*Fijar posición en la parte inferior*/
-		bottom: 0;                   /*Colocar en la parte inferior*/
-		width: 100%;                 /*Ocupar todo el ancho*/
-		height: 60px;                /*Tamaño de la altura la barra*/
-		background-color: #33cc33; /*Color de la barra*/
-		color: white;              /*Color de la letra*/
-		display: flex;               /*Permite alinear el contenido de la barra*/
-		justify-content: center;     /*Centrar el texto horizontalmente*/
-		align-items: center;         /*Centrar el texto verticalmente*/
-	}
+body {
+	margin: 0px;
+}
+
+.consultar-co .contenedor-principal {
+	padding: 20px; /*Agrega espacio en el interior*/
+}
+.consultar-co .titulo {
+	display: flex; /*Permite alinear el contenido en una línea*/
+	justify-content: center; /*Centra el elemento*/
+	margin-top: 75px; /*Añadir espacio con el elemento de arriba*/
+	font-size: 25px; /*Establece el tamaño a la letra*/
+}
+
+.consultar-co .titulo-1 {
+	color: #203864; /*Da color a las letras*/
+	margin-right: 10px; /*Añadir esapacio con el elemento de la derecha*/
+}
+
+.consultar-co .titulo-2 {
+	color: rgb(62, 207, 62); /*Da color a las letras*/
+}
+.consultar-co .subtitulo-lista {
+	color: #203864; /*Da color a las letras*/
+	font-size: 22px; /*Establece el tamaño a la letra*/
+}
+.consultar-co .tabla {
+	height: 520px; /*Tamaño de altura de la tabla*/
+	overflow-y: scroll; /*Añade barra de desplazamiento*/
+}
+.tabla::-webkit-scrollbar {
+	width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+.tabla::-webkit-scrollbar-thumb {
+	background-color: #203864; /* Color de la barra de desplazamiento */
+}
+
+.tabla::-webkit-scrollbar-track {
+	background-color: #f8f8f8; /* Color del fondo de la barra de desplazamiento */
+}
+
+table {
+	width: 100%; /*Establecer ancho del objeto*/
+	border-collapse: collapse; /*Junta los campos de la tabla*/
+	border: 1px solid #ddd; /*Color del borde de la tabla*/
+}
+
+th,
+td {
+	padding: 12px; /*Agranda espacio en el interior de la celda*/
+	text-align: center; /*Alinea el texto al centro*/
+}
+
+th {
+	background-color: #203864; /*Color de la cabecera*/
+	color: white; /*Color de la letra*/
+}
+
+tr:hover {
+	background-color: #47d84738; /*Color del contenido*/
+}
+.consultar-co .boton {
+	background-color: #47d847; /*Color del botón*/
+	color: #ffffff; /*Cambia el color del texto */
+	width: 100%; /*Establecer ancho del objeto*/
+	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
+	font-size: 15px; /*Ajusta el tamaño de fuente */
+	border-radius: 5px; /*Agrega bordes redondeados */
+	border: 1px solid #39a805; /*Añade un borde */
+	padding: 9px; /*Agranda espacio en el interior de los inputs*/
+	font-family: "Times New Roman"; /*Fuente de letra*/
+}
+.consultar-co .boton-opciones {
+	background-color: #47d847; /*Color del botón*/
+	color: #ffffff; /*Cambia el color del texto */
+	width: 15%; /*Establecer ancho del objeto*/
+	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
+	font-size: 15px; /*Ajusta el tamaño de fuente */
+	border-radius: 5px; /*Agrega bordes redondeados */
+	border: 1px solid #39a805; /*Añade un borde */
+	padding: 9px; /*Agranda espacio en el interior de los inputs*/
+	font-family: "Times New Roman"; /*Fuente de letra*/
+}
+.consultar-co .boton-opciones1 {
+	background-color: #203864; /*Color del botón*/
+	color: #ffffff; /*Cambia el color del texto */
+	width: 15%; /*Establecer ancho del objeto*/
+	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
+	font-size: 15px; /*Ajusta el tamaño de fuente */
+	border-radius: 5px; /*Agrega bordes redondeados */
+	border: 1px solid #152c57; /*Añade un borde */
+	padding: 9px; /*Agranda espacio en el interior de los inputs*/
+	font-family: "Times New Roman"; /*Fuente de letra*/
+}
+.consultar-co .parte-izq {
+	width: 70%; /*Establecer ancho de la caja*/
+	float: left; /*Posiciona el objeto a la izquierda*/
+}
+.consultar-co .contenedor {
+	width: 100%; /*Establecer ancho de la caja*/
+	margin-top: 20px; /*Elimina espacio con el elemento de arriba*/
+	border: 2px solid #47d847; /*Línea de la caja*/
+	box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562); /*Agregar sombra*/
+	padding: 15px; /*Agrega espacio en el interior*/
+	height: 518px; /*Establece la altura del objeto*/
+	border-radius: 5px; /*Redondea las esquinas*/
+}
+.consultar-co .contenedor-info {
+	width: 27%; /*Establecer ancho de la caja*/
+	float: right; /*Posiciona el objeto a la izquierda*/
+	margin-right: 35px;
+}
+.consultar-co .contenedor p {
+	margin-bottom: 5px; /*Añadir espacio con el elemento de abajo*/
+}
+.consultar-co input {
+	width: 93%; /*Establecer ancho del objeto*/
+	padding: 9px; /*Agranda espacio en el interior de los inputs*/
+	border: 1px solid #ccc; /*Añade un borde */
+	border-radius: 5px; /*Agrega bordes redondeados */
+	color: #333; /*Cambia el color del texto */
+	font-size: 14px; /*Ajusta el tamaño de fuente */
+	font-family: "Times New Roman"; /*Fuente de letra*/
+}

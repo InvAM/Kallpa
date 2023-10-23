@@ -1,0 +1,79 @@
+body {
+	margin: 0px;
+}
+
+.reportes .contenedor-principal {
+	padding: 20px; /*Agrega espacio en el interior*/
+	text-align: center;
+}
+.reportes .titulo {
+	display: flex; /*Permite alinear el contenido en una línea*/
+	justify-content: center; /*Centra el elemento*/
+	margin-top: 75px; /*Añadir espacio con el elemento de arriba*/
+	font-size: 25px; /*Establece el tamaño a la letra*/
+}
+
+.reportes .titulo-1 {
+	color: #203864; /*Da color a las letras*/
+	margin-right: 10px; /*Añadir esapacio con el elemento de la derecha*/
+}
+
+.reportes .titulo-2 {
+	color: rgb(62, 207, 62); /*Da color a las letras*/
+}
+.reportes .contenedor-graficos {
+	width: 98%; /*Establecer ancho de la caja*/
+	margin-top: 20px; /*Elimina espacio con el elemento de arriba*/
+	border: 2px solid #203867; /*Línea de la caja*/
+	box-shadow: 0px 2px 4px rgba(52, 82, 248, 0.562); /*Agregar sombra*/
+	padding: 15px; /*Agrega espacio en el interior*/
+	height: 200px; /*Establece la altura del objeto*/
+	border-radius: 5px; /*Redondea las esquinas*/
+}
+.consultar-co .tabla {
+	height: 520px; /*Tamaño de altura de la tabla*/
+	overflow-y: scroll; /*Añade barra de desplazamiento*/
+}
+.tabla::-webkit-scrollbar {
+	width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+.tabla::-webkit-scrollbar-thumb {
+	background-color: #203864; /* Color de la barra de desplazamiento */
+}
+
+.tabla::-webkit-scrollbar-track {
+	background-color: #f8f8f8; /* Color del fondo de la barra de desplazamiento */
+}
+
+table {
+	width: 100%; /*Establecer ancho del objeto*/
+	border-collapse: collapse; /*Junta los campos de la tabla*/
+	border: 1px solid #ddd; /*Color del borde de la tabla*/
+}
+
+th,
+td {
+	padding: 12px; /*Agranda espacio en el interior de la celda*/
+	text-align: center; /*Alinea el texto al centro*/
+}
+
+th {
+	background-color: #203864; /*Color de la cabecera*/
+	color: white; /*Color de la letra*/
+}
+
+tr:hover {
+	background-color: #47d84738; /*Color del contenido*/
+}
+.reportes .boton-opciones {
+	background-color: #203864; /*Color del botón*/
+	color: #ffffff; /*Cambia el color del texto */
+	width: 15%; /*Establecer ancho del objeto*/
+	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
+	font-size: 15px; /*Ajusta el tamaño de fuente */
+	border-radius: 5px; /*Agrega bordes redondeados */
+	border: 1px solid #152c57; /*Añade un borde */
+	padding: 9px; /*Agranda espacio en el interior de los inputs*/
+	font-family: "Times New Roman"; /*Fuente de letra*/
+}

@@ -5,20 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reportes</title>
-    <link rel="stylesheet" href="formReportes.css">
+    <link rel="stylesheet" href="public/css/formReportes.css">
 </head>
 
 <body>
     <div class="reportes">
 
-        <div class="cabecera">
-            <div>
-                <img src="../../Img/Kallpa.png" class="imagen-kallpa">
-            </div>
-            <div>
-                <img src="../../Img/usuario (3).png" class="imagen-usuario">
-            </div>
-        </div>
+        <?php require_once "views/header.php"; ?>
 
         <div class="contenedor-principal">
 
@@ -78,9 +71,7 @@
         </div>
 
 
-        <div class="pie-pagina">
-            <p>&copy; 2023 KALLPA. Todos los derechos reservados.</p>
-        </div>
+        <?php require_once "views/footer.php"; ?>
 
     </div>
 
