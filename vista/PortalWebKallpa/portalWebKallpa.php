@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
     <title>Portal Web Kallpa</title>
     <link rel="stylesheet" href="portalWebKallpa.css">
+    <link rel="stylesheet" href="../../splide-4.1.3/dist/css/splide-core.min.css">
+    <script src="../../splide-4.1.3/dist/js/splide.min.js"></script>
 </head>
 <body>
+<div >
     <header class="cabeceras">
         <div class="numeros">
             <div class="contenedor1">
@@ -27,8 +30,8 @@
             </a>
         </div>   
         <nav class="menuOpciones">
-           <div id="menu" class="navegacion">
-               <ul class="lista-menu">
+            <div id="menu" class="navegacion">
+                <ul class="lista-menu">
                     <li class="logo-kallpa">
                         <a href="/">
                             <img src="../../Img/Kallpa1.png">
@@ -83,9 +86,34 @@
                             </ul>
                         </div>
                     </li>
-               </ul>
-           </div>    
+                </ul>
+            </div>    
         </nav>
     </header>
+
+    <div class="container">
+        <div class="splide">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide"><img src="../../Img/SLIDER_KALLPA.png" alt=""/></li>
+                    <li class="splide__slide"><img src="../../Img/SLIDER_KALLPA1.png" alt=""/></li>
+                    <li class="splide__slide"><img src="../../Img/SLIDER_KALLPA2.png" alt=""/></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        new Splide( '.splide',{
+            type: 'loop',
+            autoplay:true,
+            interval: '2000' 
+        } ).mount();
+    </script>
+
+
+</div>
+
+    
 </body>
 </html>

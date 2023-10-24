@@ -43,7 +43,7 @@ body {
 }
 
 .contenedor2{
-   margin-top: 20px;
+    margin-top: 20px;
 }
 
 .contenedor1:hover {
@@ -95,9 +95,9 @@ body {
 }
 
 .menuOpciones .lista-menu .logo-kallpa{
-   border: 4px solid transparent;
-   padding-right: 20px;
-   border-right: 2px solid #808080; 
+    border: 4px solid transparent;
+    padding-right: 20px;
+    border-right: 2px solid #808080; 
 }
 
 .menuOpciones .lista-menu .menu-item:last-child {
@@ -202,3 +202,28 @@ body {
     display: block; /* Mostrar el submenu al pasar el mouse sobre el item */
 }
 
+.container{
+    width: 100%;
+    height: 480px;
+    padding: 15px;
+    background: lightgray;
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.container img{
+    width: 100%;
+    height: 590px;
+    object-fit: cover;
+    cursor: pointer;
+}
+/* Add numbers to pagination buttons by CSS */
+.splide__pagination {
+    counter-reset: pagination-num;
+    }
+
+.splide__pagination__page:before {
+    counter-increment: pagination-num;
+    content: counter( pagination-num );
+}
