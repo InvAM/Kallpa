@@ -23,7 +23,8 @@
             </div>
 
             <div class="caja-empleado">
-                <form action="" method="POST" autocomplete="off" class="">
+                <form action="<?php echo constant('URL'); ?>registrarEmpleado/registrarNuevoEmpleado" method="POST"
+                    autocomplete="off" class="">
                     <h3 class="subtitulo-empleado">Datos Generales</h3>
 
                     <div class="contenedor-empleado">

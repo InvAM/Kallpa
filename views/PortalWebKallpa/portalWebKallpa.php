@@ -7,9 +7,9 @@
     <link rel="icon" href="public/Img/KallpaC.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
     <title>Portal Web Kallpa</title>
-    <link rel="stylesheet" href="public/css/portalWebKallpa.css">
-    <link rel="stylesheet" href="public/splide-4.1.3/dist/css/splide-core.min.css">
-    <script src="public/splide-4.1.3/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/portalWebKallpa.css">
+    <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/splide-4.1.3/dist/css/splide-core.min.css">
+    <script src="<?php echo constant('URL'); ?>public/splide-4.1.3/dist/js/splide.min.js"></script>
 </head>
 
 <body>
@@ -35,7 +35,7 @@
                 <div id="menu" class="navegacion">
                     <ul class="lista-menu">
                         <li class="logo-kallpa">
-                            <a href="/">
+                            <a href=" ">
                                 <img src="public/Img/Kallpa1.png">
                             </a>
                         </li>
