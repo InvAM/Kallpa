@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
     <title>Registrar Empleado</title>
+    <link rel="icon" href="../../Img/KallpaC.png" type="image/x-icon">
     <link rel="stylesheet" href="formRegistrarEmpleado.css">
 </head>
 
@@ -33,26 +35,21 @@
 
                 <div class="contenedor-empleado">
 
-                    <img src="../../Img/perfil.png" class="imagen-foto">
-
-                    <p>Dni</p>
-                    <input type="text" label="DNI" placeholder="Escribir...">
-                    <p>Nombres</p>
-                    <input type="text" label="Nombre" placeholder="Escribir...">
-                    <p>Apellidos</p>
-                    <input type="text" label="Apellido" placeholder="Escribir...">
-                    <p>Celular</p>
-                    <input type="text" label="Celular" placeholder="Escribir...">
-                    <p>Categoría</p>
-
+                    <img src="../../Img/Empleado.png" class="imagen-foto">
+                    <input type="text"  name="dni" placeholder="DNI">
+                    <input type="text"  name="nombre" placeholder="Nombres">
+                    <input type="text"  name="apellido" placeholder="Apellidos">
+                    <input type="text"  name="celular" placeholder="N° Celular">
                     <select>
-                        <option value="">Escoger...</option>
+                        <option value="">Seleccione la Categoria</option>
                         <option value="asesor">Asesor</option>
                         <option value="tecnico">Técnico</option>
                         <!-- Seguir con opciones -->
                     </select>
 
-                    <button class="boton">Registrar</button>
+                    <button class="boton">Registrar
+                        <i class="mdi mdi-account-badge"></i>
+                    </button>
 
                 </div>
 
@@ -71,7 +68,7 @@
                                 <th>Nombre</th>
                                 <th>Apellido</th>
                                 <th>Celular</th>
-                                <th></th>
+                                <th>Seleccionar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -82,7 +79,9 @@
                                 <td>Chavez Paredes</td>
                                 <td>964991291</td>
                                 <td>
-                                    <button class="boton">Seleccionar</button>
+                                    <button class="boton-tabla">
+                                     <i class="mdi mdi-eye-arrow-left"></i> 
+                                    </button>
                                 </td>
                             </tr>
                             <!-- Agregar más filas -->
@@ -92,28 +91,33 @@
 
                 <div class="contenedor-credenciales">
 
-                    <h3 class="subtitulo-lista">Credenciales</h3>
+                    <h3 class="subtitulo-lista1">Credenciales</h3>
 
                     <div class="campo">
-                        <p>Dni</p>
-                        <input type="text" label="DNI" placeholder="Escribir...">
+                        <input type="text" placeholder="DNI" name="dni">
                     </div>
                     <div class="campo">
-                        <p>Usuario</p>
-                        <input type="text" label="Usuario" placeholder="Escribir...">
+                        <input type="text" placeholder="Usuario" name="usuario">
                     </div>
                     <div class="campo">
-                        <p>Contraseña</p>
-                        <input type="password" label="Contraseña" placeholder="Escribir...">
+                        <input type="password" placeholder="Contraseña" name="contraseña">
                     </div>
 
-                    <button class="boton-credencial">Agregar credenciales</button>
+                    <button class="boton-credencial">Agregar credenciales
+                        <i class="mdi mdi-account-credit-card"></i>
+                    </button>
 
                 </div>
 
-                <button class="boton-opciones">Actualizar</button>
-                <button class="boton-opciones">Atras</button>
-                <button class="boton-opciones">Limpiar</button>
+                <button class="boton-opciones">Actualizar 
+                    <i class="mdi mdi-book-plus"></i>
+                </button>
+                <button class="boton-opciones">Atras
+                        <i class="mdi mdi-keyboard-backspace"></i>
+                </button>
+                <button class="boton-opciones">Limpiar 
+                   <i class="mdi mdi-restore"></i>
+                </button>
             </div>
 
         </div>

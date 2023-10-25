@@ -47,6 +47,13 @@
                         </div>
                     </li>
 
+                    
+                    <li class="menu-item">
+                        <div class="item-label-icon" data-toggle="collapse" href="" role="button" aria-expanded="false" aria-controls="submenu2">
+                            <i class="mdi mdi-home-heart"></i>
+                            <a href="" class="menu-link"> Hogar</a>
+                        </div>
+                    </li>
 
                     <li class="menu-item">
                         <div class="item-label-icon" data-toggle="collapse" href="#submenu2" role="button" aria-expanded="false" aria-controls="submenu2">
@@ -58,15 +65,6 @@
                                 <li class="col"><a href=""><i class="mdi mdi-account-wrench"></i><span>Servicios</span></a></li>
                                 <li class="col"><a href=""><i class="mdi mdi-air-humidifier"></i><span>Gasodomésticos</span></a></li>
                             </ul>
-                        </div>
-                    </li>
-
-
-
-                    <li class="menu-item">
-                        <div class="item-label-icon" data-toggle="collapse" href="" role="button" aria-expanded="false" aria-controls="submenu2">
-                            <i class="mdi mdi-home-assistant"></i>
-                            <a href="" class="menu-link">Catalogo Virtual</a>
                         </div>
                     </li>
 
