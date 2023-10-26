@@ -10,6 +10,6 @@ class Main extends Controller
 
     function saludo()
     {
-        //echo "<p>Ejecutaste el metodo Saludo</p>";
+        echo "<p>Ejecutaste el metodo Saludo</p>";
     }
 }

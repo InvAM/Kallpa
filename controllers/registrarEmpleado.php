@@ -6,4 +6,9 @@ class RegistrarEmpleado extends Controller
         parent::__construct();
         $this->view->render('registrarEmpleado/formRegistrarEmpleado');
     }
+
+    function registrarNuevoEmpleado()
+    {
+        echo "";
+    }
 }
