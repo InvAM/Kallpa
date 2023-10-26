@@ -16,11 +16,11 @@
     <div>
         <header class="cabeceras">
             <div class="numeros">
-                <div class="contenedor1">
+                <div class="contenedor1 lineacont">
                     <span class="label">Aló Kallpa</span>
                     <a id="linea2" href="tel:+5116354338" class="numeroT">635 4338</a>
                 </div>
-                <div class="contenedor1">
+                <div class="contenedor1 lineacont">
                     <span class="label">Línea de Contacto</span>
                     <a id="linea1" href="" class="numeroT">1111</a>
                 </div>
@@ -84,7 +84,7 @@
                             <div class="item-label-icon" data-toggle="collapse" href="" role="button"
                                 aria-expanded="false" aria-controls="submenu3">
                                 <i class="mdi mdi-face-agent"></i>
-                                <a href="" class="menu-link">Atencion al cliente</a>
+                                <a href="" class="menu-link">Atención al cliente</a>
                             </div>
                             <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
                                 <ul class="row">
