@@ -9,10 +9,13 @@ body {
 	text-align: center;
 	text-decoration: none;
 	color: white;
-	width: 32.2%; /* Ancho igualmente distribuido para las tres contenedores */
+	width: 33.1%; /* Ancho igualmente distribuido para las tres contenedores */
 	display: inline-block; /* Cambiado a inline-block para colocarlos en línea */
 	box-sizing: border-box; /* Para incluir el padding en el ancho y alto */
 	border: 2px solid transparent;
+}
+
+.lineacont {
 	border-right: 2px solid #fff;
 }
 
@@ -22,21 +25,15 @@ body {
 }
 
 .cabeceras {
-	margin-left: -20px;
-	margin-top: -10px;
 	background-color: #fff;
 	color: white;
-	padding: 20px;
 	width: 100%;
 	justify-content: space-between; /* Espacio entre los contenedores */
 }
 .menuOpciones {
 	background-color: #fff;
-	margin-top: 10px;
-	height: 100px;
-	border: 2px solid transparent;
+	height: 85px;
 	border-bottom: 4px solid #33cc33;
-	padding: 10px;
 }
 .imagen {
 	width: 200px;
@@ -69,9 +66,8 @@ body {
 
 .numeros {
 	font-weight: bold;
-	padding: 25px;
+	padding: 15px;
 	width: 100%;
-	display: inline;
 	background-color: #33cc33;
 	box-sizing: border-box;
 }
@@ -79,7 +75,7 @@ body {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
-	margin-top: 20px;
+	margin-top: 8px;
 	display: flex;
 	justify-content: space-between; /* Distribuye de forma equitativa */
 }
@@ -87,7 +83,7 @@ body {
 .menuOpciones .lista-menu .menu-item {
 	flex: 1;
 	margin-right: 10px;
-	margin-left: 30px;
+	margin-left: 55px;
 	text-align: center;
 	padding: 20px;
 	font-size: 20px;
@@ -203,10 +199,9 @@ body {
 .container {
 	width: 100%;
 	height: 480px;
-
 	background: lightgray;
 	position: absolute;
-	top: 47.5%;
+	top: 43.2%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
@@ -214,12 +209,12 @@ body {
 	width: 100%;
 	height: 590px;
 	object-fit: cover;
-	cursor: pointer;
 }
 .splide__arrow {
 	border-color: transparent;
 	background-color: transparent;
 	font-size: 20px; /* Establece el tamaño de fuente del texto */
+	cursor: pointer;
 }
 
 .splide__arrow--prev {
