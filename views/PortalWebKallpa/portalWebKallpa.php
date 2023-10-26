@@ -121,6 +121,7 @@
                 type: 'loop',
                 autoplay: true,
                 interval: '2000',
+                pagination: false,
             }).mount();
         </script>
 
