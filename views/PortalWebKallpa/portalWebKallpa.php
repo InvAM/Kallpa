@@ -35,7 +35,7 @@
                 <div id="menu" class="navegacion">
                     <ul class="lista-menu">
                         <li class="logo-kallpa">
-                            <a href="habilitador">
+                            <a href="main">
                                 <img src="public/Img/Kallpa1.png">
                             </a>
                         </li>
@@ -43,14 +43,14 @@
                             <div class="item-label-icon" data-toggle="collapse" href="" role="button"
                                 aria-expanded="false" aria-controls="submenu1">
                                 <i class="mdi mdi-home-assistant"></i>
-                                <a href="" class="menu-link">InfoKallpa</a>
+                                <a href="infoKallpa" class="menu-link">InfoKallpa</a>
                             </div>
                             <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
                                 <ul class="row">
                                     <li class="col"><a href=""><i class="mdi mdi-book-edit-outline"></i><span>Nuestra
                                                 Historia</span></a></li>
-                                    <li class="col"><a href=""><i class="mdi mdi-eye-outline"></i><span>Visión y
-                                                misión</span></a></li>
+                                    <li class="col"><a href="miyvi"><i class="mdi mdi-eye-outline"></i>Visión y
+                                            misión</a></li>
                                 </ul>
                             </div>
                         </li>
