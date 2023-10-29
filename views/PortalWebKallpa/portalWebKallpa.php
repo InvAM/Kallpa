@@ -39,7 +39,7 @@
                     <ul class="lista-menu">
 
                         <li class="logo-kallpa">
-                            <a href="habilitador">
+                            <a href="main">
                                 <img src="public/Img/Kallpa1.png">
                             </a>
                         </li>
@@ -48,14 +48,16 @@
                             <div class="item-label-icon" data-toggle="collapse" href="#historia" role="button"
                                 aria-expanded="false" aria-controls="submenu1">
                                 <i class="mdi mdi-home-assistant"></i>
-                                <a href="#historia" class="menu-link">InfoKallpa</a>
+                                <a href="infoKallpa" class="menu-link">InfoKallpa</a>
                             </div>
-                                <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
-                                    <ul class="row">
-                                        <li class="col"><a href="#historia"><i class="mdi mdi-book-edit-outline"></i><span>Nuestra Historia</span></a></li>
-                                        <li class="col"><a href="#vimi"><i class="mdi mdi-eye-outline"></i><span>Visión y Misión</span></a></li>
-                                    </ul>
-                                </div>
+                            <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
+                                <ul class="row">
+                                    <li class="col"><a href=""><i class="mdi mdi-book-edit-outline"></i><span>Nuestra
+                                                Historia</span></a></li>
+                                    <li class="col"><a href="miyvi"><i class="mdi mdi-eye-outline"></i>Visión y
+                                            misión</a></li>
+                                </ul>
+                            </div>
                         </li>
 
 
@@ -119,19 +121,6 @@
         </div>
 
 
-        <div style="margin-top: 590px;">
-            <div id="historia" class="contenido">
-                <h1>Contenido de Nuestra Historia</h1>
-            </div>
-            
-            <div id="vimi" class="contenido">
-                <h1>Contenido de Visión y misión</h1>
-            </div>
-        </div>
-
-
-
-
 
 
 
@@ -157,23 +146,6 @@
                 interval: '2000',
                 pagination: false,
             }).mount();
-        </script>
-
-        
-
-        <script>
-            $(document).ready(function () {
-                $(".menu-link").click(function () {
-                    // Obtener el enlace actual
-                    var target = $(this).attr("href");
-
-                    // Ocultar todas las secciones de contenido
-                    $(".contenido").hide();
-
-                    // Mostrar la sección de contenido correspondiente
-                    $(target).show();
-                });
-            });
         </script>
 
     </div>

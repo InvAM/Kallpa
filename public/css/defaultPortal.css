@@ -3,7 +3,6 @@ body {
 	margin: 0;
 	padding: 0;
 }
-
 .contenedor1 {
 	padding: 5px;
 	text-align: center;
@@ -195,7 +194,7 @@ body {
 .menuOpciones .menu-item:hover .submenuContenedor {
 	display: block; /* Mostrar el submenu al pasar el mouse sobre el item */
 }
-/*Slider*/
+
 .container {
 	width: 100%;
 	height: 480px;
