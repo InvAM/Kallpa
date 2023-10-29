@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/portalWebKallpa.css">
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/splide-4.1.3/dist/css/splide-core.min.css">
     <script src="<?php echo constant('URL'); ?>public/splide-4.1.3/dist/js/splide.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
 </head>
 
 <body>
@@ -34,33 +37,33 @@
             <nav class="menuOpciones">
                 <div id="menu" class="navegacion">
                     <ul class="lista-menu">
+
                         <li class="logo-kallpa">
                             <a href="habilitador">
                                 <img src="public/Img/Kallpa1.png">
                             </a>
                         </li>
+
                         <li class="menu-item">
-                            <div class="item-label-icon" data-toggle="collapse" href="" role="button"
+                            <div class="item-label-icon" data-toggle="collapse" href="#historia" role="button"
                                 aria-expanded="false" aria-controls="submenu1">
                                 <i class="mdi mdi-home-assistant"></i>
-                                <a href="" class="menu-link">InfoKallpa</a>
+                                <a href="#historia" class="menu-link">InfoKallpa</a>
                             </div>
-                            <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
-                                <ul class="row">
-                                    <li class="col"><a href=""><i class="mdi mdi-book-edit-outline"></i><span>Nuestra
-                                                Historia</span></a></li>
-                                    <li class="col"><a href=""><i class="mdi mdi-eye-outline"></i><span>Visión y
-                                                misión</span></a></li>
-                                </ul>
-                            </div>
+                                <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
+                                    <ul class="row">
+                                        <li class="col"><a href="#historia"><i class="mdi mdi-book-edit-outline"></i><span>Nuestra Historia</span></a></li>
+                                        <li class="col"><a href="#vimi"><i class="mdi mdi-eye-outline"></i><span>Visión y Misión</span></a></li>
+                                    </ul>
+                                </div>
                         </li>
 
 
                         <li class="menu-item">
-                            <div class="item-label-icon" data-toggle="collapse" href="" role="button"
+                            <div class="item-label-icon" data-toggle="collapse" href="#vimi" role="button"
                                 aria-expanded="false" aria-controls="submenu2">
                                 <i class="mdi mdi-home-heart"></i>
-                                <a href="" class="menu-link"> Hogar</a>
+                                <a href="#vimi" class="menu-link"> Hogar</a>
                             </div>
                         </li>
 
@@ -68,7 +71,7 @@
                             <div class="item-label-icon" data-toggle="collapse" href="#submenu2" role="button"
                                 aria-expanded="false" aria-controls="submenu2">
                                 <i class="mdi mdi-palette-swatch-variant"></i>
-                                <a href="" class="menu-link">Catalogo Virtual</a>
+                                <a href="" class="menu-link">Catálogo Virtual</a>
                             </div>
                             <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
                                 <ul class="row">
@@ -116,6 +119,37 @@
         </div>
 
 
+        <div style="margin-top: 590px;">
+            <div id="historia" class="contenido">
+                <h1>Contenido de Nuestra Historia</h1>
+            </div>
+            
+            <div id="vimi" class="contenido">
+                <h1>Contenido de Visión y misión</h1>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <script>
             new Splide('.splide', {
                 type: 'loop',
@@ -125,10 +159,26 @@
             }).mount();
         </script>
 
+        
+
+        <script>
+            $(document).ready(function () {
+                $(".menu-link").click(function () {
+                    // Obtener el enlace actual
+                    var target = $(this).attr("href");
+
+                    // Ocultar todas las secciones de contenido
+                    $(".contenido").hide();
+
+                    // Mostrar la sección de contenido correspondiente
+                    $(target).show();
+                });
+            });
+        </script>
 
     </div>
-
 
 </body>
 
 </html>
+

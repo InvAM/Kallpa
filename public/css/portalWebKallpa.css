@@ -196,6 +196,23 @@ body {
 	display: block; /* Mostrar el submenu al pasar el mouse sobre el item */
 }
 
+
+
+
+.contenido {
+    display: none; /* Ocultar todas las secciones al principio */
+    padding: 20px;
+    background-color: #f0f0f0; /* Fondo de la sección de contenido */
+    border: 1px solid #ccc; /* Borde alrededor de la sección */
+    margin-top: 10px; /* Espacio superior entre secciones */
+}
+
+
+
+
+
+
+
 .container {
 	width: 100%;
 	height: 480px;
