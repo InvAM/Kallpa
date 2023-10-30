@@ -4,8 +4,12 @@ class miyvi extends Controller
     public function __construct()
     {
         parent::__construct();
-        $this->view->render('misionyvision/miyvi');
 
+
+    }
+    function render()
+    {
+        $this->view->render('misionyvision/miyvi');
     }
 
 

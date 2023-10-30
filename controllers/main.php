@@ -4,12 +4,12 @@ class Main extends Controller
     public function __construct()
     {
         parent::__construct();
-        $this->view->render('PortalWebKallpa/portalWebKallpa');
-        //echo "<p>Nuevo Controlador main</p>";
+
+
     }
 
-    function saludo()
+    function render()
     {
-        echo "<p>Ejecutaste el metodo Saludo</p>";
+        $this->view->render('PortalWebKallpa/portalWebKallpa');
     }
 }

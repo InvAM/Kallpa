@@ -4,9 +4,14 @@ class login extends Controller
     public function __construct()
     {
         parent::__construct();
-        $this->view->render('login/formLoginP');
-        
+
+
     }
 
-   
+    function render()
+    {
+        $this->view->render('login/formLoginP');
+    }
+
+
 }
