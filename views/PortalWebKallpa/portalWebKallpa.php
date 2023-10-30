@@ -68,14 +68,14 @@
                             <div class="item-label-icon" data-toggle="collapse" href="#submenu2" role="button"
                                 aria-expanded="false" aria-controls="submenu2">
                                 <i class="mdi mdi-palette-swatch-variant"></i>
-                                <a href="" class="menu-link">Catalogo Virtual</a>
+                                <a href="<?php echo constant('URL'); ?>catalogoservicios" class="menu-link">Catalogo Virtual</a>
                             </div>
                             <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
                                 <ul class="row">
-                                    <li class="col"><a href=""><i
-                                                class="mdi mdi-account-wrench"></i><span>Servicios</span></a></li>
-                                    <li class="col"><a href=""><i
+                                    <li class="col"><a href="<?php echo constant('URL'); ?>catalogo"><i
                                                 class="mdi mdi-air-humidifier"></i><span>Gasodomésticos</span></a></li>
+                                    <li class="col"><a href="<?php echo constant('URL'); ?>catalogoservicios"><i
+                                                class="mdi mdi-account-wrench"></i><span>Servicios</span></a></li>
                                 </ul>
                             </div>
                         </li>
