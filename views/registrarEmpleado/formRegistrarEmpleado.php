@@ -66,25 +66,44 @@
                         <thead>
                             <tr>
                                 <th>DNI</th>
-                                <th>Categoría</th>
                                 <th>Nombre</th>
                                 <th>Apellido</th>
                                 <th>Celular</th>
+                                <th>Categoría</th>
+                                <th></th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                    <button class="boton">Seleccionar</button>
-                                </td>
-                            </tr>
-                            <!-- Agregar más filas -->
+                            <?php
+                            include_once 'models/empleado.php';
+                            foreach ($this->empleado as $row) {
+                                $empleado = new Empleado();
+                                $empleado = $row; ?>
+                                <tr>
+                                    <td>
+                                        <?php echo $empleado->DNI_Em ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $empleado->Nombre_Em ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $empleado->Apellido_Em ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $empleado->Celular_Em ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $empleado->IDCategoria ?>
+                                    </td>
+                                    <td>
+                                        <button class="boton">Editar</button>
+                                    </td>
+                                    <td>
+                                        <button class="boton">Eliminar</button>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
@@ -120,6 +139,7 @@
             </div>
 
         </div>
+
 
 
         <?php require_once "views/footer.php"; ?>
