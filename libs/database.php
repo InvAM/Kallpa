@@ -17,6 +17,7 @@ class Database
         $this->user = constant('USER');
         $this->password = constant('PASSWORD');
         $this->charset = constant('CHARSET');
+        $this->port = constant('PORT');
     }
 
     function connect()

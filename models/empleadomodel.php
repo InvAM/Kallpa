@@ -1,13 +1,14 @@
 <?php
-class Empleadomodel extends Model
+class EmpleadoModel extends Model
 {
     public function __construct()
     {
         parent::__construct();
     }
 
-    public function insertar($id)
+    public function insert($datos)
     {
-        echo "Insertar datos";
+        $query = $this->db->connect()->prepare('INSERT INTO empleado(DNI_Em,Nombre_Em,Apellido_Em,Celular_Em,IDCategoria) VALUES (:dni,:nom,:ape,:cel,:categoria)');
+        $query->execute(['dni' => $datos['DNI_Em_reg'], 'nom' => $datos['Nombre_Em_reg'], 'ape' => $datos['Apellido_Em_reg'], 'cel' => $datos['Celular_Em_reg'], 'categoria' => $datos['IDCategoria_reg']]);
     }
 }

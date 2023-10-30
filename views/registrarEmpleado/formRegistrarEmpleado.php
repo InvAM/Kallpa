@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Registrar Empleado</title>
-    <link rel="stylesheet" href="public/css/formRegistrarEmpleado.css">
+    <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/formRegistrarEmpleado.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.all.min.js"></script>
 
@@ -29,7 +29,7 @@
 
                     <div class="contenedor-empleado">
 
-                        <img src="public/Img/perfil.png" class="imagen-foto">
+                        <img src="<?php echo constant('URL'); ?>public/Img/perfil.png" class="imagen-foto">
 
                         <label for="DNI_Em_reg">Dni</label>
                         <input type="text" label="DNI" placeholder="Escribir..." name="DNI_Em_reg" id="DNI_Em_reg">
