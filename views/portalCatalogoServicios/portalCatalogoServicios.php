@@ -35,7 +35,7 @@
             <div id="menu" class="navegacion">
                 <ul class="lista-menu">
                     <li class="logo-kallpa">
-                        <a href="">
+                        <a href="main">
                             <img src="<?php echo constant('URL'); ?>public/Img/Kallpa1.png">
                         </a>
                     </li>
