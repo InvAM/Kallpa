@@ -4,9 +4,9 @@ body {
 	padding: 0;
 }
 
-.contenedorPrincipal{
-    margin-top: -15px;
-    background-color: #fafafa;
+.contenedorPrincipal {
+	margin-top: -15px;
+	background-color: #fafafa;
 }
 
 .contenedor1 {
@@ -18,7 +18,7 @@ body {
 	display: inline-block; /* Cambiado a inline-block para colocarlos en línea */
 	box-sizing: border-box; /* Para incluir el padding en el ancho y alto */
 	border: 2px solid transparent;
-    margin-top: 20px;
+	margin-top: 20px;
 }
 
 .lineacont {
@@ -35,7 +35,7 @@ body {
 	color: white;
 	width: 100%;
 	justify-content: space-between; /* Espacio entre los contenedores */
-    margin-bottom: 5px;
+	margin-bottom: 5px;
 }
 .menuOpciones {
 	background-color: #fff;
@@ -207,8 +207,8 @@ body {
 	height: 590px;
 	background: lightgray;
 	position: relative;
-    z-index: 1;
-    margin-bottom: 20px;
+	z-index: 1;
+	margin-bottom: 20px;
 }
 .container img {
 	width: 100%;
@@ -247,80 +247,86 @@ body {
 	transform: rotate(180deg);
 }
 
-
 /* -------------------------------------------------------------*/
 
-.opcionesA1{
-    display: flex;
-    margin-left: 20px;
-    margin-right: 10px;
+.opcionesA1 {
+	display: flex;
+	margin-left: 20px;
+	margin-right: 10px;
 }
 
-.botonA1{
-    background-color: #33cc33; /*Color del botón*/
-    color: #fff;            /*Cambia el color del texto */
-    font-weight: bold;
-    height: 70px;
-    width: 350px;                /*Establecer ancho del objeto*/
-    cursor: pointer;             /*Cambia el cursor al pasar el ratón sobre el botón */
-    font-size: 18px;             /*Ajusta el tamaño de fuente */
-    border-radius: 5px;          /*Agrega bordes redondeados */
-    border: 2px solid #33cc33 ; /*Añade un borde */
-    padding: 9px;                /*Agranda espacio en el interior de los inputs*/
-    margin-top: 10px;            /*Añade espacio con el elemento de arriba*/
-    margin-right: 20px;          /*Añade espacio a la derecha del objeto*/
-    font-family: Arial, Helvetica, sans-serif; /*Fuente de letra*/
+.botonA1 {
+	background-color: #33cc33; /*Color del botón*/
+	color: #fff; /*Cambia el color del texto */
+	font-weight: bold;
+	height: 70px;
+	width: 350px; /*Establecer ancho del objeto*/
+	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
+	font-size: 18px; /*Ajusta el tamaño de fuente */
+	border-radius: 5px; /*Agrega bordes redondeados */
+	border: 2px solid #33cc33; /*Añade un borde */
+	padding: 9px; /*Agranda espacio en el interior de los inputs*/
+	margin-top: 10px; /*Añade espacio con el elemento de arriba*/
+	margin-right: 20px; /*Añade espacio a la derecha del objeto*/
+	font-family: Arial, Helvetica, sans-serif; /*Fuente de letra*/
 }
 
-.botonB1{
-    background-color: #fff; /*Color del botón*/
-    color: #33cc33;            /*Cambia el color del texto */
-    font-weight: bold;
-    height: 70px;
-    width: 350px;                /*Establecer ancho del objeto*/
-    cursor: pointer;             /*Cambia el cursor al pasar el ratón sobre el botón */
-    font-size: 18px;             /*Ajusta el tamaño de fuente */
-    border-radius: 5px;          /*Agrega bordes redondeados */
-    border: 2px solid #33cc33 ; /*Añade un borde */
-    padding: 9px;                /*Agranda espacio en el interior de los inputs*/
-    margin-top: 10px;            /*Añade espacio con el elemento de arriba*/
-    margin-right: 20px;          /*Añade espacio a la derecha del objeto*/
-    font-family: Arial, Helvetica, sans-serif; /*Fuente de letra*/
+.botonB1 {
+	background-color: #fff; /*Color del botón*/
+	color: #33cc33; /*Cambia el color del texto */
+	font-weight: bold;
+	height: 70px;
+	width: 350px; /*Establecer ancho del objeto*/
+	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
+	font-size: 18px; /*Ajusta el tamaño de fuente */
+	border-radius: 5px; /*Agrega bordes redondeados */
+	border: 2px solid #33cc33; /*Añade un borde */
+	padding: 9px; /*Agranda espacio en el interior de los inputs*/
+	margin-top: 10px; /*Añade espacio con el elemento de arriba*/
+	margin-right: 20px; /*Añade espacio a la derecha del objeto*/
+	font-family: Arial, Helvetica, sans-serif; /*Fuente de letra*/
 }
-.botonB1:hover{
-    background-color: #33cc33; /*Color del botón*/
-    color: #fff;            /*Cambia el color del texto */
+.botonB1:hover {
+	background-color: #33cc33; /*Color del botón*/
+	color: #fff; /*Cambia el color del texto */
 }
 
-
-.contenedorServicios{
-    margin-top: 15px;
-    margin-left: 15px;
-    margin-right: 15px;
+.contenedorServicios {
+	margin-top: 15px;
+	margin-left: 15px;
+	margin-right: 15px;
 }
 
 .servicio1 {
-    height: 500px;
-    border-radius: 10px;
-    background: linear-gradient(to right, #fff 60%, transparent 40%), url('../Img/Instalacion.jpeg');
-    background-size: 100%,50%, cover;
-    padding: 20px;
-    margin-top: 20px;
-    margin-bottom: 30px;
-} 
+	height: 500px;
+	border-radius: 10px;
+	background: linear-gradient(to right, #fff 60%, transparent 40%),
+		url("../Img/Instalacion.jpeg");
+	background-size: 100%, 50%, cover;
+	padding: 20px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
 
-.tituloS{
-    margin-left: 300px;
-    font-size: 25px;
-    font-weight: bold;
-    color:#33cc33
+.tituloS {
+	margin-left: 300px;
+	font-size: 25px;
+	font-weight: bold;
+	color: #33cc33;
 }
 
 .servicio2 {
-    height: 450px;
-    border-radius: 10px;
-    background: linear-gradient(to right, #fff 60%, transparent 40%), url('../Img/FondoHabilitación1.jpg');
-    background-size: 100%,50%, cover;
-    padding: 20px;
-    margin-top: 20px;
-} 
+	height: 450px;
+	border-radius: 10px;
+	background: linear-gradient(to right, #fff 60%, transparent 40%),
+		url("../Img/FondoHabilitación1.jpg");
+	background-size: 100%, 50%, cover;
+	padding: 20px;
+	margin-top: 20px;
+}
+
+/*Parrafos*/
+p {
+	font-size: 18px;
+	color: #33cc33;
+}

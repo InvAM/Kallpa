@@ -5,13 +5,14 @@ class Catalogo extends Controller
     {
         parent::__construct();
         $this->loadModel('producto');
-        $this->view->mensaje="";
+        $this->view->mensaje = "";
     }
 
     function render()
     {
         $producto = $this->model->get();
-        $this->view->producto=$producto;
+
+        $this->view->producto = $producto;
         $this->view->render('portalCatalogo/portalCatalogo');
     }
 
