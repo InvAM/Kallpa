@@ -175,12 +175,45 @@
             </div>
             <div class="servicio2">
                 <h2 class="tituloS">Habilitación de domicilio</h2>
+                <div class="textos">
+                    <p>La habilitación de gas natural implica una serie de procesos y verificaciones necesarias para
+                        garantizar que un sistema de gas</p>
+                    <p>esté listo y seguro para su uso. Por ello, nuestra empres, ofrece a profesionales especializados
+                        en la habilitación y un supervisor </p>
+                    <p>de Cállida que garanticen una habilitación de calidad y segura</p>
+                </div>
+                <div class="detalleS">
+                    <div class="subtituloD">
+                        <p>¿Qué realizamos?</p>
+                    </div>
+                    <div class="acciones">
+                        <div class="containerEspecial">
+                            <div class="acc1">
+                                <i class="mdi mdi-account-tie"></i>
+                                <label>Inspección de instalación</label>
+                            </div>
+                            <div class="acc1">
+                                <i class="mdi mdi-eye-circle"></i>
+                                <label>Verificación de conexiones y equipos</label>
+                            </div>
+                        </div>
 
+                        <div class="containerEspecial">
+                            <div class="acc1">
+                                <i class="mdi mdi-ev-station"></i>
+                                <label>Pruebas de hermeticidad</label>
+                            </div>
+                            <div class="acc1">
+                                <i class="mdi mdi-storage-tank-outline"></i>
+                                <label>Activación de suministro de gas</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="contenedorSecundario">
-    </div>
+        <div class="contenedorSecundario">
+        </div>
 </body>
 
 </html>
