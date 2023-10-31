@@ -370,3 +370,22 @@ p {
 	color: #33cc33;
 	margin-left: 10px;
 }
+.contenedorSecundario {
+	padding: 20px;
+	margin-top: 30px;
+	background-color: #33cc33;
+	align-items: center;
+}
+
+.contenedorTexto {
+	font-size: 40px;
+	color: #fff;
+	margin-left: 450px;
+}
+
+.contenedorVideo iframe {
+	width: 80%;
+	height: 800px;
+	display: block;
+	margin-left: 150px;
+}
