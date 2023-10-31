@@ -77,14 +77,15 @@
                             <div class="item-label-icon" data-toggle="collapse" href="#submenu2" role="button"
                                 aria-expanded="false" aria-controls="submenu2">
                                 <i class="mdi mdi-palette-swatch-variant"></i>
-                                <a href="" class="menu-link">Catálogo Virtual</a>
+                                <a href="catalogo" class="menu-link">Catálogo Virtual</a>
                             </div>
                             <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
                                 <ul class="row">
-                                    <li class="col"><a href=""><i
-                                                class="mdi mdi-account-wrench"></i><span>Servicios</span></a></li>
-                                    <li class="col"><a href=""><i
+
+                                    <li class="col"><a href="catalogo"><i
                                                 class="mdi mdi-air-humidifier"></i><span>Gasodomésticos</span></a></li>
+                                    <li class="col"><a href="catalogoservicios"><i
+                                                class="mdi mdi-account-wrench"></i><span>Servicios</span></a></li>
                                 </ul>
                             </div>
                         </li>
