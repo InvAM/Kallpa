@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/splide-4.1.3/dist/css/splide-core.min.css">
     <script src="<?php echo constant('URL'); ?>public/splide-4.1.3/dist/js/splide.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
+    <script src="https://unpkg.com/@splidejs/splide@3.0.9/dist/js/splide.min.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -45,17 +45,23 @@
                         </li>
 
                         <li class="menu-item">
-                            <div class="item-label-icon" data-toggle="collapse" href="#historia" role="button"
-                                aria-expanded="false" aria-controls="submenu1">
+                            <div class="item-label-icon" data-toggle="collapse" href="" role="button" aria-expanded="false"
+                                aria-controls="submenu1">
                                 <i class="mdi mdi-home-assistant"></i>
                                 <a href="infoKallpa" class="menu-link">InfoKallpa</a>
                             </div>
                             <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
                                 <ul class="row">
-                                    <li class="col"><a href=""><i class="mdi mdi-book-edit-outline"></i><span>Nuestra
-                                                Historia</span></a></li>
-                                    <li class="col"><a href="miyvi"><i class="mdi mdi-eye-outline"></i>Visión y
-                                            misión</a></li>
+                                    <li class="col">
+                                        <a onclick="scrollToSection('nuestraHistoria')" href="#">
+                                            <i class="mdi mdi-book-edit-outline"></i><span>Nuestra Historia</span>
+                                        </a>
+                                    </li>
+                                    <li class="col">
+                                        <a onclick="scrollToSection('visionYmision')" href="#">
+                                            <i class="mdi mdi-eye-outline"></i><span>Visión y misión</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -65,7 +71,7 @@
                             <div class="item-label-icon" data-toggle="collapse" href="#vimi" role="button"
                                 aria-expanded="false" aria-controls="submenu2">
                                 <i class="mdi mdi-home-heart"></i>
-                                <a href="#vimi" class="menu-link"> Hogar</a>
+                                <a href="" class="menu-link"> Hogar</a>
                             </div>
                         </li>
 
@@ -125,28 +131,23 @@
 
 
 
+<script>
 
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+    const windowHeight = window.innerHeight;
+    const sectionHeight = section.clientHeight;
 
+    // Calcular el desplazamiento necesario para centrar la sección verticalmente
+    const scrollTo = section.offsetTop - (windowHeight - sectionHeight) / 2;
 
+    window.scrollTo({
+        top: scrollTo,
+        behavior: "smooth"
+    });
+    }
 
-
-
-
-
-
-
-
-
-
-
-        <script>
-            new Splide('.splide', {
-                type: 'loop',
-                autoplay: true,
-                interval: '2000',
-                pagination: false,
-            }).mount();
-        </script>
+</script>
 
     </div>
 

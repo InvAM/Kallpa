@@ -166,6 +166,7 @@ body {
 	list-style-type: none;
 	margin-left: -20px;
 	margin-right: 60px;
+	cursor: pointer;
 }
 .menuOpciones .menu-item .submenuContenedor .row .col1 {
 	height: 40px;
@@ -219,6 +220,7 @@ body {
 	counter-increment: pagination-num;
 	content: counter(pagination-num);
 }
+
 .splide__arrow {
 	border-color: transparent;
 	background-color: transparent;

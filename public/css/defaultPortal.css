@@ -126,6 +126,7 @@ body {
 .menuOpciones .mdi {
 	font-size: 30px;
 	color: #808080;
+	
 }
 .menuOpciones .menu-item {
 	position: relative;
@@ -165,6 +166,7 @@ body {
 	list-style-type: none;
 	margin-left: -20px;
 	margin-right: 60px;
+	cursor: pointer;
 }
 .menuOpciones .menu-item .submenuContenedor .row .col1 {
 	height: 40px;
