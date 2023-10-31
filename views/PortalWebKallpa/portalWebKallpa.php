@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/portalWebKallpa.css">
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/splide-4.1.3/dist/css/splide-core.min.css">
     <script src="<?php echo constant('URL'); ?>public/splide-4.1.3/dist/js/splide.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/@splidejs/splide@3.0.9/dist/js/splide.min.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -34,11 +37,13 @@
             <nav class="menuOpciones">
                 <div id="menu" class="navegacion">
                     <ul class="lista-menu">
+
                         <li class="logo-kallpa">
                             <a href="main">
                                 <img src="public/Img/Kallpa1.png">
                             </a>
                         </li>
+
                         <li class="menu-item">
                             <div class="item-label-icon" data-toggle="collapse" href="" role="button"
                                 aria-expanded="false" aria-controls="submenu1">
@@ -47,17 +52,23 @@
                             </div>
                             <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
                                 <ul class="row">
-                                    <li class="col"><a href=""><i class="mdi mdi-book-edit-outline"></i><span>Nuestra
-                                                Historia</span></a></li>
-                                    <li class="col"><a href="miyvi"><i class="mdi mdi-eye-outline"></i>Visión y
-                                            misión</a></li>
+                                    <li class="col">
+                                        <a onclick="scrollToSection('nuestraHistoria')" href="#">
+                                            <i class="mdi mdi-book-edit-outline"></i><span>Nuestra Historia</span>
+                                        </a>
+                                    </li>
+                                    <li class="col">
+                                        <a onclick="scrollToSection('visionYmision')" href="#">
+                                            <i class="mdi mdi-eye-outline"></i><span>Visión y misión</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
 
 
                         <li class="menu-item">
-                            <div class="item-label-icon" data-toggle="collapse" href="" role="button"
+                            <div class="item-label-icon" data-toggle="collapse" href="#vimi" role="button"
                                 aria-expanded="false" aria-controls="submenu2">
                                 <i class="mdi mdi-home-heart"></i>
                                 <a href="" class="menu-link"> Hogar</a>
@@ -68,7 +79,8 @@
                             <div class="item-label-icon" data-toggle="collapse" href="#submenu2" role="button"
                                 aria-expanded="false" aria-controls="submenu2">
                                 <i class="mdi mdi-palette-swatch-variant"></i>
-                                <a href="<?php echo constant('URL'); ?>catalogoservicios" class="menu-link">Catalogo Virtual</a>
+                                <a href="<?php echo constant('URL'); ?>catalogoservicios" class="menu-link">Catalogo
+                                    Virtual</a>
                             </div>
                             <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
                                 <ul class="row">
@@ -116,6 +128,10 @@
         </div>
 
 
+
+
+
+
         <script>
             new Splide('.splide', {
                 type: 'loop',
@@ -127,7 +143,6 @@
 
 
     </div>
-
 
 </body>
 
