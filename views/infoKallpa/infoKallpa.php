@@ -86,6 +86,9 @@
         <div class="cajasobrekallpa1">
             <div class="separar">
                 <div class="informacion pers-mivi">
+                    <div class="subirimg2">
+                        <img src="public/Img/Mision.png">
+                    </div>
                     <p class="tit-desc">Misión</p>
                     <p class="desc2">Satisfacer las necesidades y expectativas de nuestros clientes, entregando
                         suministros y servicios de calidad con precios competitivos, desarrollando a nuestro
@@ -97,6 +100,9 @@
 
             <div class="separar">
                 <div class="informacion pers-mivi">
+                    <div class="subirimg2">
+                        <img src="public/Img/Vision.png">
+                    </div>
                     <p class="tit-desc">Visión</p>
                     <p class="desc2">Consolidar nuestra presencia en el mercado nacional, satisfaciendo los
                         requerimientos de nuestros clientes en cuanto a entregas oportunas, calidad de
