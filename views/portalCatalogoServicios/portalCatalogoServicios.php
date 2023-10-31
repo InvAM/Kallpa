@@ -145,11 +145,37 @@
                     <p>de gas natural es así como garantizamos seguridad y calidad</p>
                 </div>
                 <div class="detalleS">
+                    <div class="subtituloD">
+                        <p>¿Qué realizamos?</p>
+                    </div>
+                    <div class="acciones">
+                        <div class="containerEspecial">
+                            <div class="acc1">
+                                <i class="mdi mdi-account-hard-hat"></i>
+                                <label>Construcción e instalación de gabinetes</label>
+                            </div>
+                            <div class="acc1">
+                                <i class="mdi mdi-alpha-m-box"></i>
+                                <label>Construcción de murete</label>
+                            </div>
+                        </div>
 
+                        <div class="containerEspecial">
+                            <div class="acc1">
+                                <i class="mdi mdi-home-city"></i>
+                                <label>Instalación interna</label>
+                            </div>
+                            <div class="acc1">
+                                <i class="mdi mdi-connection"></i>
+                                <label>Conexiones a puntos de uso</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="servicio2">
                 <h2 class="tituloS">Habilitación de domicilio</h2>
+
             </div>
         </div>
     </div>
