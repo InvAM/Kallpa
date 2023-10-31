@@ -52,7 +52,7 @@
                                 <ul class="row">
                                     <li class="col">
                                         <a onclick="scrollToSection('nuestraHistoria')" href="#">
-                                            <i class="mdi mdi-book-edit-outline"></i><span>Nuestra Historia</span>
+                                            <i class="mdi mdi-book-edit-outline"></i><span>Quiénes somos</span>
                                         </a>
                                     </li>
                                     <li class="col">
