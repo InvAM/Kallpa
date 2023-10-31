@@ -125,7 +125,80 @@
                     </ul>
                 </div>
             </div>
+
         </div>
+
+        <div class="portal-cont-2" style="margin-top: 620px">
+
+            <br><br><br>
+            <h1 class="fuente-portal">Conéctate al servicio</h1>
+
+            <a href="" class="custom-btn">
+                <i class="mdi mdi-home-assistant"></i>
+                <h1 class="titulo-btn">InfoKallpa</h1>
+            </a>
+            <a href="" class="custom-btn">
+                <i class="mdi mdi-home-heart"></i>
+                <h1 class="titulo-btn">Hogar</h1>
+            </a>
+            <a href="" class="custom-btn">
+                <i class="mdi mdi-palette-swatch-variant"></i>
+                <h1 class="titulo-btn">Catálogo virtual</h1>
+            </a>
+            <a href="" class="custom-btn">
+                <i class="mdi mdi-face-agent"></i>
+                <h1 class="titulo-btn">Atención al cliente</h1>
+            </a>
+        </div>
+
+        <div class="portal-cont-3">
+            <br><br>
+            <h1 class="titulo1-cont3">"Conoscamos más del</h1>
+            <h1 class="titulo2-cont3">Gas Natural"</h1>
+            <a href="" class="custom-btn2">
+                <i class="mdi mdi-gas-burner"></i>
+                <h1 class="titulo-btn2">¿Qué es el gas natural?</h1>
+            </a>
+            <a href="" class="custom-btn2">
+                <i class="mdi mdi-meter-gas-outline"></i>
+                <h1 class="titulo-btn2">¿Cómo se distribuye?</h1>
+            </a>
+            <a href="" class="custom-btn2">
+                <i class="mdi mdi-check-underline-circle-outline"></i>
+                <h1 class="titulo-btn2">Más seguro para mi familia </h1>
+            </a>
+            <a href="" class="custom-btn2">
+                <i class="mdi mdi-account-heart-outline"></i>
+                <h1 class="titulo-btn2">Más limpio para mi salud</h1>
+            </a>
+            <a href="" class="custom-btn2">
+                <i class="mdi mdi-currency-usd"></i>
+                <h1 class="titulo-btn2">Más económico</h1>
+            </a>
+            <a href="" class="custom-btn2">
+                <i class="mdi mdi-star-check-outline"></i>
+                <h1 class="titulo-btn2">Servicio continuo</h1>
+            </a>
+            <a href="" class="custom-btn2">
+                <i class="mdi mdi-shield-lock-outline"></i>
+                <h1 class="titulo-btn2">Consejos de seguridad </h1>
+            </a>
+
+        </div>
+
+        <div class="portal-cont4">
+            <img src="public/Img/SLIDER_KALLPA_4.png" alt="">
+            <img src="public/Img/SLIDER_KALLPA_5.png" alt="">
+            <img src="public/Img/SLIDER_KALLPA_6.png" alt="">
+        </div>
+
+
+
+
+
+
+
+
 
 
 
