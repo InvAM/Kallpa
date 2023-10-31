@@ -109,6 +109,7 @@
         </script>
     
     <!-- Cuerpo de pagina-->
+     <div class="contenedorCatalogo">
        <!-- OPCIONES DE MANEJADOR -->
        <div class="opcionesA1">
         <a href="<?php echo constant('URL'); ?>catalogo">
@@ -225,43 +226,44 @@
                     <hr class="divisor"></hr>
                 </div>
            </div>
-          </div>
           <!--Llenado de Caja-->
           <div class="lista">
             <fieldset class="cajaCentral">
             <?php
-            require_once '../../Procesamiento/procesaCatalogo.php';
-            $item=1;
             echo '<div class="central">';
-            foreach ($rs as $fila) {
+            include_once 'models/producto.php';
+            foreach ($this->producto as $fila) {
+                    $producto = new Producto();
+                    $producto = $fila;
                     echo '<div class="producto">';
-                    if (!empty($fila["imagen"])){
-                        $imagen_base64 = base64_encode($fila["imagen"]);
+                    if (!empty($producto->imagen)){
+                        $imagen_base64 = base64_encode($producto->imagen);
                         $imagen_src = "data:image/jpeg;base64," . $imagen_base64;
                         echo '<img class="imagen" src="' . $imagen_src . '">';
                     }else{
                         echo '<img class="imagen" src="../../IMG/Kallpa1.png">';
                     }
                     echo '<div class="descripcion">';
-                    echo '<span class="nombre">' . $fila["nombre"] . '</span><br><br>';
-                    echo '<span class="nombre">' . $fila["marca"] . '</span><br><br><br>';
+                    echo '<span class="nombre">' . $producto->nombre . '</span><br><br>';
+                    echo '<span class="nombre">' . $producto->marca . '</span><br><br><br>';
                     echo '<span class="letra">' .'Desde '.'<span>';
-                    echo '<span class="letra1">'. 'S/.'.$fila["cuota"] .'*'. '</span>';
+                    echo '<span class="letra1">'. 'S/.'.$producto->cuota.'*'. '</span>';
                     echo '<span class="letra">' .' al mes '.'<span><br><br>';
-                    echo '<span class="letra">'.'Precio Regular: S/.'. $fila["precio"] . '</span><br><br>';
-                    echo '<span class="letra2">'.'Tienda Virtual: S/.'.(0.95*$fila["precio"]) . '</span><br><br>';
+                    echo '<span class="letra">'.'Precio Regular: S/.'. $producto->precio. '</span><br><br>';
+                    echo '<span class="letra2">'.'Tienda Virtual: S/.'.(0.95*$producto->precio) . '</span><br><br>';
                     echo '<button class="boton-compra">
                             <i class="mdi mdi-cart-percent"></i>
                             ¡Compra Ya!
                           </button>';
                     echo '</div>';
                     echo '</div>';
-                    $item++;
             }
             echo '</div>';
             ?>
             </fieldset>
           </div>
-    </div>
+      </div>
+        </div>
+        </div>
     </body>
 </html>
