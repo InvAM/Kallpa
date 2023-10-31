@@ -1,5 +1,5 @@
 <?php
-class Menu extends Controller
+class login extends Controller
 {
     public function __construct()
     {
@@ -7,9 +7,11 @@ class Menu extends Controller
 
 
     }
+
     function render()
     {
-        $this->view->render('menu/menu');
+        $this->view->render('login/formLoginP');
     }
+
 
 }

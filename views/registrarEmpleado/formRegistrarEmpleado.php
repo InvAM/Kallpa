@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Registrar Empleado</title>
-    <link rel="stylesheet" href="public/css/formRegistrarEmpleado.css">
+    <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/formRegistrarEmpleado.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.all.min.js"></script>
 
@@ -29,7 +29,7 @@
 
                     <div class="contenedor-empleado">
 
-                        <img src="public/Img/perfil.png" class="imagen-foto">
+                        <img src="<?php echo constant('URL'); ?>public/Img/perfil.png" class="imagen-foto">
 
                         <label for="DNI_Em_reg">Dni</label>
                         <input type="text" label="DNI" placeholder="Escribir..." name="DNI_Em_reg" id="DNI_Em_reg">
@@ -66,25 +66,44 @@
                         <thead>
                             <tr>
                                 <th>DNI</th>
-                                <th>Categoría</th>
                                 <th>Nombre</th>
                                 <th>Apellido</th>
                                 <th>Celular</th>
+                                <th>Categoría</th>
+                                <th></th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                    <button class="boton">Seleccionar</button>
-                                </td>
-                            </tr>
-                            <!-- Agregar más filas -->
+                            <?php
+                            include_once 'models/empleado.php';
+                            foreach ($this->empleado as $row) {
+                                $empleado = new Empleado();
+                                $empleado = $row; ?>
+                                <tr>
+                                    <td>
+                                        <?php echo $empleado->DNI_Em ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $empleado->Nombre_Em ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $empleado->Apellido_Em ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $empleado->Celular_Em ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $empleado->IDCategoria ?>
+                                    </td>
+                                    <td>
+                                        <button class="boton">Editar</button>
+                                    </td>
+                                    <td>
+                                        <button class="boton">Eliminar</button>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
@@ -120,6 +139,7 @@
             </div>
 
         </div>
+
 
 
         <?php require_once "views/footer.php"; ?>

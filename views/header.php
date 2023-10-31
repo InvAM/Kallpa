@@ -11,10 +11,10 @@
 <body>
     <div class="cabecera">
         <div>
-            <img src="public/Img/Kallpa.png" class="imagen-kallpa">
+            <img src="<?php echo constant('URL'); ?>public/Img/Kallpa.png" class="imagen-kallpa">
         </div>
         <div>
-            <img src="public/Img/usuario (3).png" class="imagen-usuario">
+            <img src="<?php echo constant('URL'); ?>public/Img/usuario (3).png" class="imagen-usuario">
         </div>
     </div>
 </body>

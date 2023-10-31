@@ -3,7 +3,7 @@ body {
 	margin: 0;
 	padding: 0;
 }
-.contenedor1 {
+.headerp .contenedor1 {
 	padding: 5px;
 	text-align: center;
 	text-decoration: none;
@@ -14,63 +14,63 @@ body {
 	border: 2px solid transparent;
 }
 
-.lineacont {
+.headerp .lineacont {
 	border-right: 2px solid #fff;
 }
 
-.contenedor1 .label,
-.contenedor1 .numeroT {
+.headerp .contenedor1 .label,
+.headerp .contenedor1 .numeroT {
 	display: inline; /* Hace que los elementos se muestren en una línea */
 }
 
-.cabeceras {
+.headerp .cabeceras {
 	background-color: #fff;
 	color: white;
 	width: 100%;
 	justify-content: space-between; /* Espacio entre los contenedores */
 }
-.menuOpciones {
+.headerp .menuOpciones {
 	background-color: #fff;
 	height: 85px;
 	border-bottom: 4px solid #33cc33;
 }
-.imagen {
+.headerp .imagen {
 	width: 200px;
 }
 
-.contenedor2 {
+.headerp .contenedor2 {
 	margin-top: 20px;
 }
 
-.contenedor1:hover {
+.headerp .contenedor1:hover {
 	background-color: #3fb43f;
 }
 
-.label {
+.headerp .label {
 	display: block;
 	font-size: 18px;
 	margin-bottom: 5px;
 }
 
-.numeroT {
+.headerp .numeroT {
 	font-size: 18px;
 	color: #fff;
 	text-decoration: none;
 }
 
-.mdi mdi-whatsapp {
+.headerp .mdi mdi-whatsapp {
 	font-size: 18px;
 	margin-right: 5px;
 }
 
-.numeros {
+.headerp .numeros {
 	font-weight: bold;
 	padding: 15px;
 	width: 100%;
 	background-color: #33cc33;
 	box-sizing: border-box;
 }
-.menuOpciones .lista-menu {
+.headerp .menuOpciones .lista-menu {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
@@ -79,7 +79,7 @@ body {
 	justify-content: space-between; /* Distribuye de forma equitativa */
 }
 
-.menuOpciones .lista-menu .menu-item {
+.headerp .menuOpciones .lista-menu .menu-item {
 	flex: 1;
 	margin-right: 10px;
 	margin-left: 55px;
@@ -89,50 +89,49 @@ body {
 	font-weight: bold;
 }
 
-.menuOpciones .lista-menu .logo-kallpa {
+.headerp .menuOpciones .lista-menu .logo-kallpa {
 	border: 4px solid transparent;
 	padding-right: 20px;
 	border-right: 2px solid #808080;
 }
 
-.menuOpciones .lista-menu .menu-item:last-child {
+.headerp .menuOpciones .lista-menu .menu-item:last-child {
 	margin-right: 0;
 }
 
-.menuOpciones .lista-menu .menu-item .item-label-icon {
+.headerp .menuOpciones .lista-menu .menu-item .item-label-icon {
 	display: flex;
 	align-items: center;
 }
 
-.menuOpciones .lista-menu .menu-item .item-label-icon i {
+.headerp .menuOpciones .lista-menu .menu-item .item-label-icon i {
 	margin-right: 10px;
 }
 
-.menuOpciones .lista-menu .menu-item .menu-link {
+.headerp .menuOpciones .lista-menu .menu-item .menu-link {
 	color: #808080;
 	text-decoration: none;
 }
 
-.menuOpciones .lista-menu .menu-item:hover .item-label-icon i,
-.menuOpciones .lista-menu .menu-item:hover .menu-link {
+.headerp .menuOpciones .lista-menu .menu-item:hover .item-label-icon i,
+.headerp .menuOpciones .lista-menu .menu-item:hover .menu-link {
 	text-decoration: underline;
 	color: #33cc33;
 }
 
-.logo-kallpa img {
+.headerp .logo-kallpa img {
 	max-width: 180px;
 }
 
-.menuOpciones .mdi {
+.headerp .menuOpciones .mdi {
 	font-size: 30px;
 	color: #808080;
-	
 }
-.menuOpciones .menu-item {
+.headerp .menuOpciones .menu-item {
 	position: relative;
 }
 
-.menuOpciones .menu-item .submenuContenedor {
+.headerp .menuOpciones .menu-item .submenuContenedor {
 	display: none; /* Inicialmente ocultar el submenu */
 	position: absolute;
 	width: 300px;
@@ -147,18 +146,18 @@ body {
 	text-align: left;
 }
 
-.menuOpciones .menu-item .submenuContenedor .row {
+.headerp .menuOpciones .menu-item .submenuContenedor .row {
 	display: inline-block;
 }
 
-.menuOpciones .menu-item .submenuContenedor .row .mdi {
+.headerp .menuOpciones .menu-item .submenuContenedor .row .mdi {
 	color: #33cc33;
 	width: 50px;
 	height: 50px;
 	margin-right: 10px;
 }
 
-.menuOpciones .menu-item .submenuContenedor .row .col {
+.headerp .menuOpciones .menu-item .submenuContenedor .row .col {
 	height: 40px;
 	width: 100%;
 	padding: 10px;
@@ -168,7 +167,7 @@ body {
 	margin-right: 60px;
 	cursor: pointer;
 }
-.menuOpciones .menu-item .submenuContenedor .row .col1 {
+.headerp .menuOpciones .menu-item .submenuContenedor .row .col1 {
 	height: 40px;
 	width: 100%;
 	padding: 10px;
@@ -176,7 +175,7 @@ body {
 	list-style-type: none;
 	margin-left: -20px;
 }
-.menuOpciones .menu-item .submenuContenedor .row span {
+.headerp .menuOpciones .menu-item .submenuContenedor .row span {
 	color: black;
 	font-weight: 100;
 
@@ -184,20 +183,20 @@ body {
 	text-decoration: none;
 }
 
-.menuOpciones .menu-item .submenuContenedor .row .col:hover,
-.menuOpciones .menu-item .submenuContenedor .row .col1:hover {
+.headerp .menuOpciones .menu-item .submenuContenedor .row .col:hover,
+.headerp .menuOpciones .menu-item .submenuContenedor .row .col1:hover {
 	background-color: #bafdba;
 	border-radius: 8px;
 }
 
-.menuOpciones .menu-item .submenuContenedor a {
+.headerp .menuOpciones .menu-item .submenuContenedor a {
 	text-decoration: none;
 }
-.menuOpciones .menu-item:hover .submenuContenedor {
+.headerp .menuOpciones .menu-item:hover .submenuContenedor {
 	display: block; /* Mostrar el submenu al pasar el mouse sobre el item */
 }
 
-.container {
+.headerp .container {
 	width: 100%;
 	height: 480px;
 	background: lightgray;

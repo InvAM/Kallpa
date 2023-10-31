@@ -1,125 +1,125 @@
-.info .caja-seccion{
-    border-top: 4px solid #33cc33;
+.info .caja-seccion {
+	border-top: 4px solid #33cc33;
 }
 
-.info .cajasobrekallpa1{
-    padding: 80px 0;
-    margin-left: 381.5px;
-    margin-right: 381.5px;
-    display: flex;
+.info .cajasobrekallpa1 {
+	padding: 80px 0;
+	margin-left: 381.5px;
+	margin-right: 381.5px;
+	display: flex;
 }
 
-.info .cajasobrekallpa2{
-    padding: 80px 0;
-    margin-left: 381.5px;
-    margin-right: 381.5px;
+.info .cajasobrekallpa2 {
+	padding: 80px 0;
+	margin-left: 381.5px;
+	margin-right: 381.5px;
 }
 
 .info .informacion {
-    flex: 1;
-    padding: 5px;
-    flex-direction: column;
+	flex: 1;
+	padding: 5px;
+	flex-direction: column;
 }
 
 .info .imagenh {
-    flex: 1;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	flex: 1;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .info .imagenh img {
-    max-width: 100%;
-    height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
-.info .p1-info{
-    margin-top: 16px;
-    font-size: 30px;
-    color: #00a34b;
-    font-weight: 600;
-    line-height: 1;
-    margin-bottom: 15px;
+.info .p1-info {
+	margin-top: 16px;
+	font-size: 30px;
+	color: #00a34b;
+	font-weight: 600;
+	line-height: 1;
+	margin-bottom: 15px;
 }
 
-.info .p2-info{
-    font-size: 50px;
-    color: #00a1de;
-    font-weight: 700;
-    line-height: 1;
-    margin-bottom: 15px;
-    margin-top: 10px;
+.info .p2-info {
+	font-size: 50px;
+	color: #00a1de;
+	font-weight: 700;
+	line-height: 1;
+	margin-bottom: 15px;
+	margin-top: 10px;
 }
 
-.info .p3-info{
-    font-size: 18px;
-    color: #868685;
-    font-weight: 300;
-    line-height: 1.5;
-    text-align: justify;
+.info .p3-info {
+	font-size: 18px;
+	color: #868685;
+	font-weight: 300;
+	line-height: 1.5;
+	text-align: justify;
 }
 
-.info .p4-info{
-    color: #00a34b;
-    font-size: 44px;
-    font-weight: 700;
-    padding-left: 90px;
-    margin-bottom: 40px;
-    margin-top: 0px;
+.info .p4-info {
+	color: #00a34b;
+	font-size: 44px;
+	font-weight: 700;
+	padding-left: 90px;
+	margin-bottom: 40px;
+	margin-top: 0px;
 }
 
 .info .c1 {
-    text-align: center;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 10px;
+	text-align: center;
+	height: 250px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 10px;
 }
 
-.info .centrarsplide{
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.info .centrarsplide {
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
 
-.info .c{
-    width: 80%;
+.info .c {
+	width: 80%;
 }
 
-.info .valores{
-    font-size: 20px;
-    color: #203864;
-    font-weight: 600;
-    margin-top: 15px;
-    margin-bottom: 13px;
+.info .valores {
+	font-size: 20px;
+	color: #203864;
+	font-weight: 600;
+	margin-top: 15px;
+	margin-bottom: 13px;
 }
 
-.info .desc-val{
-    font-size: 18px;
-    color: #868685;
-    font-weight: 300;
-    line-height: 1.1;
-    text-align: center;
-    margin-top: 0px;
-    margin-left: 40px;
-    margin-right: 40px;
+.info .desc-val {
+	font-size: 18px;
+	color: #868685;
+	font-weight: 300;
+	line-height: 1.1;
+	text-align: center;
+	margin-top: 0px;
+	margin-left: 40px;
+	margin-right: 40px;
 }
 
-.info .subirimg{
-    margin-top: 5px;
+.info .subirimg {
+	margin-top: 5px;
 }
 
-.info .desc{
-    font-size: 18px;
-    color: #868685;
-    font-weight: 300;
-    line-height: 1.1;
-    text-align: center;
-    margin-top: 0px;
-    margin-left: 10px;
-    margin-right: 10px;
+.info .desc {
+	font-size: 18px;
+	color: #868685;
+	font-weight: 300;
+	line-height: 1.1;
+	text-align: center;
+	margin-top: 0px;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .info .pers-mivi{
@@ -153,18 +153,18 @@
     color: #fff;
     font-weight: 600;
     font-size: 24px;
+    text-align: center;
     line-height: 1;
 }
 
-
-.info .splide__arrow {
+#splide1 .splide__arrow {
 	border-color: transparent;
 	background-color: transparent;
 	font-size: 20px; /* Establece el tamaño de fuente del texto */
 	cursor: pointer;
 }
 
-.info .splide__arrow--prev {
+#splide1 .splide__arrow--prev {
 	position: absolute;
 	top: 50%;
 	left: 96%;
@@ -172,7 +172,7 @@
 }
 
 /* Cambia el contenido de la flecha hacia la derecha */
-.info .splide__arrow--next {
+#splide1 .splide__arrow--next {
 	position: absolute;
 	top: 50%;
 	left: 0;
