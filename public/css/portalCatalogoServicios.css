@@ -1,0 +1,391 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.contenedorPrincipal {
+	margin-top: -15px;
+	background-color: #fafafa;
+}
+
+.contenedor1 {
+	padding: 5px;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	width: 33.1%; /* Ancho igualmente distribuido para las tres contenedores */
+	display: inline-block; /* Cambiado a inline-block para colocarlos en línea */
+	box-sizing: border-box; /* Para incluir el padding en el ancho y alto */
+	border: 2px solid transparent;
+	margin-top: 20px;
+}
+
+.lineacont {
+	border-right: 2px solid #fff;
+}
+
+.contenedor1 .label,
+.contenedor1 .numeroT {
+	display: inline; /* Hace que los elementos se muestren en una línea */
+}
+
+.cabeceras {
+	background-color: #fff;
+	color: white;
+	width: 100%;
+	justify-content: space-between; /* Espacio entre los contenedores */
+	margin-bottom: 5px;
+}
+.menuOpciones {
+	background-color: #fff;
+	height: 85px;
+	border-bottom: 4px solid #33cc33;
+}
+.imagen {
+	width: 200px;
+}
+
+.contenedor2 {
+	margin-top: 20px;
+}
+
+.contenedor1:hover {
+	background-color: #3fb43f;
+}
+
+.label {
+	display: block;
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+.numeroT {
+	font-size: 18px;
+	color: #fff;
+	text-decoration: none;
+}
+
+.mdi mdi-whatsapp {
+	font-size: 18px;
+	margin-right: 5px;
+}
+
+.numeros {
+	font-weight: bold;
+	padding: 15px;
+	width: 100%;
+	background-color: #33cc33;
+	box-sizing: border-box;
+}
+.menuOpciones .lista-menu {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	margin-top: 8px;
+	display: flex;
+	justify-content: space-between; /* Distribuye de forma equitativa */
+}
+
+.menuOpciones .lista-menu .menu-item {
+	flex: 1;
+	margin-right: 10px;
+	margin-left: 55px;
+	text-align: center;
+	padding: 20px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.menuOpciones .lista-menu .logo-kallpa {
+	border: 4px solid transparent;
+	padding-right: 20px;
+	border-right: 2px solid #808080;
+}
+
+.menuOpciones .lista-menu .menu-item:last-child {
+	margin-right: 0;
+}
+
+.menuOpciones .lista-menu .menu-item .item-label-icon {
+	display: flex;
+	align-items: center;
+}
+
+.menuOpciones .lista-menu .menu-item .item-label-icon i {
+	margin-right: 10px;
+}
+
+.menuOpciones .lista-menu .menu-item .menu-link {
+	color: #808080;
+	text-decoration: none;
+}
+
+.menuOpciones .lista-menu .menu-item:hover .item-label-icon i,
+.menuOpciones .lista-menu .menu-item:hover .menu-link {
+	text-decoration: underline;
+	color: #33cc33;
+}
+
+.logo-kallpa img {
+	max-width: 180px;
+}
+
+.menuOpciones .mdi {
+	font-size: 30px;
+	color: #808080;
+}
+.menuOpciones .menu-item {
+	position: relative;
+}
+
+.menuOpciones .menu-item .submenuContenedor {
+	display: none; /* Inicialmente ocultar el submenu */
+	position: absolute;
+	width: 300px;
+	top: 100%;
+	left: 0;
+	background-color: white;
+	border: 1px solid #fff;
+	border-radius: 10px;
+	padding: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+	text-align: left;
+}
+
+.menuOpciones .menu-item .submenuContenedor .row {
+	display: inline-block;
+}
+
+.menuOpciones .menu-item .submenuContenedor .row .mdi {
+	color: #33cc33;
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+}
+
+.menuOpciones .menu-item .submenuContenedor .row .col {
+	height: 40px;
+	width: 100%;
+	padding: 10px;
+	text-decoration: none;
+	list-style-type: none;
+	margin-left: -20px;
+	margin-right: 60px;
+}
+.menuOpciones .menu-item .submenuContenedor .row .col1 {
+	height: 40px;
+	width: 100%;
+	padding: 10px;
+	text-decoration: none;
+	list-style-type: none;
+	margin-left: -20px;
+}
+.menuOpciones .menu-item .submenuContenedor .row span {
+	color: black;
+	font-weight: 100;
+	width: 100%;
+	text-decoration: none;
+}
+
+.menuOpciones .menu-item .submenuContenedor .row .col:hover,
+.menuOpciones .menu-item .submenuContenedor .row .col1:hover {
+	background-color: #bafdba;
+	border-radius: 8px;
+}
+
+.menuOpciones .menu-item .submenuContenedor a {
+	text-decoration: none;
+}
+.menuOpciones .menu-item:hover .submenuContenedor {
+	display: block; /* Mostrar el submenu al pasar el mouse sobre el item */
+}
+/*Slider*/
+.container {
+	width: 100%;
+	height: 590px;
+	background: lightgray;
+	position: relative;
+	z-index: 1;
+	margin-bottom: 20px;
+}
+.container img {
+	width: 100%;
+	height: 590px;
+	object-fit: cover;
+}
+/* Add numbers to pagination buttons by CSS */
+.splide__pagination {
+	counter-reset: pagination-num;
+}
+
+.splide__pagination__page:before {
+	counter-increment: pagination-num;
+	content: counter(pagination-num);
+}
+.splide__arrow {
+	border-color: transparent;
+	background-color: transparent;
+	font-size: 20px; /* Establece el tamaño de fuente del texto */
+	cursor: pointer;
+}
+
+.splide__arrow--prev {
+	position: absolute;
+	top: 50%;
+	left: 96%;
+	z-index: 1;
+}
+
+/* Cambia el contenido de la flecha hacia la derecha */
+.splide__arrow--next {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	z-index: 1;
+	transform: rotate(180deg);
+}
+
+/* -------------------------------------------------------------*/
+
+.opcionesA1 {
+	display: flex;
+	margin-left: 20px;
+	margin-right: 10px;
+}
+
+.botonA1 {
+	background-color: #33cc33; /*Color del botón*/
+	color: #fff; /*Cambia el color del texto */
+	font-weight: bold;
+	height: 70px;
+	width: 350px; /*Establecer ancho del objeto*/
+	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
+	font-size: 18px; /*Ajusta el tamaño de fuente */
+	border-radius: 5px; /*Agrega bordes redondeados */
+	border: 2px solid #33cc33; /*Añade un borde */
+	padding: 9px; /*Agranda espacio en el interior de los inputs*/
+	margin-top: 10px; /*Añade espacio con el elemento de arriba*/
+	margin-right: 20px; /*Añade espacio a la derecha del objeto*/
+	font-family: Arial, Helvetica, sans-serif; /*Fuente de letra*/
+}
+
+.botonB1 {
+	background-color: #fff; /*Color del botón*/
+	color: #33cc33; /*Cambia el color del texto */
+	font-weight: bold;
+	height: 70px;
+	width: 350px; /*Establecer ancho del objeto*/
+	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
+	font-size: 18px; /*Ajusta el tamaño de fuente */
+	border-radius: 5px; /*Agrega bordes redondeados */
+	border: 2px solid #33cc33; /*Añade un borde */
+	padding: 9px; /*Agranda espacio en el interior de los inputs*/
+	margin-top: 10px; /*Añade espacio con el elemento de arriba*/
+	margin-right: 20px; /*Añade espacio a la derecha del objeto*/
+	font-family: Arial, Helvetica, sans-serif; /*Fuente de letra*/
+}
+.botonB1:hover {
+	background-color: #33cc33; /*Color del botón*/
+	color: #fff; /*Cambia el color del texto */
+}
+
+.contenedorServicios {
+	margin-top: 15px;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.servicio1 {
+	height: 500px;
+	border-radius: 10px;
+	background: linear-gradient(to right, #fff 60%, transparent 40%),
+		url("../Img/Instalacion.jpeg");
+	background-size: 100%, 50%, cover;
+	padding: 20px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+.tituloS {
+	margin-left: 300px;
+	font-size: 25px;
+	font-weight: bold;
+	color: #33cc33;
+}
+
+.servicio2 {
+	height: 450px;
+	border-radius: 10px;
+	background: linear-gradient(to right, #fff 60%, transparent 40%),
+		url("../Img/FondoHabilitación1.jpg");
+	background-size: 100%, 50%, cover;
+	padding: 20px;
+	margin-top: 20px;
+}
+
+/*Parrafos*/
+p {
+	font-size: 18px;
+	color: #33cc33;
+}
+
+.detalleS .subtituloD {
+	width: 30%;
+	padding: 0.5px;
+	background-color: #bafdba;
+	margin-left: 215px;
+}
+
+.detalleS .subtituloD p {
+	text-align: center;
+	color: #fff;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.acciones .acc1 {
+	font-size: 20px;
+	margin-top: 10px;
+	display: flex;
+	align-items: center;
+	margin-right: 20px;
+	width: 50%;
+}
+
+.acc1 label {
+	margin-top: -10px;
+	margin-left: 10px;
+}
+
+.acciones .containerEspecial {
+	display: flex;
+	width: 1000px;
+}
+
+.acc1 i {
+	font-size: 80px;
+	font-weight: bold;
+	color: #33cc33;
+	margin-left: 10px;
+}
+.contenedorSecundario {
+	padding: 20px;
+	margin-top: 30px;
+	background-color: #33cc33;
+	align-items: center;
+}
+
+.contenedorTexto {
+	font-size: 40px;
+	color: #fff;
+	margin-left: 450px;
+}
+
+.contenedorVideo iframe {
+	width: 80%;
+	height: 800px;
+	display: block;
+	margin-left: 150px;
+}

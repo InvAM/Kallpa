@@ -1,0 +1,578 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.contenedorCatalogo{
+    margin-top: -15px;
+    background-color: #fafafa !important;
+}
+
+.contenedor1 {
+	padding: 5px;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	width: 33.1%; /* Ancho igualmente distribuido para las tres contenedores */
+	display: inline-block; /* Cambiado a inline-block para colocarlos en línea */
+	box-sizing: border-box; /* Para incluir el padding en el ancho y alto */
+	border: 2px solid transparent;
+    margin-top: 20px;
+}
+
+.lineacont {
+	border-right: 2px solid #fff;
+}
+
+.contenedor1 .label,
+.contenedor1 .numeroT {
+	display: inline; /* Hace que los elementos se muestren en una línea */
+}
+
+.cabeceras {
+	background-color: #fff;
+	color: white;
+	width: 100%;
+	justify-content: space-between; /* Espacio entre los contenedores */
+    margin-bottom: 5px;
+}
+.menuOpciones {
+	background-color: #fff;
+	height: 85px;
+	border-bottom: 4px solid #33cc33;
+}
+.imagen {
+	width: 200px;
+}
+
+.contenedor2 {
+	margin-top: 20px;
+}
+
+.contenedor1:hover {
+	background-color: #3fb43f;
+}
+
+.label {
+	display: block;
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+.numeroT {
+	font-size: 18px;
+	color: #fff;
+	text-decoration: none;
+}
+
+.mdi mdi-whatsapp {
+	font-size: 18px;
+	margin-right: 5px;
+}
+
+.numeros {
+	font-weight: bold;
+	padding: 15px;
+	width: 100%;
+	background-color: #33cc33;
+	box-sizing: border-box;
+}
+.menuOpciones .lista-menu {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	margin-top: 8px;
+	display: flex;
+	justify-content: space-between; /* Distribuye de forma equitativa */
+}
+
+.menuOpciones .lista-menu .menu-item {
+	flex: 1;
+	margin-right: 10px;
+	margin-left: 55px;
+	text-align: center;
+	padding: 20px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.menuOpciones .lista-menu .logo-kallpa {
+	border: 4px solid transparent;
+	padding-right: 20px;
+	border-right: 2px solid #808080;
+}
+
+.menuOpciones .lista-menu .menu-item:last-child {
+	margin-right: 0;
+}
+
+.menuOpciones .lista-menu .menu-item .item-label-icon {
+	display: flex;
+	align-items: center;
+}
+
+.menuOpciones .lista-menu .menu-item .item-label-icon i {
+	margin-right: 10px;
+}
+
+.menuOpciones .lista-menu .menu-item .menu-link {
+	color: #808080;
+	text-decoration: none;
+}
+
+.menuOpciones .lista-menu .menu-item:hover .item-label-icon i,
+.menuOpciones .lista-menu .menu-item:hover .menu-link {
+	text-decoration: underline;
+	color: #33cc33;
+}
+
+.logo-kallpa img {
+	max-width: 180px;
+}
+
+.menuOpciones .mdi {
+	font-size: 30px;
+	color: #808080;
+}
+.menuOpciones .menu-item {
+	position: relative;
+}
+
+.menuOpciones .menu-item .submenuContenedor {
+	display: none; /* Inicialmente ocultar el submenu */
+	position: absolute;
+	width: 300px;
+	top: 100%;
+	left: 0;
+	background-color: white;
+	border: 1px solid #fff;
+	border-radius: 10px;
+	padding: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+	text-align: left;
+}
+
+.menuOpciones .menu-item .submenuContenedor .row {
+	display: inline-block;
+}
+
+.menuOpciones .menu-item .submenuContenedor .row .mdi {
+	color: #33cc33;
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+}
+
+.menuOpciones .menu-item .submenuContenedor .row .col {
+	height: 40px;
+	width: 100%;
+	padding: 10px;
+	text-decoration: none;
+	list-style-type: none;
+	margin-left: -20px;
+	margin-right: 60px;
+}
+.menuOpciones .menu-item .submenuContenedor .row .col1 {
+	height: 40px;
+	width: 100%;
+	padding: 10px;
+	text-decoration: none;
+	list-style-type: none;
+	margin-left: -20px;
+}
+.menuOpciones .menu-item .submenuContenedor .row span {
+	color: black;
+	font-weight: 100;
+	width: 100%;
+	text-decoration: none;
+}
+
+.menuOpciones .menu-item .submenuContenedor .row .col:hover,
+.menuOpciones .menu-item .submenuContenedor .row .col1:hover {
+	background-color: #bafdba;
+	border-radius: 8px;
+}
+
+.menuOpciones .menu-item .submenuContenedor a {
+	text-decoration: none;
+}
+.menuOpciones .menu-item:hover .submenuContenedor {
+	display: block; /* Mostrar el submenu al pasar el mouse sobre el item */
+}
+/*Slider*/
+.container {
+	width: 100%;
+	height: 590px;
+	background: lightgray;
+	position: relative;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+.container img {
+	width: 100%;
+	height: 590px;
+	object-fit: cover;
+}
+/* Add numbers to pagination buttons by CSS */
+.splide__pagination {
+	counter-reset: pagination-num;
+}
+
+.splide__pagination__page:before {
+	counter-increment: pagination-num;
+	content: counter(pagination-num);
+}
+.splide__arrow {
+	border-color: transparent;
+	background-color: transparent;
+	font-size: 20px; /* Establece el tamaño de fuente del texto */
+	cursor: pointer;
+}
+
+.splide__arrow--prev {
+	position: absolute;
+	top: 50%;
+	left: 96%;
+	z-index: 1;
+}
+
+/* Cambia el contenido de la flecha hacia la derecha */
+.splide__arrow--next {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	z-index: 1;
+	transform: rotate(180deg);
+}
+
+
+/* -------------------------------------------------------------*/
+
+.opcionesA1{
+    display: flex;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.botonA1{
+    background-color: #33cc33; /*Color del botón*/
+    color: #fff;            /*Cambia el color del texto */
+    font-weight: bold;
+    height: 70px;
+    width: 350px;                /*Establecer ancho del objeto*/
+    cursor: pointer;             /*Cambia el cursor al pasar el ratón sobre el botón */
+    font-size: 18px;             /*Ajusta el tamaño de fuente */
+    border-radius: 5px;          /*Agrega bordes redondeados */
+    border: 2px solid #33cc33 ; /*Añade un borde */
+    padding: 9px;                /*Agranda espacio en el interior de los inputs*/
+    margin-top: 10px;            /*Añade espacio con el elemento de arriba*/
+    margin-right: 20px;          /*Añade espacio a la derecha del objeto*/
+    font-family: Arial, Helvetica, sans-serif; /*Fuente de letra*/
+}
+
+.botonB1{
+    background-color: #fff; /*Color del botón*/
+    color: #33cc33;            /*Cambia el color del texto */
+    font-weight: bold;
+    height: 70px;
+    width: 350px;                /*Establecer ancho del objeto*/
+    cursor: pointer;             /*Cambia el cursor al pasar el ratón sobre el botón */
+    font-size: 18px;             /*Ajusta el tamaño de fuente */
+    border-radius: 5px;          /*Agrega bordes redondeados */
+    border: 2px solid #33cc33 ; /*Añade un borde */
+    padding: 9px;                /*Agranda espacio en el interior de los inputs*/
+    margin-top: 10px;            /*Añade espacio con el elemento de arriba*/
+    margin-right: 20px;          /*Añade espacio a la derecha del objeto*/
+    font-family: Arial, Helvetica, sans-serif; /*Fuente de letra*/
+}
+.botonB1:hover{
+    background-color: #33cc33; /*Color del botón*/
+    color: #fff;            /*Cambia el color del texto */
+}
+.filtrado{
+    display: flex;
+    margin-left: 520px;
+}
+.filtrado .labelSelect{
+   font-size: 18px;
+   text-align:end;
+   padding-top: 35px;
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: bold;
+   color:#808080;
+   margin-right: 20px;
+}
+
+/* Estilos para el contenedor del select personalizado */
+.select {
+    margin-top: 10px;
+    position: relative;
+    width: 350px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+  }
+  
+  /* Estilos para el elemento seleccionado */
+  .select-selected {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    padding-top: 25px;
+    height: 35px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    cursor: pointer;
+  }
+  .select-selected:hover{
+    border: 1px solid #33cc33;
+    color: #33cc33;
+  }
+
+  .select-selected .mdi{
+    margin-left: 200px;
+  }
+  
+  /* Estilos para la lista de opciones */
+  .select-items {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border-top: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilos para cada opción de la lista */
+  .select-items .items {
+    padding: 20px;
+    height: 30px;
+  }
+
+  .select-items .items a{ 
+    text-decoration: none !important;
+  }
+
+  .items span{
+    color:#333;
+    font-weight: 100;
+    width: 100%;
+    text-decoration: none !important;
+  }
+  
+  .select-selected:hover + .select-items,
+  .select-items:hover {
+    display: block;
+  }
+
+  .select-items li:hover{
+    background-color: #ccc;
+  }
+
+  .select-items li::before{
+    background-color: #ccccccbd;
+  }
+
+/*FILTRADOS ------------------------------------------*/
+.contenedorlistas{
+   margin-top: 70px;
+   margin-left: 20px;
+   margin-right: 20px;
+   display: flex;
+}
+
+.CajasFiltros{
+    padding-left: 30px;
+}
+  
+.CajasFiltros .titulocate{
+   font-size: 20px;
+   color: #33cc33;
+   font-weight: bolder;
+   font-family:Arial, Helvetica, sans-serif;
+   margin-bottom: 10px;
+}
+
+/* Estilos para la lista de verificación */
+.checklist {
+    list-style: none;
+    padding: 0;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* Estilos para cada elemento de la lista de verificación */
+.checklist li {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para el checkbox oculto */
+.checklist input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+.checklist label{
+    color:#808080;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-left: 10px;
+}
+/* Estilos para la "cajita" personalizada */
+.checklist label::before {
+    content: " ";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #33cc33;
+    border-radius: 2px;
+    text-align: center;
+    margin-right: 20px;
+    margin-top: 5px;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+
+/* Estilos para cambiar el color al marcar el checkbox */
+.checklist input[type="checkbox"]:checked + label::before {
+    background-color: #33cc33;
+    border-color: #3fb43f;
+}
+
+.checklist input[type="checkbox"]:checked + label {
+    text-decoration: underline;
+}
+
+.divisor{
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+input[type="range"] {
+    width: 180px;
+    background: #33cc33;
+    border: 1px solid #3aa83a;
+    /* Cambia el color del "thumb" (la ruedita) a un tono más claro de verde */
+    cursor: pointer;
+}
+
+
+.rangoP{
+    text-align: center;
+    color:#808080;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 70px;
+}
+
+.filtro3{
+    align-items: center;
+}
+
+.filtro3 span{
+    color: #808080;
+}
+
+
+
+.listas {
+    width: 2000px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: rgba(141, 57, 57, 0.8); /* Fondo blanco semitransparente */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+}
+
+.cajaCentral {
+    width: 1500px;
+    border: 0px solid #84de02; /* Borde anaranjado */
+    padding: 10px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.producto {
+    border: 0px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    width: 300px;
+    height: 720px;
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    text-align: center;
+}
+.imagen{
+    margin-top: 80px;
+    width:200px;
+    height:200px;
+    margin-bottom: 80px;
+}
+
+.descripcion{
+    background-color: #fff;
+    padding: 10px 20px;
+}
+
+.nombre {
+    color: #333;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.letra{
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.letra1{
+    color: #33cc33;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+
+.letra2{
+    color: #ffb71d;
+    font-size: 21px;
+    font-weight: bolder;
+}
+
+.central{
+    display: flex;
+     width: 100%;
+     flex-wrap: wrap;
+}
+
+.boton-compra{
+    background-color: #33cc33; /*Color del botón*/
+    color: #ffffff;            /*Cambia el color del texto */
+    font-weight: bold;
+    width: 250px;                /*Establecer ancho del objeto*/
+    cursor: pointer;             /*Cambia el cursor al pasar el ratón sobre el botón */
+    font-size: 20px;             /*Ajusta el tamaño de fuente */
+    border-radius: 5px;          /*Agrega bordes redondeados */
+    border: 0px ; /*Añade un borde */
+    padding: 9px;                /*Agranda espacio en el interior de los inputs*/
+    margin-top: 18px;            /*Añade espacio con el elemento de arriba*/
+    margin-right: 20px;          /*Añade espacio a la derecha del objeto*/
+    font-family: Arial, Helvetica, sans-serif; /*Fuente de letra*/
+}
+
+.boton-compra .mdi{
+    font-size: 30px;
+    font-weight: bold;
+}

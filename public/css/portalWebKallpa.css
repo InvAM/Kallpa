@@ -9,10 +9,13 @@ body {
 	text-align: center;
 	text-decoration: none;
 	color: white;
-	width: 32.2%; /* Ancho igualmente distribuido para las tres contenedores */
+	width: 33.1%; /* Ancho igualmente distribuido para las tres contenedores */
 	display: inline-block; /* Cambiado a inline-block para colocarlos en línea */
 	box-sizing: border-box; /* Para incluir el padding en el ancho y alto */
 	border: 2px solid transparent;
+}
+
+.lineacont {
 	border-right: 2px solid #fff;
 }
 
@@ -22,21 +25,15 @@ body {
 }
 
 .cabeceras {
-	margin-left: -20px;
-	margin-top: -10px;
 	background-color: #fff;
 	color: white;
-	padding: 20px;
 	width: 100%;
 	justify-content: space-between; /* Espacio entre los contenedores */
 }
 .menuOpciones {
 	background-color: #fff;
-	margin-top: 10px;
-	height: 100px;
-	border: 2px solid transparent;
+	height: 85px;
 	border-bottom: 4px solid #33cc33;
-	padding: 10px;
 }
 .imagen {
 	width: 200px;
@@ -69,9 +66,8 @@ body {
 
 .numeros {
 	font-weight: bold;
-	padding: 25px;
+	padding: 15px;
 	width: 100%;
-	display: inline;
 	background-color: #33cc33;
 	box-sizing: border-box;
 }
@@ -79,7 +75,7 @@ body {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
-	margin-top: 20px;
+	margin-top: 8px;
 	display: flex;
 	justify-content: space-between; /* Distribuye de forma equitativa */
 }
@@ -87,7 +83,7 @@ body {
 .menuOpciones .lista-menu .menu-item {
 	flex: 1;
 	margin-right: 10px;
-	margin-left: 30px;
+	margin-left: 55px;
 	text-align: center;
 	padding: 20px;
 	font-size: 20px;
@@ -170,6 +166,7 @@ body {
 	list-style-type: none;
 	margin-left: -20px;
 	margin-right: 60px;
+	cursor: pointer;
 }
 .menuOpciones .menu-item .submenuContenedor .row .col1 {
 	height: 40px;
@@ -199,42 +196,29 @@ body {
 .menuOpciones .menu-item:hover .submenuContenedor {
 	display: block; /* Mostrar el submenu al pasar el mouse sobre el item */
 }
-
+/*Slider*/
 .container {
 	width: 100%;
 	height: 480px;
-
 	background: lightgray;
 	position: absolute;
-	top: 47.5%;
-	left: 50%;
-	transform: translate(-50%, -50%);
 }
 .container img {
 	width: 100%;
 	height: 590px;
 	object-fit: cover;
-	cursor: pointer;
-}
-/* Add numbers to pagination buttons by CSS */
-.splide__pagination {
-	counter-reset: pagination-num;
-}
-
-.splide__pagination__page:before {
-	counter-increment: pagination-num;
-	content: counter(pagination-num);
 }
 .splide__arrow {
 	border-color: transparent;
 	background-color: transparent;
 	font-size: 20px; /* Establece el tamaño de fuente del texto */
+	cursor: pointer;
 }
 
 .splide__arrow--prev {
 	position: absolute;
-	top: 50%;
-	left: 96%;
+	top: 51%;
+	left: 97%;
 	z-index: 1;
 }
 
@@ -245,4 +229,143 @@ body {
 	left: 0;
 	z-index: 1;
 	transform: rotate(180deg);
+	color: #fff;
+}
+
+.portal-cont-2 {
+	max-width: 100%;
+	background: rgb(31, 17, 233);
+	background: linear-gradient(
+		90deg,
+		rgba(31, 17, 233, 0.577468487394958) 0%,
+		rgba(5, 133, 200, 1) 0%,
+		rgba(18, 214, 54, 1) 100%
+	);
+	height: 480px;
+}
+
+.custom-btn {
+	display: inline-block;
+	text-decoration: none;
+	background-color: transparent;
+	padding: 10px;
+	width: 150px; /* ancho*/
+	height: 150px; /* alto*/
+	text-align: center;
+	margin-left: 220px;
+	margin-top: 40px;
+	color: #ffffff;
+}
+
+@-webkit-keyframes custom-btn {
+	0% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+	100% {
+		-webkit-transform: translateY(-10px);
+		transform: translateY(-50px);
+	}
+}
+@keyframes slide-top {
+	0% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+	100% {
+		-webkit-transform: translateY(-100px);
+		transform: translateY(-100px);
+	}
+}
+
+.portal-cont-2 .mdi:before,
+.mdi-set {
+	display: inline-block;
+	font: normal normal normal 150px/1 "Material Design Icons";
+}
+.custom-btn:hover {
+	background-color: rgba(255, 255, 255, 0);
+	color: rgb(241, 185, 30);
+	color: rgb(241, 185, 30);
+	-webkit-animation: slide-top 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s
+		both;
+	animation: slide-top 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s both;
+}
+
+.titulo-btn {
+	font-size: 18px;
+	text-align: center;
+	margin-top: 5px;
+	color: #ffffff;
+}
+
+.fuente-portal {
+	font-size: 45px;
+	color: #fff;
+	text-align: center;
+	margin-top: 5px;
+}
+
+.portal-cont-3 {
+	max-width: 100%;
+	margin-top: 18px;
+	background: rgb(255, 254, 254);
+	height: 480px;
+}
+
+.titulo1-cont3 {
+	color: #167c16;
+	text-align: center;
+	font-weight: 850;
+	font-family: Candara;
+	font-size: 40px;
+}
+
+.titulo2-cont3 {
+	color: #160f6e;
+	text-align: center;
+	font-family: Candara;
+	font-size: 90px;
+	margin-top: -30px;
+}
+
+.custom-btn2 {
+	display: inline-block;
+	text-decoration: none;
+	background-color: transparent;
+	padding: 10px;
+	width: 230px; /* ancho*/
+	height: 150px; /* alto*/
+	text-align: center;
+	margin-left: 80px;
+	margin: -30px auto;
+	color: #128812;
+}
+
+.titulo-btn2 {
+	font-size: 18px;
+	text-align: center;
+	margin-top: 5px;
+	color: #666262;
+	font-family: Candara;
+}
+
+.portal-cont-3 .mdi:before,
+.mdi-set {
+	display: inline-block;
+	font: normal normal normal 90px/1 "Material Design Icons";
+}
+
+.portal-cont4 {
+	max-width: 100%;
+	margin-top: 20px;
+	background-color: #128812;
+	height: 580px;
+	object-fit: cover;
+}
+
+.portal-cont4 img {
+	width: 100%;
+	height: 590px;
+	object-fit: cover;
 }

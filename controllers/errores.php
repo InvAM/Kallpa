@@ -4,8 +4,8 @@ class Errores extends Controller
     function __construct()
     {
         parent::__construct();
-        $this->view->mensaje = "Este es un mensaje de prueba de error";
+        $this->view->mensaje = "La pagina que esta intentado acceder no esta disponible";
         $this->view->render('errores/errores');
-        //echo "<p>ERROR AL CARGAR LA PAGINA</p>";
+
     }
 }

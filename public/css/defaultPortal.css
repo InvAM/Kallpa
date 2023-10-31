@@ -1,0 +1,243 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+.headerp .contenedor1 {
+	padding: 5px;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	width: 33.1%; /* Ancho igualmente distribuido para las tres contenedores */
+	display: inline-block; /* Cambiado a inline-block para colocarlos en línea */
+	box-sizing: border-box; /* Para incluir el padding en el ancho y alto */
+	border: 2px solid transparent;
+}
+
+.headerp .lineacont {
+	border-right: 2px solid #fff;
+}
+
+.headerp .contenedor1 .label,
+.headerp .contenedor1 .numeroT {
+	display: inline; /* Hace que los elementos se muestren en una línea */
+}
+
+.headerp .cabeceras {
+	background-color: #fff;
+	color: white;
+	width: 100%;
+	justify-content: space-between; /* Espacio entre los contenedores */
+}
+.headerp .menuOpciones {
+	background-color: #fff;
+	height: 85px;
+	border-bottom: 4px solid #33cc33;
+}
+.headerp .imagen {
+	width: 200px;
+}
+
+.headerp .contenedor2 {
+	margin-top: 20px;
+}
+
+.headerp .contenedor1:hover {
+	background-color: #3fb43f;
+}
+
+.headerp .label {
+	display: block;
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+.headerp .numeroT {
+	font-size: 18px;
+	color: #fff;
+	text-decoration: none;
+}
+
+.headerp .mdi mdi-whatsapp {
+	font-size: 18px;
+	margin-right: 5px;
+}
+
+.headerp .numeros {
+	font-weight: bold;
+	padding: 15px;
+	width: 100%;
+	background-color: #33cc33;
+	box-sizing: border-box;
+}
+.headerp .menuOpciones .lista-menu {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	margin-top: 8px;
+	display: flex;
+	justify-content: space-between; /* Distribuye de forma equitativa */
+}
+
+.headerp .menuOpciones .lista-menu .menu-item {
+	flex: 1;
+	margin-right: 10px;
+	margin-left: 55px;
+	text-align: center;
+	padding: 20px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.headerp .menuOpciones .lista-menu .logo-kallpa {
+	border: 4px solid transparent;
+	padding-right: 20px;
+	border-right: 2px solid #808080;
+}
+
+.headerp .menuOpciones .lista-menu .menu-item:last-child {
+	margin-right: 0;
+}
+
+.headerp .menuOpciones .lista-menu .menu-item .item-label-icon {
+	display: flex;
+	align-items: center;
+}
+
+.headerp .menuOpciones .lista-menu .menu-item .item-label-icon i {
+	margin-right: 10px;
+}
+
+.headerp .menuOpciones .lista-menu .menu-item .menu-link {
+	color: #808080;
+	text-decoration: none;
+}
+
+.headerp .menuOpciones .lista-menu .menu-item:hover .item-label-icon i,
+.headerp .menuOpciones .lista-menu .menu-item:hover .menu-link {
+	text-decoration: underline;
+	color: #33cc33;
+}
+
+.headerp .logo-kallpa img {
+	max-width: 180px;
+}
+
+.headerp .menuOpciones .mdi {
+	font-size: 30px;
+	color: #808080;
+}
+.headerp .menuOpciones .menu-item {
+	position: relative;
+}
+
+.headerp .menuOpciones .menu-item .submenuContenedor {
+	display: none; /* Inicialmente ocultar el submenu */
+	position: absolute;
+	width: 300px;
+	top: 100%;
+	left: 0;
+	background-color: white;
+	border: 1px solid #fff;
+	border-radius: 10px;
+	padding: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+	text-align: left;
+}
+
+.headerp .menuOpciones .menu-item .submenuContenedor .row {
+	display: inline-block;
+}
+
+.headerp .menuOpciones .menu-item .submenuContenedor .row .mdi {
+	color: #33cc33;
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+}
+
+.headerp .menuOpciones .menu-item .submenuContenedor .row .col {
+	height: 40px;
+	width: 100%;
+	padding: 10px;
+	text-decoration: none;
+	list-style-type: none;
+	margin-left: -20px;
+	margin-right: 60px;
+	cursor: pointer;
+}
+.headerp .menuOpciones .menu-item .submenuContenedor .row .col1 {
+	height: 40px;
+	width: 100%;
+	padding: 10px;
+	text-decoration: none;
+	list-style-type: none;
+	margin-left: -20px;
+}
+.headerp .menuOpciones .menu-item .submenuContenedor .row span {
+	color: black;
+	font-weight: 100;
+
+	width: 100%;
+	text-decoration: none;
+}
+
+.headerp .menuOpciones .menu-item .submenuContenedor .row .col:hover,
+.headerp .menuOpciones .menu-item .submenuContenedor .row .col1:hover {
+	background-color: #bafdba;
+	border-radius: 8px;
+}
+
+.headerp .menuOpciones .menu-item .submenuContenedor a {
+	text-decoration: none;
+}
+.headerp .menuOpciones .menu-item:hover .submenuContenedor {
+	display: block; /* Mostrar el submenu al pasar el mouse sobre el item */
+}
+
+.headerp .container {
+	width: 100%;
+	height: 480px;
+	background: lightgray;
+	position: absolute;
+	top: 43.2%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.container img {
+	width: 100%;
+	height: 590px;
+	object-fit: cover;
+}
+/* Add numbers to pagination buttons by CSS */
+.splide__pagination {
+	counter-reset: pagination-num;
+}
+
+.splide__pagination__page:before {
+	counter-increment: pagination-num;
+	content: counter(pagination-num);
+}
+.splide__arrow {
+	border-color: transparent;
+	background-color: transparent;
+	font-size: 20px; /* Establece el tamaño de fuente del texto */
+	cursor: pointer;
+}
+
+.splide__arrow--prev {
+	position: absolute;
+	top: 51%;
+	left: 97%;
+	z-index: 1;
+}
+
+/* Cambia el contenido de la flecha hacia la derecha */
+.splide__arrow--next {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	z-index: 1;
+	transform: rotate(180deg);
+}
