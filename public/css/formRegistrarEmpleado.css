@@ -86,6 +86,7 @@ body {
 	border: 1px solid #39a805; /*Añade un borde */
 	padding: 9px; /*Agranda espacio en el interior de los inputs*/
 	font-family: "Times New Roman"; /*Fuente de letra*/
+	margin-top: 20px;
 }
 
 .registrar-e .parte-derecha {

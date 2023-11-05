@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Registrar Empleado</title>
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/formRegistrarEmpleado.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.all.min.js"></script>
+
 
 </head>
 
@@ -50,7 +49,7 @@
                             <option value="2">Técnico</option>
                             <!-- Seguir con opciones -->
                         </select>
-                        <input type="hidden" name="accion1" value="add" />
+
                         <input type="submit" class="boton" value="Registrar">
 
                     </div>
@@ -97,10 +96,14 @@
                                         <?php echo $empleado->IDCategoria ?>
                                     </td>
                                     <td>
-                                        <button class="boton">Editar</button>
+                                        <a
+                                            href="<?php echo constant('URL') . 'registrarEmpleado/verEmpleado/' . $empleado->DNI_Em; ?>"><button
+                                                class="boton-seleccionar boton">Seleccionar</button></a>
                                     </td>
                                     <td>
-                                        <button class="boton">Eliminar</button>
+                                        <a
+                                            href="<?php echo constant('URL') . 'registrarEmpleado/eliminarEmpleado/' . $empleado->DNI_Em; ?>"><button
+                                                class="boton-seleccionar boton">Eliminar</button></a>
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -125,15 +128,18 @@
                         <div class="campo">
                             <label for="password">Contraseña</label>
                             <input type="password" label="Contraseña" placeholder="Escribir..." required name="password"
-                                id="passwor">
+                                id="password">
                         </div>
                         <input type="hidden" name="accion2" value="add" />
 
                         <input type="submit" value="Agregar Credenciales" class="boton-credencial">
                     </form>
                 </div>
+                <form action="<?php echo constant('URL'); ?>registrarEmpleado/mantenimientoEmpleado" method="POST"
+                    autocomplete="off" class="">
 
-                <button class="boton-opciones">Actualizar</button>
+                    <button class="boton-opciones">Actualizar</button>
+                </form>
                 <button class="boton-opciones">Atras</button>
                 <button class="boton-opciones">Limpiar</button>
             </div>
@@ -146,6 +152,9 @@
 
     </div>
 </body>
+
+
+
 
 
 </html>
