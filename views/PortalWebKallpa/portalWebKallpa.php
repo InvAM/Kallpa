@@ -91,9 +91,52 @@
         </div>
 
         <div class="portal-cont4">
-            <img src="public/Img/SLIDER_KALLPA_4.png" alt="">
-            <img src="public/Img/SLIDER_KALLPA_5.png" alt="">
-            <img src="public/Img/SLIDER_KALLPA_6.png" alt="">
+            <ul class="slider">
+                <li id="slide1">
+                    <img src="public/Img/SLIDER_KALLPA_4.png" alt="">
+                </li>
+                <li id="slide2">
+                    <img src="public/Img/SLIDER_KALLPA_5.png" alt="">
+                </li>
+                <li id="slide3">
+                    <img src="public/Img/SLIDER_KALLPA_6.png" alt="">
+                </li>
+                <li id="slide4">
+                    <img src="public/Img/SLIDER_KALLPA_7.png" alt="">
+                </li>
+                <li id="slide5">
+                    <img src="public/Img/SLIDER_KALLPA_8.png" alt="">
+                </li>
+                <li id="slide6">
+                    <img src="public/Img/SLIDER_KALLPA_9.png" alt="">
+                </li>
+                <li id="slide7">
+                    <img src="public/Img/SLIDER_KALLPA_10.png" alt="">
+                </li>
+            </ul>
+            <ul class="menu">
+                <li>
+                    <a href="#slide1"><i class="mdi mdi-gas-burner"></i></a>
+                </li>
+                <li>
+                    <a href="#slide2"><i class="mdi mdi-meter-gas-outline"></i></a>
+                </li>
+                <li>
+                    <a href="#slide3"><i class="mdi mdi-check-underline-circle-outline"></i></a>
+                </li>
+                <li>
+                    <a href="#slide4"><i class="mdi mdi-account-heart-outline"></i></a>
+                </li>
+                <li>
+                    <a href="#slide5"><i class="mdi mdi-currency-usd"></i></a>
+                </li>
+                <li>
+                    <a href="#slide6"><i class="mdi mdi-star-check-outline"></i></a>
+                </li>
+                <li>
+                    <a href="#slide7"><i class="mdi mdi-shield-lock-outline"></i></a>
+                </li>
+            </ul>
         </div>
 
 
