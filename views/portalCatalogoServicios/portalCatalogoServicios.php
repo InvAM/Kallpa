@@ -123,17 +123,86 @@
     <div class="contenedorServicios">
         <div class="servicio1">
             <h2 class="tituloS">Instalación de gas natural</h2>
-            <p></p>
-            <div class="detalleS">
+            <div class="textos">
+                <p>La instalación de gas natural en un hogar o un edificio generalmente es un proceso complejo, que requiere ciertos conocimientos</p>
+                <p>por eso nuestra empresa ofrece técnicos capacitados y certificados para llevar acabo este proceso crucial para la adquisición </p>
+                <p>de gas natural es así como garantizamos seguridad y calidad</p>
+            </div>
+         <div class="detalleS">
+                <div class="subtituloD">
+                  <p>¿Qué realizamos?</p>
+                </div>
+                <div class="acciones">
+                    <div class="containerEspecial">
+                        <div class="acc1">
+                            <i class="mdi mdi-account-hard-hat"></i>
+                            <label>Construcción e instalación de gabinetes</label>
+                        </div>
+                        <div class="acc1">
+                            <i class="mdi mdi-alpha-m-box"></i>
+                            <label>Construcción de murete</label>
+                        </div>
+                    </div>
+                    
+                    <div class="containerEspecial">
+                        <div class="acc1">
+                            <i class="mdi mdi-home-city"></i>
+                            <label>Instalación interna</label>
+                        </div>
+                        <div class="acc1">
+                            <i class="mdi mdi-connection"></i>
+                            <label>Conexiones a puntos de uso</label>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
         <div class="servicio2">
             <h2 class="tituloS">Habilitación de domicilio</h2>
+            <div class="textos">
+                <p>La habilitación de gas natural implica una serie de procesos y verificaciones necesarias para garantizar que un sistema de gas</p>
+                <p>esté listo y seguro para su uso. Por ello, nuestra empres, ofrece a profesionales especializados en la habilitación y un supervisor </p>
+                <p>de Cállida que garanticen una habilitación de calidad y segura</p>
+            </div>
+            <div class="detalleS">
+                <div class="subtituloD">
+                  <p>¿Qué realizamos?</p>
+                </div>
+                <div class="acciones">
+                    <div class="containerEspecial">
+                        <div class="acc1">
+                            <i class="mdi mdi-account-tie"></i>
+                            <label>Inspección de instalación</label>
+                        </div>
+                        <div class="acc1">
+                            <i class="mdi mdi-eye-circle"></i>
+                            <label>Verificación de conexiones y equipos</label>
+                        </div>
+                </div>
+                    
+                <div class="containerEspecial">
+                    <div class="acc1">
+                        <i class="mdi mdi-ev-station"></i>
+                        <label>Pruebas de hermeticidad</label>
+                    </div>
+                    <div class="acc1">
+                            <i class="mdi mdi-storage-tank-outline"></i>
+                            <label>Activación de suministro de gas</label>
+                    </div>
+                </div>
+            </div>
+            </div>
         </div>
     </div>
 </div>
-<div class="contenedorSecundario">
-</div>
+    <div class="contenedorSecundario">
+            <div class="contenedorTexto">
+                <h1>¿Cómo lo hacemos?</h1>
+            </div>
+            <div class="contenedorVideo">
+                <iframe  src="https://www.youtube.com/embed/eb3Md3daflo?si=xBXxYH-pH9MrE1EL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+    </div>
     </body>
 </html>

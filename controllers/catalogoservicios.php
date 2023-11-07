@@ -8,4 +8,10 @@ class CatalogoServicios extends Controller
         $this->view->render('portalCatalogoServicios/portalCatalogoServicios');
     
     }
+
+    function render()
+    {
+        $this->view->render('portalCatalogoServicios/portalCatalogoServicios');
+    }
+
 }
