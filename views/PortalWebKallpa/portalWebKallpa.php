@@ -57,33 +57,33 @@
 
         <div class="portal-cont-3">
             <br><br>
-            <h1 class="titulo1-cont3">"Conoscamos más del</h1>
+            <h1 class="titulo1-cont3">"Conozcamos más del</h1>
             <h1 class="titulo2-cont3">Gas Natural"</h1>
-            <a href="" class="custom-btn2">
+            <a href="#slide1" class="custom-btn2">
                 <i class="mdi mdi-gas-burner"></i>
                 <h1 class="titulo-btn2">¿Qué es el gas natural?</h1>
             </a>
-            <a href="" class="custom-btn2">
+            <a href="#slide2" class="custom-btn2">
                 <i class="mdi mdi-meter-gas-outline"></i>
                 <h1 class="titulo-btn2">¿Cómo se distribuye?</h1>
             </a>
-            <a href="" class="custom-btn2">
+            <a href="#slide3" class="custom-btn2">
                 <i class="mdi mdi-check-underline-circle-outline"></i>
                 <h1 class="titulo-btn2">Más seguro para mi familia </h1>
             </a>
-            <a href="" class="custom-btn2">
+            <a href="#slide4" class="custom-btn2">
                 <i class="mdi mdi-account-heart-outline"></i>
                 <h1 class="titulo-btn2">Más limpio para mi salud</h1>
             </a>
-            <a href="" class="custom-btn2">
+            <a href="#slide5" class="custom-btn2">
                 <i class="mdi mdi-currency-usd"></i>
                 <h1 class="titulo-btn2">Más económico</h1>
             </a>
-            <a href="" class="custom-btn2">
+            <a href="#slide6" class="custom-btn2">
                 <i class="mdi mdi-star-check-outline"></i>
                 <h1 class="titulo-btn2">Servicio continuo</h1>
             </a>
-            <a href="" class="custom-btn2">
+            <a href="#slide7" class="custom-btn2">
                 <i class="mdi mdi-shield-lock-outline"></i>
                 <h1 class="titulo-btn2">Consejos de seguridad </h1>
             </a>
@@ -138,20 +138,7 @@
                 </li>
             </ul>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
         <script>
             new Splide('.splide', {
                 type: 'loop',
