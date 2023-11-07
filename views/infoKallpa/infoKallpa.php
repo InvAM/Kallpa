@@ -31,7 +31,7 @@
             <p class="p7-info">Nuestra Visión y Misión</p>
             <div class="cajasobrekallpa5">
                 <div class="separar">
-                    <div class="informacion pers-mivi scale-up-center">
+                    <div class="informacion1 pers-mivi scale-up-center">
                         <div class="subirimg2">
                             <img src="public/Img/Mision.png">
                         </div>
@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="separar">
-                    <div class="informacion pers-mivi scale-up-center">
+                    <div class="informacion1 pers-mivi scale-up-center">
                         <div class="subirimg2">
                             <img src="public/Img/Vision.png">
                         </div>
