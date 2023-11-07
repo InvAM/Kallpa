@@ -57,9 +57,9 @@
 
         <div class="portal-cont-3">
             <br><br>
-            <h1 class="titulo1-cont3">"Conoscamos más del</h1>
+            <h1 class="titulo1-cont3">"Conozcamos más del</h1>
             <h1 class="titulo2-cont3">Gas Natural"</h1>
-            <a href="" class="custom-btn2">
+            <a href="" class="custom-btn2" style="margin-left: 45px;">
                 <i class="mdi mdi-gas-burner"></i>
                 <h1 class="titulo-btn2">¿Qué es el gas natural?</h1>
             </a>
