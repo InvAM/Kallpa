@@ -1,5 +1,5 @@
 <?php
-class home extends Controller
+class atencion extends Controller
 {
     public function __construct()
     {
@@ -9,7 +9,7 @@ class home extends Controller
     }
     function render()
     {
-        $this->view->render('home/home');
+        $this->view->render('atencionCliente/atencionCliente');
     }
 
 

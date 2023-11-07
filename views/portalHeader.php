@@ -69,7 +69,7 @@
                             <div class="item-label-icon" data-toggle="collapse" href="" role="button"
                                 aria-expanded="false" aria-controls="submenu2">
                                 <i class="mdi mdi-home-heart"></i>
-                                <a href="" class="menu-link"> Hogar</a>
+                                <a href="home" class="menu-link"> Hogar</a>
                             </div>
                         </li>
 
@@ -94,7 +94,7 @@
                             <div class="item-label-icon" data-toggle="collapse" href="" role="button"
                                 aria-expanded="false" aria-controls="submenu3">
                                 <i class="mdi mdi-face-agent"></i>
-                                <a href="" class="menu-link">Atención al cliente</a>
+                                <a href="atencion" class="menu-link">Atención al cliente</a>
                             </div>
                             <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
                                 <ul class="row">

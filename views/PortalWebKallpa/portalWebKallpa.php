@@ -41,7 +41,7 @@
                 <i class="mdi mdi-home-assistant"></i>
                 <h1 class="titulo-btn">InfoKallpa</h1>
             </a>
-            <a href="" class="custom-btn">
+            <a href="home" class="custom-btn">
                 <i class="mdi mdi-home-heart"></i>
                 <h1 class="titulo-btn">Hogar</h1>
             </a>
@@ -49,7 +49,7 @@
                 <i class="mdi mdi-palette-swatch-variant"></i>
                 <h1 class="titulo-btn">Catálogo virtual</h1>
             </a>
-            <a href="" class="custom-btn">
+            <a href="atencion" class="custom-btn">
                 <i class="mdi mdi-face-agent"></i>
                 <h1 class="titulo-btn">Atención al cliente</h1>
             </a>
@@ -138,7 +138,7 @@
                 </li>
             </ul>
         </div>
-        
+
         <script>
             new Splide('.splide', {
                 type: 'loop',
