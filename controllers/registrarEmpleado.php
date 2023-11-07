@@ -22,7 +22,15 @@ class RegistrarEmpleado extends Controller
         $cel = $_POST['Celular_Em_reg'];
         $categoria = $_POST['IDCategoria_reg'];
         $mensaje = "";
-        if ($this->model->insert(['DNI_Em_reg' => $dni, 'Nombre_Em_reg' => $nom, 'Apellido_Em_reg' => $ape, 'Celular_Em_reg' => $cel, 'IDCategoria_reg' => $categoria])) {
+        if (
+            $this->model->insert([
+                'DNI_Em_reg' => $dni,
+                'Nombre_Em_reg' => $nom,
+                'Apellido_Em_reg' => $ape,
+                'Celular_Em_reg' => $cel,
+                'IDCategoria_reg' => $categoria
+            ])
+        ) {
             $mensaje = "Nuevo empleado creado";
         } else {
             $mensaje = "Empleado ya existente";

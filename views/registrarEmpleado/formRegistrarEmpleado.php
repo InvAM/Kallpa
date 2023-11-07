@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Registrar Empleado</title>
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/formRegistrarEmpleado.css">
-
-
 </head>
 
 <body>
@@ -20,16 +18,12 @@
                 <h2 class="titulo-1">Registro de</h2>
                 <h2 class="titulo-2">Empleados</h2>
             </div>
-
             <div class="caja-empleado">
                 <form action="<?php echo constant('URL'); ?>registrarEmpleado/registrarNuevoEmpleado" method="POST"
                     autocomplete="off" class="">
                     <h3 class="subtitulo-empleado">Datos Generales</h3>
-
                     <div class="contenedor-empleado">
-
                         <img src="<?php echo constant('URL'); ?>public/Img/perfil.png" class="imagen-foto">
-
                         <label for="DNI_Em_reg">Dni</label>
                         <input type="text" label="DNI" placeholder="Escribir..." name="DNI_Em_reg" id="DNI_Em_reg">
                         <label for="Nombre_Em_reg">Nombres</label>
@@ -42,20 +36,16 @@
                         <input type="text" label="Celular" placeholder="Escribir..." name="Celular_Em_reg"
                             id="Celular_Em_reg">
                         <label for="IDCategoria_reg">Categoría</label>
-
                         <select name="IDCategoria_reg" id="IDCategoria_reg">
                             <option value="0">Escoger...</option>
                             <option value="1">Asesor</option>
                             <option value="2">Técnico</option>
                             <!-- Seguir con opciones -->
                         </select>
-
                         <input type="submit" class="boton" value="Registrar">
-
                     </div>
                 </form>
             </div>
-
             <div class="parte-derecha">
 
                 <h3 class="subtitulo-lista">Lista de Empleados</h3>

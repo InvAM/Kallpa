@@ -10,8 +10,15 @@ class EmpleadoModel extends Model
     public function insert($datos)
     {
         try {
-            $query = $this->db->connect()->prepare('INSERT INTO empleado(DNI_Em,Nombre_Em,Apellido_Em,Celular_Em,IDCategoria) VALUES (:dni,:nom,:ape,:cel,:categoria)');
-            $query->execute(['dni' => $datos['DNI_Em_reg'], 'nom' => $datos['Nombre_Em_reg'], 'ape' => $datos['Apellido_Em_reg'], 'cel' => $datos['Celular_Em_reg'], 'categoria' => $datos['IDCategoria_reg']]);
+            $query = $this->db->connect()->prepare('INSERT INTO empleado(DNI_Em,Nombre_Em,Apellido_Em,Celular_Em,IDCategoria) 
+            VALUES (:dni,:nom,:ape,:cel,:categoria)');
+            $query->execute([
+                'dni' => $datos['DNI_Em_reg'],
+                'nom' => $datos['Nombre_Em_reg'],
+                'ape' => $datos['Apellido_Em_reg'],
+                'cel' => $datos['Celular_Em_reg'],
+                'categoria' => $datos['IDCategoria_reg']
+            ]);
             return true;
         } catch (PDOException $e) {
 
@@ -65,7 +72,8 @@ class EmpleadoModel extends Model
 
     public function update($item)
     {
-        $query = $this->db->connect()->prepare('UPDATE empleado SET Nombre_Em = :nombre, Apellido_Em = :apellido, Celular_Em = :celular, IDCategoria = :categoria WHERE DNI_Em = :dni');
+        $query = $this->db->connect()->prepare('UPDATE empleado SET Nombre_Em = :nombre, Apellido_Em = :apellido,
+                                                Celular_Em = :celular, IDCategoria = :categoria WHERE DNI_Em = :dni');
         try {
             $query->execute([
                 'dni' => $item['DNI_Em_reg'],
