@@ -37,19 +37,26 @@
 	justify-content: center;
 }
 
-.info .informacion {
-	flex: 2.5;
-	padding: 20px;
-	margin-left: 30px;
-	margin-right: 30px;
-}
-
-.info .imagenh {
-	flex: 1;
-	text-align: center;
+.info .cajasobrekallpa5 {
+	padding: 0px 0px 45px 0px;
+	margin-left: 81.5px;
+	margin-right: 81.5px;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+}
+
+.info .informacion {
+	padding: 5px;
+	margin-left: 30px;
+	margin-right: 30px;
+	width: 70%;
+}
+
+.info .informacion1 {
+	padding: 5px;
+	margin-left: 30px;
+	margin-right: 30px;
+	width: 88%;
 }
 
 .info .imagenh img {
@@ -114,6 +121,15 @@
 		sans-serif;
 }
 
+.info .p7-info {
+	color: #33cc33;
+	font-size: 44px;
+	font-weight: 700;
+	margin-top: 35px;
+	margin-bottom: 25px;
+	text-align: center;
+}
+
 .info .c1 {
 	text-align: center;
 	height: 250px;
@@ -171,7 +187,7 @@
 	border-radius: 18px;
 	background: transparent linear-gradient(350deg, #1ba87a 0%, #01a2c8 60%) 0% 0%
 		no-repeat padding-box;
-	height: 410px;
+	height: 440px;
 }
 
 .info .separar {
@@ -312,6 +328,13 @@ textarea {
 	background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el pie de página */
 	background-position: center; /* Alinea la imagen al centro del pie de página */
 	background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+.info .fondoimg {
+	background-image: url("../../public/Img/FONDOKALLPA.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .info .txtarea {

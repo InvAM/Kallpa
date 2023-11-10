@@ -10,7 +10,7 @@
         <?php require_once "views/portalHeader.php"; ?>
         <?php require_once "views/slider.php"; ?>
 
-        <section id="nuestraHistoria" class="caja-seccion">
+        <section id="nuestraHistoria" class="caja-seccion fondoimg">
             <div class="cajasobrekallpa1">
 
                 <div class="informacion">
@@ -24,17 +24,14 @@
                         seguridad y medio ambiente.</p>
                 </div>
 
-                <div class="imagenh">
-                    <img src="public/Img/HistoriaKallpa.jpeg">
-                </div>
-
             </div>
         </section>
 
         <section id="visionYmision" class="caja-seccion">
-            <div class="cajasobrekallpa1">
+            <p class="p7-info">Nuestra Visión y Misión</p>
+            <div class="cajasobrekallpa5">
                 <div class="separar">
-                    <div class="informacion pers-mivi scale-up-center">
+                    <div class="informacion1 pers-mivi scale-up-center">
                         <div class="subirimg2">
                             <img src="public/Img/Mision.png">
                         </div>
@@ -48,7 +45,7 @@
                 </div>
 
                 <div class="separar">
-                    <div class="informacion pers-mivi scale-up-center">
+                    <div class="informacion1 pers-mivi scale-up-center">
                         <div class="subirimg2">
                             <img src="public/Img/Vision.png">
                         </div>
