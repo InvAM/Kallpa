@@ -9,6 +9,6 @@ class View
 
     function render($nombre)
     {
-        require 'views/' . $nombre . ".php";
+        require_once 'views/' . $nombre . ".php";
     }
 }
