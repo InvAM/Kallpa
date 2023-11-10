@@ -166,6 +166,7 @@ body {
 	list-style-type: none;
 	margin-left: -20px;
 	margin-right: 60px;
+	cursor: pointer;
 }
 .menuOpciones .menu-item .submenuContenedor .row .col1 {
 	height: 40px;
@@ -207,15 +208,6 @@ body {
 	height: 590px;
 	object-fit: cover;
 }
-/* Add numbers to pagination buttons by CSS */
-.splide__pagination {
-	counter-reset: pagination-num;
-}
-
-.splide__pagination__page:before {
-	counter-increment: pagination-num;
-	content: counter(pagination-num);
-}
 .splide__arrow {
 	border-color: transparent;
 	background-color: transparent;
@@ -225,8 +217,8 @@ body {
 
 .splide__arrow--prev {
 	position: absolute;
-	top: 50%;
-	left: 96%;
+	top: 51%;
+	left: 97%;
 	z-index: 1;
 }
 
@@ -237,4 +229,202 @@ body {
 	left: 0;
 	z-index: 1;
 	transform: rotate(180deg);
+	color: #fff;
 }
+
+.portal-cont-2 {
+	max-width: 100%;
+	background: rgb(31, 17, 233);
+	background: linear-gradient(
+		90deg,
+		rgba(31, 17, 233, 0.577468487394958) 0%,
+		rgba(5, 133, 200, 1) 0%,
+		rgba(18, 214, 54, 1) 100%
+	);
+	height: 480px;
+}
+
+.custom-btn {
+	display: inline-block;
+	text-decoration: none;
+	background-color: transparent;
+	padding: 10px;
+	width: 150px; /* ancho*/
+	height: 150px; /* alto*/
+	text-align: center;
+	margin-left: 220px;
+	margin-top: 40px;
+	color: #ffffff;
+}
+
+@-webkit-keyframes custom-btn {
+	0% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+	100% {
+		-webkit-transform: translateY(-10px);
+		transform: translateY(-50px);
+	}
+}
+@keyframes slide-top {
+	0% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+	100% {
+		-webkit-transform: translateY(-100px);
+		transform: translateY(-100px);
+	}
+}
+
+.portal-cont-2 .mdi:before,
+.mdi-set {
+	display: inline-block;
+	font: normal normal normal 150px/1 "Material Design Icons";
+}
+.custom-btn:hover {
+	background-color: rgba(255, 255, 255, 0);
+	color: rgb(241, 185, 30);
+	color: rgb(241, 185, 30);
+	-webkit-animation: slide-top 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s
+		both;
+	animation: slide-top 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s both;
+}
+
+.titulo-btn {
+	font-size: 18px;
+	text-align: center;
+	margin-top: 5px;
+	color: #ffffff;
+}
+
+.fuente-portal {
+	font-size: 45px;
+	color: #fff;
+	text-align: center;
+	margin-top: 5px;
+}
+
+.portal-cont-3 {
+	max-width: 100%;
+	margin-top: 18px;
+	background: rgb(255, 254, 254);
+	height: 480px;
+}
+
+.titulo1-cont3 {
+	color: #167c16;
+	text-align: center;
+	font-weight: 850;
+	font-family: Candara;
+	font-size: 40px;
+}
+
+.titulo2-cont3 {
+	color: #160f6e;
+	text-align: center;
+	font-family: Candara;
+	font-size: 90px;
+	margin-top: -30px;
+}
+
+.custom-btn2 {
+	display: inline-block;
+	text-decoration: none;
+	background-color: transparent;
+	padding: 10px;
+	width: 230px; /* ancho*/
+	height: 150px; /* alto*/
+	text-align: center;
+	margin-left: 80px;
+	margin: -30px auto;
+	color: #128812;
+}
+
+.titulo-btn2 {
+	font-size: 18px;
+	text-align: center;
+	margin-top: 5px;
+	color: #666262;
+	font-family: Candara;
+}
+
+.portal-cont-3 .mdi:before,
+.mdi-set {
+	display: inline-block;
+	font: normal normal normal 90px/1 "Material Design Icons";
+}
+
+.portal-cont4 {
+	background: linear-gradient(
+		90deg,
+		rgba(31, 17, 233, 0.577468487394958) 0%,
+		rgba(5, 133, 200, 1) 0%,
+		rgba(18, 214, 54, 1) 100%
+	);
+	width: 96%;
+	padding: 30px;
+	height: 630px;
+}
+
+ul, li{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+ul.slider{
+	position: relative;
+	width: 100%;
+	height: 400px;
+}
+
+ul.slider li{
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	width: 100%;
+	height: 550px;
+	background-color: white;
+	transition: opacity .5s;
+}
+
+ul.slider li img{
+	width: 100%;
+	height: 550px;
+	object-fit: cover;
+}
+
+ul.slider li:first-child{
+	opacity: 1;
+}
+
+ul.slider li:target{
+	opacity: 1;
+}
+
+.menu{
+	text-align: center;
+	margin: 20px;
+}
+
+.menu li{
+	display: inline-block;
+	text-align: center;
+}
+
+.menu li a{
+	display: inline-block;
+	color: rgb(16, 99, 27);
+	text-decoration: none;
+	background-color: rgb(255, 255, 255);
+	padding: 15px;
+	width: 30px;
+	height: 30px;
+	font-size: 30px;
+	border-radius: 100%;
+	margin-top: 155px;
+}
+

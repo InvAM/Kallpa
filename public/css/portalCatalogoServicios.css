@@ -4,9 +4,9 @@ body {
 	padding: 0;
 }
 
-.contenedorPrincipal{
-    margin-top: -15px;
-    background-color: #fafafa;
+.contenedorPrincipal {
+	margin-top: -15px;
+	background-color: #fafafa;
 }
 
 .contenedor1 {
@@ -18,7 +18,7 @@ body {
 	display: inline-block; /* Cambiado a inline-block para colocarlos en línea */
 	box-sizing: border-box; /* Para incluir el padding en el ancho y alto */
 	border: 2px solid transparent;
-    margin-top: 20px;
+	margin-top: 20px;
 }
 
 .lineacont {
@@ -35,7 +35,7 @@ body {
 	color: white;
 	width: 100%;
 	justify-content: space-between; /* Espacio entre los contenedores */
-    margin-bottom: 5px;
+	margin-bottom: 5px;
 }
 .menuOpciones {
 	background-color: #fff;
@@ -207,8 +207,8 @@ body {
 	height: 590px;
 	background: lightgray;
 	position: relative;
-    z-index: 1;
-    margin-bottom: 20px;
+	z-index: 1;
+	margin-bottom: 20px;
 }
 .container img {
 	width: 100%;
@@ -247,143 +247,171 @@ body {
 	transform: rotate(180deg);
 }
 
-
 /* -------------------------------------------------------------*/
 
-.opcionesA1{
-    display: flex;
-    margin-left: 20px;
-    margin-right: 10px;
+.opcionesA1 {
+	display: flex;
+	margin-left: 20px;
+	margin-right: 10px;
 }
 
-.botonA1{
-    background-color: #33cc33; /*Color del botón*/
-    color: #fff;            /*Cambia el color del texto */
-    font-weight: bold;
-    height: 70px;
-    width: 350px;                /*Establecer ancho del objeto*/
-    cursor: pointer;             /*Cambia el cursor al pasar el ratón sobre el botón */
-    font-size: 18px;             /*Ajusta el tamaño de fuente */
-    border-radius: 5px;          /*Agrega bordes redondeados */
-    border: 2px solid #33cc33 ; /*Añade un borde */
-    padding: 9px;                /*Agranda espacio en el interior de los inputs*/
-    margin-top: 10px;            /*Añade espacio con el elemento de arriba*/
-    margin-right: 20px;          /*Añade espacio a la derecha del objeto*/
-    font-family: Arial, Helvetica, sans-serif; /*Fuente de letra*/
+.botonA1 {
+	background-color: #33cc33; /*Color del botón*/
+	color: #fff; /*Cambia el color del texto */
+	font-weight: bold;
+	height: 70px;
+	width: 350px; /*Establecer ancho del objeto*/
+	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
+	font-size: 18px; /*Ajusta el tamaño de fuente */
+	border-radius: 5px; /*Agrega bordes redondeados */
+	border: 2px solid #33cc33; /*Añade un borde */
+	padding: 9px; /*Agranda espacio en el interior de los inputs*/
+	margin-top: 10px; /*Añade espacio con el elemento de arriba*/
+	margin-right: 20px; /*Añade espacio a la derecha del objeto*/
+	font-family: Arial, Helvetica, sans-serif; /*Fuente de letra*/
 }
 
-.botonB1{
-    background-color: #fff; /*Color del botón*/
-    color: #33cc33;            /*Cambia el color del texto */
-    font-weight: bold;
-    height: 70px;
-    width: 350px;                /*Establecer ancho del objeto*/
-    cursor: pointer;             /*Cambia el cursor al pasar el ratón sobre el botón */
-    font-size: 18px;             /*Ajusta el tamaño de fuente */
-    border-radius: 5px;          /*Agrega bordes redondeados */
-    border: 2px solid #33cc33 ; /*Añade un borde */
-    padding: 9px;                /*Agranda espacio en el interior de los inputs*/
-    margin-top: 10px;            /*Añade espacio con el elemento de arriba*/
-    margin-right: 20px;          /*Añade espacio a la derecha del objeto*/
-    font-family: Arial, Helvetica, sans-serif; /*Fuente de letra*/
+.botonB1 {
+	background-color: #fff; /*Color del botón*/
+	color: #33cc33; /*Cambia el color del texto */
+	font-weight: bold;
+	height: 70px;
+	width: 350px; /*Establecer ancho del objeto*/
+	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
+	font-size: 18px; /*Ajusta el tamaño de fuente */
+	border-radius: 5px; /*Agrega bordes redondeados */
+	border: 2px solid #33cc33; /*Añade un borde */
+	padding: 9px; /*Agranda espacio en el interior de los inputs*/
+	margin-top: 10px; /*Añade espacio con el elemento de arriba*/
+	margin-right: 20px; /*Añade espacio a la derecha del objeto*/
+	font-family: Arial, Helvetica, sans-serif; /*Fuente de letra*/
 }
-.botonB1:hover{
-    background-color: #33cc33; /*Color del botón*/
-    color: #fff;            /*Cambia el color del texto */
+.botonB1:hover {
+	background-color: #33cc33; /*Color del botón*/
+	color: #fff; /*Cambia el color del texto */
 }
 
-
-.contenedorServicios{
-    margin-top: 15px;
-    margin-left: 15px;
-    margin-right: 15px;
+.contenedorServicios {
+	margin-top: 15px;
+	margin-left: 15px;
+	margin-right: 15px;
 }
 
 .servicio1 {
-    height: 500px;
-    border-radius: 10px;
-    background: linear-gradient(to right, #fff 60%, transparent 40%), url('../Img/Instalacion.jpeg');
-    background-size: 100%,50%, cover;
-    padding: 20px;
-    margin-top: 20px;
-    margin-bottom: 30px;
-} 
+	height: 520px;
+	border-radius: 10px;
+	background: linear-gradient(to right, #ffff 60%, transparent 40%),
+		url("../Img/Instalacion.jpeg");
+	background-size: 100%, 50%, cover;
+	padding: 20px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	border: 3px solid #095ba8;
+}
 
-.tituloS{
-    margin-left: 300px;
-    font-size: 25px;
-    font-weight: bold;
-    color:#33cc33
+.tituloS {
+	margin-left: 300px;
+	font-size: 25px;
+	font-weight: bold;
+	color: #095ba8;
 }
 
 .servicio2 {
-    height: 450px;
-    border-radius: 10px;
-    background: linear-gradient(to right, #fff 60%, transparent 40%), url('../Img/FondoHabilitación1.jpg');
-    background-size: 100%,50%, cover;
-    padding: 20px;
-    margin-top: 20px;
-} 
-
-p{
-    font-size:18px;
+	height: 520px;
+	border-radius: 10px;
+	background: linear-gradient(to right, #ffff 60%, transparent 40%),
+		url("../Img/FondoHabilitación1.jpg");
+	background-size: 100%, 50%, cover;
+	padding: 20px;
+	margin-top: 20px;
+	border: 3px solid #095ba8;
 }
 
-.detalleS .subtituloD{
+/*Parrafos*/
+p {
+	font-size: 18px;
+	color: black;
+}
+
+.detalleS .subtituloD {
 	width: 30%;
 	padding: 0.5px;
-	background-color: #bafdba;
+	background-color:#095ba8;
+	margin-left: 215px;
+	border-radius: 10px;
 }
 
-.detalleS .subtituloD p{
+.detalleS .subtituloD p {
 	text-align: center;
-	color: #fff;
+	color: #ffff;
 	font-size: 20px;
 	font-weight: bold;
 }
 
-.acciones .acc1{
+.acciones .acc1 {
 	font-size: 20px;
 	margin-top: 10px;
 	display: flex;
-    align-items: center;
+	align-items: center;
 	margin-right: 20px;
+	margin-left: 30px;
 	width: 50%;
 }
 
-.acc1 label{
-    margin-top: -10px;
+.acc1 label {
+	margin-top: -10px;
 	margin-left: 10px;
+	color: black;;
 }
 
 .acciones .containerEspecial {
-    display: flex;
+	display: flex;
 	width: 1000px;
 }
 
-.acc1 i{
+.acc1 i {
 	font-size: 80px;
 	font-weight: bold;
-	color:#33cc33;
+	color: #095ba8;
 	margin-left: 10px;
 }
-
-.contenedorSecundario{
+.contenedorSecundario {
 	padding: 20px;
-	margin-top: 30px;
-	background-color: #33cc33;
+	margin-top: 50px;
+	background-image: url('../Img/FondoServis.png'); /* Ruta de la imagen */
+	background-size: cover; /* Ajusta la imagen para cubrir todo el div */
+	background-position: center; 
 	align-items: center;
 }
 
 .contenedorTexto {
 	font-size: 40px;
-	color: #fff;
+	color: #ffff;
 	margin-left: 450px;
 }
 
 .contenedorVideo iframe {
-    width: 80%;
-	height: 800px ;
-    display: block;
-	margin-left: 150px;
+	width: 60%;
+	height: 600px;
+	display: block;
+	margin-left: 350px;
+}
+.textos{
+	text-align: justify;
+}
+
+.boton-servicio{
+    background-color: #095ba8; /*Color del botón*/
+    color: #ffffff;            /*Cambia el color del texto */
+    font-weight: bold;
+    width: 950px;                /*Establecer ancho del objeto*/
+    cursor: pointer;             /*Cambia el cursor al pasar el ratón sobre el botón */
+    font-size: 20px;             /*Ajusta el tamaño de fuente */
+    border-radius: 5px;          /*Agrega bordes redondeados */
+    border: 0px ; /*Añade un borde */
+    padding: 9px;                /*Agranda espacio en el interior de los inputs*/
+    margin-top: 18px;            /*Añade espacio con el elemento de arriba*/
+    margin-right: 20px;          /*Añade espacio a la derecha del objeto*/
+    margin-left: 20px;          /*Añade espacio a la izquierda del objeto*/
+    font-family: Arial, Helvetica, sans-serif; /*Fuente de letra*/
 }
