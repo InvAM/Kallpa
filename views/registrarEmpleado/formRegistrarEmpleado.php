@@ -127,7 +127,6 @@
                 </div>
                 <form action="<?php echo constant('URL'); ?>registrarEmpleado/mantenimientoEmpleado" method="POST"
                     autocomplete="off" class="">
-
                     <button class="boton-opciones">Actualizar</button>
                 </form>
                 <button class="boton-opciones">Atras</button>

@@ -11,6 +11,7 @@
 </head>
 
 <body>
+   <form method="POST" action="<?php echo constant('URL'); ?>generarOrdenI">  
     <div class="generar-OI">
         <?php require_once "views/header.php" ?>
 
@@ -54,7 +55,7 @@
                         <p class="TI2">Datos del técnico</p>
                         <input class="I2" type="text" label="tecnico" placeholder="Técnico">
                         <input class="I2" type="text" label="dniTecnico" placeholder="DNI de Técnico">
-                        <button class="boton">
+                        <button class="boton" type="submit" name="accion" value="asignarTecnico">
                             Agregar Técnico
                             <i class="mdi mdi-plus"></i>
                         </button>
@@ -80,7 +81,7 @@
                                     <td>2023-05-20</td>
                                     <td>5432117</td>
                                     <td>
-                                        <button class="btn-small btn-primary" onclick="seleccionarOrden(item)">
+                                        <button class="btn-small btn-primary" type="submit" name="accion" value="visualizar">
                                             <i class="mdi mdi-eye-settings mx-1"></i>
                                         </button>
                                     </td>
@@ -89,11 +90,11 @@
                             </tbody>
                         </table>
                     </div>
-                    <button class="boton-opciones"> Generar Orden
+                    <button class="boton-opciones" type="submit" name="accion" value="generarOrden"> Generar Orden 
                         <i class="mdi mdi-book-plus"></i></button>
-                    <button class="boton-opciones"> Limpiar
+                    <button class="boton-opciones" type="submit" name="accion" value="limpiar"> Limpiar
                         <i class="mdi mdi-restore"></i></button>
-                    <button class="boton-opciones"> Atras
+                    <button class="boton-opciones" type="submit" name="accion" value="volver"> Atras
                         <i class="mdi mdi-keyboard-backspace"></i></button>
                 </div>
             </div>
@@ -103,6 +104,7 @@
         <?php require_once "views/footer.php" ?>
 
     </div>
+</form>
 </body>
 
 </html>

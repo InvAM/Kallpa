@@ -86,6 +86,10 @@
                                 <label>Conexiones a puntos de uso</label>
                             </div>
                         </div>
+                        <button class="boton-servicio">
+                            <i class="mdi mdi-cart-percent"></i>
+                            ¡Solicítalo ya!
+                        </button>
                     </div>
                 </div>
             </div>
@@ -124,6 +128,10 @@
                                 <label>Activación de suministro de gas</label>
                             </div>
                         </div>
+                        <button class="boton-servicio">
+                            <i class="mdi mdi-cart-percent"></i>
+                            ¡Solicítalo ya!
+                        </button>
                     </div>
                 </div>
             </div>
