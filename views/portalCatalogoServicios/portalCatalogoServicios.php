@@ -147,6 +147,7 @@
                     allowfullscreen></iframe>
             </div>
         </div>
+        <?php require_once "views/chatbot.php"; ?>
 </body>
 
 </html>
