@@ -133,8 +133,8 @@
                 </div>
 
 
-                <button class="boton-opciones">Atras</button>
-                <button class="boton-opciones">Limpiar</button>
+                <a href="menu"><button class="boton-opciones">Atras</button></a>
+
             </div>
 
         </div>
