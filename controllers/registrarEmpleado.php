@@ -54,7 +54,7 @@ class RegistrarEmpleado extends Controller
 
     function actualizarEmpleado()
     {
-        session_start();
+
         // Obtén los datos del formulario
         $dni = $_POST['DNI_Em_reg'];
         $nom = $_POST['Nombre_Em_reg'];
