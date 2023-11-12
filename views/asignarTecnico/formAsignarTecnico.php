@@ -11,6 +11,8 @@
 </head>
 
 <body>
+<form method="POST" action="<?php echo constant('URL'); ?>tecnico">  
+   
     <div class="asignar-T">
         <?php require_once "views/header.php"; ?>
 
@@ -35,27 +37,37 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>71326122</td>
-                                    <td>Técnico</td>
-                                    <td>Carlos José</td>
-                                    <td>Alcedo Javier</td>
-                                    <td>944891987</td>
-                                    <td>
-                                        <button class="btn-small btn-primary" onclick="seleccionarTecnico(item)">
-                                            <i class="mdi mdi-content-copy mx-1"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <!--Más datos -->
+                                <?php
+                                include_once 'models/empleado.php';
+                                foreach ($this->empleado as $row) {
+                                    $empleado = new Empleado();
+                                    $empleado = $row; ?>
+                                    <input type="hidden" name="DNI_Em" value="<?php echo $empleado->DNI_Em; ?>">
+                                    <input type="hidden" name="IDCategoria" value="<?php echo $empleado->IDCategoria; ?>">
+                                    <input type="hidden" name="Nombre_Em" value="<?php echo $empleado->Nombre_Em; ?>">
+                                    <input type="hidden" name="Apellido_Em" value="<?php echo $empleado->Apellido_Em; ?>">
+                                    <input type="hidden" name="Celular_Em" value="<?php echo $empleado->Celular_Em; ?>">
+                                    <tr>
+                                        <td><?php echo $empleado->DNI_Em ?></td>
+                                        <td><?php echo $empleado->IDCategoria ?></td>
+                                        <td><?php echo $empleado->Nombre_Em ?></td>
+                                        <td><?php echo $empleado->Apellido_Em ?></td>
+                                        <td><?php echo $empleado->Celular_Em ?></td>
+                                        <td>
+                                            <button class="boton-seleccionar boton" type="submit" name="accion" value="seleccionar">
+                                                <i class="mdi mdi-content-copy mx-1"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
-                    <button class="boton-opciones-T"> Limpiar
+                    <button class="boton-opciones-T" type="submit" name="accion" value="limpiar"> Limpiar
                         <i class="mdi mdi-restore"></i></button>
-                    <button class="boton-opciones-T"> Atras
+                    <button class="boton-opciones-T"  type="submit" name="accion" value="volver"> Atras
                         <i class="mdi mdi-keyboard-backspace"></i></button>
-                    <button class="boton-especial"> Asignar Técnico
+                    <button class="boton-especial"  type="submit" name="accion" value="asignar"> Asignar Técnico
                         <i class="mdi mdi-arrow-right-drop-circle"></i></button>
                 </div>
                 <div class="contenedorS2">
@@ -64,18 +76,24 @@
                         <div class="imagenT">
                             <i class="mdi mdi-account-hard-hat"></i>
                         </div>
-                        <input type="text" label="dni" placeholder="DNI">
-                        <input type="text" label="categoria" placeholder="Categoria">
-                        <input type="text" label="nombre" placeholder="Nombres">
-                        <input type="text" label="apellido" placeholder="Apellidos">
-                        <input type="text" label="celular" placeholder="Celular">
+                        <input type="text" id="dni" name="DNI_Em" placeholder="DNI" 
+                               value="">
+                        <input type="text" id="categoria" name="IDCategoria" placeholder="Categoria" 
+                               value="" >
+                        <input type="text" id="nombre" name="Nombre_Em" placeholder="Nombres" 
+                               value="" >
+                        <input type="text" id="apellido" name="Apellido_Em" placeholder="Apellidos" 
+                               value="" >
+                        <input type="text" id="celular" name="Celular_Em" placeholder="Celular" 
+                               value="" >
                     </div>
                 </div>
             </div>
         </div>
 
         <?php require_once "views/footer.php"; ?>
-
     </div>
+</form>
 </body>
 <html>
+    

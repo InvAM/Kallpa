@@ -37,7 +37,8 @@ class GenerarOrdenI extends Controller
     }
 
     function render()
-    {
+    {   
+        
         $this->view->render('generarOrdenI/formGenerarOrdenI');
     }
 
@@ -48,7 +49,8 @@ class GenerarOrdenI extends Controller
     }
 
     function volver(){
-        $this->view->render("menu/menu");
+        header("Location: menu");
+        exit();
     }
 
     function limpiar(){
@@ -58,7 +60,8 @@ class GenerarOrdenI extends Controller
     }
 
     function asignarTecnico(){
-        $this->view->render("asignarTecnico/formAsignarTecnico");
+        header("Location: tecnico");
+        exit();
     }
 
     function visualizar(){
