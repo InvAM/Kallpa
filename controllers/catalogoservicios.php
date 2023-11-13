@@ -13,4 +13,5 @@ class CatalogoServicios extends Controller
     {
         $this->view->render('portalCatalogoServicios/portalCatalogoServicios');
     }
+
 }

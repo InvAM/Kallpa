@@ -200,7 +200,9 @@
             </div>
         </div>
     </div>
+    <?php require_once "views/chatbot.php"; ?>
     </div>
+
 </body>
 
 </html>

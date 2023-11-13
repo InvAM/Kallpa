@@ -20,7 +20,7 @@
             </div>
             <div class="caja-empleado">
                 <form action="<?php echo constant('URL'); ?>registrarEmpleado/registrarNuevoEmpleado" method="POST"
-                    autocomplete="off" class="">
+                    autocomplete="off" class="" id="formularioE">
                     <h3 class="subtitulo-empleado">Datos Generales</h3>
                     <div class="contenedor-empleado">
                         <img src="<?php echo constant('URL'); ?>public/Img/perfil.png" class="imagen-foto">
@@ -43,8 +43,10 @@
                             <!-- Seguir con opciones -->
                         </select>
                         <input type="submit" class="boton" value="Registrar">
+                        <button type="button" class="boton" id="btnActualizar">Actualizar</button>
                     </div>
                 </form>
+
             </div>
             <div class="parte-derecha">
 
@@ -86,9 +88,13 @@
                                         <?php echo $empleado->IDCategoria ?>
                                     </td>
                                     <td>
-                                        <a
-                                            href="<?php echo constant('URL') . 'registrarEmpleado/verEmpleado/' . $empleado->DNI_Em; ?>"><button
-                                                class="boton-seleccionar boton">Seleccionar</button></a>
+                                        <button class="boton-seleccionar boton" data-dni="<?php echo $empleado->DNI_Em; ?>"
+                                            data-nombre="<?php echo $empleado->Nombre_Em; ?>"
+                                            data-apellido="<?php echo $empleado->Apellido_Em; ?>"
+                                            data-celular="<?php echo $empleado->Celular_Em; ?>"
+                                            data-categoria="<?php echo $empleado->IDCategoria; ?>">Seleccionar</button>
+
+                                        <!-- <a href="<?php echo constant('URL') . 'registrarEmpleado/verEmpleado/' . $empleado->DNI_Em; ?>"></a> -->
                                     </td>
                                     <td>
                                         <a
@@ -125,13 +131,10 @@
                         <input type="submit" value="Agregar Credenciales" class="boton-credencial">
                     </form>
                 </div>
-                <form action="<?php echo constant('URL'); ?>registrarEmpleado/mantenimientoEmpleado" method="POST"
-                    autocomplete="off" class="">
 
-                    <button class="boton-opciones">Actualizar</button>
-                </form>
-                <button class="boton-opciones">Atras</button>
-                <button class="boton-opciones">Limpiar</button>
+
+                <a href="menu"><button class="boton-opciones">Atras</button></a>
+
             </div>
 
         </div>
@@ -141,6 +144,9 @@
         <?php require_once "views/footer.php"; ?>
 
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="<?php echo constant('URL'); ?>public/js/registrarEmpleado.js"></script>
 </body>
 
 

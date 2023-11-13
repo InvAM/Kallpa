@@ -1,6 +1,6 @@
 body {
 	margin: 0;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial;
 }
 
 .img-OI {
@@ -75,7 +75,7 @@ body {
 	border-radius: 5px;
 	color: #333;
 	font-size: 14px;
-	font-family: "Times New Roman";
+	font-family: 'Arial';
 }
 
 .generar-OI select {
@@ -86,7 +86,7 @@ body {
 	border-radius: 5px;
 	color: #333;
 	font-size: 14px;
-	font-family: "Times New Roman";
+	font-family: 'Arial';
 }
 
 .generar-OI .CajaCalendario {
