@@ -69,7 +69,7 @@
                             <div class="item-label-icon" data-toggle="collapse" href="" role="button"
                                 aria-expanded="false" aria-controls="submenu2">
                                 <i class="mdi mdi-home-heart"></i>
-                                <a href="" class="menu-link"> Hogar</a>
+                                <a href="home" class="menu-link"> Hogar</a>
                             </div>
                         </li>
 
@@ -77,14 +77,15 @@
                             <div class="item-label-icon" data-toggle="collapse" href="#submenu2" role="button"
                                 aria-expanded="false" aria-controls="submenu2">
                                 <i class="mdi mdi-palette-swatch-variant"></i>
-                                <a href="" class="menu-link">Catálogo Virtual</a>
+                                <a href="catalogo" class="menu-link">Catálogo Virtual</a>
                             </div>
                             <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
                                 <ul class="row">
-                                    <li class="col"><a href=""><i
-                                                class="mdi mdi-account-wrench"></i><span>Servicios</span></a></li>
-                                    <li class="col"><a href=""><i
+
+                                    <li class="col"><a href="catalogo"><i
                                                 class="mdi mdi-air-humidifier"></i><span>Gasodomésticos</span></a></li>
+                                    <li class="col"><a href="catalogoservicios"><i
+                                                class="mdi mdi-account-wrench"></i><span>Servicios</span></a></li>
                                 </ul>
                             </div>
                         </li>
@@ -93,7 +94,7 @@
                             <div class="item-label-icon" data-toggle="collapse" href="" role="button"
                                 aria-expanded="false" aria-controls="submenu3">
                                 <i class="mdi mdi-face-agent"></i>
-                                <a href="" class="menu-link">Atención al cliente</a>
+                                <a href="atencion" class="menu-link">Atención al cliente</a>
                             </div>
                             <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
                                 <ul class="row">

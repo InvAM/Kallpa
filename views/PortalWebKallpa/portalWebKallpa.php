@@ -17,103 +17,7 @@
 
 <body>
     <div>
-        <header class="cabeceras">
-            <div class="numeros">
-                <div class="contenedor1 lineacont">
-                    <span class="label">Aló Kallpa</span>
-                    <a id="linea2" href="tel:+5116354338" class="numeroT">635 4338</a>
-                </div>
-                <div class="contenedor1 lineacont">
-                    <span class="label">Línea de Contacto</span>
-                    <a id="linea1" href="" class="numeroT">1111</a>
-                </div>
-                <a href="https://wa.me/51941301020" target="_blank" class="contenedor1">
-                    <span class="label">
-                        <i class="mdi mdi-whatsapp"></i><span> WhatsApp</span>
-                    </span>
-                    <span class="numeroT">941 301 020</span>
-                </a>
-            </div>
-            <nav class="menuOpciones">
-                <div id="menu" class="navegacion">
-                    <ul class="lista-menu">
-
-                        <li class="logo-kallpa">
-                            <a href="main">
-                                <img src="public/Img/Kallpa1.png">
-                            </a>
-                        </li>
-
-                        <li class="menu-item">
-                            <div class="item-label-icon" data-toggle="collapse" href="" role="button"
-                                aria-expanded="false" aria-controls="submenu1">
-                                <i class="mdi mdi-home-assistant"></i>
-                                <a href="infoKallpa" class="menu-link">InfoKallpa</a>
-                            </div>
-                            <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
-                                <ul class="row">
-                                    <li class="col">
-                                        <a onclick="scrollToSection('nuestraHistoria')" href="#">
-                                            <i class="mdi mdi-book-edit-outline"></i><span>Quiénes somos</span>
-                                        </a>
-                                    </li>
-                                    <li class="col">
-                                        <a onclick="scrollToSection('visionYmision')" href="#">
-                                            <i class="mdi mdi-eye-outline"></i><span>Visión y misión</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-
-                        <li class="menu-item">
-                            <div class="item-label-icon" data-toggle="collapse" href="#vimi" role="button"
-                                aria-expanded="false" aria-controls="submenu2">
-                                <i class="mdi mdi-home-heart"></i>
-                                <a href="" class="menu-link"> Hogar</a>
-                            </div>
-                        </li>
-
-                        <li class="menu-item">
-                            <div class="item-label-icon" data-toggle="collapse" href="#submenu2" role="button"
-                                aria-expanded="false" aria-controls="submenu2">
-                                <i class="mdi mdi-palette-swatch-variant"></i>
-                                <a href="<?php echo constant('URL'); ?>catalogoservicios" class="menu-link">Catalogo
-                                    Virtual</a>
-                            </div>
-                            <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
-                                <ul class="row">
-                                    <li class="col"><a href="<?php echo constant('URL'); ?>catalogo"><i
-                                                class="mdi mdi-air-humidifier"></i><span>Gasodomésticos</span></a></li>
-                                    <li class="col"><a href="<?php echo constant('URL'); ?>catalogoservicios"><i
-                                                class="mdi mdi-account-wrench"></i><span>Servicios</span></a></li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li class="menu-item">
-                            <div class="item-label-icon" data-toggle="collapse" href="" role="button"
-                                aria-expanded="false" aria-controls="submenu3">
-                                <i class="mdi mdi-face-agent"></i>
-                                <a href="" class="menu-link">Atención al cliente</a>
-                            </div>
-                            <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
-                                <ul class="row">
-                                    <li class="col1"><a href=""><i class="mdi mdi-help"></i><span>Preguntas
-                                                frecuentes</span></a></li>
-                                    <li class="col1"><a href=""><i class="mdi mdi-archive-check-outline"></i><span>Buzón
-                                                de sugerencias</span></a></li>
-                                    <li class="col1"><a href=""><i
-                                                class="mdi mdi-notebook-check-outline"></i><span>Libro de
-                                                reclamaciones</span></a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+        <?php require_once "views/portalHeader.php"; ?>
 
         <div class="container">
             <div class="splide">
@@ -137,7 +41,7 @@
                 <i class="mdi mdi-home-assistant"></i>
                 <h1 class="titulo-btn">InfoKallpa</h1>
             </a>
-            <a href="" class="custom-btn">
+            <a href="home" class="custom-btn">
                 <i class="mdi mdi-home-heart"></i>
                 <h1 class="titulo-btn">Hogar</h1>
             </a>
@@ -145,7 +49,7 @@
                 <i class="mdi mdi-palette-swatch-variant"></i>
                 <h1 class="titulo-btn">Catálogo virtual</h1>
             </a>
-            <a href="" class="custom-btn">
+            <a href="atencion" class="custom-btn">
                 <i class="mdi mdi-face-agent"></i>
                 <h1 class="titulo-btn">Atención al cliente</h1>
             </a>
@@ -153,33 +57,33 @@
 
         <div class="portal-cont-3">
             <br><br>
-            <h1 class="titulo1-cont3">"Conoscamos más del</h1>
+            <h1 class="titulo1-cont3">"Conozcamos más del</h1>
             <h1 class="titulo2-cont3">Gas Natural"</h1>
-            <a href="" class="custom-btn2">
+            <a href="#slide1" class="custom-btn2">
                 <i class="mdi mdi-gas-burner"></i>
                 <h1 class="titulo-btn2">¿Qué es el gas natural?</h1>
             </a>
-            <a href="" class="custom-btn2">
+            <a href="#slide2" class="custom-btn2">
                 <i class="mdi mdi-meter-gas-outline"></i>
                 <h1 class="titulo-btn2">¿Cómo se distribuye?</h1>
             </a>
-            <a href="" class="custom-btn2">
+            <a href="#slide3" class="custom-btn2">
                 <i class="mdi mdi-check-underline-circle-outline"></i>
                 <h1 class="titulo-btn2">Más seguro para mi familia </h1>
             </a>
-            <a href="" class="custom-btn2">
+            <a href="#slide4" class="custom-btn2">
                 <i class="mdi mdi-account-heart-outline"></i>
                 <h1 class="titulo-btn2">Más limpio para mi salud</h1>
             </a>
-            <a href="" class="custom-btn2">
+            <a href="#slide5" class="custom-btn2">
                 <i class="mdi mdi-currency-usd"></i>
                 <h1 class="titulo-btn2">Más económico</h1>
             </a>
-            <a href="" class="custom-btn2">
+            <a href="#slide6" class="custom-btn2">
                 <i class="mdi mdi-star-check-outline"></i>
                 <h1 class="titulo-btn2">Servicio continuo</h1>
             </a>
-            <a href="" class="custom-btn2">
+            <a href="#slide7" class="custom-btn2">
                 <i class="mdi mdi-shield-lock-outline"></i>
                 <h1 class="titulo-btn2">Consejos de seguridad </h1>
             </a>
@@ -187,23 +91,53 @@
         </div>
 
         <div class="portal-cont4">
-            <img src="public/Img/SLIDER_KALLPA_4.png" alt="">
-            <img src="public/Img/SLIDER_KALLPA_5.png" alt="">
-            <img src="public/Img/SLIDER_KALLPA_6.png" alt="">
+            <ul class="slider">
+                <li id="slide1">
+                    <img src="public/Img/SLIDER_KALLPA_4.png" alt="">
+                </li>
+                <li id="slide2">
+                    <img src="public/Img/SLIDER_KALLPA_5.png" alt="">
+                </li>
+                <li id="slide3">
+                    <img src="public/Img/SLIDER_KALLPA_6.png" alt="">
+                </li>
+                <li id="slide4">
+                    <img src="public/Img/SLIDER_KALLPA_7.png" alt="">
+                </li>
+                <li id="slide5">
+                    <img src="public/Img/SLIDER_KALLPA_8.png" alt="">
+                </li>
+                <li id="slide6">
+                    <img src="public/Img/SLIDER_KALLPA_9.png" alt="">
+                </li>
+                <li id="slide7">
+                    <img src="public/Img/SLIDER_KALLPA_10.png" alt="">
+                </li>
+            </ul>
+            <ul class="menu">
+                <li>
+                    <a href="#slide1"><i class="mdi mdi-gas-burner"></i></a>
+                </li>
+                <li>
+                    <a href="#slide2"><i class="mdi mdi-meter-gas-outline"></i></a>
+                </li>
+                <li>
+                    <a href="#slide3"><i class="mdi mdi-check-underline-circle-outline"></i></a>
+                </li>
+                <li>
+                    <a href="#slide4"><i class="mdi mdi-account-heart-outline"></i></a>
+                </li>
+                <li>
+                    <a href="#slide5"><i class="mdi mdi-currency-usd"></i></a>
+                </li>
+                <li>
+                    <a href="#slide6"><i class="mdi mdi-star-check-outline"></i></a>
+                </li>
+                <li>
+                    <a href="#slide7"><i class="mdi mdi-shield-lock-outline"></i></a>
+                </li>
+            </ul>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         <script>
             new Splide('.splide', {

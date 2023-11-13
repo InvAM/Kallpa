@@ -232,199 +232,211 @@ body {
 	color: #fff;
 }
 
-.portal-cont-2 {
-	max-width: 100%;
-	background: rgb(31, 17, 233);
-	background: linear-gradient(
-		90deg,
-		rgba(31, 17, 233, 0.577468487394958) 0%,
-		rgba(5, 133, 200, 1) 0%,
-		rgba(18, 214, 54, 1) 100%
-	);
-	height: 480px;
+/*CONTENEDOR 2 */
+.home-cont2 {
+	background: linear-gradient(0deg, rgba(56,166,172,1) 0%, rgba(20,61,136,1) 100%);
+	width: 96.8%; /*ancho*/
+	padding: 30px;
+	height: 600px; /*alto*/
+    margin-top: 600px;
 }
 
-.custom-btn {
-	display: inline-block;
-	text-decoration: none;
-	background-color: transparent;
-	padding: 10px;
-	width: 150px; /* ancho*/
-	height: 150px; /* alto*/
-	text-align: center;
-	margin-left: 220px;
-	margin-top: 40px;
-	color: #ffffff;
+.home-cont2 img {
+    width: 50%;
+    height: 590px;
+    object-fit: cover;
 }
 
-@-webkit-keyframes custom-btn {
-	0% {
-		-webkit-transform: translateY(0);
-		transform: translateY(0);
-	}
-	100% {
-		-webkit-transform: translateY(-10px);
-		transform: translateY(-50px);
-	}
+.cont2-titulo{
+    margin-left: 60%;
+    font-family: Cambria;
+    margin-top: -25%;
+    color: #fff;
+    font-size: 60px;
 }
-@keyframes slide-top {
-	0% {
-		-webkit-transform: translateY(0);
-		transform: translateY(0);
-	}
-	100% {
-		-webkit-transform: translateY(-100px);
-		transform: translateY(-100px);
-	}
+.cont2-titulo2{
+    margin-left: 90%;
+    font-family: 'Comic Sans MS';
+    margin-top: 10%;
+    color: #fff;
+    font-size: 30px;
 }
 
-.portal-cont-2 .mdi:before,
-.mdi-set {
-	display: inline-block;
-	font: normal normal normal 150px/1 "Material Design Icons";
-}
-.custom-btn:hover {
-	background-color: rgba(255, 255, 255, 0);
-	color: rgb(241, 185, 30);
-	color: rgb(241, 185, 30);
-	-webkit-animation: slide-top 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s
-		both;
-	animation: slide-top 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s both;
+.home-cont3 {
+	background: rgb(255, 255, 255);
+	width: 96%; /*ancho*/
+	padding: 30px;
+	height: 570px; /*alto*/
+    margin-top: 1%;
+	border: 8px solid #1a1166;
 }
 
-.titulo-btn {
-	font-size: 18px;
-	text-align: center;
-	margin-top: 5px;
-	color: #ffffff;
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.fuente-portal {
-	font-size: 45px;
-	color: #fff;
-	text-align: center;
-	margin-top: 5px;
+.home-cont3 .titulo .mdi {
+	color: rgb(18, 17, 102); 
+	font-size: 45px; 
+	margin-right: 4px;
 }
 
-.portal-cont-3 {
-	max-width: 100%;
-	margin-top: 18px;
-	background: rgb(255, 254, 254);
-	height: 480px;
+.ParteB{
+    font-family: Candara;
+    color: rgb(18, 17, 102);
+    font-weight: bold;
+    font-size: 50px;
+}
+.titulo .ParteA{
+    font-family: Candara;
+    color: rgb(109, 102, 102);
+    margin-right: 10px;
+    font-size: 50px;
 }
 
-.titulo1-cont3 {
-	color: #167c16;
-	text-align: center;
-	font-weight: 850;
+.row{
+	display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.justificacion{
+	text-align: justify;
 	font-family: Candara;
-	font-size: 40px;
-}
-
-.titulo2-cont3 {
-	color: #160f6e;
-	text-align: center;
-	font-family: Candara;
-	font-size: 90px;
+	font-size: 20px;
 	margin-top: -30px;
 }
 
-.custom-btn2 {
-	display: inline-block;
-	text-decoration: none;
-	background-color: transparent;
-	padding: 10px;
-	width: 230px; /* ancho*/
-	height: 150px; /* alto*/
-	text-align: center;
-	margin-left: 80px;
-	margin: -30px auto;
-	color: #128812;
-}
-
-.titulo-btn2 {
-	font-size: 18px;
-	text-align: center;
-	margin-top: 5px;
-	color: #666262;
+.r-cont1 h4{
 	font-family: Candara;
+	font-size: 25px;
 }
 
-.portal-cont-3 .mdi:before,
-.mdi-set {
-	display: inline-block;
-	font: normal normal normal 90px/1 "Material Design Icons";
+.r-cont1{
+	height: 50px;
+	width: 400px;
+	margin-left: 20%;
+	margin-top: -30px;
+
 }
 
-.portal-cont4 {
-	background: linear-gradient(
-		90deg,
-		rgba(31, 17, 233, 0.577468487394958) 0%,
-		rgba(5, 133, 200, 1) 0%,
-		rgba(18, 214, 54, 1) 100%
-	);
-	width: 96%;
+.cont-img img{
+	margin-left: 265%;
+	width: 125%;
+}
+
+.letra{
+	text-align: justify;
+	font-family: Candara;
+	font-size: 20px;
+	margin-top: -30px;
+}
+
+.r-cont2 h4{
+	font-family: Candara;
+	font-size: 25px;
+}
+
+.r-cont2{
+	height: 50px;
+	width: 400px;
+	margin-left: -28%;
+	margin-top: 170px;
+}
+
+.cont-img1 img{
+	margin-left: -480%;
+	margin-top: 190%;
+	width: 125%;
+}
+
+.cont-img2 img{
+	margin-left: 80%;
+	width: 125%;
+}
+
+.letra1 {
+	text-align: justify;
+	font-family: Candara;
+	font-size: 20px;
+	margin-top: -30px;
+}
+
+.r-cont3 {
+	height: 50px;
+	width: 400px;
+	margin-top: -25px;
+	margin-left: 8%;
+}
+
+.r-cont3 h4 {
+	font-family: Candara;
+	font-size: 25px;
+}
+
+.cont-img3 img{
+	margin-top: 220px;
+	margin-left: -485%;
+	width: 125%;
+}
+
+.r-cont4 {
+	height: 50px;
+	width: 400px;
+	margin-left: 62%;
+	margin-top: -180px;
+}
+
+.r-cont4 h4{
+	font-family: Candara;
+	font-size: 25px;
+}
+
+.letra2{
+	text-align: justify;
+	font-family: Candara;
+	font-size: 20px;
+	margin-top: -30px;
+}
+
+.home-cont4 {
+	background: #00296B;
+	width: 96%; /*ancho*/
 	padding: 30px;
-	height: 630px;
+	height: 700px; /*alto*/
+    margin-top: 1%;
 }
 
-ul, li{
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-ul.slider{
-	position: relative;
+.home-cont4 img {
 	width: 100%;
-	height: 400px;
 }
 
-ul.slider li{
-	position: absolute;
-	left: 0;
-	top: 0;
-	opacity: 0;
-	width: 100%;
-	height: 550px;
-	background-color: white;
-	transition: opacity .5s;
+.home-cont4 .titulo{
+	margin-top: -36%;
+	margin-right: 70%;
+	font-family:'Comic Sans MS';
+	color: #fff;
+	font-size: 75px;
+	font-weight: bold;
 }
 
-ul.slider li img{
-	width: 100%;
-	height: 550px;
-	object-fit: cover;
+.logo img{
+	width: 80px;
+	height: 80px;
+	border-radius: 15px; 
+    background-color: white;
+	margin-top: -50px;
+	margin-left: 4%;
 }
 
-ul.slider li:first-child{
-	opacity: 1;
+.home-cont4 .titulo2{
+	color:#bafdba;
+	font-size: 85px;
+	font-family: Candara;
+	margin-top: -10%;
+	margin-left: 10%;
 }
-
-ul.slider li:target{
-	opacity: 1;
-}
-
-.menu{
-	text-align: center;
-	margin: 20px;
-}
-
-.menu li{
-	display: inline-block;
-	text-align: center;
-}
-
-.menu li a{
-	display: inline-block;
-	color: rgb(16, 99, 27);
-	text-decoration: none;
-	background-color: rgb(255, 255, 255);
-	padding: 15px;
-	width: 30px;
-	height: 30px;
-	font-size: 30px;
-	border-radius: 100%;
-	margin-top: 155px;
-}
-
