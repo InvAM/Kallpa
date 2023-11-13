@@ -1,40 +1,46 @@
-document.addEventListener("DOMContentLoaded", function () {
-	const botonesSeleccionar = document.querySelectorAll(".boton-seleccionar");
+$(document).ready(function () {
+	$(".boton-seleccionar").on("click", function () {
+		var dni = $(this).data("dni");
+		var nombre = $(this).data("nombre");
+		var apellido = $(this).data("apellido");
+		var celular = $(this).data("celular");
+		var categoria = $(this).data("categoria");
 
-	botonesSeleccionar.forEach((boton, index) => {
-		boton.addEventListener("click", function () {
-			// Obtener la fila seleccionada
-			const filaSeleccionada = boton.closest("tr");
+		// Rellena el formulario con la información de la fila seleccionada
+		$("#formularioE").find("#DNI_Em_reg").val(dni);
+		$("#formularioE").find("#Nombre_Em_reg").val(nombre);
+		$("#formularioE").find("#Apellido_Em_reg").val(apellido);
+		$("#formularioE").find("#Celular_Em_reg").val(celular);
+		$("#formularioE").find("#IDCategoria_reg").val(categoria);
+	});
 
-			// Obtener los datos de la fila y eliminar espacios en blanco
-			const dni = filaSeleccionada
-				.querySelector("td:nth-child(1)")
-				.textContent.trim();
-			const nombre = filaSeleccionada
-				.querySelector("td:nth-child(2)")
-				.textContent.trim();
-			const apellido = filaSeleccionada
-				.querySelector("td:nth-child(3)")
-				.textContent.trim();
-			const celular = filaSeleccionada
-				.querySelector("td:nth-child(4)")
-				.textContent.trim();
-			const categoria = filaSeleccionada
-				.querySelector("td:nth-child(5)")
-				.textContent.trim();
+	// Manejar el clic del botón "Actualizar"
+	$("#btnActualizar").on("click", function () {
+		// Cambiar el atributo "action" del formulario antes de enviarlo
+		$("#formularioE").attr("action", "registrarEmpleado/actualizarEmpleado");
+		$.ajax({
+			type: "POST",
+			url: $("#formularioE").attr("action"),
+			data: $("#formularioE").serialize(),
+			success: function (response) {
+				// Manejar la respuesta del servidor
+				console.log(response);
 
-			// Rellenar el formulario con los datos
-			document.getElementById("DNI_Em_reg").value = dni;
-			document.getElementById("Nombre_Em_reg").value = nombre;
-			document.getElementById("Apellido_Em_reg").value = apellido;
-			document.getElementById("Celular_Em_reg").value = celular;
-			document.getElementById("IDCategoria_reg").value = categoria;
+				// Parsear la respuesta JSON
+				var responseData = JSON.parse(response);
 
-			// Deshabilitar los campos
-			document.getElementById("DNI_Em_reg").disabled = true;
-
-			// Prevenir el comportamiento predeterminado del botón
-			event.preventDefault();
+				if (responseData.success) {
+					// Redirigir a la URL especificada en la respuesta
+					window.location.href = responseData.redirect;
+				} else {
+					// Manejar el caso de actualización fallida
+					console.error(responseData.mensaje);
+				}
+			},
+			error: function (error) {
+				// Manejar errores si es necesario
+				console.error(error);
+			},
 		});
 	});
 });
