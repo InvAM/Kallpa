@@ -253,13 +253,13 @@
 	transform: rotate(180deg);
 }
 
-.informacion.pers-mivi.scale-up-center {
+.info .scale-up-center {
 	transform: scale(1); /* Tamaño original */
 	transition: transform 0.3s ease; /* Transición suave */
 }
 
 /* Estilo cuando se pasa el cursor */
-.informacion.pers-mivi.scale-up-center:hover {
+.info .scale-up-center:hover {
 	transform: scale(1.1); /* Tamaño aumentado al pasar el cursor */
 }
 
