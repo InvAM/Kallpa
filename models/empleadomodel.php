@@ -49,6 +49,48 @@ class EmpleadoModel extends Model
         }
     }
 
+    public function getTecnico()
+    {
+        $items = [];
+        try {
+            $query = $this->db->connect()->prepare('SELECT DNI_Em,Nombre_Em,Apellido_Em,Celular_Em,IDCategoria FROM empleado where IDCategoria=2');
+            $query->execute();
+            while ($row = $query->fetch()) {
+                $item = new Empleado();
+                $item->DNI_Em = $row['DNI_Em'];
+                $item->Nombre_Em = $row['Nombre_Em'];
+                $item->Apellido_Em = $row['Apellido_Em'];
+                $item->Celular_Em = $row['Celular_Em'];
+                $item->IDCategoria = $row['IDCategoria'];
+                array_push($items, $item);
+            }
+            return $items;
+        } catch (PDOException $e) {
+            return [];
+        }
+    }
+
+    public function getHabilitador()
+    {
+        $items = [];
+        try {
+            $query = $this->db->connect()->prepare('SELECT DNI_Em,Nombre_Em,Apellido_Em,Celular_Em,IDCategoria FROM empleado where IDCategoria=3');
+            $query->execute();
+            while ($row = $query->fetch()) {
+                $item = new Empleado();
+                $item->DNI_Em = $row['DNI_Em'];
+                $item->Nombre_Em = $row['Nombre_Em'];
+                $item->Apellido_Em = $row['Apellido_Em'];
+                $item->Celular_Em = $row['Celular_Em'];
+                $item->IDCategoria = $row['IDCategoria'];
+                array_push($items, $item);
+            }
+            return $items;
+        } catch (PDOException $e) {
+            return [];
+        }
+    }
+
     public function getById($dni)
     {
         $item = new Empleado();

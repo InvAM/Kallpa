@@ -17,7 +17,7 @@ $(document).ready(function () {
 	// Manejar el clic del botón "Actualizar"
 	$("#btnActualizar").on("click", function () {
 		// Cambiar el atributo "action" del formulario antes de enviarlo
-		$("#formularioE").attr("action", "registrarEmpleado/actualizarEmpleado");
+		$("#formularioE").attr("action", "actualizarEmpleado");
 		$.ajax({
 			type: "POST",
 			url: $("#formularioE").attr("action"),

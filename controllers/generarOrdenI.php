@@ -1,76 +1,57 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Verifica qué botón fue presionado
-    if (isset($_POST["accion"])) {
-        $accion = $_POST["accion"];
-        $generarOrdenI = new GenerarOrdenI();
-        // Ejecuta el método correspondiente según el valor del botón
-        switch ($accion) {
-            case "generarOrden":
-                $generarOrdenI->registrarOrden(); // Llama al método render de la clase GenerarOrdenI
-                break;
-            case "limpiar":
-                $generarOrdenI->limpiar(); // Función asociada al segundo botón
-                break;
-            case "volver":
-                $generarOrdenI->volver(); // Función asociada al segundo botón
-                break;
-            case "asignarTecnico":
-                $generarOrdenI->asignarTecnico(); // Función asociada al segundo botón
-                break;
-            case "visualizar":
-                $generarOrdenI->visualizar(); // Función asociada al segundo botón
-                break;
-            // Agrega más casos según sea necesario
-            default:
-                $generarOrdenI->render(); // Llama al método render de la clase GenerarOrdenI
-                break;
-        }
-    }
-}
-
-class GenerarOrdenI extends Controller
+class GenerarOrdenI extends Controller 
 {
     public function __construct()
     {
         parent::__construct();
+        $this->loadModel('etapa_contrato');
+        $this->view->mensaje="";
     }
 
     function render()
-    {
+    {   
+        $etapa_contrato = $this-> model->getInstalacion();
+        $this->view->etapa_contrato=$etapa_contrato;
         $this->view->render('generarOrdenI/formGenerarOrdenI');
     }
 
     function registrarOrden()
-    {
-        echo '<script>';
-        echo 'console.log("Registro exitoso");';
-        echo '</script>';
+    {   
+        $datosJson = file_get_contents("php://input");
+        $datos = json_decode($datosJson, true); // Convierte el JSON a un array asociativo
+
+        // Acceder a los valores
+        $IDEtapa_G = $datos['IDEtapa_G'];
+        $IDContrato_G = $datos['IDContrato_G'];
+        $Fecha = $datos['Fecha'];
+        $DNI_Em_T = $datos['DNI_Em_T'];
+        
+        echo $IDEtapa_G;
+        /*
+        $idcontrato= $_POST['IDContrato_G'];
+        $idetapa= $_POST['IDEtapa_G'];
+        $dniE = $_POST['DNI_Em_T'];
+        $fecha =$_POST['selectedDate'];
+        $mensaje="";
+        
+        echo '<script> console.log('.$fecha.')</script>';
+        echo '<script> console.log('.$idcontrato.')</script>';
+        echo '<script> console.log('.$dniE.')</script>';
+        echo '<script> console.log('.$idetapa.')</script>';*/
+         
+        /*
+        if($this->model->insert([
+            'IDContrato_G'=>$idcontrato,
+            'IDEtapa_G' =>$idetapa,
+            'DNI_Em_T' =>$dniE,
+            'selectedDate' =>$fecha,
+        ])){
+            $mensaje="Se genero la orden de Instalación";
+        }else{
+            $mensaje="Orden no puede ser generada";
+        }
+        $this->view->mensaje=$mensaje;
+        $this->render();*/
     }
 
-    function volver()
-    {
-        header("Location: menu");
-        // Asegúrate de que no haya más salida después de la redirección
-        exit;
-    }
-
-    function limpiar()
-    {
-        echo '<script>';
-        echo 'console.log("Limpiando");';
-        echo '</script>';
-    }
-
-    function asignarTecnico()
-    {
-        require_once "";
-    }
-
-    function visualizar()
-    {
-        echo '<script>';
-        echo 'console.log("visualizando");';
-        echo '</script>';
-    }
 }

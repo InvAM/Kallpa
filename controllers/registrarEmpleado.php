@@ -40,17 +40,6 @@ class RegistrarEmpleado extends Controller
         $this->render();
     }
 
-    function verEmpleado($param = null)
-    {
-        $dniEmpleado = $param[0];
-        $empleado = $this->model->getById($dniEmpleado);
-
-        session_start();
-        $_SESSION['dni_verEmpleado'] = $empleado->DNI_Em;
-        $this->view->empleado = $empleado;
-        $this->view->mensaje = "";
-        $this->view->render("registrarEmpleado/formDetalleEmpleado");
-    }
 
     function actualizarEmpleado()
     {
