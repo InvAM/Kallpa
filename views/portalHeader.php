@@ -51,12 +51,12 @@
                             <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
                                 <ul class="row">
                                     <li class="col">
-                                        <a onclick="scrollToSection('nuestraHistoria')" href="#">
+                                        <a onclick="scrollToSection('nuestraHistoria')" href="#quienesSomos">
                                             <i class="mdi mdi-book-edit-outline"></i><span>Quiénes somos</span>
                                         </a>
                                     </li>
                                     <li class="col">
-                                        <a onclick="scrollToSection('visionYmision')" href="#">
+                                        <a onclick="scrollToSection('visionYmision')" href="#viymi">
                                             <i class="mdi mdi-eye-outline"></i><span>Visión y misión</span>
                                         </a>
                                     </li>
@@ -69,7 +69,7 @@
                             <div class="item-label-icon" data-toggle="collapse" href="" role="button"
                                 aria-expanded="false" aria-controls="submenu2">
                                 <i class="mdi mdi-home-heart"></i>
-                                <a href="home" class="menu-link"> Hogar</a>
+                                <a href="home" class="menu-link">Hogar</a>
                             </div>
                         </li>
 
@@ -125,10 +125,7 @@
         const section = document.getElementById(sectionId);
         const windowHeight = window.innerHeight;
         const sectionHeight = section.clientHeight;
-
-        // Calcular el desplazamiento necesario para centrar la sección verticalmente
         const scrollTo = section.offsetTop - (windowHeight - sectionHeight) / 2;
-
         window.scrollTo({
             top: scrollTo,
             behavior: "smooth"
