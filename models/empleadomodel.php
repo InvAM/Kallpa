@@ -53,7 +53,7 @@ class EmpleadoModel extends Model
     {
         $items = [];
         try {
-            $query = $this->db->connect()->prepare('SELECT DNI_Em,Nombre_Em,Apellido_Em,Celular_Em,IDCategoria FROM empleado where IDCategoria=1');
+            $query = $this->db->connect()->prepare('SELECT DNI_Em,Nombre_Em,Apellido_Em,Celular_Em,IDCategoria FROM empleado where IDCategoria=2');
             $query->execute();
             while ($row = $query->fetch()) {
                 $item = new Empleado();
@@ -74,7 +74,7 @@ class EmpleadoModel extends Model
     {
         $items = [];
         try {
-            $query = $this->db->connect()->prepare('SELECT DNI_Em,Nombre_Em,Apellido_Em,Celular_Em,IDCategoria FROM empleado where IDCategoria=1');
+            $query = $this->db->connect()->prepare('SELECT DNI_Em,Nombre_Em,Apellido_Em,Celular_Em,IDCategoria FROM empleado where IDCategoria=3');
             $query->execute();
             while ($row = $query->fetch()) {
                 $item = new Empleado();

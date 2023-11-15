@@ -15,16 +15,4 @@ class Tecnico extends Controller
         $this->view->empleado=$empleado;
         $this->view->render('asignarTecnico/formAsignarTecnico');
     }
-
-    function volver(){
-        header("Location: generarOrdenI");
-        exit();
-    }
-    
-    function asignar(){  
-    }
-
-    function seleccionar() {
-
-    }
 }

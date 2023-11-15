@@ -1,6 +1,7 @@
 body {
 	margin: 0;
 	font-family: Arial, Helvetica, sans-serif;
+	color:#838383;
 }
 
 .asignar-T .contenedorP2 {
@@ -103,7 +104,18 @@ body {
 	padding: 15px;
 	margin-bottom: 20px;
 }
-
+.boton-limpiar{
+	padding: 10px 20px;
+	font-size: 14px;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 25%;
+	background-color: #095ba8;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
 .asignar-T .boton-opciones-T {
 	padding: 10px 20px;
 	font-size: 14px;
@@ -145,4 +157,9 @@ body {
 	color: #333;
 	font-size: 14px;
 	font-family: "Arial";
+}
+
+.Sub{
+	font-size: 14px;
+	color:#838383 !important;
 }
