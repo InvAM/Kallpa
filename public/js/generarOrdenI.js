@@ -36,7 +36,42 @@ function handleDateSelection(event) {
 document.addEventListener("DOMContentLoaded", iniciar);
 
 $(document).ready(function () {
-	$("#formularioGOI").submit(function (event) {});
+	$("#formularioGOI").submit(function (event) {
+		event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+
+		// Recopila los valores de los campos utilizando jQuery
+		var IDEtapa_G = $("#IDEtapa_G").val();
+		var IDContrato_G = $("#IDContrato_G").val();
+		var Fecha = $("#selectedDate").val();
+		var DNI_Em_T = $("#DNI_Em_T").val();
+
+		// Llenando arreglo
+		var ordenActual = {
+			IDEtapa_G: IDEtapa_G,
+			IDContrato_G: IDContrato_G,
+			Fecha: Fecha,
+			DNI_Em_T: DNI_Em_T,
+		};
+
+		// Comprobando
+		console.log(JSON.stringify(ordenActual));
+
+		// Envía el formulario mediante Ajax
+		$.ajax({
+			url: "generarOrdenI/registrarOrden",
+			type: "POST",
+			contentType: "application/json",
+			data: JSON.stringify(ordenActual),
+			success: function (response) {
+				// Manejar la respuesta del servidor (si es necesario)
+				console.log(response);
+			},
+			error: function (error) {
+				// Manejar errores
+				console.error(error);
+			},
+		});
+	});
 });
 
 $(document).ready(function () {

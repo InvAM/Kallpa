@@ -18,7 +18,8 @@ body {
 form {
 	width: 100%;
 	margin-right: 20px;
-	display: inline-block;
+	display: flex;
+
 }
 
 form .boton-opciones{

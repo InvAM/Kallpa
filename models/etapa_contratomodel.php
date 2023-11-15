@@ -12,13 +12,13 @@ class Etapa_ContratoModel extends Model
     public function insert($datos)
     {
         try {
-            $query = $this->db->connect()->prepare('INSERT INTO etapa_contrato (IDContrato, IDEtapa,DNI_Em,Fecha_Et)
+            $query = $this->db->connect()->prepare('INSERT INTO etapa_contrato (IDContrato,IDEtapa,DNI_Em,Fecha_Et)
             VALUES (:idcontrato,:idetapa,:dni_em,:fecha)');
             $query->execute([
-                'idcontrato' => $datos['IDContrato'],
-                'idetapa ' => $datos['IDEtapa'],
-                'dni_em' => $datos['DNI_Em'],
-                'fecha' => $datos['Fecha_Et']
+                'idcontrato' => $datos['IDContrato_G'],
+                'idetapa' => $datos['IDEtapa_G'],
+                'dni_em' => $datos['DNI_Em_T'],
+                'fecha' => $datos['Fecha']
             ]);
             return true;
         } catch (PDOException $e) {
