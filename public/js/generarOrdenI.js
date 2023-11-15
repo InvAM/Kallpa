@@ -48,20 +48,20 @@ $(document).ready(function () {
         var Fecha = $('#selectedDate').val();
         var DNI_Em_T = $('#DNI_Em_T').val();
 
-        ordenActual=[];
-        //Llenando arreglo
+        // Llenando arreglo
         var ordenActual = {
             IDEtapa_G: IDEtapa_G,
             IDContrato_G: IDContrato_G,
             Fecha: Fecha,
             DNI_Em_T: DNI_Em_T
         };
-        //Comprobando 
-        console.log(ordenActual)
-        
-        // Envía el formulario
+
+        // Comprobando
+        console.log(JSON.stringify(ordenActual)); 
+
+        // Envía el formulario mediante Ajax
         $.ajax({
-            url: 'generarOrdenI/registrarOrden',  // Reemplaza 'tu_controlador_url' con la URL de tu controlador
+            url: 'generarOrdenI/registrarOrden',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(ordenActual),
@@ -73,11 +73,10 @@ $(document).ready(function () {
                 // Manejar errores
                 console.error(error);
             }
-        })
-        $(this).off('submit');
-        $(this).submit();
+        });
     });
 });
+
 
 
 $(document).ready(function(){
