@@ -94,7 +94,6 @@
                                             data-celular="<?php echo $empleado->Celular_Em; ?>"
                                             data-categoria="<?php echo $empleado->IDCategoria; ?>">Seleccionar</button>
 
-                                        <!-- <a href="<?php echo constant('URL') . 'registrarEmpleado/verEmpleado/' . $empleado->DNI_Em; ?>"></a> -->
                                     </td>
                                     <td>
                                         <a
