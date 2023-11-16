@@ -14,7 +14,8 @@
 <body class="login">
 
     <div id="contenedor">
-        <form method="POST" action="" class="" data-form="save">
+        <form method="POST" action="<?php echo constant('URL'); ?>login/loguearse" class="formularioLogin"
+            data-form="save">
 
             <fieldset class="cajita1"><br><br>
                 <div>
@@ -37,13 +38,13 @@
                 <div class="center-vertically">
                     <img class="icon" src="https://cdn-icons-png.flaticon.com/512/6067/6067201.png" alt="Usuario"
                         width="30" height="30">
-                    <input class="log" type="text" name="usuario" placeholder="Usuario"><br>
+                    <input class="log" type="text" name="nombreusuario" placeholder="Usuario"><br>
                 </div>
                 <br>
                 <div class="center-vertically">
                     <img class="icon" src="https://cdn-icons-png.flaticon.com/512/223/223122.png" alt="Contraseña"
                         width="30" height="30">
-                    <input class="log" type="password" name="contraseña1" placeholder="Contraseña" required><br>
+                    <input class="log" type="password" name="password" placeholder="Contraseña" required><br>
                 </div>
                 <br>
                 <div class="check">
@@ -61,6 +62,9 @@
             </fieldset>
         </form>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="<?php echo constant('URL') ?>public/js/formLoginP.js"></script>
 </body>
 
 </html>

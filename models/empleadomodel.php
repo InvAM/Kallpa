@@ -142,4 +142,9 @@ class EmpleadoModel extends Model
             return false;
         }
     }
+
+    public function loguearse($dni)
+    {
+
+    }
 }
