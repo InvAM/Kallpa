@@ -4,14 +4,16 @@ function iniciar() {
 		var dni = localStorage.getItem("DNI_Em_T");
 		var nombre = localStorage.getItem("Nombre_Em_T");
 		var apellido = localStorage.getItem("Apellido_Em_T");
+		var nombreCompleto = " ";
 		if (localStorage.getItem("Nombre_Em_T")) {
 			var nombreCompleto = nombre + " " + apellido;
 		} else {
-			var nombreCompleto = "";
+			var nombreCompleto = " ";
 		}
 
 		//Obtener los datos del localStorage de CONTRATO
 		var numS = localStorage.getItem("numSum");
+		var idContrato = "";
 		var idContrato = localStorage.getItem("IDContrato");
 
 		// Asignar los valores a los campos del formulario
@@ -54,7 +56,6 @@ $(document).ready(function () {
 		};
 
 		// Comprobando
-		console.log(JSON.stringify(ordenActual));
 
 		// Envía el formulario mediante Ajax
 		$.ajax({
@@ -65,12 +66,19 @@ $(document).ready(function () {
 			success: function (response) {
 				// Manejar la respuesta del servidor (si es necesario)
 				console.log(response);
+				window.location.href = "generarOrdenI";
 			},
 			error: function (error) {
 				// Manejar errores
 				console.error(error);
 			},
 		});
+
+		localStorage.removeItem("IDContrato");
+		localStorage.removeItem("numSum");
+		localStorage.removeItem("DNI_Em_T");
+		localStorage.removeItem("Nombre_Em_T");
+		localStorage.removeItem("Apellido_Em_T");
 	});
 });
 
@@ -91,5 +99,18 @@ $(document).ready(function () {
 	$("#btnLimpiar").on("click", function () {
 		$("input[name='DNI_Em_T']").val("");
 		$("input[name='NombreCompleto_Em']").val("");
+	});
+
+	//AgregarMateriales
+	$(".btn-small").on("click", function () {
+		var idcontrato = $(this).data("idcontrato");
+		var idetapa = $(this).data("idetapa");
+		var fecha = $(this).data("fecha");
+
+		localStorage.setItem("IDContrato", idcontrato);
+		localStorage.setItem("IDEtapa", idetapa);
+		localStorage.setItem("Fecha", fecha);
+
+		window.location.href = "registrarMateriales";
 	});
 });

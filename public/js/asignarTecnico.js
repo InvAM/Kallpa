@@ -43,6 +43,5 @@ $(document).ready(function(){
         
 		//Direccionando a otra página
 		window.location.href = 'generarOrdenI';
-		exit();
 	});
 });

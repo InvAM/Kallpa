@@ -35,18 +35,45 @@ $(document).ready(function(){
      $('#btnOrdenI').on('click', function () {
 	    var IDContrato = $("#formularioVC").find("#IDContrato_VC").val();
 		var NumS = $("#formularioVC").find("#NumerodeSuministro_VC").val();
-        //limpiado LocalS
-        localStorage.clear();
-		//Almacenando en el localS
-		localStorage.setItem('IDContrato', IDContrato);
-		localStorage.setItem('numSum', NumS);
-
-        $("#formularioVC").find("#IDContrato_VC").val("");
-        $("#formularioVC").find("#Fecha_VC").val("");
-        $("#formularioVC").find("#NumerodeSuministro_VC").val("");
-        $("#formularioVC").find("#Estado_VC").val("");
-        $("#formularioVC").find("#NumerodeRadicado_VC").val("");
-		//Direccionando a otra página
-		window.location.href = 'generarOrdenI';
+        if(IDContrato!==""){
+            //limpiado LocalS
+            localStorage.clear();
+            //Almacenando en el localS
+            localStorage.setItem('IDContrato', IDContrato);
+            localStorage.setItem('numSum', NumS);
+            
+            $("#formularioVC").find("#IDContrato_VC").val("");
+            $("#formularioVC").find("#Fecha_VC").val("");
+            $("#formularioVC").find("#NumerodeSuministro_VC").val("");
+            $("#formularioVC").find("#Estado_VC").val("");
+            $("#formularioVC").find("#NumerodeRadicado_VC").val("");
+            //Direccionando a otra página
+            window.location.href = 'generarOrdenI';
+        }else{
+            alert("Por favor, seleccione un contrato para generar la Orden de Instalación");
+        }
 	});
+
+        //Orden de Habilitación 
+        $('#btnOrdenH').on('click', function () {
+            var IDContrato = $("#formularioVC").find("#IDContrato_VC").val();
+            var NumS = $("#formularioVC").find("#NumerodeSuministro_VC").val();
+            if(IDContrato!==""){
+            //limpiado LocalS
+            localStorage.clear();
+            //Almacenando en el localS
+            localStorage.setItem('IDContrato', IDContrato);
+            localStorage.setItem('numSum', NumS);
+             
+            $("#formularioVC").find("#IDContrato_VC").val("");
+            $("#formularioVC").find("#Fecha_VC").val("");
+            $("#formularioVC").find("#NumerodeSuministro_VC").val("");
+            $("#formularioVC").find("#Estado_VC").val("");
+            $("#formularioVC").find("#NumerodeRadicado_VC").val("");
+            //Direccionando a otra página
+            window.location.href = 'generarOrdenH';
+        }else{
+            alert("Por favor, seleccione un contrato para generar la Orden de Habilitación");
+        }
+        });
 });
