@@ -1,7 +1,7 @@
 <?php
-include_once "models/etapa_contrato.php";
+include_once "models/etapacontrato.php";
 
-class Etapa_ContratoModel extends Model {
+class EtapaContratoModel extends Model {
 
     public function __construct(){
         parent:: __construct();
@@ -29,7 +29,7 @@ class Etapa_ContratoModel extends Model {
             $query = $this-> db ->connect() ->prepare ('SELECT IDContrato,IDEtapa,DNI_Em,Fecha_Et FROM etapa_contrato');
             $query ->execute();
             while($row = $query ->fetch()){
-                $etapacontrato = new Etapa_Contrato();
+                $etapacontrato = new EtapaContrato();
                 $etapacontrato->IDContrato=$row['IDContrato'];
                 $etapacontrato->IDEtapa=$row['IDEtapa'];
                 $etapacontrato->DNI_Em = $row['DNI_Em'];
@@ -48,7 +48,7 @@ class Etapa_ContratoModel extends Model {
             $query = $this-> db ->connect() ->prepare ('SELECT IDContrato,IDEtapa,DNI_Em,Fecha_Et FROM etapa_contrato WHERE IDEtapa=1');
             $query ->execute();
             while($row = $query ->fetch()){
-                $etapacontrato = new Etapa_Contrato();
+                $etapacontrato = new EtapaContrato();
                 $etapacontrato->IDContrato=$row['IDContrato'];
                 $etapacontrato->IDEtapa=$row['IDEtapa'];
                 $etapacontrato->DNI_Em = $row['DNI_Em'];
@@ -67,7 +67,7 @@ class Etapa_ContratoModel extends Model {
             $query = $this-> db ->connect() ->prepare ('SELECT IDContrato,IDEtapa,DNI_Em,Fecha_Et FROM etapa_contrato WHERE IDEtapa=2');
             $query ->execute();
             while($row = $query ->fetch()){
-                $etapacontrato = new Etapa_Contrato();
+                $etapacontrato = new EtapaContrato();
                 $etapacontrato->IDContrato=$row['IDContrato'];
                 $etapacontrato->IDEtapa=$row['IDEtapa'];
                 $etapacontrato->DNI_Em = $row['DNI_Em'];

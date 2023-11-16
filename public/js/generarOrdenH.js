@@ -1,5 +1,4 @@
-
-function iniciar() {
+function iniciar(){
     if (localStorage.getItem('DNI_Em_T')||localStorage.getItem('numSum')) {
         // Obtener los datos del localStorage de TECNICO
         var dni = localStorage.getItem('DNI_Em_T');
@@ -9,7 +8,7 @@ function iniciar() {
         if(localStorage.getItem('Nombre_Em_T')){
         var nombreCompleto = nombre + " " + apellido;
         }else{
-            var nombreCompleto = " ";
+            var nombreCompleto = "";
         }
         
         //Obtener los datos del localStorage de CONTRATO
@@ -18,13 +17,13 @@ function iniciar() {
         var idContrato= localStorage.getItem('IDContrato');
 
         // Asignar los valores a los campos del formulario
-        var numO= "OI-"+idContrato;
+        var numO= "OH-"+idContrato;
         
         console.log(numO);
         $("input[name='numOrden_G']").val(numO);
         $("input[name='IDContrato_G']").val(idContrato);
         $("input[name='NumS_G']").val(numS);
-        $("input[name='DNI_Em_T']").val(dni);
+        $("input[name='DNI_Em_H']").val(dni);
         $("input[name='NombreCompleto_Em']").val(nombreCompleto);
     }
 }
@@ -40,15 +39,16 @@ function handleDateSelection(event) {
 
 document.addEventListener('DOMContentLoaded', iniciar);
 
+
 $(document).ready(function () {
-    $('#formularioGOI').submit(function (event) {
+    $('#formularioGOH').submit(function (event) {
         event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
 
         // Recopila los valores de los campos utilizando jQuery
         var IDEtapa_G = $('#IDEtapa_G').val();
         var IDContrato_G = $('#IDContrato_G').val();
         var Fecha = $('#selectedDate').val();
-        var DNI_Em_T = $('#DNI_Em_T').val();
+        var DNI_Em_T = $('#DNI_Em_H').val();
 
         // Llenando arreglo
         var ordenActual = {
@@ -59,17 +59,17 @@ $(document).ready(function () {
         };
 
         // Comprobando
-
+        console.log(ordenActual)
         // Envía el formulario mediante Ajax
         $.ajax({
-            url: 'generarOrdenI/registrarOrden',
+            url: 'generarOrdenH/registrarOrden',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(ordenActual),
             success: function(response) {
                 // Manejar la respuesta del servidor (si es necesario)
                 console.log(response);
-                window.location.href = 'generarOrdenI';
+                /*window.location.href = 'generarOrdenH';*/
 
             },
             error: function(error) {
@@ -86,37 +86,35 @@ $(document).ready(function () {
     });
 });
 
-
-
 $(document).ready(function(){
-   //AgregarTécnico
-   $('#btnAgregarTecnico').on('click', function () {
-    //Direccionando a otra página
-    window.location.href = 'tecnico';
-    exit();
-   });
-   //Volver
-   $('#btnVolver').on('click', function () {
+    //AgregarTécnico
+    $('#btnAgregarHabilitador').on('click', function () {
      //Direccionando a otra página
-     window.location.href = 'consultarContrato';
+     window.location.href = 'habilitador';
      exit();
-     });
-   //limpiar
-    $('#btnLimpiar').on('click',function(){
-    $("input[name='DNI_Em_T']").val("");
-    $("input[name='NombreCompleto_Em']").val("");
-   });
-
-   //AgregarMateriales
-   $('.btn-small').on('click',function(){
-       var idcontrato = $(this).data("idcontrato");
-       var idetapa = $(this).data("idetapa");
-       var fecha = $(this).data("fecha");
-       
-       localStorage.setItem('IDContrato',idcontrato);
-       localStorage.setItem('IDEtapa',idetapa);
-       localStorage.setItem('Fecha',fecha);
-
-		window.location.href = 'registrarMateriales';
-   });
-});
+    });
+    //Volver
+    $('#btnVolver').on('click', function () {
+      //Direccionando a otra página
+      window.location.href = 'consultarContrato';
+      exit();
+      });
+    //limpiar
+     $('#btnLimpiar').on('click',function(){
+     $("input[name='DNI_Em_H']").val("");
+     $("input[name='NombreCompleto_Em']").val("");
+    });
+ 
+    //AgregarMateriales
+    $('.btn-small').on('click',function(){
+        var idcontrato = $(this).data("idcontrato");
+        var idetapa = $(this).data("idetapa");
+        var fecha = $(this).data("fecha");
+        
+        localStorage.setItem('IDContrato',idcontrato);
+        localStorage.setItem('IDEtapa',idetapa);
+        localStorage.setItem('Fecha',fecha);
+ 
+         window.location.href = 'registrarMateriales';
+    });
+ });

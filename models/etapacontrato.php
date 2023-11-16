@@ -1,6 +1,6 @@
 <?php
 
-class Etapa_Contrato{
+class EtapaContrato{
     public $IDContrato;
     public $IDEtapa;
     public $DNI_Em;

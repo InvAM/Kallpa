@@ -95,7 +95,7 @@
                 <button class="boton-opciones" id="btnOrdenI">
                     Orden de Instalación <i class="mdi mdi-skip-next-circle"></i>
                 </button>
-                <button class="boton-opciones">
+                <button class="boton-opciones" id="btnOrdenH">
                     Orden de Habilitación <i class="mdi mdi-skip-next-circle"></i>
                 </button>
                 </div>

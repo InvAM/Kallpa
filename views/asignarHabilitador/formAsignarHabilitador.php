@@ -78,7 +78,7 @@
                         <button class="boton-opciones-H"> Atras
                         <i class="mdi mdi-keyboard-backspace"></i>
                     </button></a>
-                    <button class="boton-especial"> Asignar Habilitador
+                    <button class="boton-especial" id="btnAsignar"> Asignar Habilitador
                         <i class="mdi mdi-arrow-right-drop-circle"></i></button>
                 </div>
                 <div class="contenedorS2">

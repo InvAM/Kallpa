@@ -24,17 +24,33 @@
                     <i class="mdi mdi-format-list-checkbox"></i>
                 </div>
                 <div class="contenedorS">
+                    <p class="tituloS2">Especificaciones de Orden</p>
                     <div class="cajaOrdenH">
-                        <p class="tituloS2">Especificaciones de Orden</p>
-                        <input type="text" label="numOrden" placeholder="Número de Orden">
-                        <select>
-                            <option value="">Seleccione etapa</option>
-                            <option value="Construccion">Construccion</option>
-                            <option value="Habilitación">Habilitación</option>
-                        </select>
-                        <input type="text" label="idEtapa" placeholder="ID Etapa">
-                        <input type="text" label="idContrato" placeholder="ID Contrato">
-                        <input type="text" label="numS" placeholder="Número de Suministro">
+                        <form action="<?php echo constant('URL'); ?>generarOrdenH/registrarOrden" name="formularioGOH1" id="formularioGOH1" method="POST">  
+                            <div class="subcajita">
+                                <label class="Sub" >Número de Orden</label><br>
+                                <input type="text" label="numOrden" id="numOrden_G" name="numOrden_G" placeholder="Número de Orden">
+                            </div>
+                            <div class="subcajita">
+                                <label class="Sub" >Etapa</label><br>
+                                <select>
+                                     <option value="1">Instalación</option>
+                                     <option value="2">Habilitación</option>
+                                </select>
+                            </div>
+                            <div class="subcajita">
+                                <label class="Sub" >ID Etapa</label><br>
+                                <input type="text" label="idEtapa" placeholder="ID Etapa" name="IDEtapa_G" id="IDEtapa_G"value="1" readonly>
+                            </div>
+                            <div class="subcajita">
+                                <label class="Sub" >ID de Contrato</label><br>
+                                <input type="text" label="idContrato" placeholder="ID Contrato" id="IDContrato_G" name="IDContrato_G" readonly>
+                            </div>
+                            <div class="subcajita">
+                                <label class="Sub" >Número de Suministro</label><br>
+                                <input type="text" label="numS" placeholder="Número de Suministro" id="NumS_G" name="NumS_G" readonly>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -52,9 +68,15 @@
                     <br>
                     <div class="CajaHabilitador">
                         <p class="TI2">Datos del Habilitador</p>
-                        <input class="I2" type="text" label="habilitador" placeholder="habilitador">
-                        <input class="I2" type="text" label="dniHabilitador" placeholder="DNI del Habilitador ">
-                        <button class="boton">
+                        <form action="<?php echo constant('URL'); ?>generarOrdenH/registrarOrden" class="formularioGOH2" name="formularioGOH2" id="formularioGOH2" method="POST">  
+                            <label class="Sub" for="NombreCompleto_Em">Habilitador</label><br>
+                            <input class="I2"  type="text" id="NombreCompleto_Em" name="NombreCompleto_Em" placeholder="Habilitador" 
+                                value=""readonly>
+                            <label class="Sub" for="DNI_Em_H">Dni del Habilitador</label><br>
+                            <input class="I2" type="text" id="DNI_Em_H" name="DNI_Em_H" placeholder="DNI" 
+                                value=""readonly>
+                        </form>
+                        <button class="boton" id="btnAgregarHabilitador">
                             Agregar Habilitador
                             <i class="mdi mdi-plus"></i>
                         </button>
@@ -71,30 +93,60 @@
                                     <th>Fecha de Etapa</th>
                                     <th>DNI Empleado</th>
                                     <th>Visualizar</th>
+                                    <th>Agregar Materiales</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>CO-123</td>
-                                    <td>2023-05-20</td>
-                                    <td>5432117</td>
-                                    <td>
-                                        <button class="btn-small btn-primary" onclick="seleccionarOrden(item)">
-                                            <i class="mdi mdi-eye-settings mx-1"></i>
+                            <?php
+                                include_once 'models/etapacontrato.php';
+                                foreach ($this->etapa_contrato as $row) {
+                                    $etapa_contrato = new EtapaContrato();
+                                    $etapa_contrato = $row; ?>
+                                    <tr>
+                                        <td>
+                                            <?php echo $etapa_contrato->IDEtapa ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $etapa_contrato->IDContrato ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $etapa_contrato->Fecha_Et ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $etapa_contrato->DNI_Em?>
+                                        </td>
+                                        <td>
+                                        <button class="btn-small btn-primary" type="submit" name="accion" value="visualizar">
+                                            
+                                             <i class="mdi mdi-eye-settings mx-1"></i>
                                         </button>
-                                    </td>
-                                </tr>
-                                <!--Más datos -->
+                                        </td>
+                                        <td>
+                                        <button class="btn-small btn-primary" id="btnAsignarMateriales"
+                                            data-idcontrato="<?php echo $etapa_contrato->IDContrato; ?>"
+                                            data-idetapa="<?php echo $etapa_contrato->IDEtapa; ?>"
+                                            data-fecha="<?php echo $etapa_contrato->Fecha_Et; ?>"
+                                            data-dniE="<?php echo $etapa_contrato->DNI_Em; ?>">
+                                            <i class="mdi mdi-list-box"></i>
+                                        </button>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
-                    <button class="boton-opciones-H"> Generar Orden
+                    <form action="<?php echo constant('URL'); ?>generarOrdenH/registrarOrden" class="formularioGOH"name="formularioGOH" id="formularioGOH" method="POST">  
+                   <button class="boton-opciones-H" id="btnGenerar"> Generar Orden 
                         <i class="mdi mdi-book-plus"></i></button>
-                    <button class="boton-opciones-H"> Limpiar
+                    </form>
+                    <button class="boton-opciones-H" id="btnLimpiar"> Limpiar
                         <i class="mdi mdi-restore"></i></button>
-                    <button class="boton-opciones-H"> Atras
-                        <i class="mdi mdi-keyboard-backspace"></i></button>
+                    <button class="boton-opciones-H" id="btnVolver"> Atras
+                               <i class="mdi mdi-keyboard-backspace"></i>
+                    </button>
+                    <br>
+                    <br>
+                    <br>
                 </div>
             </div>
         </div>
@@ -102,6 +154,10 @@
         <?php require_once "views/footer.php"; ?>
 
     </div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="<?php echo constant('URL'); ?>public/js/generarOrdenH.js"></script>
+
 </body>
 
 </html>
