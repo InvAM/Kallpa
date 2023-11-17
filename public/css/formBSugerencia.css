@@ -1,16 +1,26 @@
-
-fieldset{
+.sug fieldset{
    width:600px;
    border-color:red;    
 }
 
-.container {
+.sug .container {
   display: flex;
 }
 
-.column {
+.sug .column {
   width: 50%; /* Cada columna ocupa el 50% del ancho del contenedor */
   padding: 10px; /* Añade relleno si es necesario */
   box-sizing: border-box; /* Asegura que el relleno no afecte el ancho total */
 }
 
+.sug footer {
+	background-color: #33cc33;
+	color: #fff;
+	padding: 6px 0;
+	text-align: center;
+}
+
+.sug .footer-content {
+	max-width: 800px;
+	margin: 0 auto;
+}

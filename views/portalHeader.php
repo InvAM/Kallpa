@@ -60,6 +60,21 @@
                                             <i class="mdi mdi-eye-outline"></i><span>Visión y misión</span>
                                         </a>
                                     </li>
+                                    <li class="col">
+                                        <a onclick="scrollToSection('valor')" href="#valores">
+                                            <i class="mdi mdi-handshake-outline"></i><span>Nuestros valores</span>
+                                        </a>
+                                    </li>
+                                    <li class="col">
+                                        <a onclick="scrollToSection('ubicacion')" href="#encuentranos">
+                                            <i class="mdi mdi-map-marker-outline"></i><span>Encuéntranos</span>
+                                        </a>
+                                    </li>
+                                    <li class="col">
+                                        <a onclick="scrollToSection('contacto')" href="#contactanos">
+                                            <i class="mdi mdi-card-account-mail-outline"></i><span>Contáctanos</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -98,11 +113,11 @@
                             </div>
                             <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
                                 <ul class="row">
-                                    <li class="col1"><a href=""><i class="mdi mdi-help"></i><span>Preguntas
+                                    <li class="col1"><a href="preguntasFrecuentes"><i class="mdi mdi-help"></i><span>Preguntas
                                                 frecuentes</span></a></li>
-                                    <li class="col1"><a href=""><i class="mdi mdi-archive-check-outline"></i><span>Buzón
+                                    <li class="col1"><a href="sugerencias"><i class="mdi mdi-archive-check-outline"></i><span>Buzón
                                                 de sugerencias</span></a></li>
-                                    <li class="col1"><a href=""><i
+                                    <li class="col1"><a href="reclamaciones"><i
                                                 class="mdi mdi-notebook-check-outline"></i><span>Libro de
                                                 reclamaciones</span></a></li>
                                 </ul>
