@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="public/css/formLReclamaciones.css">
+    <link rel="icon" href="public/Img/KallpaC.png" type="image/x-icon">
     <title>Libro de reclamaciones</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.all.min.js"></script>
@@ -11,7 +12,9 @@
 </head>
 
 <body>
-    <div id="contenedor">
+    <?php require_once "views/portalHeader.php"; ?>
+    <div class="lr">
+    <div class="contenedor">
         <form method="POST" class="" action="" data-form="save">
             <fieldset class="cajita1">
                 <h1 class="titulo">Libro de reclamaciones</h1>
@@ -78,7 +81,7 @@
                             </div>
                             <textarea id="descripcion" name="descripcion" rows="4" cols="50"
                                 placeholder="Escribe aquí la descripción" resize="none">
-                                </textarea>
+                            </textarea>
                         </div>
                     </div>
                 </fieldset>
@@ -131,6 +134,14 @@
                 <input class="Botones" type="submit" value="Volver a Paginas Principal">
             </fieldset>
         </form>
+    </div>
+
+    <footer>
+            <div class="footer-content">
+                <p>&copy; 2023 Kallpa. Todos los derechos reservados.</p>
+            </div>
+    </footer>
+
     </div>
     <?php require_once "views/chatbot.php"; ?>
 </body>
