@@ -1,3 +1,4 @@
+var botonseleccionado =0;
 function iniciar() {
     if (localStorage.getItem('IDContrato')) {
         
@@ -54,6 +55,7 @@ function actualizarTabla($lista) {
             botonSeleccionar.addEventListener("click",function(){
                 $("input[name='Cantidad_Ma']").val(material.cantidad);
                 $("#materialSelect").prop('selectedIndex', material.id -1);
+                botonseleccionado =1;
             });
          celdaSeleccionar.appendChild(botonSeleccionar);
          /* -----------------------------------------------------*/  
@@ -198,7 +200,9 @@ $(document).ready(function () {
            data: JSON.stringify(listaMateriales),
            success:function(response){
                 console.log(response);
-                window.location.href='generarOrdenI';
+                if(botonseleccionado!==1 && botonseleccionado!==0 ){
+                   window.location.href='generarOrdenI';
+                }
            },
            error: function(error){
                 //Manejar errores
