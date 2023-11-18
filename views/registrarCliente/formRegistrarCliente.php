@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="public/Img/KallpaC.png" type="image/x-icon">
     <title>Registrar Cliente</title>
     <link rel="stylesheet" href="public/css/formRegistrarCliente.css">
 </head>
@@ -21,6 +22,8 @@
             </div>
 
             <div class="parte_izquierda">
+
+                <h3 class="subtitulo-domicilio">Datos del domicilio</h3>
 
                 <div class="cont-datos-domicilio">
 
@@ -61,7 +64,7 @@
 
             </div>
 
-            <h3 class="subtitulo-cliente">Datos Generales</h3>
+            <h3 class="subtitulo-cliente">Datos del Cliente</h3>
 
             <div class="contenedor-datos">
                 <form action="<?php echo constant('URL'); ?>registrarCliente/registrarNuevoCliente" method="POST"
@@ -71,23 +74,20 @@
                         <input type="text" label="Nombre" placeholder="Escribir..." name="Nombre_cli_reg" id="Nombre_cli_reg">
                         <label for="Apellido_cli_reg">Apellido del Cliente</label>
                         <input type="text" label="Apellido" placeholder="Escribir..." name="Apellido_cli_reg" id="Apellido_cli_reg">
-                    </div>
-
-                    <div class="datos_izquierda">
                         <label for="DNI_cli_reg">Dni del Cliente</label>
                         <input type="text" label="DNI" placeholder="Escribir... " name="DNI_cli_reg" id="DNI_cli_reg">
                         <label for="FechaNacimiento:_cli_reg">Fecha de Nacimiento</label>
                         <input type="text" label="FechaNacimiento" placeholder="Ejemplo: 2023-07-08" name="FechaNacimiento:_cli_reg" id="FechaNacimiento:_cli_reg">
+                    </div>
+
+
+                    <div class="datos_derecha">
                         <label for="IDGenero_reg">Género</label>
                         <select name="IDGenero_reg" id="IDGenero_reg">
                             <option value="">Escoger...</option>
                             <option value="femenino">Femenino</option>
                             <option value="masculino">Masculino</option>
-                            <!-- Seguir con opciones -->
                         </select>
-                    </div>
-
-                    <div class="datos_derecha">
                         <label for="Celular_cli_reg">Célular</label>                    
                         <input type="text" label="celular" placeholder="Escribir..." name= "Celular_cli_reg" id="Celular_cli_reg">
                         <label for="IDNacionalidad_reg">Nacionalidad</label>
@@ -105,12 +105,12 @@
                             <!-- Seguir con opciones -->
                         </select>
                     </div>
-                </form>
-            </div>
 
-            <div class="contenedor-botones">
-                <input type="submit" class="boton" value="Registrar">
-                <button type="button" class="boton" id="btnActualizar">Actualizar</button>
+                    <div class="contenedor-botones">
+                        <input type="submit" class="boton" value="Registrar">
+                        <button type="button" class="boton" id="btnActualizar">Actualizar</button>
+                    </div>
+                </form>
             </div>
 
             <div class="contenedor-info">
