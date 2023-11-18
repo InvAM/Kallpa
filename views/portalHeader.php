@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/splide-4.1.3/dist/css/splide-core.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
     <script src="<?php echo constant('URL'); ?>public/splide-4.1.3/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -107,14 +108,46 @@
                                                 reclamaciones</span></a></li>
                                 </ul>
                             </div>
-                        </li>
-
+                        </li>    
+                        <li class="menu-item">
+                    <div class="item-label-icon" data-toggle="collapse" href="#submenu4" role="button"
+                        aria-expanded="false" aria-controls="submenu4">
+                        <!-- Icono para la nueva opción -->
+                        <!-- Texto de la nueva opción -->
+                        <a href="#" class="logo-usuario">
+                            <img src="public/Img/usuario (3).png">
+                        </a>
+                    </div>
+                    <!-- Submenú de la nueva opción -->
+                    <div id="submenu4" class="submenuContenedor contenedor-menu collapse">
+                        <ul class="row">
+                            <li class="col">
+                                <a href="#" onclick="mostrarVentanaEmergente()">
+                                    <i class="mdi mdi-account"></i><span>Ingresar como cliente</span>
+                                </a>
+                            </li>
+                            <li class="col">
+                                <a href="Login">
+                                    <i class="mdi mdi-account"></i><span>Ingresar como trabajador</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>     
                     </ul>
                 </div>
+                
             </nav>
 
         </header>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.js"></script>
+    <script src="<?php echo constant('URL'); ?>public/js/formLoginCli.js"></script> 
+    <style>
+        .custom-popup-class {
+            background: transparent !important;
+        }
+    </style>
 </body>
 
 </html>
