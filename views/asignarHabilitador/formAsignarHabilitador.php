@@ -58,11 +58,11 @@
                                         </td>
                                         <td>
                                             <button class="boton-seleccionar boton" id="btnSeleccionar"
-                                                 data-dni="<?php echo $empleado->DNI_Em; ?>"
-                                                 data-nombre="<?php echo $empleado->Nombre_Em; ?>"
-                                                 data-apellido="<?php echo $empleado->Apellido_Em; ?>"
-                                                 data-celular="<?php echo $empleado->Celular_Em; ?>"
-                                                 data-categoria="<?php echo $empleado->IDCategoria; ?>">
+                                                    data-dni="<?php echo $empleado->DNI_Em; ?>"
+                                                    data-nombre="<?php echo $empleado->Nombre_Em; ?>"
+                                                    data-apellido="<?php echo $empleado->Apellido_Em; ?>"
+                                                    data-celular="<?php echo $empleado->Celular_Em; ?>"
+                                                    data-categoria="<?php echo $empleado->IDCategoria; ?>">
                                                 <i class="mdi mdi-content-copy mx-1"></i>
                                             </button>
                                         </td>
@@ -72,7 +72,7 @@
                         </table>
                     </div>
                     <button class="boton-opciones-H" id="btnlimpiar">
-                                                 Limpiar <i class="mdi mdi-restore"></i>
+                        Limpiar <i class="mdi mdi-restore"></i>
                     </button>
                     <a href="<?php echo constant('URL') . 'generarOrdenH'?>"> 
                         <button class="boton-opciones-H"> Atras
@@ -83,7 +83,7 @@
                 </div>
                 <div class="contenedorS2">
                 <form method="POST" action="<?php echo constant('URL'); ?>habilitador" autocomplete="off" class="" id="formularioH">  
-     
+
                     <div class="CajaHabilitador">
                         <p class="TI2">Datos del Habilitador</p>
                         <div class="imagenH">
@@ -91,19 +91,19 @@
                         </div>
                         <label class="Sub" for="DNI_Em_H">Dni</label>
                         <input type="text" id="DNI_Em_H" name="DNI_Em_H" placeholder="DNI" 
-                               value=""readonly>
+                            value=""readonly>
                         <label class="Sub" for="IDCategoria_H">IDCategoria</label>
                         <input type="text" id="IDCategoria_H" name="IDCategoria_H" placeholder="Categoria" 
-                               value="" readonly>
+                            value="" readonly>
                         <label class="Sub"  for="Nombre_Em_H">Nombres</label>
                         <input type="text" id="Nombre_Em_H" name="Nombre_Em_H" placeholder="Nombres" 
-                               value="" readonly>
+                            value="" readonly>
                         <label class="Sub"  for="Apellido_Em_H">Apellidos</label>
                         <input type="text" id="Apellido_Em_H" name="Apellido_Em_H" placeholder="Apellidos" 
-                               value="" readonly>
+                            value="" readonly>
                         <label class="Sub"  for="Celular_Em_H">Teléfono de Contacto</label>
                         <input type="text" id="Celular_Em_H" name="Celular_Em_H" placeholder="Celular" 
-                               value="" readonly>
+                            value="" readonly>
                     </div>
                   </form>
                 </div>
