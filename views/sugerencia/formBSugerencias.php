@@ -12,46 +12,39 @@
 <body>
     <?php require_once "views/portalHeader.php"; ?>
     <div class="sug">
-    <form>
-        <fieldset>
+        <form action="<?php echo constant('URL'); ?>sugerencias/registrarSugerencia" method="POST" id="formSugerencia">
+            <div class="container">
 
-                <div class="container">
-                    <div class="column">
-                        <p>Ubicación: San Martin - Av. Los Jazmines 958</p>
+                    <div class="titulo">
+                        <h1>Sugerencias</h1>
                     </div>
-                    <div class="column">
-                        <div class="titulo">
-                            <h1>Sugerencias</h1>
-                        </div>
-                        <br>
-                        <br>
-                        <div class="alineardr">
-                            <input type="text" name="nombre" placeholder="Nombres">
-                        </div>
-                        <div class="alineariz">
-                            <input type="text" name="apellidos" placeholder="Apellidos">
-                        </div>
-                        <div class="center-vertically">
-                            <input type="text" name="Email" placeholder="Email" required><br><br>
-                        </div>
-                        <div class="center-vertically">
-                            <textarea name="Comentario" placeholder=" Comentario" required></textarea>
-                            <br>
-                            <br>
-                        </div>
-                        <br>
-                        <input type="submit" value="Enviar">
+
+                    <div class="alineardr">
+                        <input type="text" name="nombres_s" placeholder="Nombres" id="nombres_s">
                     </div>
-                </div>
 
-        </fieldset>
-    </form>
+                    <div class="alineariz">
+                        <input type="text" name="apellidos_s" placeholder="Apellidos" id="apellidos_s">
+                    </div>
 
-    <footer>
-            <div class="footer-content">
-                <p>&copy; 2023 Kallpa. Todos los derechos reservados.</p>
+                    <div class="center-vertically">
+                        <input type="text" name="email_s" placeholder="Email" required id="email_s">
+                    </div>
+
+                    <div class="center-vertically">
+                        <textarea name="comentario_s" placeholder="Comentario" required class="txt" id="comentario_s"></textarea>
+                    </div>
+
+                    <input type="submit" value="Enviar" id="btnRegistrarS" name="btnRegistrarS">
+                
             </div>
-    </footer>
+        </form>
+
+        <footer>
+                <div class="footer-content">
+                    <p>&copy; 2023 Kallpa. Todos los derechos reservados.</p>
+                </div>
+        </footer>
     
     </div>
     <?php require_once "views/chatbot.php"; ?>

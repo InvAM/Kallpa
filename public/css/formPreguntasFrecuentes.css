@@ -1,8 +1,13 @@
+body {
+	background: linear-gradient(to right, #add8e6 0%, #d4e4ed 5%, #eff5f9 10%, #ffffff 80%, #eff5f9 90%, #d4e4ed 95%, #add8e6 100%);
+}
+
 .pf footer {
 	background-color: #33cc33;
 	color: #fff;
 	padding: 6px 0;
 	text-align: center;
+	margin-top: 10px;
 }
 
 .pf .footer-content {
