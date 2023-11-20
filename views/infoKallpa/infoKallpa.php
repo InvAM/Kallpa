@@ -3,6 +3,8 @@
 
 <head>
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/infoKallpa.css">
+    <title>InfoKallpa</title>
+    <link rel="icon" href="public/Img/KallpaC.png" type="image/x-icon">
 </head>
 
 <body>
@@ -60,7 +62,7 @@
             </div>
         </section>
 
-        <div class="caja-seccion fondo1">
+        <div id="valor" class="caja-seccion fondo1">
             <div class="cajasobrekallpa2">
                 <p class="p4-info">Valores</p>
                 <div class="centrarsplide">
@@ -115,7 +117,7 @@
             </div>
         </div>
 
-        <section class="caja-seccion fondo-cont">
+        <section id="ubicacion" class="caja-seccion fondo-cont">
             <div class="cajasobrekallpa3">
                 <p class="p6-info">¿Dónde nos puedes encontrar?</p>
                 <iframe
@@ -125,7 +127,7 @@
             </div>
         </section>
 
-        <section class="caja-seccion fondo1">
+        <section id="contacto" class="caja-seccion fondo1">
             <div class="cajasobrekallpa2">
                 <p class="p5-info">Contáctanos</p>
                 <form id="contact-form" method="post">

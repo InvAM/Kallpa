@@ -3,15 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="formBSugerencia.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Buzón de sugerencias</title>
+    <link rel="icon" href="public/Img/KallpaC.png" type="image/x-icon">
+    <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/formBSugerencia.css">
 </head>
 
 <body>
+    <?php require_once "views/portalHeader.php"; ?>
+    <div class="sug">
     <form>
         <fieldset>
 
-            <body>
                 <div class="container">
                     <div class="column">
                         <p>Ubicación: San Martin - Av. Los Jazmines 958</p>
@@ -40,8 +43,18 @@
                         <input type="submit" value="Enviar">
                     </div>
                 </div>
+
         </fieldset>
     </form>
+
+    <footer>
+            <div class="footer-content">
+                <p>&copy; 2023 Kallpa. Todos los derechos reservados.</p>
+            </div>
+    </footer>
+    
+    </div>
+    <?php require_once "views/chatbot.php"; ?>
 </body>
 
 </html>
