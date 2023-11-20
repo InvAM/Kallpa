@@ -94,17 +94,15 @@ class RegistrarDomicilio extends Controller
 
     
     function eliminarDomicilio($param = null)
-    {
-        $dni = $param[0];
-        if ($this->model->delete($id)) {
-
-            $this->view->mensaje = "Domicilio Eliminado Correctamente";
-
-        } else {
-            //msg de error
-            $this->view->mensaje = "No se puedo eliminar em domicilio";
-        }
-        $this->render();
+{
+    $id = $param[0]; // Cambié $dni a $id
+    if ($this->model->delete($id)) {
+        $this->view->mensaje = "Domicilio Eliminado Correctamente";
+    } else {
+        // Msg de error
+        $this->view->mensaje = "No se pudo eliminar el domicilio";
     }
+    $this->render();
+}
 
 }

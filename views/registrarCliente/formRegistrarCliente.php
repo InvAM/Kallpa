@@ -107,8 +107,12 @@
                     </div>
 
                     <div class="contenedor-botones">
+                        <div>
                         <input type="submit" class="boton" value="Registrar">
+                        </div>
+                        <div>
                         <button type="button" class="boton" id="btnActualizar">Actualizar</button>
+                        </div>
                     </div>
                 </form>
             </div>

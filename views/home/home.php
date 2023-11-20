@@ -113,6 +113,16 @@
             <div class="titulo2">
                 <p>Kallpa</p>
             </div>
+            <div class="imagen-bonogas">
+                <img src="public/Img/bonogas.jpg" alt="">
+            </div>
+            <div class="cont-titulo3">
+                <p class="titu1">BENEFICIOS DEL</p>
+                <p class="titu2">GAS NATURAL</p>
+            </div>
+            <div class="cont-fondo">
+                
+            </div>
         </div>
 
         <script>

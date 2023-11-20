@@ -1,5 +1,6 @@
 body {
 	margin: 0; /*Quita espacio exterior*/
+	font-family: Candara;
 }
 
 .registrar-cli .contenedor-principal {
@@ -11,9 +12,11 @@ body {
 	justify-content: center; /*Centra el elemento*/
 	margin-top: 75px; /*Añadir espacio con el elemento de arriba*/
 	font-size: 25px; /*Establece el tamaño a la letra*/
+	font-family: Candara;
 }
 
 .registrar-cli .titulo-1 {
+	font-family: Candara;
 	color: #203864; /*Da color a las letras*/
 	margin-right: 10px; /*Añadir esapacio con el elemento de la derecha*/
 }
@@ -42,11 +45,12 @@ body {
 .registrar-cli .cont-datos-domicilio{
 	width: 155%; /*Establecer ancho de la caja*/
 	margin-top: 1%; /*Elimina espacio con el elemento de arriba*/
-	border: 2px solid #101270; /*Línea de la caja*/
-	box-shadow: 0px 2px 4px rgba(35, 74, 245, 0.562); /*Agregar sombra*/
+	border: 2px solid #38914e; /*Línea de la caja*/
+	box-shadow: 0px 2px 4px rgba(124, 248, 144, 0.562);
+	background-color: #d9f0de;
 	padding: 15px; /*Agrega espacio en el interior*/
 	height: 200px; /*Establece la altura del objeto*/
-	border-radius: 5px; /*Redondea las esquinas*/
+	border-radius: 10px; /*Redondea las esquinas*/
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -54,6 +58,8 @@ body {
 
 .registrar-cli .posicion-letra label {
 	display: block;
+	font-weight: bold;
+	color: rgb(78, 72, 72);
 	margin-bottom: 5px;
 	width: 200px; /* Ajusta este valor según el ancho que desees para las etiquetas */
 }
@@ -97,13 +103,12 @@ body {
 }
 
 .registrar-cli .boton-registrar {
-	background-color: #47d847; /*Color del botón*/
+	background-color:#203864; /*Color del botón*/
 	color: #ffffff; /*Cambia el color del texto */
 	width: 100%; /*Establecer ancho del objeto*/
 	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
 	font-size: 15px; /*Ajusta el tamaño de fuente */
 	border-radius: 5px; /*Agrega bordes redondeados */
-	border: 1px solid #39a805; /*Añade un borde */
 	padding: 9px; /*Agranda espacio en el interior de los inputs*/
 	font-family: "Times New Roman"; /*Fuente de letra*/
 	margin-top: 30px; /*Añade espacio con el elemento de arriba*/
@@ -125,11 +130,12 @@ body {
 .registrar-cli .contenedor-datos {
 	width: 49%; /*Establecer ancho de la caja*/
 	margin-top: 1%; /*Elimina espacio con el elemento de arriba*/
-	border: 2px solid #47d847; /*Línea de la caja*/
-	box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562); /*Agregar sombra*/
+	border: 2px solid  #38914e;
+	box-shadow: 0px 2px 4px rgba(124, 248, 144, 0.562);
+	background-color: #d9f0de;
 	padding: 15px; /*Agrega espacio en el interior*/
 	height: 280px; /*Establece la altura del objeto*/
-	border-radius: 5px; /*Redondea las esquinas*/
+	border-radius: 10px; /*Redondea las esquinas*/
 }
 
 .registrar-cli .parte_izquierda input {
@@ -143,6 +149,8 @@ body {
 }
 
 .registrar-cli .input-todo label{
+	font-weight: bold;
+	color: rgb(78, 72, 72);
 	display: block; /* Para que cada label ocupe una línea completa */
 	margin-bottom: 5px; /* Ajusta este valor según la separación que desees */
 	width: 150px;
@@ -185,6 +193,8 @@ body {
 }
 
 .registrar-cli .datos_derecha label {
+	font-weight: bold;
+	color: rgb(78, 72, 72);
 	margin-bottom: 5px;
 }
 
@@ -220,44 +230,6 @@ body {
 	font-family: "Times New Roman"; /*Fuente de letra*/
 }
 
-.contenedor-botones {
-	text-align: center;
-}
-
-.boton {
-	padding: 10px 20px;
-	font-size: 16px;
-	cursor: pointer;
-	border: none;
-	border-radius: 5px;
-	margin: 5px;
-	transition: background-color 0.3s ease;
-}
-
-.boton:hover {
-	background-color: #4caf50; /* Cambia el color al pasar el mouse */
-	color: #fff;
-}
-
-input[type="submit"] {
-	background-color: #0fba00; /* Color de fondo del botón */
-	color: #fff; /* Color del texto del botón */
-	border: 2px solid #0fba00; /* Borde del botón */
-}
-
-input[type="submit"]:hover {
-	background-color: #005580; /* Cambia el color al pasar el mouse */
-}
-
-#btnActualizar {
-	background-color: #12f312; /* Color de fondo del botón */
-	color: #fff; /* Color del texto del botón */
-	border: 2px solid #12f312; /* Borde del botón */
-}
-
-#btnActualizar:hover {
-	background-color: #127e12; /* Cambia el color al pasar el mouse */
-}
 
 .registrar-cli .boton-datos {
 	background-color: #203864; /*Color del botón*/
