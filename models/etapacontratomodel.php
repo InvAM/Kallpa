@@ -66,6 +66,42 @@ class EtapaContratoModel extends Model
         }
     }
 
+    public function getComprobarInstalacion($id)
+    {
+        $etapacontrato = [];
+        try {
+            $query = $this->db->connect()->prepare('SELECT IDContrato,IDEtapa FROM etapa_contrato WHERE IDEtapa=1 and IDContrato= :idcon');
+            $query->execute(['idcon' => $id]);
+            while ($row = $query->fetch()) {
+                $etapacontrato[] = [
+                    'IDContrato' => $row['IDContrato'],
+                    'IDEtapa' => $row['IDEtapa']
+                ];
+            }
+            return $etapacontrato;
+        } catch (PDOException $e) {
+            return [];
+        }
+    }
+
+    public function getComprobarHabilitacion($idcon)
+    {
+        $etapacontrato = [];
+        try {
+            $query = $this->db->connect()->prepare('SELECT IDContrato,IDEtapa FROM etapa_contrato WHERE IDEtapa=2 and IDContrato= :idcon');
+            $query->execute(['idcon' => $idcon]);
+            while ($row = $query->fetch()) {
+                $etapacontrato[] = [
+                    'IDEtapa' => $row['IDEtapa'],
+                    'IDContrato' => $row['IDContrato']
+                ];
+            }
+            return $etapacontrato;
+        } catch (PDOException $e) {
+            return [];
+        }
+    }
+
     public function getHabilitacion()
     {
         $etapascontratos = [];
