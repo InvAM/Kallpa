@@ -94,11 +94,12 @@
                     </div>
                     <button class="boton-opciones" id="btnAsignarMaterialesBD"> Asignar Materiales
                         <i class="mdi mdi-book-plus"></i></button>
-                </form>
-                <button class="boton-opciones" id="btnLimpiar"> Limpiar Lista
+                        <button class="boton-opciones" id="btnLimpiar"> Limpiar Lista
                     <i class="mdi mdi-restore"></i></button>
                 <button class="boton-opciones" id="btnAtras"> Atras
                     <i class="mdi mdi-keyboard-backspace"></i></button>
+                </form>
+                
 
             </div>
         </div>

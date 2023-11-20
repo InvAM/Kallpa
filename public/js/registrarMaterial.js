@@ -1,4 +1,3 @@
-var botonseleccionado = 0;
 function iniciar() {
 	if (localStorage.getItem("IDContrato")) {
 		//Obtener los datos del localStorage de ORDEN
@@ -15,6 +14,7 @@ function iniciar() {
 
 document.addEventListener("DOMContentLoaded", iniciar);
 
+var botonSeleccionado=0;
 //Actualizar Tabla
 function actualizarTabla($lista) {
 	var listaMateriales = $lista;
@@ -37,28 +37,28 @@ function actualizarTabla($lista) {
 		let celdaNombre = fila.insertCell(1);
 		celdaNombre.innerHTML = material.nombre;
 
-		let celdaCantidad = fila.insertCell(2);
-		celdaCantidad.innerHTML = material.cantidad;
+        let celdaCantidad = fila.insertCell(2);
+        celdaCantidad.innerHTML = material.cantidad;
+        
+         /*FUNCIONAMIENTO DE BOTON SELECCIONAR*/   
+        let celdaSeleccionar = fila.insertCell(3);
+            //Creando el boton para seleccionar
+            let botonSeleccionar =document.createElement("button");
+            //Creando icono
+            let iconoSeleccionar =document.createElement("i");
+            iconoSeleccionar.className="mdi mdi-content-copy mx-1";
+            //Agregando icono
+            botonSeleccionar.appendChild(iconoSeleccionar);
+            
+            botonSeleccionar.addEventListener("click",function(){
+                $("input[name='Cantidad_Ma']").val(material.cantidad);
+                $("#materialSelect").prop('selectedIndex', material.id -1);
+                botonSeleccionado=1;
+            });
+         celdaSeleccionar.appendChild(botonSeleccionar);
+         /* -----------------------------------------------------*/  
 
-		/FUNCIONAMIENTO DE BOTON SELECCIONAR/;
-		let celdaSeleccionar = fila.insertCell(3);
-		//Creando el boton para seleccionar
-		let botonSeleccionar = document.createElement("button");
-		//Creando icono
-		let iconoSeleccionar = document.createElement("i");
-		iconoSeleccionar.className = "mdi mdi-content-copy mx-1";
-		//Agregando icono
-		botonSeleccionar.appendChild(iconoSeleccionar);
-
-		botonSeleccionar.addEventListener("click", function () {
-			$("input[name='Cantidad_Ma']").val(material.cantidad);
-			$("#materialSelect").prop("selectedIndex", material.id - 1);
-			botonseleccionado = 1;
-		});
-		celdaSeleccionar.appendChild(botonSeleccionar);
-		/* -----------------------------------------------------*/
-
-		/FUNCIONAMIENTO DE BOTON ELIMINAR/;
+		/*FUNCIONAMIENTO DE BOTON ELIMINAR*/;
 		let celdaEliminar = fila.insertCell(4);
 		// Crear el botón y asignar propiedades
 		let botonEliminar = document.createElement("button");
@@ -194,25 +194,25 @@ $(document).ready(function () {
 		}
 	});
 
-	$("#formularioRM").submit(function (event) {
-		event.preventDefault();
-		//Enviar mediante Ajax
-		console.log(JSON.stringify(listaMateriales));
-		$.ajax({
-			url: "registrarMateriales/registrarMateriales",
-			type: "POST",
-			contentType: "application/json",
-			data: JSON.stringify(listaMateriales),
-			success: function (response) {
-				console.log(response);
-				if (botonseleccionado !== 1 && botonseleccionado !== 0) {
-					window.location.href = "generarOrdenI";
-				}
-			},
-			error: function (error) {
-				//Manejar errores
-				console.error(error);
-			},
-		});
-	});
+    $('#formularioRM').submit(function(event){
+        event.preventDefault(); 
+       //Enviar mediante Ajax
+       console.log(JSON.stringify(listaMateriales));
+       $.ajax({
+           url: 'registrarMateriales/registrarMateriales',
+           type: 'POST',
+           contentType: 'application/json',
+           data: JSON.stringify(listaMateriales),
+           success:function(response){
+                console.log(response);
+                if(botonSeleccionado!==1 && botonSeleccionado!==0){
+                    window.location.href='generarOrdenI';
+                }
+           },
+           error: function(error){
+                //Manejar errores
+                console.error(error);
+           }
+       });
+    });
 });

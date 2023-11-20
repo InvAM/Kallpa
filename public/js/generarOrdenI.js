@@ -87,7 +87,6 @@ $(document).ready(function () {
 	$("#btnAgregarTecnico").on("click", function () {
 		//Direccionando a otra página
 		window.location.href = "tecnico";
-		exit();
 	});
 	//Volver
 	$("#btnVolver").on("click", function () {
