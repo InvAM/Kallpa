@@ -41,6 +41,8 @@ class reclamaciones extends Controller
             ])
         ){
             $mensaje='Registrado';
+            $url = constant('URL').'reclamaciones';
+            var_dump($url);
             header("Location:".constant('URL').'reclamaciones');
         }
 
