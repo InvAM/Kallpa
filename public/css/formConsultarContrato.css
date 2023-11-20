@@ -19,6 +19,18 @@ body {
 	color: #0d3458; /*Da color a las letras*/
 	margin-right: 10px; /*Añadir esapacio con el elemento de la derecha*/
 }
+.especial{
+	display: flex;
+}
+
+
+#formularioCC{
+	width: 400px !important;
+}
+
+#formularioCC1{
+	width: 400px !important;
+}
 
 .consultar-co .titulo-2 {
 	color: rgb(62, 207, 62); /*Da color a las letras*/
@@ -79,7 +91,7 @@ tr:hover {
 	background-color: #47d847; /*Color del botón*/
 	height: 40px;
 	color: #ffffff; /*Cambia el color del texto */
-	width: 28%; /*Establecer ancho del objeto*/
+	width: 95%; /*Establecer ancho del objeto*/
 	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
 	font-size: 16px; /*Ajusta el tamaño de fuente */
 	border-radius: 5px; /*Agrega bordes redondeados */
@@ -153,4 +165,5 @@ tr:hover {
 }
 .Acciones {
 	margin-top: 20px;
+	display: flex;
 }
