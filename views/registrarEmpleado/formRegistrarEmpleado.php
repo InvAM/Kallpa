@@ -94,7 +94,6 @@
                                             data-celular="<?php echo $empleado->Celular_Em; ?>"
                                             data-categoria="<?php echo $empleado->IDCategoria; ?>">Seleccionar</button>
 
-                                        <!-- <a href="<?php echo constant('URL') . 'registrarEmpleado/verEmpleado/' . $empleado->DNI_Em; ?>"></a> -->
                                     </td>
                                     <td>
                                         <a
@@ -148,9 +147,4 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="<?php echo constant('URL'); ?>public/js/registrarEmpleado.js"></script>
 </body>
-
-
-
-
-
 </html>

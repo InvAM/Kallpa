@@ -15,6 +15,48 @@ body {
 	display: flex;
 }
 
+form {
+	width: 100%;
+	margin-right: 20px;
+	display: flex;
+}
+
+.formularioGOI2 {
+	width: 100%;
+	margin-right: 20px;
+	display: inline-block !important;
+}
+
+.formularioGOI{
+	display: inline !important;
+}
+
+.CajaTecnico .boton-opciones{
+	padding: 10px 20px;
+	font-size: 14px;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 90% !important;
+	background-color: #33cc33 !important;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+form .boton-opciones{
+	padding: 10px 20px;
+	font-size: 14px;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 30% !important;
+	background-color: #095ba8;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
 .generar-OI .contenedorP {
 	padding: 20px;
 	margin-bottom: 10px;
@@ -49,15 +91,30 @@ body {
 	margin-top: -10px;
 	float: left;
 	margin-left: 15px;
+	border: 2px solid #abf5b7;
+	box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562);
+}
+
+.generar-OI .contenedorS p{
+  margin-left: 20px;
+}
+
+.subcajita {
+    width: 20%; /* Ajusta según sea necesario */
+    margin: 0; /* Elimina el margen para evitar espacios entre las subcajitas */
+    box-sizing: border-box; /* Asegura que el ancho incluya el relleno y el borde */
+}
+
+.subcajita input,select {
+    width: 90% !important;
 }
 
 .generar-OI .cajaOrdenI {
 	margin-top: -15px;
-	border: 2px solid #abf5b7;
-	box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562);
 	padding: 15px;
-	height: 100px;
+	height: 80px;
 	border-radius: 0px;
+	display: flex;
 }
 
 .imagenOI {
@@ -65,7 +122,7 @@ body {
 	display: block;
 	color: rgb(62, 207, 62);
 	margin: 0 auto;
-	margin-top: -20px;
+	margin-top: 20px;
 }
 
 .generar-OI input {

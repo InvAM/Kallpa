@@ -49,15 +49,20 @@ body {
 	margin-top: -10px;
 	float: left;
 	margin-left: 15px;
+	border: 2px solid #abf5b7;
+	box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562);
 }
+
+.generar-OH .contenedorS p{
+	margin-left: 20px;
+  }
 
 .generar-OH .cajaOrdenH {
 	margin-top: -15px;
-	border: 2px solid #abf5b7;
-	box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562);
 	padding: 15px;
-	height: 100px;
+	height: 80px;
 	border-radius: 0px;
+	display: flex;
 }
 
 .imagenOH {
@@ -75,7 +80,7 @@ body {
 	border-radius: 5px;
 	color: #333;
 	font-size: 14px;
-	font-family: "Times New Roman";
+	font-family: "Arial";
 }
 
 .generar-OH select {
@@ -86,7 +91,7 @@ body {
 	border-radius: 5px;
 	color: #333;
 	font-size: 14px;
-	font-family: "Times New Roman";
+	font-family: "Arial";
 }
 
 .generar-OH .CajaCalendario {
@@ -199,6 +204,32 @@ body {
 	background-color: #095ba8;
 	color: white;
 }
+.subcajita {
+    width: 20%; /* Ajusta según sea necesario */
+    margin: 0; /* Elimina el margen para evitar espacios entre las subcajitas */
+    box-sizing: border-box; /* Asegura que el ancho incluya el relleno y el borde */
+}
+
+.subcajita input,select {
+    width: 90% !important;
+}
+
+form {
+	width: 100%;
+	margin-right: 20px;
+	display: flex;
+}
+
+.formularioGOH2 {
+	width: 100%;
+	margin-right: 20px;
+	display: inline-block !important;
+}
+
+.formularioGOH{
+	display: inline !important;
+}
+
 
 .custom-table-H button:hover {
 	background-color: #0e76a8;

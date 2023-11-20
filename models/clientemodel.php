@@ -78,6 +78,35 @@ class ClienteModel extends Model
         }
     }
 
+    public function getEspecial($dniC)
+    {
+        $item = []; // Declaras $item como un array
+
+        $query = $this->db->connect()->prepare('SELECT cliente.DNI_cli,cliente.Nombre_cli,cliente.Apellido_cli,cliente.IDDomicilio,domicilio.Direccion_Dom FROM cliente INNER JOIN domicilio on cliente.IDDomicilio= domicilio.IDDomicilio WHERE cliente.DNI_cli = :dniC ');
+        
+        try {
+            $query->execute(['dniC' => $dniC]);
+
+            // Supongo que deseas obtener un solo cliente, por lo que no necesitas un bucle
+            if ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+                $item = [
+                    'DNI_cli' => $row['DNI_cli'],
+                    'Nombre_cli' => $row['Nombre_cli'],
+                    'Apellido_cli' => $row['Apellido_cli'],
+                    'IDDomicilio' => $row['IDDomicilio'],
+                    'Direccion_Dom' => $row['Direccion_Dom'],
+                ];
+            }
+
+            return $item;
+        } catch (PDOException $e) {
+            // Manejar el error, puedes imprimirlo en la consola para depuración
+            echo json_encode(['error' => 'Error de base de datos']);
+            return [];
+        }
+    }
+
+
     public function update($item)
     {
         $query = $this->db->connect()->prepare('UPDATE cliente SET Nombre_cli = :nombre, Apellido_cli = :apellido,

@@ -1,0 +1,105 @@
+body {
+  background: url("https://d2bqn2kyidxvh4.cloudfront.net/wp-content/uploads/2021/09/NP2-1-808x454.jpeg");
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(26, 35, 126, 0.7);
+	z-index: -1;
+	background-clip: content-box;
+}
+
+.sug .container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.884);
+  text-align: center;
+}
+
+.sug .titulo {
+  text-align: center;
+  margin-top: -30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sug h1 {
+  color: #33cc33;
+}
+
+.sug input[type="text"],
+.sug textarea{
+  width: calc(100% - 20px);
+  padding: 10px;
+	margin-bottom: 10px;
+	color: #1a237e;
+	border-radius: 10px;
+  border: 0.5px solid #1a237e;
+}
+
+.sug input[type="text"]:hover{
+	background-color: #e3f2fd;
+	color: #1a237e;
+}
+
+.sug .txt {
+  resize: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sug input[type="submit"] {
+  background: linear-gradient(to right, #2e5397, #203864);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+.sug input[type="submit"]:hover {
+  background: linear-gradient(to right, #203864, #2e5397);
+  transform: translateY(-3px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sug textarea {
+  height: 273px;
+}
+
+.sug textarea::-webkit-scrollbar {
+  width: 8px; /* Ajusta el ancho de la barra de desplazamiento */
+}
+
+.sug textarea::-webkit-scrollbar-thumb {
+  background-color: #203864; /* Color del deslizador */
+  border-radius: 15px; /* Borde redondeado del deslizador */
+}
+
+.sug textarea:hover {
+  background-color: #e3f2fd;
+}
+
+.sug footer {
+	background-color: #33cc33;
+	color: #fff;
+	padding: 6px 0;
+	text-align: center;
+}
+
+.sug .footer-content {
+	max-width: 800px;
+	margin: 0 auto;
+}

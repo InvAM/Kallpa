@@ -18,7 +18,6 @@ body {
 	display: inline-block; /* Cambiado a inline-block para colocarlos en línea */
 	box-sizing: border-box; /* Para incluir el padding en el ancho y alto */
 	border: 2px solid transparent;
-	margin-top: 20px;
 }
 
 .lineacont {
@@ -209,6 +208,7 @@ body {
 	position: relative;
 	z-index: 0;
 	margin-bottom: 20px;
+	margin-top: -5px;
 }
 .container img {
 	width: 100%;

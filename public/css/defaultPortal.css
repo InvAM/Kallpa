@@ -122,7 +122,10 @@ body {
 .headerp .logo-kallpa img {
 	max-width: 180px;
 }
-
+.headerp .logo-usuario img {
+	max-width: 80px;
+	margin-top: -3px;
+}
 .headerp .menuOpciones .mdi {
 	font-size: 30px;
 	color: #808080;
@@ -130,7 +133,31 @@ body {
 .headerp .menuOpciones .menu-item {
 	position: relative;
 }
+.menuOpciones {
+	position: relative;
+}
 
+/* Estilo para el menú del usuario y sus submenús */
+.logo-usuario {
+	position: absolute;
+	right: 0; /* Ajusta este valor según sea necesario */
+	top: 0; /* Ajusta este valor según sea necesario */
+	z-index: 1; /* Asegura que el menú del usuario esté encima de otros elementos si es necesario */
+}
+
+/* Estilo para el submenú del usuario */
+.submenuContenedor {
+	position: absolute;
+	top: 100%; /* Ajusta este valor según sea necesario */
+	right: 0; /* Ajusta este valor según sea necesario */
+	display: none; /* Oculta el submenú por defecto */
+	z-index: 1; /* Asegura que el submenú esté encima de otros elementos si es necesario */
+}
+
+/* Asegura que el submenú esté visible al hacer hover sobre el ícono */
+.logo-usuario:hover .submenuContenedor {
+	display: block;
+}
 .headerp .menuOpciones .menu-item .submenuContenedor {
 	display: none; /* Inicialmente ocultar el submenu */
 	position: absolute;
@@ -163,8 +190,6 @@ body {
 	padding: 10px;
 	text-decoration: none;
 	list-style-type: none;
-	margin-left: -20px;
-	margin-right: 60px;
 	cursor: pointer;
 }
 .headerp .menuOpciones .menu-item .submenuContenedor .row .col1 {
@@ -240,4 +265,11 @@ body {
 	left: 0;
 	z-index: 1;
 	transform: rotate(180deg);
+}
+
+.imglogin {
+	width: 45px;
+	height: 45px;
+	margin-bottom: -39px;
+	margin-left: -135px;
 }
