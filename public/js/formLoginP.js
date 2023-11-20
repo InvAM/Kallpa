@@ -15,6 +15,7 @@ $(document).ready(function () {
 			url: "login/loguearse",
 			data: formData,
 			success: function (response) {
+				console.log("Respuesta del servidor:", response);
 				// Manejar la respuesta del servidor, por ejemplo, mostrar SweetAlert
 				if (response === "OK") {
 					Swal.fire({

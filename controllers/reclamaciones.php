@@ -4,7 +4,7 @@ class reclamaciones extends Controller
     public function __construct()
     {
         parent::__construct();
-        $this->loadModel("reclamacion");
+        $this->loadModel("reclamaciones");
 
     }
     function render()
@@ -12,7 +12,8 @@ class reclamaciones extends Controller
         $this->view->render('reclamaciones/formLReclamaciones');
     }
 
-    function registrarReclamaciones(){
+    function registrarReclamaciones()
+    {
         $nombre = $_POST['nombre_r'];
         $dni = $_POST['dni_r'];
         $correo = $_POST['correo_r'];
@@ -24,8 +25,8 @@ class reclamaciones extends Controller
         $tipo_reclamacion = $_POST['tipo_reclamacion_r'];
         $detalle = $_POST['detalle_r'];
         $pedido = $_POST['pedido_r'];
-
-        if(
+        $mensaje = "";
+        if (
             $this->model->insert([
                 'nombre_r' => $nombre,
                 'dni_r' => $dni,
@@ -39,13 +40,10 @@ class reclamaciones extends Controller
                 'detalle_r' => $detalle,
                 'pedido_r' => $pedido
             ])
-        ){
-            $mensaje='Registrado';
-            $url = constant('URL').'reclamaciones';
-            var_dump($url);
-            header("Location:".constant('URL').'reclamaciones');
+        ) {
+            $mensaje = 'Registrado';
+            header("Location:" . constant('URL') . 'reclamaciones');
         }
-
         $this->render();
     }
 

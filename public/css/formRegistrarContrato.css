@@ -1,0 +1,308 @@
+body {
+	margin: 0;
+	font-family: Arial;
+}
+
+.registrar-contrato .cont-1{
+	padding: 20px;
+}
+
+.registrar-contrato .titulo-principal{
+	display: flex;
+	justify-content: center;
+	margin-top: 4.5%;
+	font-size: 25px;
+}
+
+.registrar-contrato .titulo1{
+	color: #203864;
+	margin-right: 10px;
+}
+
+.registrar-contrato .titulo2{
+	color: rgb(62, 207, 62);
+}
+
+.registrar-contrato .cont-2 {
+	width: 31.8%; 
+	height: 350px;
+	margin-top: -28px; 
+	float: left; 
+}
+
+.registrar-contrato .subtitulo-cli{
+	color: #203864; 
+	font-size: 22px;
+	margin-left: 5%;
+}
+
+.registrar-contrato .cont-cliente {
+	width: 145%; 
+	margin-top: 1%; 
+	border: 2px solid #2aa312; 
+	background-color: #fff;
+	padding: 15px; 
+	height: 300px; 
+	border-radius: 0px; 
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-left: 5%;
+}
+
+.registrar-contrato .cont-cliente .icono-cliente{
+	justify-content: center;
+	margin-top: 1%;
+	margin-left: 2%;
+}
+
+.registrar-contrato .cont-cliente .mdi{
+	margin-top: 50px;
+	font-size: 180px;
+	color: #2aa312;
+}
+
+.registrar-contrato .cont-cliente .grupo1 {
+    margin-bottom: 15px;
+	margin-left: 30%;
+	margin-top: -27%;
+}
+
+
+.registrar-contrato .cont-cliente .grupo1 input{
+	padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.registrar-contrato .cont-cliente .grupo1 label{
+	display: block;
+	margin-bottom: 5px;
+	width: 200px;
+	color: rgb(78, 72, 72);
+}
+
+.registrar-contrato .cont-cliente .grupo2{
+	margin-left: 31%;
+	margin-top: -17%;
+}
+
+.registrar-contrato .cont-cliente .grupo2 input{
+	padding: 10px;
+    width: 80%;
+	margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.registrar-contrato .cont-cliente .grupo2 label{
+	display: block;
+	margin-bottom: 5px;
+	width: 700px;
+	color: rgb(78, 72, 72);
+}
+
+
+.registrar-contrato .cont-cliente .grupo1,
+.grupo2 label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.registrar-contrato .cont-cliente .grupo1,
+.grupo2 input {
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 4px;
+    outline: none;
+}
+
+.registrar-contrato .cont-cliente .boton-cli {
+    margin-top: -80px;
+	margin-left: 10px;
+}
+
+.registrar-contrato .cont-cliente .boton-cli .boton-buscar {
+	width: 200px;
+    padding: 10px;
+    background-color: #2aa312;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.registrar-contrato .cont-cliente .boton-cli .boton-buscar:hover {
+    background-color: #45a049;
+}
+
+.registrar-contrato .cont-3 {
+	margin-right: 8%;
+	margin-top: 24%;
+	margin-left: 2%;
+}
+
+.registrar-contrato .cont-3 .sub-contrato {
+	color: #203864; 
+	margin-left: 10px;
+	font-size: 22px;
+}
+
+.registrar-contrato .cont-3 .cont-contrato {
+	width: 51%;  
+	border: 2px solid #38914e; 
+	background-color: #fff;
+	padding: 15px; 
+	height: 300px; 
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.registrar-contrato .cont-contrato .grupo1-cont {
+    margin-bottom: 15px;
+	margin-left: 10px;
+	width: 45%;
+	margin-left: 10px;
+	margin-top: 2%;
+}
+
+
+.registrar-contrato .cont-contrato .grupo1-cont input{
+	padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+	margin-bottom: 10px;
+}
+
+.registrar-contrato .cont-contrato .grupo1-cont label{
+	font-weight: bold;
+	display: block;
+	margin-bottom: 5px;
+	width: 200px;
+	color: rgb(78, 72, 72);
+}
+
+.registrar-contrato .cont-contrato .grupo1-cont select{
+	width: 100%;
+	padding: 8px;
+	margin: 5px 0;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.registrar-contrato .cont-contrato .grupo2-cont {
+	margin-bottom: 15px;
+	margin-right: 10px;
+	margin-left: 20px;
+	margin-top: 2%;
+	width: 50%;
+}
+
+.registrar-contrato .cont-contrato .grupo2-cont input{
+	padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+	margin-bottom: 10px;
+}
+
+.registrar-contrato .cont-contrato .grupo2-cont label{
+	font-weight: bold;
+	display: block;
+	margin-bottom: 5px;
+	width: 200px;
+	color: rgb(78, 72, 72);
+}
+
+.registrar-contrato .cont-contrato .grupo2-cont select{
+	width: 100%;
+	padding: 8px;
+	margin: 5px 0;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.registrar-contrato .cont-4 {
+	width: 45%; 
+	margin-top: -800px; 
+	border: 2px solid rgb(10, 30, 87); 
+	box-shadow: 0px 2px 4px rgba(8, 4, 255, 0.616);
+	padding: 15px; 
+	height: 700px; 
+	border-radius: 5px; 
+	margin-left: 52%;
+}
+
+.registrar-contrato .cont-4 .imagen-kallpainfo {
+	max-height: 300px; 
+	max-width: 200px; 
+}
+
+.registrar-contrato .cont-4 .linea {
+	display: flex; 
+	justify-content: space-between; 
+	margin-right: 15px; 
+}
+
+.registrar-contrato .cont-5 {
+	margin-left: 54%;
+	margin-top: 1%;
+	width: 40%;
+	padding: 15px; 
+	height: 20px; 
+	border-radius: 5px; 
+}
+
+.registrar-contrato .grupo1-boton {
+	width: 100%;
+}
+
+.registrar-contrato .grupo1-boton .boton1 {
+	width: 33%;
+    padding: 10px;
+	margin-right: 10px;
+    background-color: #095ba8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.registrar-contrato .grupo1-boton .mdi {
+    font-size: 20px;
+    color: #fff;
+}
+.registrar-contrato .grupo1-boton .boton1:hover {
+    background-color: #459aa0;
+}
+
+.registrar-contrato .grupo1-boton {
+	display: flex;
+}
+
+.formularioRC1{
+	width: 300px;
+}
+
+.formularioRC1 .boton1{
+	width: 95% !important;
+}
+

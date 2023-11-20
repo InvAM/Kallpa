@@ -92,12 +92,18 @@
                     Atras
                         <i class="mdi mdi-keyboard-backspace"></i>
                 </button>
-                <button class="boton-opciones" id="btnOrdenI">
-                    Orden de Instalación <i class="mdi mdi-skip-next-circle"></i>
-                </button>
-                <button class="boton-opciones">
-                    Orden de Habilitación <i class="mdi mdi-skip-next-circle"></i>
-                </button>
+                <div class="especial">
+                    <form method="POST" action="<?php echo constant('URL'); ?>consultarContrato/generarOrdenI" id="formularioCC" name="formularioCC">
+                        <button class="boton-opciones" id="btnOrdenI">
+                            Orden de Instalación <i class="mdi mdi-skip-next-circle"></i>
+                        </button>
+                    </form>
+                    <form method="POST" action="<?php echo constant('URL'); ?>consultarContrato/generarOrdenH" id="formularioCC1" name="formularioCC1">
+                        <button class="boton-opciones" id="btnOrdenH">
+                            Orden de Habilitación <i class="mdi mdi-skip-next-circle"></i>
+                        </button>
+                    </form>
+                </div>
                 </div>
                 </div>
             </div>

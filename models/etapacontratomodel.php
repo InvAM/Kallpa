@@ -1,7 +1,7 @@
 <?php
-include_once "models/etapa_contrato.php";
+include_once "models/etapacontrato.php";
 
-class Etapa_ContratoModel extends Model
+class EtapaContratoModel extends Model
 {
 
     public function __construct()
@@ -33,7 +33,7 @@ class Etapa_ContratoModel extends Model
             $query = $this->db->connect()->prepare('SELECT IDContrato,IDEtapa,DNI_Em,Fecha_Et FROM etapa_contrato');
             $query->execute();
             while ($row = $query->fetch()) {
-                $etapacontrato = new Etapa_Contrato();
+                $etapacontrato = new EtapaContrato();
                 $etapacontrato->IDContrato = $row['IDContrato'];
                 $etapacontrato->IDEtapa = $row['IDEtapa'];
                 $etapacontrato->DNI_Em = $row['DNI_Em'];
@@ -53,7 +53,7 @@ class Etapa_ContratoModel extends Model
             $query = $this->db->connect()->prepare('SELECT IDContrato,IDEtapa,DNI_Em,Fecha_Et FROM etapa_contrato WHERE IDEtapa=1');
             $query->execute();
             while ($row = $query->fetch()) {
-                $etapacontrato = new Etapa_Contrato();
+                $etapacontrato = new EtapaContrato();
                 $etapacontrato->IDContrato = $row['IDContrato'];
                 $etapacontrato->IDEtapa = $row['IDEtapa'];
                 $etapacontrato->DNI_Em = $row['DNI_Em'];
@@ -66,6 +66,42 @@ class Etapa_ContratoModel extends Model
         }
     }
 
+    public function getComprobarInstalacion($id)
+    {
+        $etapacontrato = [];
+        try {
+            $query = $this->db->connect()->prepare('SELECT IDContrato,IDEtapa FROM etapa_contrato WHERE IDEtapa=1 and IDContrato= :idcon');
+            $query->execute(['idcon' => $id]);
+            while ($row = $query->fetch()) {
+                $etapacontrato[] = [
+                    'IDContrato' => $row['IDContrato'],
+                    'IDEtapa' => $row['IDEtapa']
+                ];
+            }
+            return $etapacontrato;
+        } catch (PDOException $e) {
+            return [];
+        }
+    }
+
+    public function getComprobarHabilitacion($idcon)
+    {
+        $etapacontrato = [];
+        try {
+            $query = $this->db->connect()->prepare('SELECT IDContrato,IDEtapa FROM etapa_contrato WHERE IDEtapa=2 and IDContrato= :idcon');
+            $query->execute(['idcon' => $idcon]);
+            while ($row = $query->fetch()) {
+                $etapacontrato[] = [
+                    'IDEtapa' => $row['IDEtapa'],
+                    'IDContrato' => $row['IDContrato']
+                ];
+            }
+            return $etapacontrato;
+        } catch (PDOException $e) {
+            return [];
+        }
+    }
+
     public function getHabilitacion()
     {
         $etapascontratos = [];
@@ -73,7 +109,7 @@ class Etapa_ContratoModel extends Model
             $query = $this->db->connect()->prepare('SELECT IDContrato,IDEtapa,DNI_Em,Fecha_Et FROM etapa_contrato WHERE IDEtapa=2');
             $query->execute();
             while ($row = $query->fetch()) {
-                $etapacontrato = new Etapa_Contrato();
+                $etapacontrato = new EtapaContrato();
                 $etapacontrato->IDContrato = $row['IDContrato'];
                 $etapacontrato->IDEtapa = $row['IDEtapa'];
                 $etapacontrato->DNI_Em = $row['DNI_Em'];

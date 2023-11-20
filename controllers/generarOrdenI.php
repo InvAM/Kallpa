@@ -4,7 +4,7 @@ class GenerarOrdenI extends Controller
     public function __construct()
     {
         parent::__construct();
-        $this->loadModel('etapa_contrato');
+        $this->loadModel('etapacontrato');
         $this->view->mensaje = "";
     }
 
@@ -38,15 +38,11 @@ class GenerarOrdenI extends Controller
                 ])
             ) {
                 $mensaje = "Se genero la orden de Instalación";
-
-                echo '<script> console.log(' . $mensaje . ')</script>';
             } else {
                 $mensaje = "Orden no puede ser generada";
-
-                echo '<script> console.log(' . $mensaje . ')</script>';
             }
             $this->view->mensaje = $mensaje;
-            $this->render();
+
         } else {
             // Manejar el caso en el que alguna de las variables es nula
             echo "Error: Datos incompletos";

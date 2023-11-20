@@ -34,8 +34,8 @@
                         <div class="subcajita">
                             <label class="Sub" >Etapa</label><br>
                             <select readonly>
-                                <option value="asesor">Instalación</option>
-                                <option value="tecnico">Habilitación</option>
+                                <option value="1">Instalación</option>
+                                <option value="2">Habilitación</option>
                             </select>
                         </div>
                         <div class="subcajita">
@@ -68,11 +68,11 @@
                     <br>
                     <div class="CajaTecnico">
                         <p class="TI2">Datos del técnico</p>
-                        <form action="<?php echo constant('URL'); ?>generarOrdenI/registrarOrden" name="formularioGOI2" id="formularioGOI2" method="POST">  
-                        <label class="Sub" for="NombreCompleto_Em">Técnico</label>
+                        <form action="<?php echo constant('URL'); ?>generarOrdenI/registrarOrden" class="formularioGOI2" name="formularioGOI2" id="formularioGOI2" method="POST">  
+                        <label class="Sub" for="NombreCompleto_Em">Técnico</label><br>
                         <input class="I2" type="text" id="NombreCompleto_Em" name="NombreCompleto_Em" placeholder="Técnico" 
                                value=""readonly>
-                        <label class="Sub" for="DNI_Em_T">Dni del Técnico</label>
+                        <label class="Sub" for="DNI_Em_T">Dni del Técnico</label><br>
                         <input class="I2" type="text" id="DNI_Em_T" name="DNI_Em_T" placeholder="DNI" 
                                value=""readonly>
                         </form>
@@ -92,20 +92,21 @@
                                     <th>Fecha de Etapa</th>
                                     <th>DNI Empleado</th>
                                     <th>Visualizar</th>
+                                    <th>Agregar Materiales</th>
                                 </tr>
                             </thead>
                             <tbody>
                             <?php
-                                include_once 'models/etapa_contrato.php';
+                                include_once 'models/etapacontrato.php';
                                 foreach ($this->etapa_contrato as $row) {
-                                    $etapa_contrato = new Etapa_Contrato();
+                                    $etapa_contrato = new EtapaContrato();
                                     $etapa_contrato = $row; ?>
                                     <tr>
                                         <td>
-                                            <?php echo $etapa_contrato->IDContrato ?>
+                                            <?php echo $etapa_contrato->IDEtapa ?>
                                         </td>
                                         <td>
-                                            <?php echo $etapa_contrato->IDEtapa ?>
+                                            <?php echo $etapa_contrato->IDContrato ?>
                                         </td>
                                         <td>
                                             <?php echo $etapa_contrato->Fecha_Et ?>
@@ -115,7 +116,17 @@
                                         </td>
                                         <td>
                                         <button class="btn-small btn-primary" type="submit" name="accion" value="visualizar">
-                                            <i class="mdi mdi-eye-settings mx-1"></i>
+                                            
+                                             <i class="mdi mdi-eye-settings mx-1"></i>
+                                        </button>
+                                        </td>
+                                        <td>
+                                        <button class="btn-small btn-primary" id="btnAsignarMateriales"
+                                            data-idcontrato="<?php echo $etapa_contrato->IDContrato; ?>"
+                                            data-idetapa="<?php echo $etapa_contrato->IDEtapa; ?>"
+                                            data-fecha="<?php echo $etapa_contrato->Fecha_Et; ?>"
+                                            data-dniE="<?php echo $etapa_contrato->DNI_Em; ?>">
+                                            <i class="mdi mdi-list-box"></i>
                                         </button>
                                         </td>
                                     </tr>
@@ -123,7 +134,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <form action="<?php echo constant('URL'); ?>generarOrdenI/registrarOrden" name="formularioGOI" id="formularioGOI" method="POST">  
+                    <form action="<?php echo constant('URL'); ?>generarOrdenI/registrarOrden" class="formularioGOI"name="formularioGOI" id="formularioGOI" method="POST">  
                    <button class="boton-opciones" id="btnGenerar"> Generar Orden 
                         <i class="mdi mdi-book-plus"></i></button>
                     </form>
@@ -132,6 +143,9 @@
                     <button class="boton-opciones" id="btnVolver"> Atras
                                <i class="mdi mdi-keyboard-backspace"></i>
                     </button>
+                    <br>
+                    <br>
+                    <br>
                 </div>
             </div>
         </div>
