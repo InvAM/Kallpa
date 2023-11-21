@@ -6,11 +6,15 @@ class Menu extends Controller
     {
         parent::__construct();
         session_start();
+        if (!isset($_SESSION['dni'])) {
+            header("Location:" . constant('URL') . 'login');
+            exit();
+        }
     }
     function render()
     {
         $this->view->render('menu/menu');
-        var_dump($_SESSION);
+
     }
 
 }

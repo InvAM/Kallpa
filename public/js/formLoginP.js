@@ -5,43 +5,44 @@ $(document).ready(function () {
 		event.preventDefault();
 
 		// Obtener los datos del formulario
-		var formData = $(".formularioLogin").serialize();
-
+		var formData = {
+			dni: $("input[name='dni']").val(),
+			nombreusuario: $("input[name='nombreusuario']").val(),
+			password: $("input[name='password']").val(),
+		};
 		// Mostrar los datos en la consola
-
+		console.log(formData);
 		// Realizar la petición AJAX al controlador
 		$.ajax({
 			type: "POST",
 			url: "login/loguearse",
-			data: formData,
+			data: JSON.stringify(formData),
+			dataType: "json", // Especifica el tipo de datos que esperas del servidor
 			success: function (response) {
 				console.log("Respuesta del servidor:", response);
-				// Manejar la respuesta del servidor, por ejemplo, mostrar SweetAlert
-				if (response === "OK") {
+				console.log("Dni:", response.dni);
+				console.log("Nombre Usuario:", response.nombreusuario);
+				if (response.success) {
+					// Muestra SweetAlert de éxito
 					Swal.fire({
 						icon: "success",
-						title: "Éxito",
-						text: "Credenciales correctas",
-						didClose: function () {
-							// Redireccionar a la página de menú después de cerrar SweetAlert
-							window.location.replace("menu");
-						},
+						title: "Inicio de sesión exitoso",
+						text: response.message,
+					}).then(() => {
+						// Redirige a otra página después de hacer clic en "OK"
+						window.location.href = "menu";
 					});
 				} else {
+					// Muestra SweetAlert de error
 					Swal.fire({
 						icon: "error",
 						title: "Error",
-						text: "Credenciales incorrectas",
+						text: response.message,
 					});
 				}
 			},
 			error: function () {
-				// Manejar errores de la petición AJAX
-				Swal.fire({
-					icon: "error",
-					title: "Error",
-					text: "Hubo un problema al realizar la operación.",
-				});
+				console.error("Error en la petición AJAX");
 			},
 		});
 	});
