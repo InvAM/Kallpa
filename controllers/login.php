@@ -21,11 +21,11 @@ class login extends Controller
             $dni = $_POST['dni'];
             $nombreUsuario = $_POST['nombreusuario'];
             $password = $_POST['password'];
+            $datos = array('dni' => $dni, 'nombreusuario' => $nombreUsuario, 'password' => $password);
 
-            // Validación adicional, asegúrate de realizar la validación necesaria
 
             // Llamar al método de inicio de sesión en el modelo
-            $credenciales = $this->model->getCredencialesEmpleado($dni, $nombreUsuario, $password);
+            $credenciales = $this->model->getCredencialesEmpleado($datos);
 
             if ($credenciales !== null) {
 
@@ -33,8 +33,9 @@ class login extends Controller
                 // Puedes almacenar información del usuario en la sesión
                 $_SESSION['dni'] = $credenciales->DNI_Em;
                 $_SESSION['nombreUsuario'] = $credenciales->nombreusuario;
+                $_SESSION["credencialesempleado"] = array();
                 echo "OK";
-                exit();
+
 
             } else {
                 echo "Credenciales incorrectas";

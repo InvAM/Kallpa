@@ -1,6 +1,6 @@
 function mostrarVentanaEmergente() {
-    Swal.fire({
-        html: `
+	Swal.fire({
+		html: `
             <div id="login.ventana-cliente" style="max-width: 400px; margin: 20px auto; text-align: center; font-family: 'Arial', sans-serif; overflow: hidden;">
                 <div class="login.chat-header" style="background-color: #ffffff; color: #203864; padding: 20px; border-radius: 10px;">
                     <div class="login.header-content" style="margin-bottom: 20px;">
@@ -11,13 +11,13 @@ function mostrarVentanaEmergente() {
                     <div class="login.center-vertically" style="margin: 10px 0;">
                         <div style="display: flex; align-items: center;">
                             <img src="public/Img/correo.png" style="width: 50px; height: 50px; margin-top: 10px; margin-right: 10px;">
-                            <input class="login.log" type="text" name="usuario" placeholder="Ingrese Correo..." style="width: 80%; padding: 15px; border: 1px solid #203864; border-radius: 5px; background-color: #ffffff; color: #203864; margin-top: 8px; margin-right: 15px;">
+                            <input class="login.log" type="text" name="username" id="username" placeholder="Ingrese Nombre Usuario..." style="width: 80%; padding: 15px; border: 1px solid #203864; border-radius: 5px; background-color: #ffffff; color: #203864; margin-top: 8px; margin-right: 15px;">
                         </div>
                     </div>
                     <div class="login.center-vertically" style="margin: 10px 0;">
                         <div style="display: flex; align-items: center;">
                             <img src="public/Img/bloquear.png" style="width: 50px; height: 50px; margin-right: 10px;">
-                            <input class="login.log" type="password" name="contraseña1" placeholder="Ingrese Contraseña..." required style="width: 80%; padding: 15px; border: 1px solid #203864; border-radius: 5px; background-color: #ffffff; color: #203864; margin-right: 15px;">
+                            <input class="login.log" type="password" name="password" id="password" placeholder="Ingrese Contraseña..." required style="width: 80%; padding: 15px; border: 1px solid #203864; border-radius: 5px; background-color: #ffffff; color: #203864; margin-right: 15px;">
                         </div>
                     </div>
                     <div class="login.check" style="margin: 10px 0; display: flex; align-items: center; justify-content: space-between;">
@@ -29,11 +29,62 @@ function mostrarVentanaEmergente() {
                     </div>
                     <button class="login.popup-nav-btn" onclick="iniciarSesion()" style="background-color: #203864; color: #ffffff; padding: 12px 20px; border: none; border-radius: 5px; cursor: pointer;">Iniciar Sesión</button>
                 </div>
+                <script src="<?php echo constant('URL'); ?>public/js/formLoginCli.js"></script>
             </div>`,
-        showConfirmButton: false,
-        customClass: {
-            popup: 'custom-popup-class',
-            title: 'custom-title-class',
-        },
-    });
+		showConfirmButton: false,
+		customClass: {
+			popup: "custom-popup-class",
+			title: "custom-title-class",
+		},
+	});
+}
+
+function iniciarSesion() {
+	// Obtener los valores ingresados por el usuario
+	var username = $('input[name="username"]').val();
+	var password = $('input[name="password"]').val();
+	// var guardarClave = $('input[name="check"]').is(":checked");
+
+	// Realizar alguna acción con la información, como enviarla a través de AJAX
+	// Aquí puedes agregar tu lógica para enviar la información al servidor
+
+	var datos = {
+		username: username,
+		password: password,
+	};
+	console.log(datos);
+	// Realizar la petición AJAX
+	$.ajax({
+		type: "POST", // Tipo de petición (POST en este caso)
+		url: "loginClientes/loguearse", // URL del controlador PHP
+		data: datos, // Datos a enviar
+		success: function (response) {
+			// Manejar la respuesta del servidor
+			console.log(response);
+			if (response === "OK") {
+				Swal.fire({
+					icon: "success",
+					title: "Éxito",
+					text: "Credenciales correctas",
+					didClose: function () {
+						// Redireccionar a la página de menú después de cerrar SweetAlert
+						window.location.href = "catalogo";
+					},
+				});
+			} else {
+				Swal.fire({
+					icon: "error",
+					title: "Error",
+					text: "Credenciales incorrectas",
+				});
+			}
+		},
+		error: function (error) {
+			// Manejar errores de la petición AJAX
+			console.error(error);
+		},
+	});
+
+	// Cerrar la ventana emergente después de realizar las acciones necesarias
+	Swal.close();
 }

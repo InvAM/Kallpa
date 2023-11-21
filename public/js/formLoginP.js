@@ -24,7 +24,7 @@ $(document).ready(function () {
 						text: "Credenciales correctas",
 						didClose: function () {
 							// Redireccionar a la página de menú después de cerrar SweetAlert
-							window.location.href = "menu";
+							window.location.replace("menu");
 						},
 					});
 				} else {

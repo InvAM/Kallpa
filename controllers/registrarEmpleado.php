@@ -10,10 +10,13 @@ class RegistrarEmpleado extends Controller
     }
     function render()
     {
+
+
         $empleado = $this->model->get();
         $this->view->empleado = $empleado;
         $this->view->render('registrarEmpleado/formRegistrarEmpleado');
     }
+
     function registrarNuevoEmpleado()
     {
         $dni = $_POST['DNI_Em_reg'];

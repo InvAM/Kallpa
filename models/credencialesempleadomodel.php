@@ -8,8 +8,11 @@ class CredencialesEmpleadoModel extends Model
         parent::__construct();
     }
 
-    public function getCredencialesEmpleado($dni, $nombreusuario, $password)
+    public function getCredencialesEmpleado($datos)
     {
+        $dni = $datos['dni'];
+        $nombreusuario = $datos['nombreusuario'];
+        $password = $datos['password'];
         $query = $this->db->connect()->prepare('SELECT DNI_Em, nombreusuario, password FROM credencialesempleado WHERE DNI_Em = :dni AND nombreusuario = :nombreusuario AND password = :password;');
         try {
             $query->execute(['dni' => $dni, 'nombreusuario' => $nombreusuario, 'password' => $password]);
