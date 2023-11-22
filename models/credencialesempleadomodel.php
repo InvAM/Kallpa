@@ -8,6 +8,22 @@ class CredencialesEmpleadoModel extends Model
         parent::__construct();
     }
 
+    public function getNombreEmpleado($dni)
+    {
+        // Consultar la base de datos para obtener el nombre del empleado
+        $query = $this->db->connect()->prepare('SELECT Nombre_Em FROM empleado WHERE DNI_Em = :dni');
+        $query->execute(['dni' => $dni]);
+
+        // Verificar si se encontraron resultados
+        if ($query->rowCount() > 0) {
+            // Obtener el nombre del primer resultado (puedes ajustar según tu lógica)
+            $row = $query->fetch();
+            return $row['Nombre_Em'];
+        } else {
+            // No se encontraron resultados
+            return "Nombre no encontrado";
+        }
+    }
     public function getCredencialesEmpleado($datos)
     {
         $dni = $datos['dni'];

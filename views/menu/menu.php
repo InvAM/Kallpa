@@ -15,7 +15,7 @@
         <div class="contenedor1">
             <h1 class="titulo-bien">
                 <span>¡Bienvenido!</span>
-                <?php echo $_SESSION['nombreusuario'] ?>
+                <?php echo $this->nombreEmpleado; ?>
             </h1>
             <img src="public/Img/Kallpa.png" alt="Kallpa" class="Img1">
             <img src="public/Img/usuario (3).png" alt="Usuario" class="Img2">
