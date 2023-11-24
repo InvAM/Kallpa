@@ -13,6 +13,23 @@ class EvaluarContrato extends Controller
         $this->view->contrato = $contrato;
         $this->view->render('evaluarContrato/formEvaluarContrato');
     }
-
-
+    
+    function actualizarEstado()
+    {
+        if (isset($_POST['confirmar'])) {
+            $estado = $_POST['selectedEstado'];
+            $IDContrato = $_POST['IDContrato'];
+            $mensaje = "";
+            if(
+                $this->model->updateEvaluar([
+                    'selectedEstado' => $estado,
+                    'IDContrato' => $IDContrato
+                ])
+            ){
+                $mensaje = 'Actualizado';
+                header("Location:" . constant('URL') . 'evaluarContrato');
+            }
+            $this->render();
+        }
+    }
 }

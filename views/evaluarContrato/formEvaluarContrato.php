@@ -26,26 +26,31 @@
 
                 <p class="subtitulo_1">Filtros de Contratos</p>
 
-                <div class="caja_filtro_1">
-                    <div class="subcajita">
-                        <label class="label-styled" for="searchID">ID Contrato:</label>
-                        <input type="text" class="input-field" id="searchID" placeholder="Buscar por ID">
+                <form action="" method="post">
+                    <div class="caja_filtro_1">
+                        <div class="subcajita">
+                            <label class="label-styled" for="filtroIDContrato">ID Contrato:</label>
+                            <input type="text" class="input-field" id="filtroIDContrato" name="filtroIDContrato" placeholder="Buscar por ID">
+                        </div>
+                        <div class="subcajita">
+                            <label class="label-styled" for="searchEstado">Seleccione un estado:</label>
+                            <select class="input-field cbx" id="searchEstado" name="searchEstado" placeholder="Estados">
+                                <option value="">Seleccionar estado</option>
+                                <option value="En revisión">En revisión</option>
+                                <option value="Observado">Observado</option>
+                                <option value="Aprobado">Aprobado</option>
+                                <option value="Desaprobado">Desaprobado</option>
+                            </select>
+                        </div>
+                        <div class="subcajita">
+                            <label class="label-styled" for="searchFecha">Selecciona una fecha:</label><br>
+                            <input type="date" id="searchFecha" name="searchFecha">
+                        </div>
+
+                        <button class="boton-css" id="btn-limp"><i class="mdi mdi-broom"></i></button>
+
                     </div>
-                    <div class="subcajita">
-                        <label class="label-styled" for="searchEstado">Seleccione un estado:</label>
-                        <select class="input-field cbx" id="searchEstado" placeholder="Estados">
-                            <option value="">En revisión</option>
-                            <option value="">Observado</option>
-                            <option value="">Aprobado</option>
-                            <option value="">Desaprobado</option>
-                            <!-- Opciones de estados se cargarán dinámicamente aquí -->
-                        </select>
-                    </div>
-                    <div class="subcajita">
-                        <label class="label-styled" for="searchFecha">Selecciona una fecha:</label><br>
-                        <input type="date" id="searchFecha">
-                    </div>
-                </div>
+                </form>
 
             </div>
             <div class="table-container">
@@ -121,7 +126,7 @@
 
         <div class="contenedor-principal2">
 
-            <form method="Post" action="<?php echo constant('URL'); ?>evaluarContrato" id="formularioEV">
+            <form method="POST" action="<?php echo constant('URL'); ?>evaluarContrato/actualizarEstado" id="formularioEV">
 
             <div class="subcajita4">
 
@@ -131,7 +136,7 @@
                         <i class="mdi mdi-file-document i-t subcajita3"></i>
                         <div class="subcajita2" style="margin-left:-1px">
                             <label class="label-styled" for="IDContrato">ID Contrato:</label>
-                            <input type="text" class="input-field2" id="IDContrato" placeholder="IDContrato" readonly>
+                            <input type="text" class="input-field2" name="IDContrato" id="IDContrato" placeholder="IDContrato" readonly>
                         </div>
                         <div class="subcajita2">
                             <label class="label-styled" for="numSum">Número de Suministro:</label>
@@ -143,40 +148,34 @@
                         </div>
                         <div class="subcajita2">
                             <label class="label-styled" for="selectedEstado">Estado del Contrato:</label>
-                            <select class="input-field2 cbx" id="selectedEstado">
-                                <option value="">En revisión</option>
-                                <option value="">Observado</option>
-                                <option value="">Aprobado</option>
-                                <option value="">Desaprobado</option>
-                                <!-- Opciones del estado del contrato se cargarán dinámicamente aquí -->
+                            <select class="input-field2 cbx" id="selectedEstado" name="selectedEstado">
+                                <option value="En revisión">En revisión</option>
+                                <option value="Observado">Observado</option>
+                                <option value="Aprobado">Aprobado</option>
+                                <option value="Desaprobado">Desaprobado</option>
                             </select>
                         </div>
                     </div>
                 </div>
             </div>
 
-            </form>
-
             <div class="subcajita5">
 
 
             <div class="buttons-container">
-                <button class="action-button" id="confirmar">Actualizar Estado<i class="mdi mdi-pencil ia"></i></button>
+                <button class="action-button1" id="confirmar" name="confirmar">Actualizar Estado<i class="mdi mdi-pencil ia"></i></button>
+            </div>
+
+            </div>
+
+            </form>
+            
+            <div class="buttons-container2">
                 <button class="action-button" id="limpiar">Limpiar Campos<i class="mdi mdi-restore ia"></i></button>
                 <button class="action-button" id="volverMenu">Volver a Menú<i class="mdi mdi-keyboard-backspace ia"></i></button>
             </div>
-            </div>
 
         </div>
-
-        <div class="confirmation-dialog" id="dialogVisible">
-            <!-- Contenido de la ventana de confirmación se generará dinámicamente aquí -->
-        </div>
-
-        <div class="error-dialog" id="dialogError">
-            <!-- Contenido de la ventana de error se generará dinámicamente aquí -->
-        </div>
-
 
         <?php require_once "views/footer.php" ?>
     </div>
@@ -184,7 +183,6 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="<?php echo constant('URL'); ?>public/js/evaluarContrato.js"></script>
-
 </body>
 
 </html>
