@@ -1,51 +1,110 @@
-$(document).ready(function (){
-    $(".boton-seleccionar").on("click", function(){
-        var dni = $(this).data("dni");
-        var nombre = $(this).data("nombre");
-        var apellido =$(this).data("apellido");
-        var fecha = $(this).data("fecha");
-        var genero = $(this).data("genero");
-        var nacionalidad = $(this).data("nacionalidad");
-        var estado = $(this).data("estado");
-        var celular =$(this).data("celular");
+function handleDateSelection(event) {
+	// Obtén el valor seleccionado
+	var selectedDate = event.target.value;
 
-        $("#formularioC").find("#DNI_cli_reg").val(dni);
-        $("#formularioC").find("#Nombre_cli_reg").val(nombre);
-        $("#formularioC").find("#Apellido_cli_reg").val(apellido);
-        $("#formularioC").find("#Celular_cli_reg").val(celular);
-        $("#formularioC").find("#FechaNacimiento:_cli_reg").val(fecha);
-        $("#formularioC").find("#IDGenero_reg").val(genero);
-        $("#formularioC").find("#IDNacionalidad_regNI_cli_reg").val(nacionalidad);
-        $("#formularioC").find("#IDEstadoCivil_reg").val(estado);
-    });
+	console.log("Fecha seleccionada:", selectedDate);
+}
 
-    // Manejar el clic del botón "Actualizar"
-	$("#btnActualizar").on("click", function () {
-		// Cambiar el atributo "action" del formulario antes de enviarlo
-		$("#formularioC").attr("action", "registrarCliente/actualizarCliente");
+
+$(document).ready(function(){
+	//VOLVER
+	$("#btnAtras").on("click", function(){
+		window.location.href="menu";
+	});
+
+	//LIMPIAR
+	$("#btnLimpiar").on("click", function(){
+	$("#IDDomicilio_reg").val("");
+	$("#Direccion_Dom_reg").val("");
+	$("#Interior_Dom_reg").val("");
+	$("#Piso_Dom_reg").val("");
+	$("#Nomb_Malla_Dom_reg").val("");
+	$("#IDCondicion").prop("selectedIndex", 0);
+	$("#IDEstrato_reg").prop("selectedIndex", 0);
+	$("#IDPredio_reg").prop("selectedIndex", 0);
+	$("#IDDistrito_reg").prop("selectedIndex", 0);
+	$("#Nombre_cli_reg").val("");
+	$("#Apellido_cli_reg").val("");
+	$("#DNI_cli_reg").val("");
+	$("#FechaNacimiento").val("");
+	$("#IDGenero_reg").prop("selectedIndex",0);
+	$("#Celular_cli_reg").val("");
+	$("#IDNacionalidad_reg").prop("selectedIndex",0);
+	$("#IDEstadoCivil_reg").prop("SelectedIndex",0);
+	});
+
+	//REGISTRAR
+	$("#formularioRCL1").submit(function(event){
+		event.preventDefault();
+		var IDDomicilio = $("#IDDomicilio_reg").val();
+		var Direccion_Dom = $("#Direccion_Dom_reg").val();
+		var Interior_Dom = $("#Interior_Dom_reg").val();
+		var Piso_Dom = $("#Piso_Dom_reg").val();
+		var Nomb_Malla_Dom = $("#Nomb_Malla_Dom_reg").val();
+		var IDCondicion = $("#IDCondicion").val();
+		var IDEstrato = $("#IDEstrato_reg").val();
+		var IDPredio = $("#IDPredio_reg").val();
+		var IDDistrito = $("#IDDistrito_reg").val();
+		var Nombre_cli = $("#Nombre_cli_reg").val();
+		var Apellido_cli = $("#Apellido_cli_reg").val();
+		var DNI_cli = $("#DNI_cli_reg").val();
+		var FechaNacimiento_cli = $("#FechaNacimiento").val();
+		var IDGenero = $("#IDGenero_reg").val();
+		var Celular_cli = $("#Celular_cli_reg").val();
+		var IDNacionalidad =$("#IDNacionalidad_reg").val();
+		var IDEstadoCivil = $("#IDEstadoCivil_reg").val();
+
+		var registroActual = {
+			IDDomicilio: IDDomicilio,
+			Direccion_Dom: Direccion_Dom,
+			Interior_Dom: Interior_Dom,
+			Piso_Dom: Piso_Dom,
+			Nomb_Malla_Dom: Nomb_Malla_Dom,
+			IDCondicion: IDCondicion,
+			IDEstrato: IDEstrato,
+			IDPredio: IDPredio,
+			IDDistrito: IDDistrito,
+			Nombre_cli: Nombre_cli,
+			Apellido_cli: Apellido_cli,
+			DNI_cli: DNI_cli,
+			FechaNacimiento_cli: FechaNacimiento_cli,
+			IDGenero: IDGenero,
+			Celular_cli: Celular_cli,
+			IDNacionalidad: IDNacionalidad,
+			IDEstadoCivil: IDEstadoCivil
+		};
+
+		console.log(registroActual);
+		//Envia el formulario mediante Ajax
+
 		$.ajax({
+			url: "registrarCliente/registrarCliente",
 			type: "POST",
-			url: $("#formularioC").attr("action"),
-			data: $("#formularioC").serialize(),
-			success: function (response) {
-				// Manejar la respuesta del servidor
-				console.log(response);
-
-				// Parsear la respuesta JSON
-				var responseData = JSON.parse(response);
-
-				if (responseData.success) {
-					// Redirigir a la URL especificada en la respuesta
-					window.location.href = responseData.redirect;
-				} else {
-					// Manejar el caso de actualización fallida
-					console.error(responseData.mensaje);
-				}
+			contentType: "application/json",
+			data: JSON.stringify(registroActual),
+			success: function(response){
+				alert(response);
+				$("#IDDomicilio_reg").val("");
+				$("#Direccion_Dom_reg").val("");
+				$("#Interior_Dom_reg").val("");
+				$("#Piso_Dom_reg").val("");
+				$("#Nomb_Malla_Dom_reg").val("");
+				$("#IDCondicion").prop("selectedIndex", 0);
+				$("#IDEstrato_reg").prop("selectedIndex", 0);
+				$("#IDPredio_reg").prop("selectedIndex", 0);
+				$("#IDDistrito_reg").prop("selectedIndex", 0);
+				$("#Nombre_cli_reg").val("");
+				$("#Apellido_cli_reg").val("");
+				$("#DNI_cli_reg").val("");
+				$("#FechaNacimiento").val("");
+				$("#IDGenero_reg").prop("selectedIndex",0);
+				$("#Celular_cli_reg").val("");
+				$("#IDNacionalidad_reg").prop("selectedIndex",0);
+				$("#IDEstadoCivil_reg").prop("SelectedIndex",0);
 			},
-			error: function (error) {
-				// Manejar errores si es necesario
+			error: function(error){
 				console.error(error);
 			},
 		});
 	});
-})
+});

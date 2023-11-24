@@ -6,7 +6,6 @@ include_once "models/tipoinstalacionmodel.php";
 
 class RegistrarContrato extends Controller
 {
-    private $asesores;  // Declarar la propiedad
 
     function __construct()
     {
@@ -57,10 +56,10 @@ class RegistrarContrato extends Controller
         
         if($IDContrato !==null){
             $cliente=$this->model->getBusqueda($DNI_cli);
-          if(!empty($cliente)){
+            if(!empty($cliente)){
                 $mensaje="El cliente con DNI:".$DNI_cli." "."ya cuenta con un contrato vigente,".
-                          "por favor ingrese otro cliente";
-           }else{
+                            "por favor ingrese otro cliente";
+            }else{
             if(
                 $this->model->insert([
                     'IDContrato' => $IDContrato,
@@ -79,8 +78,8 @@ class RegistrarContrato extends Controller
                 }else{
                     $mensaje="El contrato no puede ser registrado";
                 }
-           }
-           echo json_encode($mensaje);
+            }
+            echo json_encode($mensaje);
         }else{
             echo "Error: Datos incompletos";
         }

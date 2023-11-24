@@ -8,29 +8,29 @@ function handleDateSelection(event) {
 
 $(document).ready(function(){
   //VOLVER
-  $("#btnAtras").on("click",function(){
-     window.location.href="menu";
-  });
-  
+   $("#btnAtras").on("click",function(){
+      window.location.href="menu";
+   });
+   
   //LIMPIAR
-  $("#btnLimpiar").on("click", function(){
-    $("#HUD").val("");
-    $("#selectedDate").prop("selectedIndex", 0);
-    $("#HUD").val("");
-    $("#puntosI").val("");
-    $("#iddomicilio").val("");
-    $("#iddomicilio").val("");
-    $("#dniCliente").val("");
-    $("#asesorSelect").prop("selectedIndex", 0);
-    $("#gabineteSelect").prop("selectedIndex", 0);
-    $("#tipoInsSelect").prop("selectedIndex", 0);
-  });
-  
+   $("#btnLimpiar").on("click", function(){
+   $("#HUD").val("");
+   $("#selectedDate").prop("selectedIndex", 0);
+   $("#HUD").val("");
+   $("#puntosI").val("");
+   $("#iddomicilio").val("");
+   $("#iddomicilio").val("");
+   $("#dniCliente").val("");
+   $("#asesorSelect").prop("selectedIndex", 0);
+   $("#gabineteSelect").prop("selectedIndex", 0);
+   $("#tipoInsSelect").prop("selectedIndex", 0);
+   });
+   
   //BUSCAR
-  $("#formularioRC").submit(function(event){
+   $("#formularioRC").submit(function(event){
       event.preventDefault();
       var DNI= $("#dniCliente").val();
-       console.log("Me presione")
+      console.log("Me presione")
       //Envia el dato mediante AJAX
 
       $.ajax({
@@ -61,7 +61,7 @@ $(document).ready(function(){
             console.error(error);
          },
       });
-  });
+   });
 
    //REGISTRAR
    $("#formularioRC1").submit(function(event){
@@ -79,22 +79,22 @@ $(document).ready(function(){
       var IDTipoInst= $("#tipoInsSelect").val();
 
       var contratoActual = {
-        IDContrato: IDContrato,
-        Fecha_Con: Fecha_Con,
-        NumeroRadicado_Con: NumeroRadicado_Con,
-        PuntoInstalacion_Con: PuntoInstalacion_Con,
-        numSum: numSum,
-        estado: estado,
-        IDDomicilio: IDDomicilio,
-        DNI_cli: DNI_cli,
-        DNI_Em: DNI_Em,
-        IDGabineteCategoria: IDGabineteCategoria,
-        IDTipoInst:IDTipoInst
+         IDContrato: IDContrato,
+         Fecha_Con: Fecha_Con,
+         NumeroRadicado_Con: NumeroRadicado_Con,
+         PuntoInstalacion_Con: PuntoInstalacion_Con,
+         numSum: numSum,
+         estado: estado,
+         IDDomicilio: IDDomicilio,
+         DNI_cli: DNI_cli,
+         DNI_Em: DNI_Em,
+         IDGabineteCategoria: IDGabineteCategoria,
+         IDTipoInst:IDTipoInst
       };
 
       console.log(contratoActual);
 		// Envía el formulario mediante Ajax
-    
+   
 		$.ajax({
 			url: "registrarContrato/registrarContrato",
 			type: "POST",
@@ -102,7 +102,7 @@ $(document).ready(function(){
 			data: JSON.stringify(contratoActual),
 			success: function (response) {
 				// Manejar la respuesta del servidor (si es necesario)
-			  alert(response);
+			   alert(response);
             $("#HUD").val("");
             $("#selectedDate").prop("selectedIndex", 0);
             $("#HUD").val("");

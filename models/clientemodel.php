@@ -10,17 +10,18 @@ class ClienteModel extends Model
     public function insert($datos)
     {
         try {
-            $query = $this->db->connect()->prepare('INSERT TO cliente(DNI_cli,Nombre_cli,Apellido_cli,Celular_cli,FechaNacimiento_cli,IDGenero,IDNacionalidad,IDEstadoCivil)
-            VALUES (:dniC,:nomC,:apeC,:cel,:fecha,:genero,:nacionalidad,:estadoC)');
+            $query = $this->db->connect()->prepare('INSERT INTO cliente(DNI_cli,Nombre_cli,Apellido_cli,Celular_cli,FechaNacimiento_cli,IDGenero,IDNacionalidad,IDEstadoCivil,IDDomicilio)
+            VALUES (:dniC,:nomC,:apeC,:cel,:fecha,:genero,:nacionalidad,:estadoC,:id)');
             $query->execute([
-                'dniC' => $datos['DNI_cli_reg'],
-                'nomC' => $datos['Nombre_cli_reg'],
-                'apeC' => $datos['Apellido_cli_reg'],
-                'cel'  => $datos['Celular_cli_reg'],
-                'fecha'=> $datos['FechaNacimiento:_cli_reg'],
-                'genero'=> $datos['IDGenero_reg'],
-                'nacionalidad' => $datos['IDNacionalidad_reg'],
-                'estadoC' => $datos['IDEstadoCivil_reg']
+                'dniC' => $datos['DNI_cli'],
+                'nomC' => $datos['Nombre_cli'],
+                'apeC' => $datos['Apellido_cli'],
+                'cel'  => $datos['Celular_cli'],
+                'fecha'=> $datos['FechaNacimiento_cli'],
+                'genero'=> $datos['IDGenero'],
+                'nacionalidad' => $datos['IDNacionalidad'],
+                'estadoC' => $datos['IDEstadoCivil'],
+                'id' => $datos['IDDomicilio']
             ]);
             return true;
         } catch (PDOException $e) {
@@ -95,6 +96,32 @@ class ClienteModel extends Model
                     'Apellido_cli' => $row['Apellido_cli'],
                     'IDDomicilio' => $row['IDDomicilio'],
                     'Direccion_Dom' => $row['Direccion_Dom'],
+                ];
+            }
+
+            return $item;
+        } catch (PDOException $e) {
+            // Manejar el error, puedes imprimirlo en la consola para depuración
+            echo json_encode(['error' => 'Error de base de datos']);
+            return [];
+        }
+    }
+
+    public function getConfirmar($dniC)
+    {
+        $item = []; // Declaras $item como un array
+
+        $query = $this->db->connect()->prepare('SELECT DNI_cli,Nombre_cli,Apellido_cli FROM cliente  WHERE DNI_cli = :dniC ');
+        
+        try {
+            $query->execute(['dniC' => $dniC]);
+
+            // Supongo que deseas obtener un solo cliente, por lo que no necesitas un bucle
+            if ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+                $item = [
+                    'DNI_cli' => $row['DNI_cli'],
+                    'Nombre_cli' => $row['Nombre_cli'],
+                    'Apellido_cli' => $row['Apellido_cli']
                 ];
             }
 

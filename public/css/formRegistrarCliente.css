@@ -45,12 +45,11 @@ body {
 .registrar-cli .cont-datos-domicilio{
 	width: 155%; /*Establecer ancho de la caja*/
 	margin-top: 1%; /*Elimina espacio con el elemento de arriba*/
-	border: 2px solid #38914e; /*Línea de la caja*/
-	box-shadow: 0px 2px 4px rgba(124, 248, 144, 0.562);
-	background-color: #d9f0de;
+	border: 2px solid #2aa312; /*Línea de la caja*/
+	background-color: #ffffff;
 	padding: 15px; /*Agrega espacio en el interior*/
 	height: 200px; /*Establece la altura del objeto*/
-	border-radius: 10px; /*Redondea las esquinas*/
+	border-radius: 0px; /*Redondea las esquinas*/
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -87,6 +86,10 @@ body {
 	width: 200px;
 }
 
+.registrar-cli .grupo2 select{
+	width: 200px !important;
+}
+
 .registrar-cli .grupo2 input {
     width: 200%; 
     padding: 8px; 
@@ -98,8 +101,8 @@ body {
 
 .registrar-cli .grupo3 {
 	width: 100%;
-	margin-left: 215%;
-	margin-top: -104%;
+	margin-left: 225%;
+	margin-top: -108%;
 }
 
 .registrar-cli .boton-registrar {
@@ -130,12 +133,11 @@ body {
 .registrar-cli .contenedor-datos {
 	width: 49%; /*Establecer ancho de la caja*/
 	margin-top: 1%; /*Elimina espacio con el elemento de arriba*/
-	border: 2px solid  #38914e;
-	box-shadow: 0px 2px 4px rgba(124, 248, 144, 0.562);
-	background-color: #d9f0de;
+	border: 2px solid  #2aa312;
+	background-color: #ffffff;
 	padding: 15px; /*Agrega espacio en el interior*/
 	height: 280px; /*Establece la altura del objeto*/
-	border-radius: 10px; /*Redondea las esquinas*/
+	border-radius: 0px; /*Redondea las esquinas*/
 }
 
 .registrar-cli .parte_izquierda input {
@@ -219,6 +221,24 @@ body {
 	font-family: "Times New Roman"; /*Fuente de letra*/
 }
 
+.registrar-cli .grupo3 select {
+	width: 100%;
+	padding: 8px;
+	margin-bottom: 16px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.registrar-cli .grupo2 select {
+	width: 100%;
+	padding: 8px;
+	margin-bottom: 16px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
 .registrar-cli .datos_derecha select {
 	margin-bottom: 5px;
 	width: 100.5%; /*Establecer ancho del objeto*/
@@ -245,15 +265,14 @@ body {
 }
 
 .registrar-cli .contenedor-info {
-	width: 40%; /*Establecer ancho de la caja*/
-	margin-top: -600px; /*Elimina espacio con el elemento de arriba*/
-	border: 2px solid #47d847; /*Línea de la caja*/
-	box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562); /*Agregar sombra*/
+	width: 45%; /*Establecer ancho de la caja*/
+	margin-top: -640px; /*Elimina espacio con el elemento de arriba*/
+	border: 2px solid rgb(10, 30, 87); /*Línea de la caja*/
+	box-shadow: 0px 2px 4px rgba(8, 4, 255, 0.616); /*Agregar sombra*/
 	padding: 15px; /*Agrega espacio en el interior*/
-	height: 518px; /*Establece la altura del objeto*/
+	height: 600px; /*Establece la altura del objeto*/
 	border-radius: 5px; /*Redondea las esquinas*/
-	float: right; /*Posiciona el objeto a la izquierda*/
-	margin-left: 10%;
+	margin-left: 52%;
 }
 
 .registrar-cli .imagen-kallpainfo {
@@ -271,17 +290,38 @@ body {
 	margin-top: -45px; /*Elimina espacio con el elemento de arriba*/
 }
 
-.registrar-cli .boton-atras {
-	background-color: #47d847; /*Color del botón*/
-	color: #ffffff; /*Cambia el color del texto */
-	width: 20%; /*Establecer ancho del objeto*/
-	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
-	font-size: 15px; /*Ajusta el tamaño de fuente */
-	border-radius: 5px; /*Agrega bordes redondeados */
-	border: 1px solid #39a805; /*Añade un borde */
-	padding: 9px; /*Agranda espacio en el interior de los inputs*/
-	font-family: "Times New Roman"; /*Fuente de letra*/
-	margin-top: 83px; /*Añade espacio con el elemento de arriba*/
-	margin-left: -16px; /*Elimina el espacio con el elemento izquierdo*/
-	margin-right: 35px; /*Añadir espacio con elemento de la derecha*/
+/* Estilo para el contenedor principal */
+.cont-button {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+	width: 400px;
+	height: 100px;
 }
+
+/* Estilo para cada botón */
+.boton1 {
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilo para el icono dentro del botón */
+.boton1 i {
+    margin-right: 5px;
+}
+
+/* Estilo para cambiar el color cuando el mouse pasa sobre el botón */
+.boton1:hover {
+    background-color: #45a049;
+}
+
+
