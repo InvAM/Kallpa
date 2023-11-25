@@ -105,7 +105,12 @@
             </hr>
             <div>
                 <ul>
-                    <li> <a href="cerrarSesion">Hola</a></li>
+                    <li> <a href="cerrarSesion">Cerrar Sesion</a></li>
+                    <li><a href="registrarEmpleado">Registrar Empleado</a></li>
+                    <li><a href="registrarContrato">Registrar Contrato</a></li>
+                    <li><a href="registrarCliente">Registrar Cliente</a></li>
+                    <li><a href="registrarMateriales">Registrar Materiales</a></li>
+                    <li><a href="ConsultarContrato">Consultar Contrato</a></li>
                 </ul>
             </div>
         </div>

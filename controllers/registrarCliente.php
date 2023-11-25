@@ -6,12 +6,19 @@ class RegistrarCliente extends Controller
         parent::__construct();
         $this->loadModel('cliente');
         $this->view->mensaje = "";
+        //El usuario debe estar registrado
+        session_start();
+        if (!isset($_SESSION['dni'])) {
+            header("Location:" . constant('URL') . 'Login');
+            exit();
+        }
 
     }
     function render()
     {
         $cliente = $this->model->get();
         $this->view->cliente = $cliente;
+
         $this->view->render('registrarCliente/formRegistrarCliente');
     }
     function registrarNuevoCliente()
@@ -67,7 +74,7 @@ class RegistrarCliente extends Controller
         $fecha = $_POST['FechaNacimiento:_cli_reg'];
         $genero = $_POST['IDGenero_reg'];
         $nacionalidad = $_POST['IDNacionalidad_reg'];
-        $estadoC = $datos['IDEstadoCivil_reg'];
+        $estadoC = $_POST['IDEstadoCivil_reg'];
 
         //Asegurar que los datos esten presentes y validos
         if (!empty($dniC) && !empty($nomC) && !empty($apeC) && !empty($cel) && !empty($fecha) && !empty($genero) && !empty($nacionalidad) && !empty($estadoC)) {

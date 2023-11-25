@@ -7,6 +7,13 @@ class RegistrarEmpleado extends Controller
         $this->loadModel('empleado');
         $this->view->mensaje = "";
 
+        //El usuario debe estar registrado
+        session_start();
+        if (!isset($_SESSION['dni'])) {
+            header("Location:" . constant('URL') . 'login');
+            exit();
+        }
+
     }
     function render()
     {

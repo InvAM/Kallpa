@@ -8,6 +8,21 @@ class CredencialesEmpleadoModel extends Model
         parent::__construct();
     }
 
+    //esta aqui porque necesita el DNI de la sesion
+    public function obtenerInicialNombre($dni)
+    {
+        $query = $this->db->connect()->prepare('SELECT LEFT(Nombre_Em, 1) AS Inicial FROM empleado WHERE DNI_Em = :dni');
+        $query->execute(['dni' => $dni]);
+
+        if ($query->rowCount() > 0) {
+            $row = $query->fetch();
+            return $row['Inicial'];
+        } else {
+            return null; // O maneja el caso en que no se encuentre el empleado con ese DNI
+        }
+    }
+
+    //esta aqui porque necesita el DNI de la sesion
     public function getNombreEmpleado($dni)
     {
         // Consultar la base de datos para obtener el nombre del empleado
