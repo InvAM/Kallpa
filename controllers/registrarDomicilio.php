@@ -6,6 +6,12 @@ class RegistrarDomicilio extends Controller
         parent::__construct();
         $this->loadModel('domicilio');
         $this->view->mensaje = "";
+        //El usuario debe estar registrado
+        session_start();
+        if (!isset($_SESSION['dni'])) {
+            header("Location:" . constant('URL') . 'Login');
+            exit();
+        }
     }
     function render()
     {
@@ -62,14 +68,14 @@ class RegistrarDomicilio extends Controller
     function actualizarDomicilio()
     {
         $id = $_POST['IDDomicilio_reg'];
-        $direc = $S_POST['Direccion_Dom_reg'];
-        $inte = $S_POST['Interior_Dom_reg'];
-        $piso = $S_POST['Piso_Dom_reg'];
-        $malla = $S_POST['Nomb_Malla_Dom_reg'];
-        $cond = $S_POST['IDCondicion_reg'];
-        $estra = $S_POST['IDEstrato_reg'];
-        $predio = $S_POST['IDPredio_reg'];
-        $distrito = $S_POST['IDDistrito_reg'];
+        $direc = $_POST['Direccion_Dom_reg'];
+        $inte = $_POST['Interior_Dom_reg'];
+        $piso = $_POST['Piso_Dom_reg'];
+        $malla = $_POST['Nomb_Malla_Dom_reg'];
+        $cond = $_POST['IDCondicion_reg'];
+        $estra = $_POST['IDEstrato_reg'];
+        $predio = $_POST['IDPredio_reg'];
+        $distrito = $_POST['IDDistrito_reg'];
 
         if (!empty($id) && !empty($direc) && !empty($inte) && !empty($piso) && !empty($malla) && !empty($cond) && !empty($estra) && !empty($predio) && !empty($distrito)) {
             if (
@@ -109,7 +115,7 @@ class RegistrarDomicilio extends Controller
     function eliminarDomicilio($param = null)
     {
         $dni = $param[0];
-        if ($this->model->delete($id)) {
+        if ($this->model->delete($dni)) {
 
             $this->view->mensaje = "Domicilio Eliminado Correctamente";
 

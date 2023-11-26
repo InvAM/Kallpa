@@ -22,8 +22,9 @@
                     <a id="linea2" href="tel:+5116354338" class="numeroT">635 4338</a>
                 </div>
                 <div class="contenedor1 lineacont">
-                    <span class="label">Línea de Contacto</span>
-                    <a id="linea1" href="" class="numeroT">1111</a>
+
+                    <a id="linea1" href="https://www.calidda.com.pe/" class="numeroT"><span class="label">Línea de
+                            Contacto</span> Cálidda</a>
                 </div>
                 <a href="https://wa.me/51941301020" target="_blank" class="contenedor1">
                     <span class="label">
@@ -131,6 +132,7 @@
                                 aria-expanded="false" aria-controls="submenu4">
                                 <!-- Icono para la nueva opción -->
                                 <!-- Texto de la nueva opción -->
+
                                 <a href="#" class="logo-usuario ">
                                     <img class="imglogin" src="public/Img/usuario (3).png">
                                 </a>
@@ -144,8 +146,8 @@
                                         </a>
                                     </li>
                                     <li class="col">
-                                        <a href="Login">
-                                            <i class="mdi mdi-account"></i><span>Ingresar como trabajador</span>
+                                        <a href="cerrarSesionC">
+                                            <i class="mdi mdi-account"></i><span>Cerrar Sesion</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -158,8 +160,11 @@
 
         </header>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.js"></script>
     <script src="<?php echo constant('URL'); ?>public/js/formLoginCli.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <style>
         .custom-popup-class {
             background: transparent !important;

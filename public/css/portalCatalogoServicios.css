@@ -296,7 +296,7 @@ body {
 }
 
 .servicio1 {
-	height: 520px;
+	height: 550px;
 	border-radius: 10px;
 	background: linear-gradient(to right, #ffff 60%, transparent 40%),
 		url("../Img/Instalacion.jpeg");
@@ -315,7 +315,7 @@ body {
 }
 
 .servicio2 {
-	height: 520px;
+	height: 550px;
 	border-radius: 10px;
 	background: linear-gradient(to right, #ffff 60%, transparent 40%),
 		url("../Img/FondoHabilitación1.jpg");

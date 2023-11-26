@@ -4,7 +4,7 @@ class reclamaciones extends Controller
     public function __construct()
     {
         parent::__construct();
-        $this->loadModel("reclamaciones");
+        $this->loadModel("reclamacion");
 
     }
     function render()

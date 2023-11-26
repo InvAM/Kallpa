@@ -7,13 +7,23 @@ class RegistrarEmpleado extends Controller
         $this->loadModel('empleado');
         $this->view->mensaje = "";
 
+        //El usuario debe estar registrado
+        session_start();
+        if (!isset($_SESSION['dni'])) {
+            header("Location:" . constant('URL') . 'login');
+            exit();
+        }
+
     }
     function render()
     {
+
+
         $empleado = $this->model->get();
         $this->view->empleado = $empleado;
         $this->view->render('registrarEmpleado/formRegistrarEmpleado');
     }
+
     function registrarNuevoEmpleado()
     {
         $dni = $_POST['DNI_Em_reg'];
