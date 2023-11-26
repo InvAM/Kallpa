@@ -23,13 +23,11 @@ $(document).ready(function(){
     });
 
     //limpiar filtros
-    $("#btn-limp").on("click",function(){
-            // Limpiar valores de los campos de filtro
-            $("#filtroIDContrato").val(""); // Limpiar el campo de ID de Contrato
-            $("#searchEstado").val(""); // Restablecer el valor del select de Estado
-            $("#searchFecha").val(""); // Restablecer el valor del campo de fecha
-    
-            // Restablecer la lógica de filtrado para mostrar todas las filas nuevamente
+    $("#btn-borrar").on("click",function(){
+            event.preventDefault();
+            $("#formularioF").find("#filtroIDContrato").val("");
+            $("#formularioF").find("#searchEstado").val("");
+            $("#formularioF").find("#searchFecha").val("");
             $('#filtroIDContrato, #searchEstado, #searchFecha').trigger('input');
     });
 

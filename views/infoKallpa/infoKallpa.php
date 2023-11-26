@@ -29,13 +29,13 @@
             </div>
         </section>
 
-        <section id="visionYmision" class="caja-seccion">
+        <section id="visionYmision" class="caja-seccion1">
             <p class="p7-info">Nuestra Visión y Misión</p>
             <div class="cajasobrekallpa5">
                 <div class="separar">
                     <div class="informacion1 pers-mivi scale-up-center">
                         <div class="subirimg2">
-                            <img src="public/Img/Mision.png">
+                            <img src="public/Img/mi.png">
                         </div>
                         <p class="tit-desc">Misión</p>
                         <p class="desc2">Satisfacer las necesidades y expectativas de nuestros clientes, entregando
@@ -49,7 +49,7 @@
                 <div class="separar">
                     <div class="informacion1 pers-mivi scale-up-center">
                         <div class="subirimg2">
-                            <img src="public/Img/Vision.png">
+                            <img src="public/Img/vi.png">
                         </div>
                         <p class="tit-desc">Visión</p>
                         <p class="desc2">Consolidar nuestra presencia en el mercado nacional, satisfaciendo los
@@ -62,7 +62,7 @@
             </div>
         </section>
 
-        <div id="valor" class="caja-seccion fondo1">
+        <div id="valor" class="caja-seccion2">
             <div class="cajasobrekallpa2">
                 <p class="p4-info">Valores</p>
                 <div class="centrarsplide">
@@ -128,7 +128,7 @@
         </section>
 
         <section id="contacto" class="caja-seccion fondo1">
-            <div class="cajasobrekallpa2">
+            <div class="cajasobrekallpa6">
                 <p class="p5-info">Contáctanos</p>
                 <form id="contact-form" method="post">
                     <div class="cajasobrekallpa4">

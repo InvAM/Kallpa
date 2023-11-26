@@ -26,7 +26,7 @@
 
                 <p class="subtitulo_1">Filtros de Contratos</p>
 
-                <form action="" method="post">
+                <form action="" method="post" id="formularioF">
                     <div class="caja_filtro_1">
                         <div class="subcajita">
                             <label class="label-styled" for="filtroIDContrato">ID Contrato:</label>
@@ -47,7 +47,7 @@
                             <input type="date" id="searchFecha" name="searchFecha">
                         </div>
 
-                        <button class="boton-css" id="btn-limp"><i class="mdi mdi-broom"></i></button>
+                        <button class="boton-css" id="btn-borrar" name="btn-borrar"><i class="mdi mdi-broom"></i></button>
 
                     </div>
                 </form>
