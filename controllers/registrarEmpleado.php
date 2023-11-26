@@ -1,10 +1,13 @@
 <?php
+
+include_once "models/categoriaempleadomodel.php";
 class RegistrarEmpleado extends Controller
 {
     function __construct()
     {
         parent::__construct();
         $this->loadModel('empleado');
+        $this->categoria = new Categoriaempleadomodel();
         $this->view->mensaje = "";
 
         //El usuario debe estar registrado
@@ -18,8 +21,9 @@ class RegistrarEmpleado extends Controller
     function render()
     {
 
-
+        $categoria = $this->categoria->get();
         $empleado = $this->model->get();
+        $this->view->categoria = $categoria;
         $this->view->empleado = $empleado;
         $this->view->render('registrarEmpleado/formRegistrarEmpleado');
     }
@@ -94,7 +98,7 @@ class RegistrarEmpleado extends Controller
 
         } else {
             //msg de error
-            $this->view->mensaje = "No se puedo eliminar em empleado";
+            $this->view->mensaje = "No se puedo eliminar el empleado porque esta afiliado a un contrato";
         }
         $this->render();
     }

@@ -37,9 +37,16 @@
                             id="Celular_Em_reg">
                         <label for="IDCategoria_reg">Categoría</label>
                         <select name="IDCategoria_reg" id="IDCategoria_reg">
-                            <option value="0">Escoger...</option>
-                            <option value="1">Asesor</option>
-                            <option value="2">Técnico</option>
+                            <?php
+                            include_once "models/categoriaempleado.php";
+                            foreach ($this->categoria as $opcion) {
+                                $categoria = new Categoriaempleado();
+                                $categoria = $opcion; ?>
+                                <option value="<?php echo $opcion->IDCategoria ?>" ;>
+                                    <?php echo $opcion->Cargo_CE ?>
+                                </option>
+                            <?php } ?>
+
                             <!-- Seguir con opciones -->
                         </select>
                         <input type="submit" class="boton" value="Registrar">
@@ -143,8 +150,10 @@
         <?php require_once "views/footer.php"; ?>
 
     </div>
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="<?php echo constant('URL'); ?>public/js/registrarEmpleado.js"></script>
 </body>
+
 </html>

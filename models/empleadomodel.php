@@ -32,7 +32,7 @@ class EmpleadoModel extends Model
     {
         $items = [];
         try {
-            $query = $this->db->connect()->prepare('SELECT DNI_Em,Nombre_Em,Apellido_Em,Celular_Em,IDCategoria FROM empleado');
+            $query = $this->db->connect()->prepare('SELECT DNI_Em,Nombre_Em,Apellido_Em,Celular_Em,IDCategoria FROM empleado  ORDER BY empleado.Nombre_Em ASC');
             $query->execute();
             while ($row = $query->fetch()) {
                 $item = new Empleado();
@@ -90,6 +90,8 @@ class EmpleadoModel extends Model
             return [];
         }
     }
+
+
 
     public function getAsesores()
     {
@@ -164,8 +166,5 @@ class EmpleadoModel extends Model
         }
     }
 
-    public function loguearse($dni)
-    {
 
-    }
 }
