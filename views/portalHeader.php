@@ -129,27 +129,9 @@
                         </li>
                         <li class="menu-item">
                             <div class="item-label-icon" data-toggle="collapse" href="#submenu4" role="button"
-                                aria-expanded="false" aria-controls="submenu4" style="color: black;">
+                                aria-expanded="false" aria-controls="submenu4">
                                 <!-- Icono para la nueva opción -->
-
-                                <?php
-                                // Iniciar sesión
-                                
-
-                                // Verificar si 'nombrecliente' está definido en la sesión
-                                if (isset($_SESSION['username'])) {
-                                    $nombrecliente = $_SESSION['username'];
-                                } else {
-                                    $nombrecliente = null;
-                                }
-                                ?>
-
-                                <!-- Imprimir el nombre del cliente o 'Invitado' -->
-                                <?php
-
-                                echo $this->nombrecliente;
-
-                                ?>
+                                <!-- Texto de la nueva opción -->
 
                                 <a href="#" class="logo-usuario ">
                                     <img class="imglogin" src="public/Img/usuario (3).png">

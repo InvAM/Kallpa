@@ -6,9 +6,9 @@ class Main extends Controller
         parent::__construct();
         $this->view->mensaje = "";
         session_start();
-        if (isset($_SESSION['username'])) {
-            $username = $_SESSION['username'];
-            $this->view->nombrecliente = $username;
+        if (isset($_SESSION['nombrecliente'])) {
+            $nombrecliente = $_SESSION['nombrecliente'];
+            $this->view->nombrecliente = $nombrecliente;
         } else {
             $this->view->nombrecliente = null;
         }
