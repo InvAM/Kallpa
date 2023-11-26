@@ -40,51 +40,41 @@ function mostrarVentanaEmergente() {
 }
 
 function iniciarSesion() {
-	// Obtener los valores ingresados por el usuario
-	var username = $('input[name="username"]').val();
-	var password = $('input[name="password"]').val();
-	// var guardarClave = $('input[name="check"]').is(":checked");
-
-	// Realizar alguna acción con la información, como enviarla a través de AJAX
-	// Aquí puedes agregar tu lógica para enviar la información al servidor
-
-	var datos = {
-		username: username,
-		password: password,
+	var formData = {
+		nombrecliente: $("input[name='username']").val(),
+		dnicliente: $("input[name='password']").val(),
 	};
-	console.log(datos);
-	// Realizar la petición AJAX
+
+	console.log(formData);
+
 	$.ajax({
-		type: "POST", // Tipo de petición (POST en este caso)
-		url: "loginClientes/loguearse", // URL del controlador PHP
-		data: datos, // Datos a enviar
+		type: "POST",
+		url: "loginClientes/loguearse",
+		data: JSON.stringify(formData),
+		dataType: "json",
 		success: function (response) {
-			// Manejar la respuesta del servidor
-			console.log(response);
-			if (response === "OK") {
+			console.log("Respuesta del servidor: ", response);
+			console.log("Nombre de usuario", response.nombrecliente);
+			console.log("Contraseña:", response.dnicliente);
+			if (response.success) {
 				Swal.fire({
 					icon: "success",
-					title: "Éxito",
-					text: "Credenciales correctas",
-					didClose: function () {
-						// Redireccionar a la página de menú después de cerrar SweetAlert
-						window.location.href = "catalogo";
-					},
+					title: "Inicio de sesión exitoso",
+					text: response.message,
+				}).then(() => {
+					// Redirige a otra página después de hacer clic en "OK"
+					window.location.href = "main";
 				});
 			} else {
 				Swal.fire({
 					icon: "error",
 					title: "Error",
-					text: "Credenciales incorrectas",
+					text: response.message,
 				});
 			}
 		},
-		error: function (error) {
-			// Manejar errores de la petición AJAX
-			console.error(error);
+		error: function () {
+			console.error("Error en la petición AJAX");
 		},
 	});
-
-	// Cerrar la ventana emergente después de realizar las acciones necesarias
-	Swal.close();
 }

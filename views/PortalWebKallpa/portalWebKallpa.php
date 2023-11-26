@@ -18,7 +18,6 @@
 <body>
     <div>
         <?php require_once "views/portalHeader.php"; ?>
-
         <div class="container">
             <div class="splide">
                 <div class="splide__track">
@@ -138,6 +137,7 @@
                 </li>
             </ul>
         </div>
+
 
         <script>
             new Splide('.splide', {

@@ -129,9 +129,28 @@
                         </li>
                         <li class="menu-item">
                             <div class="item-label-icon" data-toggle="collapse" href="#submenu4" role="button"
-                                aria-expanded="false" aria-controls="submenu4">
+                                aria-expanded="false" aria-controls="submenu4" style="color: black;">
                                 <!-- Icono para la nueva opción -->
-                                <!-- Texto de la nueva opción -->
+
+                                <?php
+                                // Iniciar sesión
+                                
+
+                                // Verificar si 'nombrecliente' está definido en la sesión
+                                if (isset($_SESSION['username'])) {
+                                    $nombrecliente = $_SESSION['username'];
+                                } else {
+                                    $nombrecliente = null;
+                                }
+                                ?>
+
+                                <!-- Imprimir el nombre del cliente o 'Invitado' -->
+                                <?php
+
+                                echo $this->nombrecliente;
+
+                                ?>
+
                                 <a href="#" class="logo-usuario ">
                                     <img class="imglogin" src="public/Img/usuario (3).png">
                                 </a>
@@ -145,8 +164,8 @@
                                         </a>
                                     </li>
                                     <li class="col">
-                                        <a href="Login">
-                                            <i class="mdi mdi-account"></i><span>Ingresar como trabajador</span>
+                                        <a href="cerrarSesionC">
+                                            <i class="mdi mdi-account"></i><span>Cerrar Sesion</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -159,6 +178,7 @@
 
         </header>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.js"></script>
     <script src="<?php echo constant('URL'); ?>public/js/formLoginCli.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"

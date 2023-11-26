@@ -14,8 +14,7 @@
 <body class="login">
 
     <div id="contenedor">
-        <form method="POST" action="<?php echo constant('URL'); ?>login/loguearse" class="formularioLogin"
-            data-form="save">
+        <form method="POST" class="formularioLogin" data-form="save">
 
             <fieldset class="cajita1"><br><br>
                 <div>
