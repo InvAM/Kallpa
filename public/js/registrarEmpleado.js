@@ -14,6 +14,22 @@ $(document).ready(function () {
 		$("#formularioE").find("#IDCategoria_reg").val(categoria);
 	});
 
+	//Manejar el clic del boton "Atrás"
+	$("#btnAtras").on("click",function(){
+		window.location.href="menu";
+	 });
+
+	$("#btnLimpiar").on("click",function(){
+		$("#DNI_Em_reg").val("");
+		$("#Nombre_Em_reg").val("");
+		$("#Apellido_Em_reg").val("");
+		$("#Celular_Em_reg").val("");
+		$("#IDCategoria_reg").val("");
+		$("#DNI_Em_cre").val("");
+		$("#username").val("");
+		$("#password").val("");
+	});
+
 	// Manejar el clic del botón "Actualizar"
 	$("#btnActualizar").on("click", function () {
 		// Cambiar el atributo "action" del formulario antes de enviarlo

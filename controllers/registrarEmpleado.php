@@ -1,12 +1,13 @@
 <?php
+include_once "models/categoriaempleadomodel.php";
 class RegistrarEmpleado extends Controller
 {
     function __construct()
     {
         parent::__construct();
         $this->loadModel('empleado');
+        $this->categoriaempleados= new CategoriaEmpleadoModel();
         $this->view->mensaje = "";
-
         //El usuario debe estar registrado
         session_start();
         if (!isset($_SESSION['dni'])) {
@@ -17,10 +18,10 @@ class RegistrarEmpleado extends Controller
     }
     function render()
     {
-
-
+        $categorias= $this->categoriaempleados->get();
         $empleado = $this->model->get();
         $this->view->empleado = $empleado;
+        $this->view->categorias=$categorias;
         $this->view->render('registrarEmpleado/formRegistrarEmpleado');
     }
 
