@@ -13,17 +13,14 @@ class EmpleadoModel extends Model
             $query = $this->db->connect()->prepare('INSERT INTO empleado(DNI_Em,Nombre_Em,Apellido_Em,Celular_Em,IDCategoria) 
             VALUES (:dni,:nom,:ape,:cel,:categoria)');
             $query->execute([
-                'dni' => $datos['DNI_Em_reg'],
-                'nom' => $datos['Nombre_Em_reg'],
-                'ape' => $datos['Apellido_Em_reg'],
-                'cel' => $datos['Celular_Em_reg'],
-                'categoria' => $datos['IDCategoria_reg']
+                'dni' => $datos['DNI_Em'],
+                'nom' => $datos['Nombre_Em'],
+                'ape' => $datos['Apellido_Em'],
+                'cel' => $datos['Celular_Em'],
+                'categoria' => $datos['IDCategoria']
             ]);
             return true;
         } catch (PDOException $e) {
-
-
-
             return false;
         }
     }
@@ -32,7 +29,7 @@ class EmpleadoModel extends Model
     {
         $items = [];
         try {
-            $query = $this->db->connect()->prepare('SELECT DNI_Em,Nombre_Em,Apellido_Em,Celular_Em,IDCategoria FROM empleado  ORDER BY empleado.Nombre_Em ASC');
+            $query = $this->db->connect()->prepare('SELECT DNI_Em,Nombre_Em,Apellido_Em,Celular_Em,IDCategoria FROM empleado');
             $query->execute();
             while ($row = $query->fetch()) {
                 $item = new Empleado();
@@ -141,11 +138,11 @@ class EmpleadoModel extends Model
                                                 Celular_Em = :celular, IDCategoria = :categoria WHERE DNI_Em = :dni');
         try {
             $query->execute([
-                'dni' => $item['DNI_Em_reg'],
-                'nombre' => $item['Nombre_Em_reg'],
-                'apellido' => $item['Apellido_Em_reg'],
-                'celular' => $item['Celular_Em_reg'],
-                'categoria' => $item['IDCategoria_reg'],
+                'dni' => $item['DNI_Em'],
+                'nombre' => $item['Nombre_Em'],
+                'apellido' => $item['Apellido_Em'],
+                'celular' => $item['Celular_Em'],
+                'categoria' => $item['IDCategoria'],
             ]);
             return true;
         } catch (PDOException $e) {

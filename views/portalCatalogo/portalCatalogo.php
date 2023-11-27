@@ -180,13 +180,13 @@
                             echo '<img class="imagen" src="../../IMG/Kallpa1.png">';
                         }
                         echo '<div class="descripcion">';
-                        echo '<span class="nombre">' . $producto->nombre . '</span><br><br>';
-                        echo '<span class="nombre">' . $producto->detalleMarcaP. '</span><br><br><br>';
+                        echo '<span name="nombre" class="nombre">' . $producto->nombre . '</span><br><br>';
+                        echo '<span name="detalle" class="nombre">' . $producto->detalleMarcaP . '</span><br><br><br>';
                         echo '<span class="letra">' . 'Desde ' . '<span>';
                         echo '<span class="letra1">' . 'S/.' . $producto->cuota . '*' . '</span>';
                         echo '<span class="letra">' . ' al mes ' . '<span><br><br>';
                         echo '<span class="letra">' . 'Precio Regular: S/.' . $producto->precio . '</span><br><br>';
-                        echo '<span class="letra2">' . 'Tienda Virtual: S/.' . (0.95 * $producto->precio) . '</span><br><br>';
+                        echo '<span name="precio" class="letra2">' . 'Tienda Virtual: S/.' . (0.95 * $producto->precio) . '</span><br><br>';
                         echo '<button class="boton-compra">
                             <i class="mdi mdi-cart-percent"></i>
                             ¡Compra Ya!

@@ -1,6 +1,7 @@
 <?php
 
 include_once "models/categoriaempleadomodel.php";
+include_once "models/credencialesempleadomodel.php";
 class RegistrarEmpleado extends Controller
 {
     function __construct()
@@ -8,6 +9,7 @@ class RegistrarEmpleado extends Controller
         parent::__construct();
         $this->loadModel('empleado');
         $this->categoria = new Categoriaempleadomodel();
+        $this->credenciales = new CredencialesEmpleadoModel();
         $this->view->mensaje = "";
 
         //El usuario debe estar registrado
@@ -27,80 +29,141 @@ class RegistrarEmpleado extends Controller
         $this->view->empleado = $empleado;
         $this->view->render('registrarEmpleado/formRegistrarEmpleado');
     }
-
-    function registrarNuevoEmpleado()
+    public function registrarNuevoEmpleado()
     {
-        $dni = $_POST['DNI_Em_reg'];
-        $nom = $_POST['Nombre_Em_reg'];
-        $ape = $_POST['Apellido_Em_reg'];
-        $cel = $_POST['Celular_Em_reg'];
-        $categoria = $_POST['IDCategoria_reg'];
-        $mensaje = "";
-        if (
-            $this->model->insert([
-                'DNI_Em_reg' => $dni,
-                'Nombre_Em_reg' => $nom,
-                'Apellido_Em_reg' => $ape,
-                'Celular_Em_reg' => $cel,
-                'IDCategoria_reg' => $categoria
-            ])
-        ) {
-            $mensaje = "Nuevo empleado creado";
+        $datosJson = file_get_contents("php://input");
+        $datos = json_decode($datosJson, true);
+        $response = array();
+
+        if ($datos !== null) {
+            $dni = isset($datos['DNI_Em']) ? $datos['DNI_Em'] : null;
+            $nombre = isset($datos['Nombre_Em']) ? $datos['Nombre_Em'] : null;
+            $apellido = isset($datos['Apellido_Em']) ? $datos['Apellido_Em'] : null;
+            $celular = isset($datos['Celular_Em']) ? $datos['Celular_Em'] : null;
+            $categoria = isset($datos['IDCategoria']) ? $datos['IDCategoria'] : null;
+
+            if ($dni !== null && $nombre !== null && $apellido !== null && $celular !== null && $categoria !== null) {
+                if (
+                    $this->model->insert([
+                        'DNI_Em' => $dni,
+                        'Nombre_Em' => $nombre,
+                        'Apellido_Em' => $apellido,
+                        'Celular_Em' => $celular,
+                        'IDCategoria' => $categoria
+                    ])
+                ) {
+                    $response['success'] = true;
+                    $response['message'] = 'Empleado registrado con éxito';
+                } else {
+                    $response['success'] = false;
+                    $response['message'] = 'No se pudo registrar al empleado';
+                }
+            } else {
+                $response['success'] = false;
+                $response['message'] = 'Faltan datos obligatorios';
+            }
         } else {
-            $mensaje = "Empleado ya existente";
+            $response['success'] = false;
+            $response['message'] = 'Datos no válidos';
         }
-
-        $this->view->mensaje = $mensaje;
-        $this->render();
+        header('Content-Type: application/json');
+        echo json_encode($response);
     }
-
-
     function actualizarEmpleado()
     {
 
-        // Obtén los datos del formulario
-        $dni = $_POST['DNI_Em_reg'];
-        $nom = $_POST['Nombre_Em_reg'];
-        $ape = $_POST['Apellido_Em_reg'];
-        $cel = $_POST['Celular_Em_reg'];
-        $categoria = $_POST['IDCategoria_reg'];
+        $datosJson = file_get_contents("php://input");
+        $datos = json_decode($datosJson, true);
+        $response = array();
 
-        // Asegúrate de que los datos estén presentes y válidos
-        if (!empty($dni) && !empty($nom) && !empty($ape) && !empty($cel) && !empty($categoria)) {
-            // Actualiza el empleado en el modelo
-            if ($this->model->update(['DNI_Em_reg' => $dni, 'Nombre_Em_reg' => $nom, 'Apellido_Em_reg' => $ape, 'Celular_Em_reg' => $cel, 'IDCategoria_reg' => $categoria])) {
-                // Crea un objeto Empleado con los datos actualizados
-                $empleado = new Empleado();
-                $empleado->DNI_Em = $dni;
-                $empleado->Nombre_Em = $nom;
-                $empleado->Apellido_Em = $ape;
-                $empleado->Celular_Em = $cel;
-                $empleado->IDCategoria = $categoria;
+        if ($datos !== null) {
+            $dni = isset($datos['DNI_Em']) ? $datos['DNI_Em'] : null;
+            $nombre = isset($datos['Nombre_Em']) ? $datos['Nombre_Em'] : null;
+            $apellido = isset($datos['Apellido_Em']) ? $datos['Apellido_Em'] : null;
+            $celular = isset($datos['Celular_Em']) ? $datos['Celular_Em'] : null;
+            $categoria = isset($datos['IDCategoria']) ? $datos['IDCategoria'] : null;
 
-                // Define la URL de redirección
-                $redirectUrl = constant('URL') . 'registrarEmpleado'; // Cambia 'tu_pagina_actual' por la URL real
-
-                // Devuelve una respuesta JSON con éxito, la URL de redirección y el objeto Empleado
-                echo json_encode(['success' => true, 'redirect' => $redirectUrl, 'empleado' => $empleado, 'mensaje' => 'Empleado Actualizado Correctamente']);
-                return;
+            if ($dni !== null && $nombre !== null && $apellido !== null && $celular !== null && $categoria !== null) {
+                if (
+                    $this->model->update([
+                        'DNI_Em' => $dni,
+                        'Nombre_Em' => $nombre,
+                        'Apellido_Em' => $apellido,
+                        'Celular_Em' => $celular,
+                        'IDCategoria' => $categoria
+                    ])
+                ) {
+                    $response['success'] = true;
+                    $response['message'] = 'Empleado actualizado con éxito';
+                } else {
+                    $response['success'] = false;
+                    $response['message'] = 'No se pudo actualizar al empleado';
+                }
+            } else {
+                $response['success'] = false;
+                $response['message'] = 'Faltan datos obligatorios';
             }
+        } else {
+            $response['success'] = false;
+            $response['message'] = 'Datos no válidos';
         }
-        echo json_encode(['success' => false, 'mensaje' => 'No se pudo actualizar el empleado']);
+        header('Content-Type: application/json');
+        echo json_encode($response);
+    }
+    function eliminarEmpleado()
+    {
+        $json_data = file_get_contents("php://input");
+        $data = json_decode($json_data, true);
+        $response = array();
+
+        if (isset($data['dni'])) {
+            $dni = $data['dni'];
+
+            if ($this->model->delete($dni)) {
+                $response['success'] = true;
+                $response['message'] = "Empleado eliminado correctamente";
+
+            } else {
+                $response['success'] = false;
+                $response['message'] = 'No se puede eliminar un empleado que tiene un contrato asignado';
+
+            }
+
+            header('Content-Type: application/json');
+            echo json_encode($response);
+            exit();
+        }
     }
 
-
-    function eliminarEmpleado($param = null)
+    function registrarCredenciales()
     {
-        $dni = $param[0];
-        if ($this->model->delete($dni)) {
+        $datosJson = file_get_contents("php://input");
+        $datos = json_decode($datosJson, true);
+        $response = array();
+        if ($datos !== null) {
 
-            $this->view->mensaje = "Empleado Eliminado Correctamente";
+            $dni = isset($datos['DNI_Em']) ? $datos['DNI_Em'] : null;
+            $nombreusuario = isset($datos['nombreusuario']) ? $datos['nombreusuario'] : null;
+            $password = isset($datos['password']) ? $datos['password'] : null;
 
+            if ($dni !== null && $nombreusuario !== null && $password !== null) {
+                if ($this->credenciales->insert(['DNI_Em' => $dni, 'nombreusuario' => $nombreusuario, 'password' => $password])) {
+                    $response['success'] = true;
+                    $response['message'] = 'Empleado registrado con éxito';
+                } else {
+                    $response['success'] = false;
+                    $response['message'] = 'No se pudo registrar al empleado';
+                }
+            } else {
+                $response['success'] = false;
+                $response['message'] = 'Faltan datos obligatorios';
+            }
         } else {
-            //msg de error
-            $this->view->mensaje = "No se puedo eliminar el empleado porque esta afiliado a un contrato";
+            $response['success'] = false;
+            $response['message'] = 'Datos no válidos';
         }
-        $this->render();
+        header('Content-Type: application/json');
+        echo json_encode($response);
     }
 
 }

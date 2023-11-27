@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Registrar Empleado</title>
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/formRegistrarEmpleado.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.all.min.js"></script>
+
 </head>
 
 <body>
@@ -19,24 +22,21 @@
                 <h2 class="titulo-2">Empleados</h2>
             </div>
             <div class="caja-empleado">
-                <form action="<?php echo constant('URL'); ?>registrarEmpleado/registrarNuevoEmpleado" method="POST"
-                    autocomplete="off" class="" id="formularioE">
+                <form method="POST" autocomplete="off" class="formularioE" id="formularioE">
                     <h3 class="subtitulo-empleado">Datos Generales</h3>
                     <div class="contenedor-empleado">
                         <img src="<?php echo constant('URL'); ?>public/Img/perfil.png" class="imagen-foto">
-                        <label for="DNI_Em_reg">Dni</label>
-                        <input type="text" label="DNI" placeholder="Escribir..." name="DNI_Em_reg" id="DNI_Em_reg">
-                        <label for="Nombre_Em_reg">Nombres</label>
-                        <input type="text" label="Nombre" placeholder="Escribir..." name="Nombre_Em_reg"
-                            id="Nombre_Em_reg">
-                        <label for="Apellido_Em_reg">Apellidos</label>
-                        <input type="text" label="Apellido" placeholder="Escribir..." name="Apellido_Em_reg"
-                            id="Apellido_Em_reg">
-                        <label for="Celular_Em_reg">Celular</label>
-                        <input type="text" label="Celular" placeholder="Escribir..." name="Celular_Em_reg"
-                            id="Celular_Em_reg">
-                        <label for="IDCategoria_reg">Categoría</label>
-                        <select name="IDCategoria_reg" id="IDCategoria_reg">
+                        <label for="DNI_Em">Dni</label>
+                        <input type="text" label="DNI" placeholder="Escribir..." name="DNI_Em" id="DNI_Em">
+                        <label for="Nombre_Em">Nombres</label>
+                        <input type="text" label="Nombre" placeholder="Escribir..." name="Nombre_Em" id="Nombre_Em">
+                        <label for="Apellido_Em">Apellidos</label>
+                        <input type="text" label="Apellido" placeholder="Escribir..." name="Apellido_Em"
+                            id="Apellido_Em">
+                        <label for="Celular_Em">Celular</label>
+                        <input type="text" label="Celular" placeholder="Escribir..." name="Celular_Em" id="Celular_Em">
+                        <label for="IDCategoria">Categoría</label>
+                        <select name="IDCategoria" id="IDCategoria">
                             <?php
                             include_once "models/categoriaempleado.php";
                             foreach ($this->categoria as $opcion) {
@@ -49,7 +49,7 @@
 
                             <!-- Seguir con opciones -->
                         </select>
-                        <input type="submit" class="boton" value="Registrar">
+                        <button type="button" class="boton" id="btnRegistrar">Registrar</button>
                         <button type="button" class="boton" id="btnActualizar">Actualizar</button>
                     </div>
                 </form>
@@ -79,7 +79,7 @@
                                 $empleado = new Empleado();
                                 $empleado = $row; ?>
                                 <tr>
-                                    <td>
+                                    <td class="dniColumn">
                                         <?php echo $empleado->DNI_Em ?>
                                     </td>
                                     <td>
@@ -103,9 +103,7 @@
 
                                     </td>
                                     <td>
-                                        <a
-                                            href="<?php echo constant('URL') . 'registrarEmpleado/eliminarEmpleado/' . $empleado->DNI_Em; ?>"><button
-                                                class="boton-seleccionar boton">Eliminar</button></a>
+                                        <button class="boton-seleccionar boton" id="btnEliminar">Eliminar</button>
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -114,27 +112,26 @@
                 </div>
 
                 <div class="contenedor-credenciales">
-                    <form action="" class="FormularioAjax">
+                    <form method="POST" class="FormularioAjax">
                         <h3 class="subtitulo-lista">Credenciales</h3>
 
                         <div class="campo">
-                            <label for="DNI_Em_cre">Dni</label>
-                            <input type="text" label="DNI" placeholder="Escribir..." name="DNI_Em_cre" id="DNI_Em_cre"
+                            <label for="DNI_Em_c">Dni</label>
+                            <input type="text" label="DNI" placeholder="Escribir..." name="DNI_Em_c" id="DNI_Em_c"
                                 required>
                         </div>
                         <div class="campo">
-                            <label for="username">Usuario</label>
-                            <input type="text" label="Usuario" placeholder="Escribir..." name="username" id="username"
-                                required>
+                            <label for="nombreusuario">Usuario</label>
+                            <input type="text" label="Usuario" placeholder="Escribir..." name="nombreusuario"
+                                id="nombreusuario" required>
                         </div>
                         <div class="campo">
                             <label for="password">Contraseña</label>
                             <input type="password" label="Contraseña" placeholder="Escribir..." required name="password"
                                 id="password">
                         </div>
-                        <input type="hidden" name="accion2" value="add" />
 
-                        <input type="submit" value="Agregar Credenciales" class="boton-credencial">
+                        <button id="btnRegistrarCredenciales" class="boton-credencial">Agregar Credenciales</button>
                     </form>
                 </div>
 

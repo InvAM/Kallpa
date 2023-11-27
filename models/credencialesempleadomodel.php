@@ -8,7 +8,6 @@ class CredencialesEmpleadoModel extends Model
         parent::__construct();
     }
 
-    //esta aqui porque necesita el DNI de la sesion
     public function obtenerInicialNombre($dni)
     {
         $query = $this->db->connect()->prepare('SELECT LEFT(Nombre_Em, 1) AS Inicial FROM empleado WHERE DNI_Em = :dni');
@@ -22,7 +21,6 @@ class CredencialesEmpleadoModel extends Model
         }
     }
 
-    //esta aqui porque necesita el DNI de la sesion
     public function getNombreEmpleado($dni)
     {
         // Consultar la base de datos para obtener el nombre del empleado
@@ -67,5 +65,18 @@ class CredencialesEmpleadoModel extends Model
             return null;
         }
     }
-
+    public function insert($datos)
+    {
+        try {
+            $query = $this->db->connect()->prepare('INSERT INTO credencialesempleado (DNI_Em, nombreusuario,password) VALUES (:dni,:nombreusuario,:password)');
+            $query->execute([
+                'dni' => $datos['DNI_Em'],
+                'nombreusuario' => $datos['nombreusuario'],
+                'password' => $datos['password'],
+            ]);
+            return true;
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
 }
