@@ -6,7 +6,6 @@ $(document).ready(function () {
 		var celular = $(this).data("celular");
 		var categoria = $(this).data("categoria");
 
-		// Rellena el formulario con la información de la fila seleccionada
 		$("#formularioE").find("#DNI_Em").val(dni);
 		$("#formularioE").find("#Nombre_Em").val(nombre);
 		$("#formularioE").find("#Apellido_Em").val(apellido);

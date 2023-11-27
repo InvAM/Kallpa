@@ -12,7 +12,7 @@ class RegistrarEmpleado extends Controller
         $this->credenciales = new CredencialesEmpleadoModel();
         $this->view->mensaje = "";
 
-        //El usuario debe estar registrado
+
         session_start();
         if (!isset($_SESSION['dni'])) {
             header("Location:" . constant('URL') . 'login');
@@ -22,7 +22,6 @@ class RegistrarEmpleado extends Controller
     }
     function render()
     {
-
         $categoria = $this->categoria->get();
         $empleado = $this->model->get();
         $this->view->categoria = $categoria;
