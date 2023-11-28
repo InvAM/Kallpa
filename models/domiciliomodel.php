@@ -1,5 +1,6 @@
 <?php
 include_once "models/domicilio.php";
+
 class DomicilioModel extends Model
 {
     public function __construct()
@@ -13,15 +14,15 @@ class DomicilioModel extends Model
             $query = $this->db->connect()->prepare('INSERT INTO domicilio(IDDomicilio, Direccion_Dom, Interior_Dom, Piso_Dom, Nomb_Malla_Dom,IDCondicion,IDEstrato,IDPredio,IDDistrito)
             VALUES (:id,:direc,:inte,:piso,:malla,:cond,:estra,:predio,:distrito)');
             $query->execute([
-                'id' => $datos['IDDomicilio_reg'],
-                'direc' => $datos['Direccion_Dom_reg'],
-                'inte' => $datos['Interior_Dom_reg'],
-                'piso' => $datos['Piso_Dom_reg'],
-                'malla' => $datos['Nomb_Malla_Dom_reg'],
-                'cond' => $datos['IDCondicion_reg'],
-                'estra' => $datos ['IDEstrato_reg'],
-                'predio' => $datos['IDPredio_reg'],
-                'distrito' => $datos['IDDistrito_reg']
+                'id' => $datos['IDDomicilio'],
+                'direc' => $datos['Direccion_Dom'],
+                'inte' => $datos['Interior_Dom'],
+                'piso' => $datos['Piso_Dom'],
+                'malla' => $datos['Nomb_Malla_Dom'],
+                'cond' => $datos['IDCondicion'],
+                'estra' => $datos ['IDEstrato'],
+                'predio' => $datos['IDPredio'],
+                'distrito' => $datos['IDDistrito']
             ]);
             return true;
         } catch(PDOException $e){
@@ -50,8 +51,10 @@ class DomicilioModel extends Model
                 $item->IDDistrito = $row['IDDistrito'];
                 array_push($items,$item);
             }
+            echo '<script> console.log("Hola")</script>';
             return $items;
         } catch(PDOException $e){
+            echo '<script> console.log("Salio Mal")</script>';
             return[];
         }
     }
@@ -82,6 +85,31 @@ class DomicilioModel extends Model
         }
     }
 
+
+    public function getConfirmar($IDDomicilio)
+    {
+        $item = []; // Declaras $item como un array
+
+        $query = $this->db->connect()->prepare('SELECT IDDomicilio,Direccion_Dom FROM domicilio  WHERE IDDomicilio = :id ');
+        
+        try {
+            $query->execute(['id' => $IDDomicilio]);
+
+            // Supongo que deseas obtener un solo cliente, por lo que no necesitas un bucle
+            if ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+                $item = [
+                    'IDDomicilio' => $row['IDDomicilio'],
+                    'Direccion_Dom' => $row['Direccion_Dom']
+                ];
+            }
+
+            return $item;
+        } catch (PDOException $e) {
+            // Manejar el error, puedes imprimirlo en la consola para depuración
+            echo json_encode(['error' => 'Error de base de datos']);
+            return [];
+        }
+    }
     public function update($item)
     {
         $query = $this->db->connect()->prepare('UPDATE domicilio SET IDDomicilio = :idDom,  Direccion_Dom = :direccion, Interior_Dom = :interior, Piso_Dom = :piso,

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="public/Img/KallpaC.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
     <title>Registrar Cliente</title>
     <link rel="stylesheet" href="public/css/formRegistrarCliente.css">
 </head>
@@ -46,28 +47,60 @@
                             <label for="Nomb_Malla_Dom_reg">Nombre de Malla</label>
                             <input type="text" label="malla" placeholder="Escribir..." name="Nomb_Malla_Dom_reg"
                                 id="Nomb_Malla_Dom_reg">
-                            <label for="IDCondicion_reg">Condición</label>
-                            <input type="text" label="cond" placeholder="Escribir..." name="IDCondicion_reg"
-                                id="IDCondicion_reg">
+                            <label for="IDCondicion">Condición</label>
+                            <select name="IDCondicion" id="IDCondicion">
+                                <?php
+                                include_once 'models/condicion.php';
+                                foreach ($this->condiciones as $opcion) {
+                                    $condicion = new Condicion();
+                                    $condicion = $opcion; ?>
+                                    <option value="<?php echo $opcion->IDCondicion; ?>">
+                                        <?php echo $opcion->Descripcion_Co; ?>
+                                    </option>
+                                <?php } ?>
+                            </select>
                         </div>
                         <div class="grupo3">
-                            <label for="IDEstrato_reg">Estrator</label>
-                            <input type="text" label="estra" placeholder="Escribir..." name="IDEstrato_reg"
-                                id="IDEstrato_reg">
+                            <label for="IDEstrato_reg">Estrato</label>
+                            <select name="IDEstrato_reg" id="IDEstrato_reg">
+                                <?php
+                                include_once 'models/estrato.php';
+                                foreach ($this->estratos as $opcion) {
+                                    $estratos = new Estrato();
+                                    $estratos = $opcion; ?>
+                                    <option value="<?php echo $opcion->IDEstrato; ?>">
+                                        <?php echo $opcion->Descripcion_Estrato; ?>
+                                    </option>
+                                <?php } ?>
+                            </select>
                             <label for="IDPredio_reg">Predio</label>
-                            <input type="text" label="predio" placeholder="Escribir..." name="IDPredio_reg"
-                                id="IDPredio_reg">
+                            <select name="IDPredio_reg" id="IDPredio_reg">
+                            <?php
+                                include_once 'models/predio.php';
+                                foreach ($this->predios as $opcion) {
+                                    $predios = new Tipopredio();
+                                    $predios = $opcion; ?>
+                                    <option value="<?php echo $opcion->IDPredio; ?>">
+                                        <?php echo $opcion->Descripcion_Pre; ?>
+                                    </option>
+                                <?php } ?>
+                            </select>
                             <label for="IDDistrito_reg">Distrito</label>
-                            <input type="text" label="distrito" placeholder="Escribir..." name="IDDistrito_reg"
-                                id="IDDistrito_reg">
+                            <select name="IDDistrito_reg" id="IDDistrito_reg">
+                                <?php
+                                include_once 'models/distrito.php';
+                                foreach ($this->distritos as $opcion) {
+                                    $distritos = new Tipopredio();
+                                    $distritos = $opcion; ?>
+                                    <option value="<?php echo $opcion->IDDistrito; ?>">
+                                        <?php echo $opcion->Nombre_Di; ?>
+                                    </option>
+                                <?php } ?>
+                            </select>
                         </div>
                     </div>
 
-
-
-                    <div class="posicion-boton">
-                        <button class="boton-registrar">Registrar Domicilio</button>
-                    </div>
+                   
 
                 </div>
 
@@ -87,42 +120,57 @@
                             id="Apellido_cli_reg">
                         <label for="DNI_cli_reg">Dni del Cliente</label>
                         <input type="text" label="DNI" placeholder="Escribir... " name="DNI_cli_reg" id="DNI_cli_reg">
-                        <label for="FechaNacimiento:_cli_reg">Fecha de Nacimiento</label>
-                        <input type="text" label="FechaNacimiento" placeholder="Ejemplo: 2023-07-08"
-                            name="FechaNacimiento:_cli_reg" id="FechaNacimiento:_cli_reg">
+                        <label for="FechaNacimiento">Fecha de Nacimiento</label>
+                            <div class="calendario-wr">
+                                <input class="calendario" type="date" id="FechaNacimiento" name="FechaNacimiento"
+                                onchange="handleDateSelection(event)">
+                            </div>
                     </div>
 
 
                     <div class="datos_derecha">
                         <label for="IDGenero_reg">Género</label>
                         <select name="IDGenero_reg" id="IDGenero_reg">
-                            <option value="">Escoger...</option>
-                            <option value="femenino">Femenino</option>
-                            <option value="masculino">Masculino</option>
+                            <?php
+                            include_once 'models/genero.php';
+                            foreach ($this->generos as $opcion) {
+                                $generos = new Genero();
+                                $generos = $opcion; ?>
+                                <option value="<?php echo $opcion->IDGenero; ?>">
+                                    <?php echo $opcion->Descripcion_G; ?>
+                                </option>
+                            <?php } ?>
                         </select>
                         <label for="Celular_cli_reg">Célular</label>
                         <input type="text" label="celular" placeholder="Escribir..." name="Celular_cli_reg"
                             id="Celular_cli_reg">
                         <label for="IDNacionalidad_reg">Nacionalidad</label>
                         <select name="IDNacionalidad_reg" id="IDNacionalidad_reg">
-                            <option value="0">Escoger...</option>
-                            <option value="1">Peruano</option>
-                            <option value="2">Venezolano</option>
-                            <!-- Seguir con opciones -->
+                            <?php
+                            include_once 'models/nacionalidad.php';
+                            foreach ($this->nacionalidades as $opcion) {
+                                $nacionalidades = new Genero();
+                                $nacionalidades = $opcion; ?>
+                                <option value="<?php echo $opcion->IDNacionalidad; ?>">
+                                    <?php echo $opcion->Descripcion_NA; ?>
+                                </option>
+                            <?php } ?>
                         </select>
                         <label for="IDEstadoCivil_reg">Estado Civil</label>
                         <select name="IDEstadoCivil_reg" id="IDEstadoCivil_reg">
-                            <option value="0">Escoger...</option>
-                            <option value="1">Soltero</option>
-                            <option value="2">Casado</option>
-                            <!-- Seguir con opciones -->
+                            <?php
+                            include_once 'models/estadocivil.php';
+                            foreach ($this->estados as $opcion) {
+                                $estados = new Estadocivil();
+                                $estados = $opcion; ?>
+                                <option value="<?php echo $opcion->IDEstadoCivil; ?>">
+                                    <?php echo $opcion->Descripcion_Es; ?>
+                                </option>
+                            <?php } ?>
                         </select>
                     </div>
 
-                    <div class="contenedor-botones">
-                        <input type="submit" class="boton" value="Registrar">
-                        <button type="button" class="boton" id="btnActualizar">Actualizar</button>
-                    </div>
+                    
                 </form>
             </div>
 
@@ -149,13 +197,26 @@
                         <h4>Estado Civil : </h4>
                         <h4>Celular : </h4>
                     </div>
-                    <button class="boton_seleccionar boton">Seleccionar</button>
-                    <button class="boton-seleccionar boton">Eliminar</button>
                 </div>
-                <div>
-                    <button class="boton-atras">Atras</button>
-                </div>
+                
 
+            </div>
+
+            <div class="cont-button">
+                <div class="button1">
+                    <form method="POST" action="<?php echo constant('URL'); ?>registrarCliente/registrarCliente" class="formularioRCL1" name="formularioRCL1" id="formularioRCL1">
+                        <button class="boton1" name="btnRegistrar" id="btnRegistrar">
+                        <i class="mdi mdi-book-plus"></i>Registrar</button>
+                        </button>
+                    </form>
+                </div>
+                <button class="boton1" name="btnLimpiar" id="btnLimpiar">
+                    <i class="mdi mdi-restore"></i>Limpiar</button>
+                <button class="boton1" name="btnAtras" id="btnAtras">
+                    <i class="mdi mdi-keyboard-backspace"></i>Atras</button>
+                <button class="boton1">
+                    <i class="mdi mdi-printer"></i>
+                    Imprimir</button>
             </div>
 
         </div>

@@ -1,10 +1,28 @@
 <?php
+include_once "models/condicionmodel.php";
+include_once "models/distritomodel.php";
+include_once "models/estratomodel.php";
+include_once "models/tipoprediomodel.php";
+include_once "models/generomodel.php";
+include_once "models/nacionalidadmodel.php";
+include_once "models/estadocivilmodel.php";
+include_once "models/domiciliomodel.php";
+
 class RegistrarCliente extends Controller
 {
+
     function __construct()
     {
         parent::__construct();
         $this->loadModel('cliente');
+        $this->condiciones = new CondicionModel();
+        $this->distritos = new DistritoModel();
+        $this->estratos = new EstratoModel();
+        $this->predios = new TipopredioModel();
+        $this->generos = new GeneroModel();
+        $this->nacionalidades = new NacionalidadModel();
+        $this->estados = new EstadocivilModel();
+        $this->domicilios = new DomicilioModel();
         $this->view->mensaje = "";
         //El usuario debe estar registrado
         session_start();
@@ -16,110 +34,104 @@ class RegistrarCliente extends Controller
     }
     function render()
     {
-        $cliente = $this->model->get();
-        $this->view->cliente = $cliente;
-
+        $condiciones = $this->condiciones->get();
+        $distritos = $this->distritos->get();
+        $estratos = $this->estratos->get();
+        $predios = $this->predios->get();
+        $generos = $this->generos->get();
+        $nacionalidades = $this->nacionalidades->get();
+        $estados = $this->estados->get();
+        $this->view->condiciones = $condiciones;
+        $this->view->distritos = $distritos;
+        $this->view->estratos = $estratos;
+        $this->view->predios = $predios;
+        $this->view->generos = $generos;
+        $this->view->nacionalidades = $nacionalidades;
+        $this->view->estados = $estados;
         $this->view->render('registrarCliente/formRegistrarCliente');
     }
-    function registrarNuevoCliente()
+
+    function registrarCliente()
     {
-        $dniC = $_POST['DNI_cli_reg'];
-        $nomC = $_POST['Nombre_cli_reg'];
-        $apeC = $_POST['Apellido_cli_reg'];
-        $cel = $_POST['Celular_cli_reg'];
-        $fecha = $_POST['FechaNacimiento:_cli_reg'];
-        $genero = $_POST['IDGenero_reg'];
-        $nacionalidad = $_POST['IDNacionalidad_reg'];
-        $estadoC = $_POST['IDEstadoCivil_reg'];
-        $mensaje = "";
-        if (
-            $this->model->insert([
-                'DNI_cli_reg' => $dniC,
-                'Nombre_cli_reg' => $nomC,
-                'Apellido_cli_reg' => $apeC,
-                'Celular_cli_reg' => $cel,
-                'FechaNacimiento:_cli_reg' => $fecha,
-                'IDGenero_reg' => $genero,
-                'IDNacionalidad_reg' => $nacionalidad,
-                'IDEstadoCivil_reg' => $estadoC
-            ])
-        ) {
-            $mensaje = "Nuevo cliente creado";
-        } else {
-            $mensaje = "Cliente ya existente";
-        }
-        $this->view->mensaje = $mensaje;
-        $this->render();
-    }
+        $datosJson = file_get_contents("php://input");
+        $datos = json_decode($datosJson, true); // Convierte el JSON a un array asociativo
 
-    function verCliente($param = null)
-    {
-        $dniCliente = $param[0];
-        $cliente = $this->model->getById($dniCliente);
+        //verificar
+        $IDDomicilio = isset($datos['IDDomicilio']) ? $datos['IDDomicilio'] : null;
+        $Direccion_Dom = isset($datos['Direccion_Dom']) ? $datos['Direccion_Dom'] : null;
+        $Interior_Dom = isset($datos['Interior_Dom']) ? $datos['Interior_Dom'] : null;
+        $Piso_Dom = isset($datos['Piso_Dom']) ? $datos['Piso_Dom'] : null;
+        $Nomb_Malla_Dom = isset($datos['Nomb_Malla_Dom']) ? $datos['Nomb_Malla_Dom'] : null;
+        $IDCondicion = isset($datos['IDCondicion']) ? $datos['IDCondicion'] : null;
+        $IDEstrato = isset($datos['IDEstrato']) ? $datos['IDEstrato'] : null;
+        $IDPredio = isset($datos['IDPredio']) ? $datos['IDPredio'] : null;
+        $IDDistrito = isset($datos['IDDistrito']) ? $datos['IDDistrito'] : null;
+        $Nombre_cli = isset($datos['Nombre_cli']) ? $datos['Nombre_cli'] : null;
+        $Apellido_cli = isset($datos['Apellido_cli']) ? $datos['Apellido_cli'] : null;
+        $DNI_cli = isset($datos['DNI_cli']) ? $datos['DNI_cli'] : null;
+        $FechaNacimiento_cli = isset($datos['FechaNacimiento_cli']) ? $datos['FechaNacimiento_cli'] : null;
+        $IDGenero = isset($datos['IDGenero']) ? $datos['IDGenero'] : null;
+        $Celular_cli = isset($datos['Celular_cli']) ? $datos['Celular_cli'] : null;
+        $IDNacionalidad = isset($datos['IDNacionalidad']) ? $datos['IDNacionalidad'] : null;
+        $IDEstadoCivil = isset($datos['IDEstadoCivil']) ? $datos['IDEstadoCivil'] : null;
+        if ($IDDomicilio !== null) {
+            //Registrando domicilio
+            $domicilio = $this->domicilios->getConfirmar($IDDomicilio);
+            $cliente = $this->model->getConfirmar($DNI_cli);
 
-        session_start();
-        $_SESSION['dni_verCliente'] = $cliente->DNI_cli;
-        $this->view->cliente = $cliente;
-        $this->view->mensaje = "";
-        $this->view->render("registrarCliente/formDetalleCliente");
-    }
-
-    function actualizarCliente()
-    {
-        //Obtenemos los datos del form
-        $dniC = $_POST['DNI_cli_reg'];
-        $nomC = $_POST['Nombre_cli_reg'];
-        $apeC = $_POST['Apellido_cli_reg'];
-        $cel = $_POST['Celular_cli_reg'];
-        $fecha = $_POST['FechaNacimiento:_cli_reg'];
-        $genero = $_POST['IDGenero_reg'];
-        $nacionalidad = $_POST['IDNacionalidad_reg'];
-        $estadoC = $_POST['IDEstadoCivil_reg'];
-
-        //Asegurar que los datos esten presentes y validos
-        if (!empty($dniC) && !empty($nomC) && !empty($apeC) && !empty($cel) && !empty($fecha) && !empty($genero) && !empty($nacionalidad) && !empty($estadoC)) {
-            //Actualiza el cliente en el modelo
-            if (
-                $this->model->update([
-                    'DNI_cli_reg' => $dniC,
-                    'Nombre_cli_reg' => $nomC,
-                    'Apellido_cli_reg' => $apeC,
-                    'Celular_cli_reg' => $cel,
-                    'FechaNacimiento:_cli_reg' => $fecha,
-                    'IDGenero_reg' => $genero,
-                    'IDNacionalidad_reg' => $nacionalidad,
-                    'IDEstadoCivil_reg' => $estadoC
-                ])
-            ) {
-                //Crea un objeto Cliente con los datos actualizados
-                $cliente = new Cliente();
-                $cliente->DNI_cli = $dniC;
-                $cliente->Nombre_cli = $nomC;
-                $cliente->Apellido_cli = $apeC;
-                $cliente->Celular_cli = $cel;
-                $cliente->FechaNacimiento_cli = $fecha;
-                $cliente->IDGenero = $genero;
-                $cliente->IDNacionalidad = $nacionalidad;
-                $cliente->IDEstadoCivil = $estadoC;
-
-                //Define la URL de redireccion 
-                $redirectUrl = constant('URL') . 'registrarCliente';
-
-                echo json_encode(['success' => true, 'redirect' => $redirectUrl, 'cliente' => $cliente, 'mensaje' => 'Cliente Actializado Correctamente']);
-                return;
+            if (!empty($domicilio)) {
+                $mensaje = "El domicilio con ID:" . $IDDomiclio . " ya está registrado";
+            } else {
+                if (!empty($cliente)) {
+                    $mensaje = "El cliente con DNI: " . $DNI_cli . " " . "ya esta registrado";
+                } else {
+                    //Registrando Domilicilio
+                    if (
+                        $this->domicilios->insert([
+                            'IDDomicilio' => $IDDomicilio,
+                            'Direccion_Dom' => $Direccion_Dom,
+                            'Interior_Dom' => $Interior_Dom,
+                            'Piso_Dom' => $Piso_Dom,
+                            'Nomb_Malla_Dom' => $Nomb_Malla_Dom,
+                            'IDCondicion' => $IDCondicion,
+                            'IDEstrato' => $IDEstrato,
+                            'IDPredio' => $IDPredio,
+                            'IDDistrito' => $IDDistrito
+                        ])
+                    ) {
+                        //Registrando cliente
+                        if (
+                            $this->model->insert([
+                                'DNI_cli' => $DNI_cli,
+                                'Nombre_cli' => $Nombre_cli,
+                                'Apellido_cli' => $Apellido_cli,
+                                'Celular_cli' => $Celular_cli,
+                                'FechaNacimiento_cli' => $FechaNacimiento_cli,
+                                'IDGenero' => $IDGenero,
+                                'IDNacionalidad' => $IDNacionalidad,
+                                'IDEstadoCivil' => $IDEstadoCivil,
+                                'IDDomicilio' => $IDDomicilio
+                            ])
+                        ) {
+                            $mensaje = "Se registro cliente";
+                        } else {
+                            $mensaje = "Error";
+                        }
+                    } else {
+                        $mensaje = "El cliente no puede ser registrado, verifique los campos";
+                    }
+                }
             }
+            echo json_encode($mensaje);
+        } else {
+            echo "Error: Datos incompletos";
         }
-        echo json_encode(['success' => false, 'mensaje' => 'No se pudo actualizar el cliente']);
+
     }
 
-    function eliminarCliente($param = null)
-    {
-        $dniC = $param[0];
-        if ($this->model->delete($dniC)) {
-            $this->view->mensaje = "Cliente Eliminado Correctamente";
-        } else {
-            $this->view->mensaje = "No se puede eliminar el Cliente";
-        }
-        $this->render();
-    }
+
+
+
+
+
 }
