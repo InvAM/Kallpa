@@ -15,7 +15,6 @@
     <?php require_once "views/portalHeader.php"; ?>
     <div class="lr">
     <div class="contenedor">
-        <form action="<?php echo constant('URL'); ?>reclamaciones/registrarReclamaciones" method="POST" id="formReclamaciones">
             <fieldset class="cajita1">
                 <h1 class="titulo">Libro de reclamaciones</h1>
                 <fieldset class="cajas">
@@ -112,9 +111,10 @@
                 </fieldset>
                 <br>
                 <br>
-                <input class="Botones" type="submit" value="Enviar hoja de reclamación">
+                <form method="POST" action="<?php echo constant('URL'); ?>reclamaciones/registrarReclamaciones" id="formReclamaciones" name="formReclamaciones">
+                    <input class="Botones" type="submit" value="Enviar hoja de reclamación" name="btnReg" id="btnReg">
+                </form>
             </fieldset>
-        </form>
     </div>
 
     <footer>
