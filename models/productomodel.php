@@ -55,4 +55,23 @@ class ProductoModel extends Model
       return [];
     }
   }
+  
+  public function insert($datos)
+{
+    try {
+        $query = $this->db->connect()->prepare('INSERT INTO producto (codigo, nombre, precio, cuota, IDMarcaP, IDCategoriaP, imagen) VALUES (:codigo, :nombre, :precio, :cuota, :IDMarcaP, :IDCategoriaP, :imagen)');
+        $query->execute([
+            'codigo' => isset($datos['codigo']) ? $datos['codigo'] : '',
+            'nombre' => isset($datos['nombre']) ? $datos['nombre'] : '',
+            'precio' => isset($datos['precio']) ? $datos['precio'] : '',
+            'cuota' => isset($datos['cuota']) ? $datos['cuota'] : '',
+            'IDMarcaP' => isset($datos['IDMarcaP']) ? $datos['IDMarcaP'] : '',
+            'IDCategoriaP' => isset($datos['IDCategoriaP']) ? $datos['IDCategoriaP'] : '',
+            'imagen' => isset($datos['imagen']) ? $datos['imagen'] : '',
+        ]);
+        return true;
+    } catch (PDOException $e) {
+        return false;
+    }
+}
 }

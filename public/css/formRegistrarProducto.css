@@ -1,0 +1,215 @@
+body {
+    margin: 0;
+}
+
+.registra_produ .contenedor-principal {
+    padding: 20px;
+    
+}
+
+.registra_produ .titulo {
+    display: flex;
+    justify-content: center;
+    margin-top: 75px;
+    font-size: 25px;
+}
+
+.registra_produ .titulo-1,
+.registra_produ .titulo-2 {
+    font-weight: bold;
+}
+
+.registra_produ .titulo-1 {
+    color: #203864;
+    margin-right: 10px;
+}
+
+.registra_produ .titulo-2 {
+    color: rgb(62, 207, 62);
+}
+
+.registra_produ .caja-empleado {
+    width: 24%;
+}
+
+.registra_produ .contenedor-empleado {
+    margin-top: 20px;
+    border: 2px solid #47d847;
+    box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.registra_produ .input-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.registra_produ input,
+.registra_produ select {
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    font-size: 14px;
+    font-family: "Times New Roman";
+}
+
+.registra_produ .file-container {
+    width: 100%;
+}
+
+.registra_produ .file-container input {
+    width: 70%;
+}
+
+.registra_produ .file-container .image-container {
+    width: 100%;
+}
+
+.registra_produ .file-container .image-container img {
+    max-width: 40%;
+    max-height: 100%;
+}
+
+.registra_produ .actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.registra_produ button {
+    width: 48%;
+}
+.fila {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .fila {
+        flex-direction: column;
+    }
+}
+
+.registra_produ .parte-derecha {
+    float: right; /*Posiciona el objeto a la derecha*/
+	width: 70%; /*Establecer ancho del objeto*/
+    margin-top: -520px;
+}
+
+.registrar_produ .tabla {
+	height: 411px; /*Tamaño de altura de la tabla*/
+	overflow-y: scroll; /*Añade barra de desplazamiento*/
+}
+.registra_produ .table-container {
+    box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562);
+    padding: 15px;
+    border-radius: 5px;
+}
+.registra_produ .subtitulo-lista {
+    color: #203864;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0px;
+    margin-top: -3px;
+    margin-bottom: 7px;
+}
+
+.tabla::-webkit-scrollbar {
+    width: 8px;
+}
+
+.tabla::-webkit-scrollbar-thumb {
+    background-color: #203864;
+}
+
+.tabla::-webkit-scrollbar-track {
+    background-color: #f8f8f8;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #203864;
+    color: white;
+}
+
+tr:hover {
+    background-color: #47d84738;
+}
+
+.registra_produ .boton-opciones {
+    background-color: #203864;
+    color: #ffffff;
+    width: 200px;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid #152c57;
+    padding: 10px;
+}
+
+button {
+    background-color: #203864;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #203864;
+}
+
+button,
+.boton-opciones {
+    width: 100%;
+}
+
+.boton-opciones {
+    background-color: #555;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.boton-opciones:hover {
+    background-color: #333;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #203864;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
