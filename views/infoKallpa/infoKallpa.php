@@ -72,14 +72,14 @@
                                 <ul class="splide__list">
                                     <li class="splide__slide c1">
                                         <div class="subirimg">
-                                            <img src="public/Img/TrabajoEquipo.png">
+                                            <img src="public/Img/traequ.png">
                                         </div>
                                         <p class="valores">Trabajo en equipo</p>
                                         <p class="desc-val">Para lograr cumplir objetivos comunes.</p>
                                     </li>
                                     <li class="splide__slide c1">
                                         <div class="subirimg">
-                                            <img src="public/Img/Honestidad.png">
+                                            <img src="public/Img/hon.png">
                                         </div>
                                         <p class="valores">Honestidad</p>
                                         <p class="desc-val">Hablar con la verdad, para lograr una congruencia entre el
@@ -87,7 +87,7 @@
                                     </li>
                                     <li class="splide__slide c1">
                                         <div class="subirimg">
-                                            <img src="public/Img/Profesionalismo.png">
+                                            <img src="public/Img/prof.png">
                                         </div>
                                         <p class="valores">Profesionalismo</p>
                                         <p class="desc-val">Logrado a través de la disciplina, confianza y deseos de
@@ -95,7 +95,7 @@
                                     </li>
                                     <li class="splide__slide c1">
                                         <div class="subirimg">
-                                            <img src="public/Img/Respeto.png">
+                                            <img src="public/Img/resp.png">
                                         </div>
                                         <p class="valores">Respeto</p>
                                         <p class="desc-val">Mostramos aprecio y cuidado por el valor que tienen las
@@ -103,7 +103,7 @@
                                     </li>
                                     <li class="splide__slide c1">
                                         <div class="subirimg">
-                                            <img src="public/Img/Innovacion.png">
+                                            <img src="public/Img/inno.png">
                                         </div>
                                         <p class="valores">Innovación</p>
                                         <p class="desc-val">Utilizando la tecnología que permita el desarrollo de

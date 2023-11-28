@@ -115,11 +115,11 @@
 
 .info .p4-info {
 	color: #203864;
-	font-size: 44px;
+	font-size: 64px;
 	font-weight: 700;
 	margin-bottom: 40px;
 	margin-top: 0px;
-	width: 50%;
+	text-align: center;
 }
 
 .info .p5-info {
