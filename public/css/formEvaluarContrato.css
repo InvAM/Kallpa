@@ -79,8 +79,9 @@ body {
 }
 
 .evaluar-c .subcajita5 {
+	display: inline-block;
     width: 40% !important;
-	margin-top: -198px;
+	margin-top: -150px !important;
 	margin-left: 1080px;
 }
 
@@ -219,6 +220,18 @@ tr:hover {
 	margin-right: -35px;
 }
 
+.evaluar-c .buttons-container2 {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-end; /* Alinea los elementos a la derecha */
+	margin-top: 20px; /* Ajusta la separación superior */
+	margin-right: -35px;
+	width: 41.8%;
+	margin-left: 1074px;
+	margin-top: -54.4px;
+}
+
 .evaluar-c .boton-opciones {
 	padding: 10px 20px;
 	font-size: 14px;
@@ -230,6 +243,20 @@ tr:hover {
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
+}
+
+.evaluar-c .boton-css {
+	padding: 10px 20px;
+	font-size: 14px;
+	margin-left: 1796.9px;
+	margin-right: 10px;
+	width: 40px;
+	background-color: #095ba8;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: -41px;
 }
 
 .evaluar-c .table-container {
@@ -272,6 +299,19 @@ tr:hover {
 	cursor: pointer;
 }
 
+.evaluar-c .action-button1 {
+	padding: 10px 20px;
+	font-size: 14px;
+	margin-left: 10px;
+	margin-right: 500px;
+	width: 28%;
+	background-color: #095ba8;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
 .evaluar-c .action-button:hover {
 	background-color: rgb(37, 219, 77);
 }
@@ -285,8 +325,7 @@ tr:hover {
 .evaluar-c .select-button:hover {
 	background-color: #45a049; /* Cambia de color al pasar el mouse */
 }
-/* Estilo para la etiqueta */
-/* Estilo para la etiqueta */
+
 .label-styled {
 	font-size: 16px;
 	color: #203864;

@@ -43,7 +43,7 @@ $(document).ready(function () {
 	$("#formularioGOH").submit(function (event) {
 		event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
 
-		// Recopila los valores de los campos utilizando jQuery
+		// Recopila los valores de los campos
 		var IDEtapa_G = $("#IDEtapa_G").val();
 		var IDContrato_G = $("#IDContrato_G").val();
 		var Fecha = $("#selectedDate").val();
@@ -58,7 +58,15 @@ $(document).ready(function () {
 		};
 
 		// Comprobando
-		console.log(ordenActual);
+		if(DNI_Em_T=="" || Fecha==""){
+			Swal.fire({
+				title: 'Verifique',
+				confirmButtonText: 'Aceptar',
+				text: "Por favor verfique los campos adicionales",
+				icon: 'info',
+				buttonsStyling: true,
+			});
+		}else{
 		// Envía el formulario mediante Ajax
 		$.ajax({
 			url: "generarOrdenH/registrarOrden",
@@ -66,9 +74,17 @@ $(document).ready(function () {
 			contentType: "application/json",
 			data: JSON.stringify(ordenActual),
 			success: function (response) {
-				// Manejar la respuesta del servidor (si es necesario)
-				console.log(response);
-				/*window.location.href = 'generarOrdenH';*/
+				var mensaje = JSON.parse(response);
+				Swal.fire({
+					title: 'Registro exitoso',
+					confirmButtonText: 'Aceptar',
+					text: mensaje,
+					icon: 'success',
+					buttonsStyling: true,
+					didClose: () => {
+						window.location.href = 'generarOrdenH';
+					}
+				});
 			},
 			error: function (error) {
 				// Manejar errores
@@ -81,6 +97,7 @@ $(document).ready(function () {
 		localStorage.removeItem("DNI_Em_T");
 		localStorage.removeItem("Nombre_Em_T");
 		localStorage.removeItem("Apellido_Em_T");
+	}
 	});
 });
 
@@ -108,11 +125,32 @@ $(document).ready(function () {
 		var idcontrato = $(this).data("idcontrato");
 		var idetapa = $(this).data("idetapa");
 		var fecha = $(this).data("fecha");
-
-		localStorage.setItem("IDContrato", idcontrato);
-		localStorage.setItem("IDEtapa", idetapa);
-		localStorage.setItem("Fecha", fecha);
-
-		window.location.href = "registrarMateriales";
+        
+		$.ajax({
+            url: "generarOrdenI/verificarMaterial",
+				type: "POST",
+				contentType: "application/json",
+				data: JSON.stringify(idcontrato), // Enviar un objeto con propiedad IDContrato
+				success: function (response) {
+					var mensaje = JSON.parse(response);
+					if(mensaje==""){
+						localStorage.setItem("IDContrato", idcontrato);
+						localStorage.setItem("IDEtapa", idetapa);
+						localStorage.setItem("Fecha", fecha);
+						window.location.href = "registrarMateriales";
+					}else{
+						Swal.fire({
+							title: 'Acceso denegado',
+							confirmButtonText: 'Aceptar',
+							text: mensaje,
+							icon: 'info',
+							buttonsStyling: true,
+						});	
+					}
+				},
+				error:function (error){
+					console.error(error);
+				}
+		});
 	});
 });

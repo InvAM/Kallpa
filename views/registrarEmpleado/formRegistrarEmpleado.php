@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="public/Img/KallpaC.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
     <title>Registrar Empleado</title>
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/formRegistrarEmpleado.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.css">
@@ -68,8 +70,8 @@
                                 <th>Apellido</th>
                                 <th>Celular</th>
                                 <th>Categoría</th>
-                                <th></th>
-                                <th></th>
+                                <th>Seleccionar</th>
+                                <th>Eliminar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -99,7 +101,8 @@
                                             data-nombre="<?php echo $empleado->Nombre_Em; ?>"
                                             data-apellido="<?php echo $empleado->Apellido_Em; ?>"
                                             data-celular="<?php echo $empleado->Celular_Em; ?>"
-                                            data-categoria="<?php echo $empleado->IDCategoria; ?>">Seleccionar</button>
+                                            data-categoria="<?php echo $empleado->IDCategoria; ?>">
+                                            <i class="mdi mdi-content-copy mx-1"></i></button>
 
                                     </td>
                                     <td>
@@ -112,34 +115,42 @@
                 </div>
 
                 <div class="contenedor-credenciales">
-                    <form method="POST" class="FormularioAjax">
-                        <h3 class="subtitulo-lista">Credenciales</h3>
+                    <form action="" class="FormularioAjax">
+                        <h3 class="subtitulo-lista-c">Credenciales</h3>
 
-                        <div class="campo">
-                            <label for="DNI_Em_c">Dni</label>
-                            <input type="text" label="DNI" placeholder="Escribir..." name="DNI_Em_c" id="DNI_Em_c"
-                                required>
-                        </div>
-                        <div class="campo">
-                            <label for="nombreusuario">Usuario</label>
-                            <input type="text" label="Usuario" placeholder="Escribir..." name="nombreusuario"
-                                id="nombreusuario" required>
-                        </div>
-                        <div class="campo">
-                            <label for="password">Contraseña</label>
-                            <input type="password" label="Contraseña" placeholder="Escribir..." required name="password"
-                                id="password">
-                        </div>
+                        <form method="POST" class="FormularioAjax">
+                            <h3 class="subtitulo-lista">Credenciales</h3>
 
-                        <button id="btnRegistrarCredenciales" class="boton-credencial">Agregar Credenciales</button>
-                    </form>
+                            <div class="campo">
+                                <label for="DNI_Em_c">Dni</label>
+                                <input type="text" label="DNI" placeholder="Escribir..." name="DNI_Em_c" id="DNI_Em_c"
+                                    required>
+                            </div>
+                            <div class="campo">
+                                <label for="nombreusuario">Usuario</label>
+                                <input type="text" label="Usuario" placeholder="Escribir..." name="nombreusuario"
+                                    id="nombreusuario" required>
+                            </div>
+                            <div class="campo">
+                                <label for="password">Contraseña</label>
+                                <input type="password" label="Contraseña" placeholder="Ingrese la contraseña" required
+                                    name="password" id="password">
+                            </div>
+
+                            <button id="btnRegistrarCredenciales" class="boton-credencial">Agregar Credenciales</button>
+                        </form>
                 </div>
-
-
-                <a href="menu"><button class="boton-opciones">Atras</button></a>
-
+                <button class="boton-opciones" name="btnLimpiar" id="btnLimpiar">
+                    <i class="mdi mdi-restore"></i>Limpiar</button>
+                <button class="boton-opciones" name="btnAtras" id="btnAtras">
+                    <i class="mdi mdi-keyboard-backspace"></i>Atras</button>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
             </div>
-
         </div>
 
 

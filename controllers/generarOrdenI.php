@@ -1,10 +1,12 @@
 <?php
+include_once "models/detalleetapamaterialmodel.php";
 class GenerarOrdenI extends Controller
 {
     public function __construct()
     {
         parent::__construct();
         $this->loadModel('etapacontrato');
+        $this->detalleetapamaterial= new DetalleEtapaMaterialModel();
         $this->view->mensaje = "";
         //El usuario debe estar registrado
         session_start();
@@ -47,12 +49,24 @@ class GenerarOrdenI extends Controller
             } else {
                 $mensaje = "Orden no puede ser generada";
             }
-            $this->view->mensaje = $mensaje;
-
+            echo json_encode($mensaje);
         } else {
             // Manejar el caso en el que alguna de las variables es nula
             echo "Error: Datos incompletos";
         }
+    }
+
+    function verificarMaterial()
+    {
+        $datosJson = file_get_contents("php://input");
+        $id= json_decode($datosJson, true);
+        $detallecontrato= $this->detalleetapamaterial->getComprobarM($id,1);
+        if(!empty($detallecontrato)){
+             $mensaje="La orden ya cuenta con una asignación de materiales";               
+        }else{
+            $mensaje="";
+        }
+        echo json_encode($mensaje);
     }
 
 }

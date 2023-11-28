@@ -29,14 +29,22 @@ $(document).ready(function(){
 		var DNI = $("#formularioH").find("#DNI_Em_H").val();
 		var Nombre = $("#formularioH").find("#Nombre_Em_H").val();
 		var Apellido = $("#formularioH").find("#Apellido_Em_H").val();
-
-		//Almacenando en el localS
-		localStorage.setItem('DNI_Em_T', DNI);
-		localStorage.setItem('Nombre_Em_T', Nombre);
-		localStorage.setItem('Apellido_Em_T', Apellido);
-        
-		//Direccionando a otra página
-		window.location.href = 'generarOrdenH';
-		exit();
+        if(DNI==""){
+            Swal.fire({
+				title: 'Seleccione',
+				confirmButtonText: 'Aceptar',
+				text: "Por favor seleccione un habilitador",
+				icon: 'info',
+				buttonsStyling: true,
+			});
+		}else{
+			//Almacenando en el localS
+			localStorage.setItem('DNI_Em_T', DNI);
+			localStorage.setItem('Nombre_Em_T', Nombre);
+			localStorage.setItem('Apellido_Em_T', Apellido);
+			
+			//Direccionando a otra página
+			window.location.href = 'generarOrdenH';
+		}
 	});
 });

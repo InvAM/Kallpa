@@ -56,7 +56,13 @@ $(document).ready(function () {
 						//Direccionando a otra página
 						window.location.href = "generarOrdenI";
 					} else {
-						alert(mensaje);
+						Swal.fire({
+							title: 'Acceso denegado',
+							confirmButtonText: 'Aceptar',
+							text: mensaje,
+							icon: 'info',
+							buttonsStyling: true,
+						});											
 					}
 
 					$("#formularioVC").find("#IDContrato_VC").val("");
@@ -70,9 +76,13 @@ $(document).ready(function () {
 				},
 			});
 		} else {
-			alert(
-				"Por favor, seleccione un contrato para generar la Orden de Instalación"
-			);
+			Swal.fire({
+				title: 'Seleccione',
+				text: "Por favor, seleccione un contrato para generar la Orden de Instalación",
+				icon: 'info',
+				confirmButtonText: 'Aceptar',
+				buttonsStyling: true,
+			});	
 		}
 	});
 
@@ -102,7 +112,12 @@ $(document).ready(function () {
 						//Direccionando a otra página
 						window.location.href = "generarOrdenH";
 					} else {
-						alert(mensaje);
+						Swal.fire({
+							title: 'Acceso denegado',
+							confirmButtonText: 'Aceptar',
+							text: mensaje,
+							icon: 'info',
+						});	
 					}
 
 					$("#formularioVC").find("#IDContrato_VC").val("");
@@ -116,9 +131,13 @@ $(document).ready(function () {
 				},
 			});
 		} else {
-			alert(
-				"Por favor, seleccione un contrato para generar la Orden de Habilitacion"
-			);
+			Swal.fire({
+				title: 'Seleccione',
+				confirmButtonText: 'Aceptar',
+				text: "Por favor, seleccione un contrato para generar la Orden de Habilitacion",
+				icon: 'info',
+				buttonsStyling: true,
+			});
 		}
 	});
 });
