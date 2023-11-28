@@ -14,7 +14,6 @@ function iniciar() {
 
 document.addEventListener("DOMContentLoaded", iniciar);
 
-var botonSeleccionado=0;
 //Actualizar Tabla
 function actualizarTabla($lista) {
 	var listaMateriales = $lista;
@@ -69,22 +68,33 @@ function actualizarTabla($lista) {
 		botonEliminar.appendChild(iconoEliminar);
 
 		botonEliminar.addEventListener("click", function () {
-			var confirmacion = confirm(
-				"¿Está seguro de que desea eliminar este material?"
-			);
-			if (confirmacion) {
-				var indiceMaterial = listaMateriales.findIndex(function (elemento) {
-					return elemento.id === material.id;
-				});
-				if (indiceMaterial !== -1) {
-					listaMateriales.splice(indiceMaterial, 1);
-					actualizarTabla(listaMateriales);
+			Swal.fire({
+				title: 'Confirmar eliminación',
+				text: '¿Está seguro de que desea eliminar este material?',
+				icon: 'warning',
+				showCancelButton: true,
+				confirmButtonText: 'Sí,eliminar',
+				cancelButtonText: 'Cancelar',
+				confirmButtonColor: '#d33',
+				cancelButtonColor: '#3085d6',
+				buttonsStyling: true,
+
+			}).then((result) => {
+				if (result.isConfirmed) {
+					// Acción al presionar Aceptar
+					var indiceMaterial = listaMateriales.findIndex(function (elemento) {
+						return elemento.id === material.id;
+					});
+					if (indiceMaterial !== -1) {
+						listaMateriales.splice(indiceMaterial, 1);
+						actualizarTabla(listaMateriales);
+					} else {
+						console.log("Material no encontrado en la lista");
+					}
 				} else {
-					console.log("Material no encontrado en la lista");
+					console.log("Eliminación cancelada por el usuario");
 				}
-			} else {
-				console.log("Eliminación cancelada por el usuario");
-			}
+			});			
 		});
 
 		// Agregar el botón a la celda
@@ -116,11 +126,13 @@ $(document).ready(function () {
 
 			if (materialExistente) {
 				// Si el material ya existe, mostrar un mensaje
-				alert(
-					"El material  " +
-						nombre +
-						" ya está registrado. Por favor, actualízalo en lugar de agregar uno nuevo."
-				);
+				Swal.fire({
+					title: 'Verifique',
+					text: "El material  " +	nombre +" ya está registrado. Por favor, actualízalo en lugar de agregar uno nuevo.",
+					icon: 'info',
+					confirmButtonText: 'Aceptar',
+					buttonsStyling: true,
+				});
 				$("#materialSelect").prop("selectedIndex", 0);
 				$("#Cantidad_Ma").val("");
 			} else {
@@ -144,7 +156,13 @@ $(document).ready(function () {
 				actualizarTabla(listaMateriales);
 			}
 		} else {
-			alert("Por favor, seleccione un material y proporcione la cantidad.");
+			Swal.fire({
+				title: 'Seleccione',
+				text: "Por favor, seleccione un material y proporcione la cantidad.",
+				icon: 'info',
+				confirmButtonText: 'Aceptar',
+				buttonsStyling: true,
+			});	
 		}
 	});
 
@@ -165,11 +183,16 @@ $(document).ready(function () {
 			listaMateriales[indiceMaterial].cantidad = cantidadA;
 			// Actualizar la tabla
 			actualizarTabla(listaMateriales);
-			console.log("Material actualizado:", listaMateriales[indiceMaterial]);
 			$("#materialSelect").prop("selectedIndex", 0);
 			$("#Cantidad_Ma").val("");
 		} else {
-			alert("Por favor, ingrese un ID válido.");
+			Swal.fire({
+				title: 'Verifique',
+				text: "Por favor, ingrese un ID válido.",
+				icon: 'info',
+				confirmButtonText: 'Aceptar',
+				buttonsStyling: true,
+			});	
 		}
 	});
 
@@ -180,39 +203,81 @@ $(document).ready(function () {
 
 	//LIMPIAR
 	$("#btnLimpiar").on("click", function () {
-		var confirmacion = confirm(
-			"¿Está seguro de que desea limpiar la lista de materiales?"
-		);
-
-		if (confirmacion) {
-			// Limpiar completamente el array listaMateriales
-			listaMateriales = [];
-			console.log("Lista de materiales limpiada");
-			actualizarTabla(listaMateriales);
-		} else {
-			console.log("Limpieza cancelada por el usuario");
-		}
+		Swal.fire({
+			title: 'Limpiar',
+			text: '¿Está seguro de que desea limpiar la lista de materiales?',
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonText: 'Sí, limpiar',
+			cancelButtonText: 'Cancelar',
+			confirmButtonColor: '#d33',
+			cancelButtonColor: '#3085d6',
+			buttonsStyling: true,
+		}).then((result) => {
+			if (result.isConfirmed) {
+				listaMateriales = [];
+				console.log("Lista de materiales limpiada");
+				actualizarTabla(listaMateriales);
+			} else {
+			    console.log("Limpieza cancelada por el usuario");
+			}
+		});
 	});
 
     $('#formularioRM').submit(function(event){
+		var idetapa = $("input[name='IDEtapa_M']").val();
         event.preventDefault(); 
        //Enviar mediante Ajax
        console.log(JSON.stringify(listaMateriales));
-       $.ajax({
-           url: 'registrarMateriales/registrarMateriales',
-           type: 'POST',
-           contentType: 'application/json',
-           data: JSON.stringify(listaMateriales),
-           success:function(response){
-                console.log(response);
-                if(botonSeleccionado!==1 && botonSeleccionado!==0){
-                    window.location.href='generarOrdenI';
-                }
-           },
-           error: function(error){
-                //Manejar errores
-                console.error(error);
-           }
-       });
+		if(idetapa==""){
+			Swal.fire({
+				title: 'Verifique',
+				text: "Por favor, verifique si seleccionó una orden con anterioridad",
+				icon: 'info',
+				confirmButtonText: 'Aceptar',
+				buttonsStyling: true,
+			});	
+		}else{
+		$.ajax({
+			url: 'registrarMateriales/registrarMateriales',
+			type: 'POST',
+			contentType: 'application/json',
+			data: JSON.stringify(listaMateriales),
+			success:function(response){
+				var mensaje= JSON.parse(response);
+				if(idetapa==1){
+					Swal.fire({
+						title: 'Registro exitoso',
+						confirmButtonText: 'Aceptar',
+						text: mensaje,
+						icon: 'success',
+						buttonsStyling: true,
+						didClose: () => {
+							window.location.href = 'generarOrdenI';
+						}
+					});
+					localStorage.removeItem("IDContrato");
+		            localStorage.removeItem("numSum");
+				}else if(idetapa==2){
+					Swal.fire({
+						title: 'Registro exitoso',
+						confirmButtonText: 'Aceptar',
+						text: mensaje,
+						icon: 'success',
+						buttonsStyling: true,
+						didClose: () => {
+							window.location.href = 'generarOrdenH';
+						}
+					});
+					localStorage.removeItem("IDContrato");
+		            localStorage.removeItem("numSum");
+				}
+			},
+			error: function(error){
+				 //Manejar errores
+				 console.error(error);
+			}
+		});
+	}
     });
 });

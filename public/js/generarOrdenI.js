@@ -56,7 +56,15 @@ $(document).ready(function () {
 		};
 
 		// Comprobando
-
+        if(DNI_Em_T=="" || Fecha==""){
+			Swal.fire({
+				title: 'Verifique',
+				confirmButtonText: 'Aceptar',
+				text: "Por favor verfique los campos adicionales",
+				icon: 'info',
+				buttonsStyling: true,
+			});
+		}else{
 		// Envía el formulario mediante Ajax
 		$.ajax({
 			url: "generarOrdenI/registrarOrden",
@@ -65,20 +73,29 @@ $(document).ready(function () {
 			data: JSON.stringify(ordenActual),
 			success: function (response) {
 				// Manejar la respuesta del servidor (si es necesario)
-				console.log(response);
-				window.location.href = "generarOrdenI";
+				var mensaje = JSON.parse(response);
+				Swal.fire({
+					title: 'Registro exitoso',
+					confirmButtonText: 'Aceptar',
+					text: mensaje,
+					icon: 'success',
+					buttonsStyling: true,
+					didClose: () => {
+						window.location.href = 'generarOrdenI';
+					}
+				});
 			},
 			error: function (error) {
 				// Manejar errores
 				console.error(error);
 			},
 		});
-
 		localStorage.removeItem("IDContrato");
 		localStorage.removeItem("numSum");
 		localStorage.removeItem("DNI_Em_T");
 		localStorage.removeItem("Nombre_Em_T");
 		localStorage.removeItem("Apellido_Em_T");
+	    }
 	});
 });
 
@@ -105,11 +122,32 @@ $(document).ready(function () {
 		var idcontrato = $(this).data("idcontrato");
 		var idetapa = $(this).data("idetapa");
 		var fecha = $(this).data("fecha");
-
-		localStorage.setItem("IDContrato", idcontrato);
-		localStorage.setItem("IDEtapa", idetapa);
-		localStorage.setItem("Fecha", fecha);
-
-		window.location.href = "registrarMateriales";
+        
+		$.ajax({
+            url: "generarOrdenI/verificarMaterial",
+				type: "POST",
+				contentType: "application/json",
+				data: JSON.stringify(idcontrato), // Enviar un objeto con propiedad IDContrato
+				success: function (response) {
+					var mensaje = JSON.parse(response);
+					if(mensaje==""){
+						localStorage.setItem("IDContrato", idcontrato);
+						localStorage.setItem("IDEtapa", idetapa);
+						localStorage.setItem("Fecha", fecha);
+						window.location.href = "registrarMateriales";
+					}else{
+						Swal.fire({
+							title: 'Acceso denegado',
+							confirmButtonText: 'Aceptar',
+							text: mensaje,
+							icon: 'info',
+							buttonsStyling: true,
+						});	
+					}
+				},
+				error:function (error){
+					console.error(error);
+				}
+		});
 	});
 });

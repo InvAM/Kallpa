@@ -30,8 +30,7 @@ class ConsultarContrato extends Controller
         $id = json_decode($datosJson, true);
         $contrato = $this->etapacontratos->getComprobarInstalacion($id);
         if (!empty($contrato)) {
-            $mensaje = "El contrato con ID:" . $id . " ya cuenta con una Orden de Instalacion, " .
-                "por favor seleccione otro contrato";
+            $mensaje = "El contrato seleccionado ya cuenta con una Orden de Instalacion, por favor seleccione otro contrato";
         } else {
             $mensaje = "";
         }
@@ -45,7 +44,7 @@ class ConsultarContrato extends Controller
         $id = json_decode($datosJson, true);
         $contrato = $this->etapacontratos->getComprobarHabilitacion($id);
         if (!empty($contrato)) {
-            $mensaje = "El contrato con ID:" . $id . " ya cuenta con una Orden de Habilitacion, " .
+            $mensaje = "El contrato seleccionado ya cuenta con una Orden de Habilitacion, " .
                 "por favor seleccione otro contrato";
         } else {
             $mensaje = "";

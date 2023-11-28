@@ -45,13 +45,11 @@ class GenerarOrdenH extends Controller
                     'Fecha' => $Fecha
                 ])
             ) {
-                echo "<script>console.log('LLEGUE')</script>";
                 $mensaje = "Se genero la orden de Habilitación";
             } else {
-                echo "<script>console.log('NO LLEGUE AYUDA')</script>";
                 $mensaje = "Orden no puede ser generada";
             }
-            $this->view->mensaje = $mensaje;
+            echo json_encode($mensaje);
 
         } else {
             // Manejar el caso en el que alguna de las variables es nula
@@ -59,4 +57,15 @@ class GenerarOrdenH extends Controller
         }
     }
 
+    function verificarMaterial(){
+        $datosJson = file_get_contents("php://input");
+        $id= json_decode($datosJson, true);
+        $detallecontrato= $this->detalleetapamaterial->getComprobarM($id,2);
+        if(!empty($detallecontrato)){
+             $mensaje="La orden ya cuenta con una asignación de materiales";               
+        }else{
+            $mensaje="";
+        }
+        echo json_encode($mensaje);  
+    }
 }

@@ -62,7 +62,7 @@
                         <p class="TI2">Fecha de ejecución</p>
                         <div class="calendario-wrapper">
                             <input class="calendario" type="date" id="selectedDate" name="selectedDate" min="2000-01-01" max="2023-12-31"
-                                onchange="handleDateSelection(event)">
+                                onchange="handleDateSelection(event)" required>
                         </div>
                     </div>
                     <br>
@@ -71,10 +71,10 @@
                         <form action="<?php echo constant('URL'); ?>generarOrdenI/registrarOrden" class="formularioGOI2" name="formularioGOI2" id="formularioGOI2" method="POST">  
                         <label class="Sub" for="NombreCompleto_Em">Técnico</label><br>
                         <input class="I2" type="text" id="NombreCompleto_Em" name="NombreCompleto_Em" placeholder="Técnico" 
-                               value=""readonly>
+                               value=""readonly required>
                         <label class="Sub" for="DNI_Em_T">Dni del Técnico</label><br>
                         <input class="I2" type="text" id="DNI_Em_T" name="DNI_Em_T" placeholder="DNI" 
-                               value=""readonly>
+                               value=""readonly required> 
                         </form>
                         <button class="boton-opciones" id="btnAgregarTecnico"> Agregar Técnico
                                <i class="mdi mdi-keyboard-backspace"></i>
@@ -155,6 +155,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="<?php echo constant('URL'); ?>public/js/generarOrdenI.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 
 </html>
