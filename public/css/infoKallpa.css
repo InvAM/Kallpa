@@ -2,18 +2,33 @@
 	border-top: 4px solid #33cc33;
 }
 
+.info .caja-seccion1 {
+	border-top: 4px solid #33cc33;
+	background-image: url("../../public/Img/FONDOVIYM.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.info .caja-seccion2 {
+	border-top: 4px solid #33cc33;
+	background-color: #CCCCCC;
+}
+
 .info .cajasobrekallpa1 {
 	padding: 80px 0;
 	margin-left: 81.5px;
 	margin-right: 81.5px;
 	display: flex;
 	align-items: center;
+	height: 580px;
 }
 
 .info .cajasobrekallpa2 {
 	padding: 80px 0;
-	margin-left: 381.5px;
-	margin-right: 381.5px;
+	margin-left: 120px;
+	margin-right: 120px;
+	height: 580px;
 }
 
 .info .cajasobrekallpa3 {
@@ -38,11 +53,18 @@
 }
 
 .info .cajasobrekallpa5 {
-	padding: 0px 0px 45px 0px;
+	padding: 0px 0px 85px 0px;
 	margin-left: 81.5px;
 	margin-right: 81.5px;
 	display: flex;
 	align-items: center;
+	height: 550px;
+}
+
+.info .cajasobrekallpa6 {
+	padding: 80px 0;
+	margin-left: 381.5px;
+	margin-right: 381.5px;
 }
 
 .info .informacion {
@@ -57,6 +79,7 @@
 	margin-left: 30px;
 	margin-right: 30px;
 	width: 88%;
+	box-shadow: 0 0 30px white; 
 }
 
 .info .imagenh img {
@@ -92,11 +115,11 @@
 
 .info .p4-info {
 	color: #203864;
-	font-size: 44px;
+	font-size: 64px;
 	font-weight: 700;
 	margin-bottom: 40px;
 	margin-top: 0px;
-	width: 50%;
+	text-align: center;
 }
 
 .info .p5-info {
@@ -122,11 +145,11 @@
 }
 
 .info .p7-info {
-	color: #33cc33;
-	font-size: 44px;
+	color: white;
+	font-size: 64px;
 	font-weight: 700;
-	margin-top: 35px;
-	margin-bottom: 25px;
+	margin-top: 55px;
+	margin-bottom: 40px;
 	text-align: center;
 }
 
@@ -187,7 +210,7 @@
 	border-radius: 18px;
 	background: transparent linear-gradient(350deg, #1ba87a 0%, #01a2c8 60%) 0% 0%
 		no-repeat padding-box;
-	height: 440px;
+	height: 540px;
 }
 
 .info .separar {
@@ -201,11 +224,11 @@
 }
 
 .info .subirimg2 {
-	margin-top: 15px;
+	margin-top: 25px;
 }
 
 .info .desc2 {
-	font-size: 24px;
+	font-size: 24.1px;
 	color: #fff;
 	margin-left: 30px;
 	margin-right: 30px;
@@ -214,9 +237,10 @@
 .info .tit-desc {
 	color: #fff;
 	font-weight: 600;
-	font-size: 30px;
+	font-size: 40px;
 	text-align: center;
 	line-height: 1;
+	margin-top: 25px;
 }
 
 .info .fondo-cont {
@@ -331,7 +355,7 @@ textarea {
 }
 
 .info .fondoimg {
-	background-image: url("../../public/Img/FONDOKALLPA.png");
+	background-image: url("../../public/Img/FONDOKALLPA1.png");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;

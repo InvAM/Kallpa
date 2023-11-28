@@ -29,13 +29,13 @@
             </div>
         </section>
 
-        <section id="visionYmision" class="caja-seccion">
+        <section id="visionYmision" class="caja-seccion1">
             <p class="p7-info">Nuestra Visión y Misión</p>
             <div class="cajasobrekallpa5">
                 <div class="separar">
                     <div class="informacion1 pers-mivi scale-up-center">
                         <div class="subirimg2">
-                            <img src="public/Img/Mision.png">
+                            <img src="public/Img/mi.png">
                         </div>
                         <p class="tit-desc">Misión</p>
                         <p class="desc2">Satisfacer las necesidades y expectativas de nuestros clientes, entregando
@@ -49,7 +49,7 @@
                 <div class="separar">
                     <div class="informacion1 pers-mivi scale-up-center">
                         <div class="subirimg2">
-                            <img src="public/Img/Vision.png">
+                            <img src="public/Img/vi.png">
                         </div>
                         <p class="tit-desc">Visión</p>
                         <p class="desc2">Consolidar nuestra presencia en el mercado nacional, satisfaciendo los
@@ -62,7 +62,7 @@
             </div>
         </section>
 
-        <div id="valor" class="caja-seccion fondo1">
+        <div id="valor" class="caja-seccion2">
             <div class="cajasobrekallpa2">
                 <p class="p4-info">Valores</p>
                 <div class="centrarsplide">
@@ -72,14 +72,14 @@
                                 <ul class="splide__list">
                                     <li class="splide__slide c1">
                                         <div class="subirimg">
-                                            <img src="public/Img/TrabajoEquipo.png">
+                                            <img src="public/Img/traequ.png">
                                         </div>
                                         <p class="valores">Trabajo en equipo</p>
                                         <p class="desc-val">Para lograr cumplir objetivos comunes.</p>
                                     </li>
                                     <li class="splide__slide c1">
                                         <div class="subirimg">
-                                            <img src="public/Img/Honestidad.png">
+                                            <img src="public/Img/hon.png">
                                         </div>
                                         <p class="valores">Honestidad</p>
                                         <p class="desc-val">Hablar con la verdad, para lograr una congruencia entre el
@@ -87,7 +87,7 @@
                                     </li>
                                     <li class="splide__slide c1">
                                         <div class="subirimg">
-                                            <img src="public/Img/Profesionalismo.png">
+                                            <img src="public/Img/prof.png">
                                         </div>
                                         <p class="valores">Profesionalismo</p>
                                         <p class="desc-val">Logrado a través de la disciplina, confianza y deseos de
@@ -95,7 +95,7 @@
                                     </li>
                                     <li class="splide__slide c1">
                                         <div class="subirimg">
-                                            <img src="public/Img/Respeto.png">
+                                            <img src="public/Img/resp.png">
                                         </div>
                                         <p class="valores">Respeto</p>
                                         <p class="desc-val">Mostramos aprecio y cuidado por el valor que tienen las
@@ -103,7 +103,7 @@
                                     </li>
                                     <li class="splide__slide c1">
                                         <div class="subirimg">
-                                            <img src="public/Img/Innovacion.png">
+                                            <img src="public/Img/inno.png">
                                         </div>
                                         <p class="valores">Innovación</p>
                                         <p class="desc-val">Utilizando la tecnología que permita el desarrollo de
@@ -128,7 +128,7 @@
         </section>
 
         <section id="contacto" class="caja-seccion fondo1">
-            <div class="cajasobrekallpa2">
+            <div class="cajasobrekallpa6">
                 <p class="p5-info">Contáctanos</p>
                 <form id="contact-form" method="post">
                     <div class="cajasobrekallpa4">
