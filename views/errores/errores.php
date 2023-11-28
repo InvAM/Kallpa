@@ -7,7 +7,6 @@
     <title>Error 404</title>
     <link rel="stylesheet" href="<?php echo constant("URL"); ?>public/css/errores.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="<?php echo constant("URL"); ?>public/js/errores.js"></script>
 
 </head>
 
@@ -46,5 +45,6 @@
     </div>
 
 </body>
+<script src="<?php echo constant("URL"); ?>public/js/errores.js"></script>
 
 </html>

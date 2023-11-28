@@ -1,49 +1,77 @@
 <?php
+include_once "models/producto.php";
 class ProductoModel extends Model
 {
-    public function __construct()
-    {
-        parent::__construct();
-    }
 
-    public function get()
-    {
-        $productos = [];
-        try {
-            $query = $this->db->connect()->prepare('SELECT nombre, precio, cuota, marca, categoria, imagen FROM producto');
-            $query->execute();
-            while ($row = $query->fetch()) {
-                $producto = new Producto();
-                $producto->nombre = $row['nombre'];
-                $producto->precio = $row['precio'];
-                $producto->cuota = $row['cuota'];
-                $producto->marca = $row['marca'];
-                $producto->categoria = $row['categoria'];
-                $producto->imagen = $row['imagen'];
-                array_push($productos, $producto);
-            }
-            return $productos;
-        } catch (PDOException $e) {
-            return [];
-        }
-    }
+  public function __construct()
+  {
+    parent::__construct();
+  }
 
-    public function insert($data)
-    {
-        try {
-            $query = $this->db->connect()->prepare('INSERT INTO producto (nombre, precio, cuota, marca, categoria, imagen) VALUES (:nombre, :precio, :cuota, :marca, :categoria, :imagen)');
-            $query->execute([
-                ':nombre' => $data['nombre'],
-                ':precio' => $data['precio'],
-                ':cuota' => $data['cuota'],
-                ':marca' => $data['marca'],
-                ':categoria' => $data['categoria'],
-                ':imagen' => $data['imagen'],
-            ]);
-            return true;
-        } catch (PDOException $e) {
-            return false;
-        }
+
+  /*
+  public function get()
+  {
+     $productos = [];
+     try {
+         $query = $this-> db-> connect()->prepare('SELECT nombre,precio,cuota,marca,categoria,imagen FROM producto');
+         $query-> execute();
+         while($row=$query->fetch()){
+           $producto= new Producto();
+           $producto->nombre =$row['nombre'];
+           $producto->precio =$row['precio'];
+           $producto->cuota  =$row['cuota'];
+           $producto->marca  =$row['marca'];
+           $producto->categoria =$row['categoria'];
+           $producto->imagen= $row['imagen'];
+           array_push($productos,$producto);
+       }              
+       return $productos;
+     }catch (PDOException $e){
+       return [];
+     }
+  }*/
+
+  public function getP()
+  {
+    $productos = [];
+    try {
+      $query = $this->db->connect()->prepare('SELECT p.nombre,p.precio,p.cuota,mp.detalleMarcaP, cp.detalleCategoriaP,p.imagen FROM producto p 
+                                                            inner join categoria_producto cp on p.IDCategoriaP= cp.IDCategoriaP
+                                                            inner join marca_producto mp on p.IDMarcaP= mp.IDMarcaP');
+      $query->execute();
+      while ($row = $query->fetch()) {
+        $producto = new Producto();
+        $producto->nombre = $row['nombre'];
+        $producto->precio = $row['precio'];
+        $producto->cuota = $row['cuota'];
+        $producto->detalleMarcaP = $row['detalleMarcaP'];
+        $producto->detalleCategoriaP = $row['detalleCategoriaP'];
+        $producto->imagen = $row['imagen'];
+        array_push($productos, $producto);
+      }
+      return $productos;
+    } catch (PDOException $e) {
+      return [];
+    }
+  }
+  
+  public function insert($datos)
+{
+    try {
+        $query = $this->db->connect()->prepare('INSERT INTO producto (codigo, nombre, precio, cuota, IDMarcaP, IDCategoriaP, imagen) VALUES (:codigo, :nombre, :precio, :cuota, :IDMarcaP, :IDCategoriaP, :imagen)');
+        $query->execute([
+            'codigo' => isset($datos['codigo']) ? $datos['codigo'] : '',
+            'nombre' => isset($datos['nombre']) ? $datos['nombre'] : '',
+            'precio' => isset($datos['precio']) ? $datos['precio'] : '',
+            'cuota' => isset($datos['cuota']) ? $datos['cuota'] : '',
+            'IDMarcaP' => isset($datos['IDMarcaP']) ? $datos['IDMarcaP'] : '',
+            'IDCategoriaP' => isset($datos['IDCategoriaP']) ? $datos['IDCategoriaP'] : '',
+            'imagen' => isset($datos['imagen']) ? $datos['imagen'] : '',
+        ]);
+        return true;
+    } catch (PDOException $e) {
+        return false;
     }
 }
-?>
+}

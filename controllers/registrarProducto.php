@@ -1,39 +1,51 @@
 <?php
-include_once "models/producto.php";
+include_once "models/categoria_productomodel.php";
+include_once "models/marca_productomodel.php";
 class RegistrarProducto extends Controller
 {
     function __construct()
     {
         parent::__construct();
         $this->loadModel('producto');
+        $this->marcas = new MarcaProductoModel();
+        $this->categorias = new CategoriaProductoModel();
         $this->view->mensaje = "";
+        session_start();
+        if (!isset($_SESSION['dni'])) {
+            header("Location:" . constant('URL') . 'Login');
+            exit();
+        }
     }
 
     function render()
     {
-        $productos = $this->model->get();
-        $this->view->productos = $productos;
+        $marcas = $this->marcas->get();  
+        $categorias = $this->categorias->get();  
+        $this->view->categorias = $categorias;
+        $this->view->marcas = $marcas;
         $this->view->render('registrarProducto/formRegistrarProducto');
     }
 
     function registrarNuevoProducto()
     {
         try {
+            $codigo = $_POST['product-code'];
             $nombre = $_POST['product-name'];
             $precio = $_POST['product-price'];
             $cuota = $_POST['product-cuota'];
-            $categoria = $_POST['product-categoria'];
-            $marca = $_POST['product-marca'];
-            $imagen = $this->guardarImagen($_FILES['product-image']);
-
+            $categoria = isset($_POST['id-categoria']) ? $_POST['id-categoria'] : null;
+            $marca = isset($_POST['id-marca']) ? $_POST['id-marca'] : null;
+            $imagen = isset($_POST['hidden-image']) ? $_POST['hidden-image'] : null;
+    
             $mensaje = "";
-
+    
             if ($this->model->insert([
+                'codigo' => $codigo,
                 'nombre' => $nombre,
                 'precio' => $precio,
                 'cuota' => $cuota,
-                'categoria' => $categoria,
-                'marca' => $marca,
+                'IDCategoriaP' => $categoria,
+                'IDMarcaP' => $marca,
                 'imagen' => $imagen,
             ])) {
                 $mensaje = "Nuevo producto registrado";
@@ -43,54 +55,35 @@ class RegistrarProducto extends Controller
         } catch (Exception $e) {
             $mensaje = "Excepción: " . $e->getMessage();
         }
-
+    
         $this->view->mensaje = $mensaje;
         $this->render();
     }
-    private function guardarImagen($file)
+   /* private function guardarImagen($file)
     {
         // Ruta donde se guardará el archivo en el servidor
         $target_dir = __DIR__ . "/uploads/";
         $target_file = $target_dir . basename($file["name"]);
-    
-        // Inicializar $uploadOk
-        $uploadOk = 1;
-    
-        // Verificar si el archivo ya existe
-        if (file_exists($target_file)) {
-            echo "Error: El archivo ya existe.";
-            $uploadOk = 0;
+
+        // Cambiar el nombre del archivo si ya existe
+        while (file_exists($target_file)) {
+            $file_name = pathinfo($file["name"], PATHINFO_FILENAME);
+            $file_extension = pathinfo($file["name"], PATHINFO_EXTENSION);
+            $new_file_name = $file_name . '_' . time() . '.' . $file_extension;
+            $target_file = $target_dir . $new_file_name;
         }
-    
-        // Verificar el tamaño de la imagen
-        if ($file["size"] > 500000) {
-            echo "Error: El tamaño del archivo es demasiado grande.";
-            $uploadOk = 0;
+
+        // Verificar si la carpeta de destino existe, si no, crearla
+        if (!file_exists($target_dir)) {
+            mkdir($target_dir, 0755, true);
         }
-    
-        // Permitir ciertos formatos de archivo
-        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-        if (
-            $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-            && $imageFileType != "gif"
-        ) {
-            echo "Error: Solo se permiten archivos JPG, JPEG, PNG y GIF.";
-            $uploadOk = 0;
-        }
-    
-        // Verificar si $uploadOk está configurado en 0 por algún error
-        if ($uploadOk == 0) {
-            echo "Error: No se pudo subir el archivo.";
-            return false;
+
+        // Mover el archivo al directorio de destino
+        if (move_uploaded_file($file["tmp_name"], $target_file)) {
+            return $target_file; // Devuelve la ruta de la imagen guardada
         } else {
-            // Si todo está bien, intenta subir el archivo
-            if (move_uploaded_file($file["tmp_name"], $target_file)) {
-                return $target_file; // Devuelve la ruta de la imagen guardada
-            } else {
-                echo "Error al mover el archivo al directorio de destino.";
-                return false; // Devuelve false en caso de error al mover el archivo
-            }
+            return false; // Devuelve false en caso de error al mover el archivo
         }
-    }
+    }*/
 }
 ?>

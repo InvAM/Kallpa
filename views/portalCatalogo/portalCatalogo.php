@@ -181,7 +181,7 @@
                         }
                         echo '<div class="descripcion">';
                         echo '<span class="nombre">' . $producto->nombre . '</span><br><br>';
-                        echo '<span class="nombre">' . $producto->marca . '</span><br><br><br>';
+                        echo '<span class="nombre">' . $producto->detalleMarcaP. '</span><br><br><br>';
                         echo '<span class="letra">' . 'Desde ' . '<span>';
                         echo '<span class="letra1">' . 'S/.' . $producto->cuota . '*' . '</span>';
                         echo '<span class="letra">' . ' al mes ' . '<span><br><br>';

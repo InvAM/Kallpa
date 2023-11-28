@@ -15,6 +15,7 @@
         <div class="contenedor1">
             <h1 class="titulo-bien">
                 <span>¡Bienvenido!</span>
+                <?php echo $this->nombreEmpleado; ?>
             </h1>
             <img src="public/Img/Kallpa.png" alt="Kallpa" class="Img1">
             <img src="public/Img/usuario (3).png" alt="Usuario" class="Img2">
@@ -104,7 +105,12 @@
             </hr>
             <div>
                 <ul>
-                    <li> <a href="habilitador">Hola</a></li>
+                    <li> <a href="cerrarSesion">Cerrar Sesion</a></li>
+                    <li><a href="registrarEmpleado">Registrar Empleado</a></li>
+                    <li><a href="registrarContrato">Registrar Contrato</a></li>
+                    <li><a href="registrarCliente">Registrar Cliente</a></li>
+                    <li><a href="registrarMateriales">Registrar Materiales</a></li>
+                    <li><a href="ConsultarContrato">Consultar Contrato</a></li>
                 </ul>
             </div>
         </div>

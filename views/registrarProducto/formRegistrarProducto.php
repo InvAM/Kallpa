@@ -20,7 +20,7 @@
             </div>
             <div class="caja-empleado">
                 <div class="contenedor-empleado">
-                    <form action="<?php echo constant('URL'); ?>registrarProducto/registrarNuevoProducto" method="POST" enctype="multipart/form-data">
+                <form id="product-form" action="<?php echo constant('URL'); ?>registrarProducto/registrarNuevoProducto" method="POST" enctype="multipart/form-data">
                         <div class="fila">
                             <div class="input-group">
                                 <label class="subtitulo-empleados" for="product-code">Código del Producto:</label>
@@ -48,16 +48,37 @@
                         <div class="fila">
                             <div class="input-group">
                                 <label for="product-categoria">Categoria del Producto:</label>
-                                <input type="text" id="product-categoria" placeholder="Seleccione Categoria..." name="product-categoria" required>
+                                <select name="id-categoria" id="id-categoria">
+                <?php
+                            include_once 'models/categoria_producto.php';
+                            foreach ($this->categorias as $opcion) {
+                                $categorias = new CategoriaProducto();
+                                $categorias = $opcion; ?>
+                                <option value="<?php echo $opcion->IDCategoriaP; ?>">
+                                    <?php echo $opcion->detalleCategoriaP; ?>
+                                </option>
+                            <?php } ?>
+                </select>
                             </div>
 
                             <div class="input-group">
                                 <label for="product-marca">Marca del Producto:</label>
-                                <input type="text" id="product-marca" placeholder="Seleccione Marca..." name="product-marca" required>
+                                <select name="id-marca" id="id-marca">
+                <?php
+                            include_once 'models/marca_producto.php';
+                            foreach ($this->marcas as $opcion) {
+                                $marcas = new MarcaProducto();
+                                $marcas = $opcion; ?>
+                                <option value="<?php echo $opcion->IDMarcaP; ?>">
+                                    <?php echo $opcion->detalleMarcaP; ?>
+                                </option>
+                            <?php } ?>
+                </select>
+                                <input type="hidden" name="id-marca" value="valor_marca">      
                             </div>
                         </div>
 
-                                            <div class="fila">
+                        <div class="fila">
                             <div class="input-group">
                                 <label for="product-image">Imagen del Producto:</label>
                                 <div class="file-container">
@@ -71,7 +92,7 @@
                         </div>
 
                         <div class="actions">
-                            <button type="submit">Registrar</button>
+                            <button type="submit" id="btn-registrar">Registrar</button>
                         </div>
                     </form>
                 </div>

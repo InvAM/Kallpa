@@ -10,7 +10,7 @@ class Catalogo extends Controller
 
     function render()
     {
-        $producto = $this->model->get();
+        $producto = $this->model->getP();
 
         $this->view->producto = $producto;
         $this->view->render('portalCatalogo/portalCatalogo');

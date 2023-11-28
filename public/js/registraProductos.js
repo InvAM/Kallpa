@@ -9,57 +9,52 @@ function previewImage(input) {
 
     reader.readAsDataURL(file);
 }
+
 $(document).ready(function () {
-    // Manejar el clic del botón "Seleccionar"
-    $(".boton-seleccionar").on("click", function () {
-        // Obtener los datos de la fila seleccionada
-        var codigo = $(this).data("codigo");
-        var nombre = $(this).data("nombre");
-        var precio = $(this).data("precio");
-        var cuota = $(this).data("cuota");
-        var categoria = $(this).data("categoria");
-        var marca = $(this).data("marca");
+    $("#formularioRegistrarProducto").submit(function (event) {
+        event.preventDefault(); 
+        var codigo = $("#product-code").val();
+        var nombre = $("#product-name").val();
+        var precio = $("#product-price").val();
+        var cuota = $("#product-cuota").val();
+        var categoria = $("#id-categoria").val();
+        var marca = $("#id-marca").val();
+        var imagen = document.getElementById('file-upload').files[0];
 
-        // Rellenar el formulario con la información de la fila seleccionada
-        $("#formulario").find("#product-code").val(codigo);
-        $("#formulario").find("#product-name").val(nombre);
-        $("#formulario").find("#product-price").val(precio);
-        $("#formulario").find("#product-cuota").val(cuota);
-        $("#formulario").find("#product-categoria").val(categoria);
-        $("#formulario").find("#product-marca").val(marca);
-    });
+        var formData = new FormData();
+        formData.append('codigo', codigo);
+        formData.append('nombre', nombre);
+        formData.append('precio', precio);
+        formData.append('cuota', cuota);
+        formData.append('id-categoria', categoria);
+        formData.append('id-marca', marca);
+        formData.append('imagen', imagen);
 
-    // Manejar el clic del botón "Registrar"
-    $("#formulario").on("submit", function (event) {
-        event.preventDefault();
-
-        // Cambiar el atributo "action" del formulario antes de enviarlo
-        $(this).attr("action", "<?php echo constant('URL'); ?>registrarProducto/registrarNuevoProducto");
-
-        // Enviar el formulario mediante AJAX
+        // Realiza la solicitud AJAX
         $.ajax({
+            url: "<?php echo constant('URL'); ?>registrarProducto/registrarNuevoProducto",
             type: "POST",
-            url: $(this).attr("action"),
-            data: new FormData(this),
-            contentType: false,
+            data: formData,
             processData: false,
+            contentType: false,
             success: function (response) {
-                // Manejar la respuesta del servidor
-                console.log(response);
+                // Manejar la respuesta del servidor (si es necesario)
+                alert(response);
+                // Limpiar los campos del formulario
+                $("#product-code").val("");
+                $("#product-name").val("");
+                $("#product-price").val("");
+                $("#product-cuota").val("");
+                $("#id-categoria").val("");
+                $("#id-marca").val("");
+                $("#file-upload").val("");
+                // Actualizar la tabla de productos si es necesario
+                // ...
 
-                // Parsear la respuesta JSON
-                var responseData = JSON.parse(response);
-
-                if (responseData.success) {
-                    // Redirigir a la URL especificada en la respuesta
-                    window.location.href = responseData.redirect;
-                } else {
-                    // Manejar el caso de registro fallido
-                    console.error(responseData.mensaje);
-                }
+                // También puedes realizar otras acciones después de registrar el producto
             },
             error: function (error) {
-                // Manejar errores si es necesario
+                // Manejar errores
                 console.error(error);
             },
         });
