@@ -35,7 +35,15 @@ $(document).ready(function(){
 	    var DNI = $("#formularioT").find("#DNI_Em_T").val();
 		var Nombre = $("#formularioT").find("#Nombre_Em_T").val();
 		var Apellido = $("#formularioT").find("#Apellido_Em_T").val();
-
+		if(DNI==""){
+            Swal.fire({
+				title: 'Seleccione',
+				confirmButtonText: 'Aceptar',
+				text: "Por favor seleccione un técnico",
+				icon: 'info',
+				buttonsStyling: true,
+			});
+		}else{
 		//Almacenando en el localS
 		localStorage.setItem('DNI_Em_T', DNI);
 		localStorage.setItem('Nombre_Em_T', Nombre);
@@ -43,5 +51,6 @@ $(document).ready(function(){
         
 		//Direccionando a otra página
 		window.location.href = 'generarOrdenI';
+		}
 	});
 });

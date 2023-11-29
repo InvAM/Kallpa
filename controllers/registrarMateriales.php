@@ -23,10 +23,10 @@ class RegistrarMateriales extends Controller
     }
 
     function registrarMateriales()
-    {
+    {    
+        $cont= 0;
         $datosJson = file_get_contents("php://input");
         $datos = json_decode($datosJson, true);
-        var_dump($datosJson);
         foreach ($datos as $material) {
             // Accede a las propiedades del objeto, por ejemplo:
             $id = $material['id'];
@@ -42,9 +42,14 @@ class RegistrarMateriales extends Controller
                     'cantidad' => $cantidad
                 ])
             ) {
-                $mensaje = "Se registro correctamente";
-
+                $cont=$cont+1;
             }
         }
+
+        
+        if($cont== count($datos)){
+            $mensaje="Registro exitoso";
+         }
+         echo json_encode($mensaje);
     }
 }

@@ -13,10 +13,10 @@ class TipoInstalacionModel extends Model{
         $query=$this->db->connect()->prepare('SELECT IDTipoInst,Descripcion_TI FROM tipoinstalacion');
         $query->execute();
         while($row= $query ->fetch()){
-             $tipoI =new TipoInstalacion();
-             $tipoI->IDTipoInst = $row['IDTipoInst'];
-             $tipoI->Descripcion_TI = $row['Descripcion_TI'];
-             array_push($tipoInstalaciones,$tipoI);
+            $tipoI =new TipoInstalacion();
+            $tipoI->IDTipoInst = $row['IDTipoInst'];
+            $tipoI->Descripcion_TI = $row['Descripcion_TI'];
+            array_push($tipoInstalaciones,$tipoI);
         }
         return $tipoInstalaciones;
         }catch(PDOException $e){

@@ -6,7 +6,6 @@ class EvaluarContrato extends Controller
         parent::__construct();
         $this->loadModel('contrato');
         $this->view->mensaje = "";
-        //El usuario debe estar registrado
         session_start();
         if (!isset($_SESSION['dni'])) {
             header("Location:" . constant('URL') . 'Login');
@@ -19,23 +18,27 @@ class EvaluarContrato extends Controller
         $this->view->contrato = $contrato;
         $this->view->render('evaluarContrato/formEvaluarContrato');
     }
-    
+
     function actualizarEstado()
     {
-        if (isset($_POST['confirmar'])) {
-            $estado = $_POST['selectedEstado'];
-            $IDContrato = $_POST['IDContrato'];
-            $mensaje = "";
-            if(
+        $datosJson = file_get_contents("php://input");
+        $datos = json_decode($datosJson, true);
+        //Obteniendo datos
+        $estado = isset($datos['Estado']) ? $datos['Estado'] : null;
+        $IDContrato = isset($datos['IDContrato']) ? $datos['IDContrato'] : null;
+        if ($IDContrato !== null) {
+            if (
                 $this->model->updateEvaluar([
-                    'selectedEstado' => $estado,
+                    'Estado' => $estado,
                     'IDContrato' => $IDContrato
                 ])
-            ){
-                $mensaje = 'Actualizado';
-                header("Location:" . constant('URL') . 'evaluarContrato');
+            ) {
+                $mensaje = 'El contrato con ID:' . $IDContrato . ' ha sido actualizado con éxito';
+            } else {
+                $mensaje = 'No se pudo realizar la actualización';
             }
-            $this->render();
+            echo json_encode($mensaje);
         }
+
     }
 }

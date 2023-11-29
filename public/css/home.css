@@ -407,7 +407,7 @@ body {
 	background: #00296B;
 	width: 96%; /*ancho*/
 	padding: 30px;
-	height: 700px; /*alto*/
+	height: 900px; /*alto*/
     margin-top: 1%;
 }
 
@@ -439,4 +439,43 @@ body {
 	font-family: Candara;
 	margin-top: -10%;
 	margin-left: 10%;
+}
+
+.home-cont4 .imagen-bonogas{
+	width: 16%;
+	margin-left: 83%;
+	margin-top: -17%;
+}
+
+.home-cont4 .cont-titulo3 {
+	margin-top: -2%;
+    margin-left: 40%;
+    border: 2px solid #000000; /* Agrega un borde negro de 2 píxeles */
+}
+
+
+
+.home-cont4 .cont-titulo3 .titu1 {
+	font-family: 'Comic Sans MS';
+	font-size: 60px;
+	color: #1a1166;
+	font-weight: bold;
+	margin-right: 10%;
+}
+
+.home-cont4 .cont-titulo3 .titu2 {
+	font-family: 'Comic Sans MS';
+	font-size: 60px;
+	color: #33cc33;
+	font-weight: bold;
+	margin-left: 52%;
+	margin-top: -14%;
+}
+
+.home-cont4 .cont-fondo {
+    background-color: #ffffff; /* Color de fondo */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+	margin-top: 14%;
+	height: 200px;
 }

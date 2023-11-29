@@ -6,7 +6,6 @@ include_once "models/tipoinstalacionmodel.php";
 
 class RegistrarContrato extends Controller
 {
-    private $asesores;  // Declarar la propiedad
 
     function __construct()
     {

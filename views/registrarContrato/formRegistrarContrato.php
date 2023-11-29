@@ -123,12 +123,12 @@
                     <i class="mdi mdi-book-plus"></i>Registrar</button>
                 </form>
                 <button class="boton1" name="btnLimpiar" id="btnLimpiar">
-                   <i class="mdi mdi-restore"></i>Limpiar</button>
+                    <i class="mdi mdi-restore"></i>Limpiar</button>
                 <button class="boton1" name="btnAtras" id="btnAtras">
-                   <i class="mdi mdi-keyboard-backspace"></i>Atras</button>
+                    <i class="mdi mdi-keyboard-backspace"></i>Atras</button>
                 <button class="boton1">
-                   <i class="mdi mdi-printer"></i>
-                     Imprimir</button>
+                    <i class="mdi mdi-printer"></i>
+                    Imprimir</button>
             </div>
             <br>
             <br>

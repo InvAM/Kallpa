@@ -8,7 +8,6 @@ class CredencialesEmpleadoModel extends Model
         parent::__construct();
     }
 
-    //esta aqui porque necesita el DNI de la sesion
     public function obtenerInicialNombre($dni)
     {
         $query = $this->db->connect()->prepare('SELECT LEFT(Nombre_Em, 1) AS Inicial FROM empleado WHERE DNI_Em = :dni');
@@ -18,24 +17,22 @@ class CredencialesEmpleadoModel extends Model
             $row = $query->fetch();
             return $row['Inicial'];
         } else {
-            return null; // O maneja el caso en que no se encuentre el empleado con ese DNI
+            return null;
         }
     }
 
-    //esta aqui porque necesita el DNI de la sesion
     public function getNombreEmpleado($dni)
     {
-        // Consultar la base de datos para obtener el nombre del empleado
+
         $query = $this->db->connect()->prepare('SELECT Nombre_Em FROM empleado WHERE DNI_Em = :dni');
         $query->execute(['dni' => $dni]);
 
-        // Verificar si se encontraron resultados
         if ($query->rowCount() > 0) {
-            // Obtener el nombre del primer resultado (puedes ajustar según tu lógica)
+
             $row = $query->fetch();
             return $row['Nombre_Em'];
         } else {
-            // No se encontraron resultados
+
             return "Nombre no encontrado";
         }
     }
@@ -48,9 +45,8 @@ class CredencialesEmpleadoModel extends Model
         try {
             $query->execute(['dni' => $dni, 'nombreusuario' => $nombreusuario, 'password' => $password]);
 
-            // Verificar si se encontraron resultados
+
             if ($query->rowCount() > 0) {
-                // Inicio de sesión exitoso
                 $credenciales = new Credencialesempleado();
                 while ($row = $query->fetch()) {
                     $credenciales->DNI_Em = $row['DNI_Em'];
@@ -59,13 +55,26 @@ class CredencialesEmpleadoModel extends Model
                 }
                 return $credenciales;
             } else {
-                // Inicio de sesión fallido
+
                 return null;
             }
         } catch (PDOException $e) {
-            // Manejar la excepción según tus necesidades
+
             return null;
         }
     }
-
+    public function insert($datos)
+    {
+        try {
+            $query = $this->db->connect()->prepare('INSERT INTO credencialesempleado (DNI_Em, nombreusuario,password) VALUES (:dni,:nombreusuario,:password)');
+            $query->execute([
+                'dni' => $datos['DNI_Em'],
+                'nombreusuario' => $datos['nombreusuario'],
+                'password' => $datos['password'],
+            ]);
+            return true;
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
 }

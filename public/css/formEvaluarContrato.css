@@ -79,8 +79,9 @@ body {
 }
 
 .evaluar-c .subcajita5 {
+	display: inline-block;
     width: 40% !important;
-	margin-top: -198px;
+	margin-top: -150px !important;
 	margin-left: 1080px;
 }
 

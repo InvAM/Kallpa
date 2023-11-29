@@ -30,7 +30,7 @@ class loginClientes extends Controller
         if ($credenciales !== null) {
             session_start();
             $_SESSION['nombrecliente'] = $credenciales->Nombre_cli;
-
+            $_SESSION['carrito'] = array();
             $response['success'] = true;
             $response['message'] = 'Inicio de sesion exitoso';
             $response['nombrecliente'] = $credenciales->Nombre_cli;
