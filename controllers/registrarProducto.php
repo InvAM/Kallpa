@@ -19,8 +19,8 @@ class RegistrarProducto extends Controller
 
     function render()
     {
-        $marcas = $this->marcas->get();  
-        $categorias = $this->categorias->get();  
+        $marcas = $this->marcas->get();
+        $categorias = $this->categorias->get();
         $this->view->categorias = $categorias;
         $this->view->marcas = $marcas;
         $this->view->render('registrarProducto/formRegistrarProducto');
@@ -29,61 +29,53 @@ class RegistrarProducto extends Controller
     function registrarNuevoProducto()
     {
         try {
-            $codigo = $_POST['product-code'];
-            $nombre = $_POST['product-name'];
-            $precio = $_POST['product-price'];
-            $cuota = $_POST['product-cuota'];
-            $categoria = isset($_POST['id-categoria']) ? $_POST['id-categoria'] : null;
-            $marca = isset($_POST['id-marca']) ? $_POST['id-marca'] : null;
-            $imagen = isset($_POST['hidden-image']) ? $_POST['hidden-image'] : null;
-    
-            $mensaje = "";
-    
-            if ($this->model->insert([
-                'codigo' => $codigo,
-                'nombre' => $nombre,
-                'precio' => $precio,
-                'cuota' => $cuota,
-                'IDCategoriaP' => $categoria,
-                'IDMarcaP' => $marca,
-                'imagen' => $imagen,
-            ])) {
-                $mensaje = "Nuevo producto registrado";
+            $datosJson = file_get_contents("php://input");
+            $datos = json_decode($datosJson, true);
+            $response = array();
+            if ($datos !== null) {
+                $IDProducto = isset($datos['IDProducto']) ? $datos['IDProducto'] : null;
+                $nombre = isset($datos['nombre']) ? $datos['nombre'] : null;
+                $precio = isset($datos['precio']) ? $datos['precio'] : null;
+                $cuota = isset($datos['cuota']) ? $datos['cuota'] : null;
+                $IDCategoriaP = isset($datos['IDCategoriaP']) ? $datos['IDCategoriaP'] : null;
+                $IDMarcaP = isset($datos['IDMarcaP']) ? $datos['IDMarcaP'] : null;
+                $imagen = isset($datos['imagen']) ? base64_decode($datos['imagen']) : null;
+
+                if ($IDProducto !== null && $nombre != null && $precio !== null && $cuota !== null && $IDCategoriaP !== null && $IDMarcaP !== null && $imagen !== null) {
+
+
+
+                    if (
+                        $this->model->insert([
+                            'IDProducto' => $IDProducto,
+                            'nombre' => $nombre,
+                            'precio' => $precio,
+                            'cuota' => $cuota,
+                            'IDCategoriaP' => $IDCategoriaP,
+                            'IDMarcaP' => $IDMarcaP,
+                            'imagen' => $imagen
+                        ])
+                    ) {
+
+                        $response['success'] = true;
+                        $response['message'] = 'Producto registrado con éxito';
+                    } else {
+                        $response['success'] = false;
+                        $response['message'] = 'No se pudo registrar el producto verifique la informacion ingresada';
+                    }
+                } else {
+                    $response['success'] = false;
+                    $response['message'] = 'Faltan datos obligatorios';
+                }
             } else {
-                $mensaje = "Error al registrar el producto en la base de datos";
+                $response['success'] = false;
+                $response['message'] = 'Datos no válidos';
             }
-        } catch (Exception $e) {
-            $mensaje = "Excepción: " . $e->getMessage();
+            header('Content-Type: application/json');
+            echo json_encode($response);
+        } catch (PDOException $e) {
+            echo "Error en la consulta: " . $e->getMessage();
         }
-    
-        $this->view->mensaje = $mensaje;
-        $this->render();
     }
-   /* private function guardarImagen($file)
-    {
-        // Ruta donde se guardará el archivo en el servidor
-        $target_dir = __DIR__ . "/uploads/";
-        $target_file = $target_dir . basename($file["name"]);
 
-        // Cambiar el nombre del archivo si ya existe
-        while (file_exists($target_file)) {
-            $file_name = pathinfo($file["name"], PATHINFO_FILENAME);
-            $file_extension = pathinfo($file["name"], PATHINFO_EXTENSION);
-            $new_file_name = $file_name . '_' . time() . '.' . $file_extension;
-            $target_file = $target_dir . $new_file_name;
-        }
-
-        // Verificar si la carpeta de destino existe, si no, crearla
-        if (!file_exists($target_dir)) {
-            mkdir($target_dir, 0755, true);
-        }
-
-        // Mover el archivo al directorio de destino
-        if (move_uploaded_file($file["tmp_name"], $target_file)) {
-            return $target_file; // Devuelve la ruta de la imagen guardada
-        } else {
-            return false; // Devuelve false en caso de error al mover el archivo
-        }
-    }*/
 }
-?>

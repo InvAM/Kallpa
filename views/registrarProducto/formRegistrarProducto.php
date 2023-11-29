@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Registrar Producto</title>
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/formRegistrarProducto.css">
-    <!-- Incluye tus estilos adicionales si es necesario -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.all.min.js"></script>
 </head>
 
 <body>
@@ -20,79 +21,80 @@
             </div>
             <div class="caja-empleado">
                 <div class="contenedor-empleado">
-                <form id="product-form" action="<?php echo constant('URL'); ?>registrarProducto/registrarNuevoProducto" method="POST" enctype="multipart/form-data">
+                    <form id="formProducto" method="POST" enctype="multipart/form-data">
                         <div class="fila">
                             <div class="input-group">
-                                <label class="subtitulo-empleados" for="product-code">Código del Producto:</label>
-                                <input type="text" id="product-code" placeholder="Ingrese Código..." name="product-code" required>
+                                <label class="subtitulo-empleados" for="IDProducto">Código del Producto:</label>
+                                <input type="text" id="IDProducto" placeholder="Ingrese Código..." name="IDProducto"
+                                    required>
                             </div>
 
                             <div class="input-group">
-                                <label class="subtitulo-empleados" for="product-name">Nombre del Producto:</label>
-                                <input type="text" id="product-name" placeholder="Ingrese Nombre del Producto..." name="product-name" required>
+                                <label class="subtitulo-empleados" for="nombre">Nombre del Producto:</label>
+                                <input type="text" id="nombre" placeholder="Ingrese Nombre del Producto..."
+                                    name="nombre" required>
                             </div>
                         </div>
 
                         <div class="fila">
                             <div class="input-group">
-                                <label for="product-price">Precio del Producto:</label>
-                                <input type="text" id="product-price" placeholder="Ingrese Precio..." name="product-price" required>
+                                <label for="precio">Precio del Producto:</label>
+                                <input type="text" id="precio" placeholder="Ingrese Precio..." name="precio" required>
                             </div>
 
                             <div class="input-group">
-                                <label for="product-cuota">Cuota del Producto:</label>
-                                <input type="text" id="product-cuota" placeholder="Ingrese Cuota..." name="product-cuota" required>
-                            </div>
-                        </div>
-
-                        <div class="fila">
-                            <div class="input-group">
-                                <label for="product-categoria">Categoria del Producto:</label>
-                                <select name="id-categoria" id="id-categoria">
-                <?php
-                            include_once 'models/categoria_producto.php';
-                            foreach ($this->categorias as $opcion) {
-                                $categorias = new CategoriaProducto();
-                                $categorias = $opcion; ?>
-                                <option value="<?php echo $opcion->IDCategoriaP; ?>">
-                                    <?php echo $opcion->detalleCategoriaP; ?>
-                                </option>
-                            <?php } ?>
-                </select>
-                            </div>
-
-                            <div class="input-group">
-                                <label for="product-marca">Marca del Producto:</label>
-                                <select name="id-marca" id="id-marca">
-                <?php
-                            include_once 'models/marca_producto.php';
-                            foreach ($this->marcas as $opcion) {
-                                $marcas = new MarcaProducto();
-                                $marcas = $opcion; ?>
-                                <option value="<?php echo $opcion->IDMarcaP; ?>">
-                                    <?php echo $opcion->detalleMarcaP; ?>
-                                </option>
-                            <?php } ?>
-                </select>
-                                <input type="hidden" name="id-marca" value="valor_marca">      
+                                <label for="cuota">Cuota del Producto:</label>
+                                <input type="text" id="cuota" placeholder="Ingrese Cuota..." name="cuota" required>
                             </div>
                         </div>
 
                         <div class="fila">
                             <div class="input-group">
-                                <label for="product-image">Imagen del Producto:</label>
+                                <label for="IDCategoriaP">Categoria del Producto:</label>
+                                <select name="IDCategoriaP" id="IDCategoriaP">
+                                    <?php
+                                    include_once 'models/categoria_producto.php';
+                                    foreach ($this->categorias as $opcion) {
+                                        $categorias = new CategoriaProducto();
+                                        $categorias = $opcion; ?>
+                                        <option value="<?php echo $opcion->IDCategoriaP; ?>">
+                                            <?php echo $opcion->detalleCategoriaP; ?>
+                                        </option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="IDMarcaP">Marca del Producto:</label>
+                                <select name="IDMarcaP" id="IDMarcaP">
+                                    <?php
+                                    include_once 'models/marca_producto.php';
+                                    foreach ($this->marcas as $opcion) {
+                                        $marcas = new MarcaProducto();
+                                        $marcas = $opcion; ?>
+                                        <option value="<?php echo $opcion->IDMarcaP; ?>">
+                                            <?php echo $opcion->detalleMarcaP; ?>
+                                        </option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="fila">
+                            <div class="input-group">
+                                <label for="imagen">Imagen del Producto:</label>
                                 <div class="file-container">
-                                    <input type="file" id="file-upload" name="product-image" onchange="previewImage(this)">
+                                    <input type="file" id="file-upload" name="imagen" onchange="previewImage(this)">
                                     <div class="image-container">
                                         <img class="image-preview" id="modal-image">
                                     </div>
                                 </div>
-                                <a href="#" id="preview-link" style="display: none;" onclick="openModal()"></a>
+                                <a href="#" id="preview-link" style="display: none;"></a>
                             </div>
                         </div>
 
                         <div class="actions">
-                            <button type="submit" id="btn-registrar">Registrar</button>
+                            <button type="submit" id="btnRegistrar">Registrar</button>
                         </div>
                     </form>
                 </div>
@@ -125,8 +127,10 @@
 
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="<?php echo constant('URL'); ?>public/js/registraProductos.js"></script>
         <!-- Incluye tus scripts adicionales si es necesario -->
-    </body>
+</body>
+
 </html>
