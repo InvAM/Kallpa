@@ -8,30 +8,6 @@ class ProductoModel extends Model
     parent::__construct();
   }
 
-
-  /*
-  public function get()
-  {
-     $productos = [];
-     try {
-         $query = $this-> db-> connect()->prepare('SELECT nombre,precio,cuota,marca,categoria,imagen FROM producto');
-         $query-> execute();
-         while($row=$query->fetch()){
-           $producto= new Producto();
-           $producto->nombre =$row['nombre'];
-           $producto->precio =$row['precio'];
-           $producto->cuota  =$row['cuota'];
-           $producto->marca  =$row['marca'];
-           $producto->categoria =$row['categoria'];
-           $producto->imagen= $row['imagen'];
-           array_push($productos,$producto);
-       }              
-       return $productos;
-     }catch (PDOException $e){
-       return [];
-     }
-  }*/
-
   public function getP()
   {
     $productos = [];
@@ -55,23 +31,23 @@ class ProductoModel extends Model
       return [];
     }
   }
-  
+
   public function insert($datos)
-{
+  {
     try {
-        $query = $this->db->connect()->prepare('INSERT INTO producto (codigo, nombre, precio, cuota, IDMarcaP, IDCategoriaP, imagen) VALUES (:codigo, :nombre, :precio, :cuota, :IDMarcaP, :IDCategoriaP, :imagen)');
-        $query->execute([
-            'codigo' => isset($datos['codigo']) ? $datos['codigo'] : '',
-            'nombre' => isset($datos['nombre']) ? $datos['nombre'] : '',
-            'precio' => isset($datos['precio']) ? $datos['precio'] : '',
-            'cuota' => isset($datos['cuota']) ? $datos['cuota'] : '',
-            'IDMarcaP' => isset($datos['IDMarcaP']) ? $datos['IDMarcaP'] : '',
-            'IDCategoriaP' => isset($datos['IDCategoriaP']) ? $datos['IDCategoriaP'] : '',
-            'imagen' => isset($datos['imagen']) ? $datos['imagen'] : '',
-        ]);
-        return true;
+      $query = $this->db->connect()->prepare('INSERT INTO producto (IDProducto, nombre, precio, cuota, IDMarcaP, IDCategoriaP, imagen) VALUES (:IDProducto, :nombre, :precio, :cuota, :IDMarcaP, :IDCategoriaP, :imagen)');
+      $query->execute([
+        'IDProducto' => isset($datos['IDProducto']) ? $datos['IDProducto'] : '',
+        'nombre' => isset($datos['nombre']) ? $datos['nombre'] : '',
+        'precio' => isset($datos['precio']) ? $datos['precio'] : '',
+        'cuota' => isset($datos['cuota']) ? $datos['cuota'] : '',
+        'IDMarcaP' => isset($datos['IDMarcaP']) ? $datos['IDMarcaP'] : '',
+        'IDCategoriaP' => isset($datos['IDCategoriaP']) ? $datos['IDCategoriaP'] : '',
+        'imagen' => isset($datos['imagen']) ? $datos['imagen'] : '',
+      ]);
+      return true;
     } catch (PDOException $e) {
-        return false;
+      return false;
     }
-}
+  }
 }
