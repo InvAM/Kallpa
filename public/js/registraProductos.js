@@ -8,8 +8,7 @@ function previewImage(input) {
 		reader.onload = function (e) {
 			document.getElementById("modal-image").src = e.target.result;
 			document.getElementById("preview-link").style.display = "block";
-			var data = reader.result.split(",")[1];
-			binaryImageData = atob(data); // Actualizar la variable global
+			binaryImageData = e.target.result.split(",")[1]; // Actualizar la variable global
 		};
 
 		reader.readAsDataURL(file);

@@ -43,6 +43,8 @@ class RegistrarProducto extends Controller
 
                 if ($IDProducto !== null && $nombre != null && $precio !== null && $cuota !== null && $IDCategoriaP !== null && $IDMarcaP !== null && $imagen !== null) {
 
+
+
                     if (
                         $this->model->insert([
                             'IDProducto' => $IDProducto,
