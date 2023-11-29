@@ -27,16 +27,17 @@
                 <form method="POST" autocomplete="off" class="formularioE" id="formularioE">
                     <h3 class="subtitulo-empleado">Datos Generales</h3>
                     <div class="contenedor-empleado">
-                        <img src="<?php echo constant('URL'); ?>public/Img/perfil.png" class="imagen-foto">
+                        <i class="mdi mdi-account-tie"></i>
+                        <br>
                         <label for="DNI_Em">Dni</label>
-                        <input type="text" label="DNI" placeholder="Escribir..." name="DNI_Em" id="DNI_Em">
+                        <input type="text" label="DNI" placeholder="Ingrese el DNI" name="DNI_Em" id="DNI_Em">
                         <label for="Nombre_Em">Nombres</label>
-                        <input type="text" label="Nombre" placeholder="Escribir..." name="Nombre_Em" id="Nombre_Em">
+                        <input type="text" label="Nombre" placeholder="Ingrese los nombres" name="Nombre_Em" id="Nombre_Em">
                         <label for="Apellido_Em">Apellidos</label>
-                        <input type="text" label="Apellido" placeholder="Escribir..." name="Apellido_Em"
+                        <input type="text" label="Apellido" placeholder="Ingrese los apellidos" name="Apellido_Em"
                             id="Apellido_Em">
                         <label for="Celular_Em">Celular</label>
-                        <input type="text" label="Celular" placeholder="Escribir..." name="Celular_Em" id="Celular_Em">
+                        <input type="text" label="Celular" placeholder="Ingrese el N° de celular" name="Celular_Em" id="Celular_Em">
                         <label for="IDCategoria">Categoría</label>
                         <select name="IDCategoria" id="IDCategoria">
                             <?php
@@ -51,8 +52,13 @@
 
                             <!-- Seguir con opciones -->
                         </select>
-                        <button type="button" class="boton" id="btnRegistrar">Registrar</button>
-                        <button type="button" class="boton" id="btnActualizar">Actualizar</button>
+                        <div class="botones">
+                        <button type="button" class="boton" id="btnRegistrar">
+                        <i class="mdi mdi-plus-box"></i>Registrar</button>
+
+                        <button type="button" class="boton" id="btnActualizar">
+                        <i class="mdi mdi-update"></i>Actualizar</button>
+                        </div>
                     </div>
                 </form>
 
@@ -106,7 +112,9 @@
 
                                     </td>
                                     <td>
-                                        <button class="boton-seleccionar boton" id="btnEliminar">Eliminar</button>
+                                        <button class="boton-seleccionar boton" id="btnEliminar">
+                                        <i class="mdi mdi-delete-empty"></i>
+                                        </button>
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -119,11 +127,9 @@
                         <h3 class="subtitulo-lista-c">Credenciales</h3>
 
                         <form method="POST" class="FormularioAjax">
-                            <h3 class="subtitulo-lista">Credenciales</h3>
-
                             <div class="campo">
                                 <label for="DNI_Em_c">Dni</label>
-                                <input type="text" label="DNI" placeholder="Escribir..." name="DNI_Em_c" id="DNI_Em_c"
+                                <input type="text" label="DNI" placeholder="DNI" name="DNI_Em_c" id="DNI_Em_c"
                                     required>
                             </div>
                             <div class="campo">
@@ -137,7 +143,9 @@
                                     name="password" id="password">
                             </div>
 
-                            <button id="btnRegistrarCredenciales" class="boton-credencial">Agregar Credenciales</button>
+                            <button id="btnRegistrarCredenciales" class="boton-credencial">
+                                <i class="mdi mdi-key-plus"></i>
+                            Agregar Credenciales</button>
                         </form>
                 </div>
                 <button class="boton-opciones" name="btnLimpiar" id="btnLimpiar">

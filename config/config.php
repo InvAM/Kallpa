@@ -7,4 +7,4 @@ define('DB', 'kallpa');
 define('USER', 'root');
 define('PASSWORD', '');
 define('CHARSET', 'utf8mb4');
-define('PORT', '3307');
+define('PORT', '3306');
