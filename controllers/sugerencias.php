@@ -1,11 +1,14 @@
 <?php
+
+include_once "models/clientemodel.php";
+
 class sugerencias extends Controller
 {
     public function __construct()
     {
         parent::__construct();
         $this->loadModel("sugerencia");
-
+        $this->clientes= new ClienteModel();
     }
     function render()
     {
@@ -14,24 +17,35 @@ class sugerencias extends Controller
 
     function registrarSugerencia()
     {
-        $nombres = $_POST['nombres_s'];
-        $apellidos = $_POST['apellidos_s'];
-        $email = $_POST['email_s'];
-        $comentario = $_POST['comentario_s'];
-        $mensaje = "";
-        if (
-            $this->model->insert([
-                'nombres_s' => $nombres,
-                'apellidos_s' => $apellidos,
-                'email_s' => $email,
-                'comentario_s' => $comentario
-            ])
-        ) {
-            $mensaje = 'Registrado';
-            header("Location:" . constant('URL') . 'sugerencias');
+        $datosJson = file_get_contents("php://input");
+        $datos = json_decode($datosJson, true); 
+
+        $nombres = isset($datos['nombres']) ?$datos['nombres']:null;
+        $dni= isset($datos['DNI_cli']) ?$datos['DNI_cli']:null;
+        $apellidos = isset($datos['apellidos']) ?$datos['apellidos']:null;
+        $email =isset($datos['email']) ?$datos['email']:null;
+        $comentario =isset($datos['comentario']) ?$datos['comentario']:null;
+       
+        if($dni !==null){
+             $cliente= $this->clientes->getEspecial($dni);
+            if(empty($cliente)){
+               $mensaje="";
+            }else{
+                if (
+                    $this->model->insert([
+                        'dni' => $dni,
+                        'email' => $email,
+                        'comentario' => $comentario
+                    ])
+                ) {
+                    $mensaje = "La sugerencia de ".$nombres." ".$apellidos." ha sido registrada con éxito";
+                }else{
+                    $mensaje = "Error al registrar la sugerencia";
+                }
+            }
+            echo json_encode(['mensaje' => $mensaje]);
+        }else{
+            echo "Error: Datos incompletos";
         }
-
-        $this->render();
     }
-
 }
