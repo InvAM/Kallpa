@@ -9,7 +9,7 @@
     <title>Catalogo de Productos</title>
     <script src="<?php echo constant('URL'); ?>public/splide-4.1.3/dist/js/splide.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.all.min.js"></script>
 </head>
 
 <body>
@@ -184,16 +184,16 @@
                         }
                         echo '<div class="descripcion">';
                         echo '<span name="nombre" class="nombre">' . $producto->nombre . '</span><br><br>';
-                        echo '<span name="detalle" class="nombre">' . $producto->detalleMarcaP . '</span><br><br><br>';
+                        echo '<span name="detalle" class="detalle">' . $producto->detalleMarcaP . '</span><br><br><br>';
                         echo '<span class="letra">' . 'Desde ' . '<span>';
-                        echo '<span class="letra1">' . 'S/.' . $producto->cuota . '*' . '</span>';
+                        echo '<span class="letra1" name="cuota">' . 'S/.' . $producto->cuota . '*' . '</span>';
                         echo '<span class="letra">' . ' al mes ' . '<span><br><br>';
-                        echo '<span class="letra">' . 'Precio Regular: S/.' . $producto->precio . '</span><br><br>';
-                        echo '<span name="precio" class="letra2">' . 'Tienda Virtual: S/.' . (0.95 * $producto->precio) . '</span><br><br>';
-                        echo '<button class="boton-compra">
-                            <i class="mdi mdi-cart-percent"></i>
-                            ¡Compra Ya!
-                          </button>';
+                        echo '<span class="letra" name="precio1">' . 'Precio Regular: S/.' . $producto->precio . '</span><br><br>';
+                        echo '<span name="precio2" class="letra2">' . 'Tienda Virtual: S/.' . (0.95 * $producto->precio) . '</span><br><br>';
+                        echo '<button class="boton-compra comprar-btn">
+                                <i class="mdi mdi-cart-percent"></i>
+                                    ¡Compra Ya!
+                            </button>';
                         echo '</div>';
                         echo '</div>';
                     }
@@ -205,7 +205,9 @@
     </div>
     <?php require_once "views/chatbot.php"; ?>
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="<?php echo constant('URL'); ?>public/js/catalogo.js"></script>
 </body>
 
 </html>

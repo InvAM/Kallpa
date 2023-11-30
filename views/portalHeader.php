@@ -161,6 +161,8 @@
                                     // Si la sesión 'nombrecliente' no está presente, el usuario no está conectado
                                     echo '<a href="#" onclick="mostrarVentanaEmergente()"><i class="mdi mdi-account"></i><span>Ingresar como cliente</span></a>';
                                 }
+                                echo '<a href="carrito" style="display: block;"><i class="mdi mdi-cart"></i><span>Ver Carrito</span>
+                                <span id="carritoContador">0</span></a>';
                                 ?>
                                 </ul>
                             </div>
@@ -182,6 +184,13 @@
             background: transparent !important;
         }
     </style>
+    <!-- <script>
+        // Restaurar el contador al cargar la página
+        $(document).ready(function () {
+
+            updateCartCounter();
+        });
+    </script> -->
 </body>
 
 </html>
