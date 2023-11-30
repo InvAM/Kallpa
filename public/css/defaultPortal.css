@@ -273,3 +273,14 @@ body {
 	margin-bottom: -39px;
 	margin-left: -135px;
 }
+
+.nameCliente {
+	display: inline;
+	color: black;
+	margin-top: 5px;
+}
+.clientGuess {
+	margin-top: 28px;
+	right: 122px;
+	position: absolute;
+}

@@ -18,11 +18,11 @@
 <body>
     <div>
         <?php require_once "views/portalHeader.php"; ?>
-        <h3>
+        <!-- <h3>
             <?php
-            echo $this->nombrecliente;
+            //echo $this->nombrecliente;
             ?>
-        </h3>
+        </h3> -->
         <div class="container">
             <div class="splide">
                 <div class="splide__track">

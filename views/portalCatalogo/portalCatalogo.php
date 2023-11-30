@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
     <title>Catalogo de Productos</title>
     <script src="<?php echo constant('URL'); ?>public/splide-4.1.3/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
     <!-- CABECERA -->
     <?php require_once "views/portalHeader.php"; ?><!-- LAYER -->
+
     <div class="container">
         <div class="splide">
             <div class="splide__track">

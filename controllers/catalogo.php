@@ -6,6 +6,13 @@ class Catalogo extends Controller
         parent::__construct();
         $this->loadModel('producto');
         $this->view->mensaje = "";
+        session_start();
+        if (isset($_SESSION['nombrecliente'])) {
+            $nombrecliente = $_SESSION['nombrecliente'];
+            $this->view->nombrecliente = $nombrecliente;
+        } else {
+            $this->view->nombrecliente = null;
+        }
 
     }
 

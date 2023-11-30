@@ -5,6 +5,13 @@ class reclamacion extends Controller
     {
         parent::__construct();
         $this->loadModel("reclamaciones");
+        session_start();
+        if (isset($_SESSION['nombrecliente'])) {
+            $nombrecliente = $_SESSION['nombrecliente'];
+            $this->view->nombrecliente = $nombrecliente;
+        } else {
+            $this->view->nombrecliente = null;
+        }
 
     }
     function render()
