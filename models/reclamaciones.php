@@ -1,5 +1,5 @@
 <?php
-class Reclamacion
+class Reclamaciones
 {
     public $nombre;
 

@@ -1,10 +1,10 @@
 <?php
-class reclamaciones extends Controller
+class reclamacion extends Controller
 {
     public function __construct()
     {
         parent::__construct();
-        $this->loadModel("reclamacion");
+        $this->loadModel("reclamaciones");
 
     }
     function render()

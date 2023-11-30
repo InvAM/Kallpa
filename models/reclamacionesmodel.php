@@ -1,16 +1,20 @@
 <?php
-include_once "models/reclamacion.php";
+include_once "models/reclamaciones.php";
 
-class ReclamacionesModel extends Model {
-    public function __construct() {
+class ReclamacionesModel extends Model
+{
+    public function __construct()
+    {
         parent::__construct();
     }
 
-    public function insert ($datos){
-        try{
+    public function insert($datos)
+    {
+        try {
             $query = $this->db->connect()->prepare(
                 'INSERT INTO reclamaciones(nombre,dni,correo,domicilio,telefono,tipo_servicio,monto_reclamado,descripcion,tipo_reclamacion,detalle,pedido)
-                VALUES (:nombre,:dni,:correo,:domicilio,:telefono,:tipo_servicio,:monto_reclamado,:descripcion,:tipo_reclamacion,:detalle,:pedido)');
+                VALUES (:nombre,:dni,:correo,:domicilio,:telefono,:tipo_servicio,:monto_reclamado,:descripcion,:tipo_reclamacion,:detalle,:pedido)'
+            );
             $query->execute([
                 'nombre' => $datos['nombre_r'],
                 'dni' => $datos['dni_r'],
@@ -24,7 +28,7 @@ class ReclamacionesModel extends Model {
                 'detalle' => $datos['detalle_r'],
                 'pedido' => $datos['pedido_r'],
             ]);
-        }catch (PDOException $e) {
+        } catch (PDOException $e) {
             return false;
         }
     }
