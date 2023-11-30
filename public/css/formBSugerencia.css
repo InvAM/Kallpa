@@ -57,7 +57,7 @@ body::before {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.sug input[type="submit"] {
+.sug button {
   background: linear-gradient(to right, #2e5397, #203864);
   color: white;
   font-weight: bold;
@@ -67,9 +67,10 @@ body::before {
   padding: 10px;
   border: none;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
-.sug input[type="submit"]:hover {
+.sug button:hover {
   background: linear-gradient(to right, #203864, #2e5397);
   transform: translateY(-3px);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
