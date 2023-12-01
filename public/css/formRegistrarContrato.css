@@ -247,7 +247,7 @@ body {
 	border: 2px solid rgb(10, 30, 87); 
 	box-shadow: 0px 2px 4px rgba(8, 4, 255, 0.616);
 	padding: 15px; 
-	height: 700px; 
+	height: 750px; 
 	border-radius: 5px; 
 	margin-left: 52%;
 }
@@ -306,3 +306,13 @@ body {
 	width: 95% !important;
 }
 
+.registrar-contrato .cont-4 .espacio{
+	margin-top: 85px;
+	width: 1900px;
+	margin-left: -170px;
+}
+
+.registrar-contrato .cont-4 .espacio span{
+	font-weight: normal;
+    color: #4d4a4a;
+}

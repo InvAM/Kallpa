@@ -53,7 +53,7 @@
             <div class="cont-contrato">
             <div class=grupo1-cont >
                 <label for="">Asesor</label>
-                <select name="asesorSelect" id="asesorSelect">
+                <select name="asesorSelect" id="asesorSelect" onchange="updateContenedor()">
                 <?php
                             include_once 'models/empleado.php';
                             foreach ($this->asesores as $opcion) {
@@ -65,9 +65,9 @@
                             <?php } ?>
                 </select>
                 <label for="">Número de Radicando</label>
-                <input type="text" label="" placeholder="Escribir..." name="" id="">
+                <input type="text" label="" placeholder="Escribir..." name="" id="idnumero">
                 <label for="">Tipo de instalación</label>
-                <select name="tipoInsSelect" id="tipoInsSelect">
+                <select name="tipoInsSelect" id="tipoInsSelect"  onchange="updateContenedor()">
                             <?php
                             include_once 'models/tipoinstalacion.php';
                             foreach ($this->tipoinstalaciones as $opcion) {
@@ -85,7 +85,7 @@
                 <label for="">Punto de instalación</label>
                 <input type="number" label="" placeholder="Puntos " name="puntosI" id="puntosI">
                 <label for="">Categoría del Gabinete</label>
-                <select name="gabineteSelect" id="gabineteSelect">
+                <select name="gabineteSelect" id="gabineteSelect" onchange="updateContenedor()">
                             <?php
                             include_once 'models/categoria_gabinete.php';
                             foreach ($this->gabinetes as $opcion) {
@@ -113,7 +113,30 @@
                 <div>
                     <img src="public/Img/Kallpa.png" class="imagen-kallpainfo">
                 </div>
-                
+                <div class="espacio">
+
+                    <h3>Datos Generales del Cliente:</h3>
+                    <hr>
+                    <div>
+                        <h4>DNI :                         <span id="mostrarDNI"></span>         </h4>
+                        <h4>Nombres y Apellidos :         <span id="mostrarNombres"></span>     </h4>
+                        <h4>Domicilio :                   <span id="mostrarDomicilio"></span>   </h4>
+                        <h4>ID Domicilio :                <span id="mostrarIDDom"></span>       </h4>
+                    </div>
+                    <br>
+                    <h3>Datos del Contrato:</h3>
+                    <hr>
+                    <div>
+                        <h4>Asesor :                      <span id="mostrarAsesor"></span>      </h4>
+                        <h4>Número de Radicando :         <span id="mostrarNumero"></span>      </h4>
+                        <h4>Tipo de instalación :         <span id="mostrarTipo"></span>        </h4>
+                        <h4>Estado :                      <span id="mostrarEstado"></span>      </h4>
+                        <h4>Punto de instalación :        <span id="mostrarPunto"></span>       </h4>
+                        <h4>Categoría del Gabinete :      <span id="mostrarCategoria"></span>   </h4>
+                        <h4>HUD :                         <span id="mostrarHUD"></span>         </h4>
+                        <h4>Fecha :                       <span id="mostrarFecha"></span>       </h4>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -151,3 +174,70 @@
 
 
 </html>
+
+<script>
+    //DATOS CLIENTE
+    const DNIInput = document.getElementById("dniCliente");
+    const mostrarDNI = document.getElementById("mostrarDNI");
+
+    const NombresInput = document.getElementById("nombrecli");
+    const mostrarNombres = document.getElementById("mostrarNombres");
+
+    //DATOS DEL CONTRATO
+    const NumeroInput = document.getElementById("idnumero");
+    const mostrarNumero = document.getElementById("mostrarNumero");
+
+    const puntoInput = document.getElementById("puntosI");
+    const mostrarPunto = document.getElementById("mostrarPunto");
+
+    const hudInput = document.getElementById("HUD");
+    const mostrarHUD = document.getElementById("mostrarHUD");
+
+    const fechaInput = document.getElementById("selectedDate");
+    const mostrarFecha = document.getElementById("mostrarFecha");
+
+
+        // Datos CLIENTE
+        DNIInput.addEventListener("input", () => {
+            mostrarDNI.textContent = DNIInput.value;
+        });
+
+        NombresInput.addEventListener("input", () => {
+            mostrarNombres.textContent = NombresInput.value;
+        });
+
+        //Datos CONTRATO
+        NumeroInput.addEventListener("input", () => {
+            mostrarNumero.textContent = NumeroInput.value;
+        });
+
+        puntoInput.addEventListener("input", () => {
+            mostrarPunto.textContent = puntoInput.value;
+        });
+
+        hudInput.addEventListener("input", () => {
+            mostrarHUD.textContent = hudInput.value;
+        });
+
+        fechaInput.addEventListener("input", () => {
+            mostrarFecha.textContent = fechaInput.value;
+        });
+
+    
+    //Datos contrato Select
+    function updateContenedor(){
+        var asesoresSelect = document.getElementById("asesorSelect");
+        var mostrarAsesor = document.getElementById("mostrarAsesor");
+        mostrarAsesor.textContent = asesoresSelect.options[asesoresSelect.selectedIndex].text;
+
+        var tipoSelect = document.getElementById("tipoInsSelect");
+        var mostrarTipo = document.getElementById("mostrarTipo");
+        mostrarTipo.textContent = tipoSelect.options[tipoSelect.selectedIndex].text;
+
+        var categoriaSelect = document.getElementById("gabineteSelect");
+        var mostrarCategoria = document.getElementById("mostrarCategoria");
+        mostrarCategoria.textContent = categoriaSelect.options[categoriaSelect.selectedIndex].text;
+    }
+
+
+</script>
