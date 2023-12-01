@@ -1,3 +1,15 @@
+<!-- header.php -->
+
+<?php
+//session_start();
+$dniSesion = $_SESSION['dni'];
+
+require_once "models/credencialesempleadomodel.php";
+
+$credencialesModel = new CredencialesEmpleadoModel();
+$inicialEmpleado = $credencialesModel->obtenerInicialNombre($dniSesion);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,10 +25,14 @@
         <div>
             <img src="<?php echo constant('URL'); ?>public/Img/Kallpa.png" class="imagen-kallpa">
         </div>
-        <div>
-            <img src="<?php echo constant('URL'); ?>public/Img/usuario (3).png" class="imagen-usuario">
+        <div class="perfil-circle">
+            <?php echo $inicialEmpleado; ?>
+            <div class="dropdown">
+                <div class="dropdown-item"><a href="cerrarSesion">Cerrar Sesión</a></div>
+            </div>
         </div>
     </div>
+
 </body>
 
 </html>

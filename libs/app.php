@@ -1,16 +1,18 @@
 <?php
 require_once 'controllers/errores.php';
+
 class App
 {
-    public function __construct()
+
+    function __construct()
     {
         //echo "<p>Nueva app</p>";
 
-        $url = isset($_GET["url"]) ? $_GET['url'] : null;
-        $url = rtrim($url, "/");
-        $url = explode("/", $url);
+        $url = isset($_GET['url']) ? $_GET['url'] : null;
+        $url = rtrim($url, '/');
+        $url = explode('/', $url);
 
-        //Cuando se ingresa sin definir controlador
+        // cuando se ingresa sin definir controlador
         if (empty($url[0])) {
             $archivoController = 'controllers/main.php';
             require_once $archivoController;
@@ -19,17 +21,18 @@ class App
             $controller->render();
             return false;
         }
-        $archivoController = 'controllers/' . $url[0] . ".php";
+        $archivoController = 'controllers/' . $url[0] . '.php';
 
         if (file_exists($archivoController)) {
             require_once $archivoController;
 
-            //inicializa el controlador
+            // inicializar controlador
             $controller = new $url[0];
             $controller->loadModel($url[0]);
 
             // # elementos del arreglo
             $nparam = sizeof($url);
+
             if ($nparam > 1) {
                 if ($nparam > 2) {
                     $param = [];
@@ -43,10 +46,10 @@ class App
             } else {
                 $controller->render();
             }
-
         } else {
             $controller = new Errores();
         }
-
     }
 }
+
+?>

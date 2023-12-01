@@ -1,5 +1,6 @@
 body {
 	margin: 0; /*Quita espacio exterior*/
+	font-family: "Arial";
 }
 
 .registrar-e .contenedor-principal {
@@ -17,11 +18,21 @@ body {
 	color: #203864; /*Da color a las letras*/
 	margin-right: 10px; /*Añadir esapacio con el elemento de la derecha*/
 }
-
+.contenedor-empleado .mdi{
+	margin-left: 70px;
+	font-size: 120px !important;
+	color:#47d847;
+}
 .registrar-e .titulo-2 {
 	color: rgb(62, 207, 62); /*Da color a las letras*/
 }
 
+.contenedor-empleado .botones .mdi{
+	font-size: 20px !important;
+	color:#fff;
+	margin-left: 10px;
+	margin-right: 10px;
+}
 .registrar-e .caja-empleado {
 	width: 16%; /*Establecer ancho de la caja*/
 	margin-top: -25px; /*Eliminar espacio con el elemento de arriba*/
@@ -29,17 +40,16 @@ body {
 }
 
 .registrar-e .subtitulo-empleado {
-	color: #203864; /*Da color a las letras*/
+	color: #47d847; /*Da color a las letras*/
 	font-size: 22px; /*Establece el tamaño a la letra*/
 }
 
 .registrar-e .contenedor-empleado {
 	margin-top: -15px; /*Eliminar espacio con el elemento de arriba*/
 	border: 2px solid #47d847; /*Línea de la caja*/
-	box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562); /*Agregar sombra*/
 	padding: 15px; /*Agrega espacio en el interior*/
 	height: 591px; /*Establece la altura del objeto*/
-	border-radius: 5px; /*Redondea las esquinas*/
+	border-radius: 0px; /*Redondea las esquinas*/
 }
 
 .registrar-e .imagen-foto {
@@ -52,12 +62,14 @@ body {
 
 .registrar-e input {
 	width: 93%; /*Establecer ancho del objeto*/
+	height: 20px;
 	padding: 9px; /*Agranda espacio en el interior de los inputs*/
 	border: 1px solid #ccc; /*Añade un borde */
 	border-radius: 5px; /*Agrega bordes redondeados */
 	color: #333; /*Cambia el color del texto */
 	font-size: 14px; /*Ajusta el tamaño de fuente */
-	font-family: "Times New Roman"; /*Fuente de letra*/
+	font-family: "Arial"; /*Fuente de letra*/
+	margin-bottom: 10px;
 }
 
 .registrar-e .contenedor-empleado select {
@@ -68,7 +80,7 @@ body {
 	border-radius: 5px; /*Agrega bordes redondeados */
 	color: #333; /*Cambia el color del texto */
 	font-size: 14px; /*Ajusta el tamaño de fuente */
-	font-family: "Times New Roman"; /*Fuente de letra*/
+	font-family: "Arial"; /*Fuente de letra*/
 }
 
 .registrar-e .contenedor-empleado p,
@@ -80,13 +92,24 @@ body {
 	background-color: #47d847; /*Color del botón*/
 	color: #ffffff; /*Cambia el color del texto */
 	width: 100%; /*Establecer ancho del objeto*/
+	height: 40px !important;
 	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
 	font-size: 15px; /*Ajusta el tamaño de fuente */
 	border-radius: 5px; /*Agrega bordes redondeados */
-	border: 1px solid #39a805; /*Añade un borde */
+	border: 0px !important; /*Añade un borde */
 	padding: 9px; /*Agranda espacio en el interior de los inputs*/
-	font-family: "Times New Roman"; /*Fuente de letra*/
-	margin-top: 20px;
+	font-family: "Arial"; /*Fuente de letra*/
+	margin-top: 8px;
+}
+
+.registrar-e .boton-seleccionar{
+	cursor: pointer;
+	border: 0px;
+	width: 40px;
+	font-size: 18px;
+	border-radius: 5px;
+	background-color: #095ba8;
+	color: white;
 }
 
 .registrar-e .parte-derecha {
@@ -95,8 +118,9 @@ body {
 }
 
 .registrar-e .subtitulo-lista {
-	color: #203864; /*Da color a las letras*/
-	font-size: 22px; /*Establece el tamaño a la letra*/
+	color: #333; /*Da color a las letras*/
+	font-size: 18px; /*Establece el tamaño a la letra*/
+	font-weight: 100;
 	margin: 0px; /*Quitar el margen de afuera del texto*/
 	margin-top: -3px; /*Eliminar espacio con el elemento de arriba*/
 	margin-bottom: 7px; /*Añadir espacio con el elemento de abajo*/
@@ -112,7 +136,7 @@ body {
 }
 
 .tabla::-webkit-scrollbar-thumb {
-	background-color: #203864; /* Color de la barra de desplazamiento */
+	background-color: #ffffff; /* Color de la barra de desplazamiento */
 }
 
 .tabla::-webkit-scrollbar-track {
@@ -122,7 +146,7 @@ body {
 table {
 	width: 100%; /*Establecer ancho del objeto*/
 	border-collapse: collapse; /*Junta los campos de la tabla*/
-	border: 1px solid #ddd; /*Color del borde de la tabla*/
+	border: 1px solid #fff; /*Color del borde de la tabla*/
 }
 
 th,
@@ -132,53 +156,65 @@ td {
 }
 
 th {
-	background-color: #203864; /*Color de la cabecera*/
+	background-color: #095ba8; /*Color de la cabecera*/
 	color: white; /*Color de la letra*/
+	font-size: 12px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 tr:hover {
-	background-color: #47d84738; /*Color del contenido*/
+	background-color: #ccc; /*Color del contenido*/
 }
 
 .registrar-e .boton-opciones {
-	background-color: #203864; /*Color del botón*/
+	background-color: #095ba8; /*Color del botón*/
 	color: #ffffff; /*Cambia el color del texto */
 	width: 200px; /*Establecer ancho del objeto*/
 	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
 	font-size: 15px; /*Ajusta el tamaño de fuente */
 	border-radius: 5px; /*Agrega bordes redondeados */
-	border: 1px solid #152c57; /*Añade un borde */
+	border: 1px solid #095ba8; /*Añade un borde */
 	padding: 9px; /*Agranda espacio en el interior de los inputs*/
 	margin-top: 18px; /*Añade espacio con el elemento de arriba*/
 	margin-right: 20px; /*Añade espacio a la derecha del objeto*/
-	font-family: "Times New Roman"; /*Fuente de letra*/
+	font-family: "Arial"; /*Fuente de letra*/
 }
 
 .registrar-e .contenedor-credenciales {
 	margin-top: 20px; /*Añade espacio con el elemento de arriba*/
 	border: 2px solid #47d847; /*Línea de la caja*/
-	box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562); /*Agregar sombra*/
 	padding: 15px; /*Agrega espacio en el interior*/
-	border-radius: 5px; /*Redondea las esquinas*/
+	border-radius: 0px; /*Redondea las esquinas*/
 }
 
 .registrar-e .campo {
 	display: inline-block; /*Alinea los elemetos*/
-	width: 400px; /*Establecer ancho del objeto*/
+	width: 350px; /*Establecer ancho del objeto*/
 	margin-right: 20px; /*Añade espacio a la derecha del objeto*/
 	margin-top: -13px; /*Eliminar espacio con el elemento de arriba*/
 }
+.contenedor-credenciales .subtitulo-lista-c {
+    margin-top: 10px;
+	color: #47d847;
+}
 
+.contenedor-empleado .imag-especial i{
+	margin-left: 55px;
+	font-size: 120px ;
+	color:rgb(62, 207, 62);
+}
 .registrar-e .boton-credencial {
 	background-color: #47d847; /*Color del botón*/
 	color: #ffffff; /*Cambia el color del texto */
 	width: 254px; /*Establecer ancho del objeto*/
+	height: 40px !important;
 	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
 	font-size: 15px; /*Ajusta el tamaño de fuente */
 	border-radius: 5px; /*Agrega bordes redondeados */
-	border: 1px solid #39a805; /*Añade un borde */
+	border: 0px solid; /*Añade un borde */
 	padding: 9px; /*Agranda espacio en el interior de los inputs*/
-	font-family: "Times New Roman"; /*Fuente de letra*/
+	font-family: "Arial"; /*Fuente de letra*/
 }
 .registrar-e .contenedor-empleado p,
 .contenedor-credenciales p {
