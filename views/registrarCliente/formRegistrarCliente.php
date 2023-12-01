@@ -27,7 +27,6 @@
                 <h3 class="subtitulo-domicilio">Datos del domicilio</h3>
 
                 <div class="cont-datos-domicilio">
-
                     <div class="posicion-letra">
                         <div class="grupo1">
                             <label for="IDDomicilio_reg">ID Domicilio</label>
@@ -97,6 +96,10 @@
                                     </option>
                                 <?php } ?>
                             </select>
+                        </div>
+
+                        <div class="icono-dom">
+                            <i class="mdi mdi-home-assistant"></i>
                         </div>
                     </div>
 
@@ -228,9 +231,6 @@
                     <i class="mdi mdi-restore"></i>Limpiar</button>
                 <button class="boton1" name="btnAtras" id="btnAtras">
                     <i class="mdi mdi-keyboard-backspace"></i>Atras</button>
-                <button class="boton1">
-                    <i class="mdi mdi-printer"></i>
-                    Imprimir</button>
             </div>
 
         </div>

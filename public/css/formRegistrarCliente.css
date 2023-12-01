@@ -48,7 +48,7 @@ body {
   border: 2px solid #2aa312;
   background-color: #ffffff;
   padding: 15px;
-  height: 200px;
+  height: 205px;
   border-radius: 0px;
   display: flex;
   flex-wrap: wrap;
@@ -75,8 +75,8 @@ body {
 
 .registrar-cli .grupo2 {
   width: 100%;
-  margin-left: 110%;
-  margin-top: -104%;
+  margin-left: 230px;
+  margin-top: -209px;
   flex: 1;
 }
 
@@ -87,22 +87,22 @@ body {
 }
 
 .registrar-cli .grupo2 select {
-  width: 200px !important;
+  width: 180px !important;
 }
 
 .registrar-cli .grupo2 input {
-  width: 200%;
-  padding: 8px;
   margin-bottom: 10px;
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
+  width: 178px !important;
+  padding: 8px;
 }
 
 .registrar-cli .grupo3 {
   width: 100%;
-  margin-left: 225%;
-  margin-top: -108%;
+  margin-left: 440px;
+  margin-top: -220px;
 }
 
 .registrar-cli .boton-registrar {
@@ -136,18 +136,23 @@ body {
   border: 2px solid #2aa312;
   background-color: #ffffff;
   padding: 15px;
-  height: 20px;
+  height: 280px;
   border-radius: 0px;
 }
 
 .registrar-cli .parte_izquierda input {
-  width: 90%;
+  width: 178px;
   padding: 9px;
   border: 1px solid #ccc;
   border-radius: 5px;
   color: #333;
   font-size: 14px;
   font-family: "Times New Roman";
+}
+
+.registrar-cli .input-todo{
+  margin-top: 3px;
+  margin-left: 30px;
 }
 
 .registrar-cli .input-todo label {
@@ -159,7 +164,7 @@ body {
 }
 
 .registrar-cli .input-todo input {
-  width: 450%;
+  width: 650px;
   margin-bottom: 10px;
 }
 
@@ -171,7 +176,7 @@ body {
 
 .registrar-cli .input-todo input,
 .datos_izquierda input {
-  width: 30%;
+  width: 340px;
   padding: 9px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -191,7 +196,7 @@ body {
   margin-top: -31.5%;
   width: 30%;
   float: right;
-  margin-right: 33%;
+  margin-right: 175px;
 }
 
 .registrar-cli .datos_derecha label {
@@ -202,7 +207,7 @@ body {
 
 .registrar-cli .datos_derecha input {
   margin-bottom: 5%;
-  width: 92.9%;
+  width: 370px;
   padding: 9px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -212,7 +217,7 @@ body {
 }
 
 .registrar-cli .datos_izquierda select {
-  width: 104%;
+  width: 104px;
   padding: 9px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -222,7 +227,7 @@ body {
 }
 
 .registrar-cli .grupo3 select {
-  width: 100%;
+  width: 180px;
   padding: 8px;
   margin-bottom: 16px;
   border: 1px solid #ccc;
@@ -241,7 +246,7 @@ body {
 
 .registrar-cli .datos_derecha select {
   margin-bottom: 5px;
-  width: 105%;
+  width: 395px;
   padding: 9px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -265,13 +270,13 @@ body {
 
 .registrar-cli .contenedor-info {
   width: 45%;
-  margin-top: -640px;
+  margin-top: -620px;
   border: 2px solid rgb(10, 30, 87);
   box-shadow: 0px 2px 4px rgba(8, 4, 255, 0.616);
   padding: 15px;
   height: 1000px;
   border-radius: 5px;
-  margin-left: 52%;
+  margin-left: 940px;
 }
 
 .registrar-cli .imagen-kallpainfo {
@@ -290,9 +295,10 @@ body {
 }
 
 .registrar-cli .cont-button {
-  margin-top: -18%;
-  width: 100%;
+  margin-top: -380px;
+  width: 1500px;
   display: flex;
+  margin-left: 30px;
 }
 
 .registrar-cli .cont-button .boton1 {
@@ -319,5 +325,22 @@ body {
 }
 
 .formularioRCL1 .boton1 {
-  width: 95% !important;
+  width: 190px !important;
+}
+
+.registrar-cli .icono-dom{
+  justify-content: center;
+	margin-top: -220px;
+	margin-left: 650px;
+}
+
+.registrar-cli .icono-dom .mdi{
+	margin-top: 50px;
+	font-size: 180px;
+	color: #2aa312;
+}
+
+.registrar-cli .contenedor-info span{
+  font-weight: normal;
+  color: #4d4a4a;
 }

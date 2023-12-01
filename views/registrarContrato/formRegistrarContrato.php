@@ -113,6 +113,7 @@
                 <div>
                     <img src="public/Img/Kallpa.png" class="imagen-kallpainfo">
                 </div>
+                
             </div>
         </div>
 
