@@ -1,13 +1,17 @@
 <?php
 include_once "models/reclamaciones.php";
+include_once "models/reclamaciones.php";
 
-class ReclamacionesModel extends Model {
-    public function __construct() {
+class ReclamacionesModel extends Model
+{
+    public function __construct()
+    {
         parent::__construct();
     }
 
-    public function insert ($datos){
-        try{
+    public function insert($datos)
+    {
+        try {
             $query = $this->db->connect()->prepare(
                 'INSERT INTO reclamaciones (DNI_cli,nombre,correo,domicilio,telefono,tiposervicio,montoreclamado,descripcion,tiporeclamacion,detalle,pedido)
                 VALUES (:dni,:nombre,:correo,:domicilio,:telefono,:tipos,:montor,:descripcion,:tipor,:detalle,:pedido)');

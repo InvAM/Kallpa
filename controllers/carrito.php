@@ -1,5 +1,5 @@
 <?php
-class InfoKallpa extends Controller
+class carrito extends Controller
 {
     public function __construct()
     {
@@ -15,7 +15,7 @@ class InfoKallpa extends Controller
     }
     function render()
     {
-        $this->view->render('infoKallpa/infoKallpa');
+        $this->view->render('carrito/carrito');
     }
 
 

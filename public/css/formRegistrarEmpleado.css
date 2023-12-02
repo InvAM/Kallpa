@@ -18,11 +18,21 @@ body {
 	color: #203864; /*Da color a las letras*/
 	margin-right: 10px; /*Añadir esapacio con el elemento de la derecha*/
 }
-
+.contenedor-empleado .mdi{
+	margin-left: 70px;
+	font-size: 120px !important;
+	color:#47d847;
+}
 .registrar-e .titulo-2 {
 	color: rgb(62, 207, 62); /*Da color a las letras*/
 }
 
+.contenedor-empleado .botones .mdi{
+	font-size: 20px !important;
+	color:#fff;
+	margin-left: 10px;
+	margin-right: 10px;
+}
 .registrar-e .caja-empleado {
 	width: 16%; /*Establecer ancho de la caja*/
 	margin-top: -25px; /*Eliminar espacio con el elemento de arriba*/

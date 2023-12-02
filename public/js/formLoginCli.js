@@ -63,7 +63,7 @@ function iniciarSesion() {
 					text: response.message,
 				}).then(() => {
 					// Redirige a otra página después de hacer clic en "OK"
-					window.location.href = "main";
+					window.location.href = "catalogo";
 				});
 			} else {
 				Swal.fire({
