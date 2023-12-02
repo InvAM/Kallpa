@@ -6,8 +6,6 @@
     <link rel="stylesheet" href="public/css/formLReclamaciones.css">
     <link rel="icon" href="public/Img/KallpaC.png" type="image/x-icon">
     <title>Libro de reclamaciones</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css" rel="stylesheet">
 </head>
 
@@ -111,7 +109,7 @@
                 </fieldset>
                 <br>
                 <br>
-                <form method="POST" action="<?php echo constant('URL'); ?>reclamaciones/registrarReclamaciones" id="formReclamaciones" name="formReclamaciones">
+                <form method="POST" id="formReclamaciones" name="formReclamaciones">
                     <input class="Botones" type="submit" value="Enviar hoja de reclamación" name="btnReg" id="btnReg">
                 </form>
             </fieldset>
@@ -125,6 +123,10 @@
 
     </div>
     <?php require_once "views/chatbot.php"; ?>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="<?php echo constant('URL'); ?>public/js/reclamaciones.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 
 </html>
