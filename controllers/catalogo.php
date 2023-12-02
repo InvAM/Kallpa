@@ -30,11 +30,19 @@ class Catalogo extends Controller
         $datos = json_decode($datosJson, true);
         $response = array();
 
-        $producto["nombre"] = $datos["nombre"];
-        $producto["cuota"] = $datos["cuota"];
-        $producto["precio1"] = $datos["precio1"];
-        $producto["precio2"] = $datos["precio2"];
-        $_SESSION["carrito"][$producto["nombre"]] = $producto;
-        header("location:carrito");
+        if ($datos) {
+            $producto["nombre"] = $datos["nombre"];
+            $producto["cuota"] = $datos["cuota"];
+            $producto["precio1"] = $datos["precio1"];
+            $producto["precio2"] = $datos["precio2"];
+            $_SESSION["carrito"][$producto["nombre"]] = $producto;
+            $response['success'] = true;
+            $response['message'] = 'Producto agregado al carrito';
+        } else {
+            $response['success'] = false;
+            $response['message'] = 'No se pudo agregar el producto';
+        }
+        header('Content-Type: application/json');
+        echo json_encode($response);
     }
 }
