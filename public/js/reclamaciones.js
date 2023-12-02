@@ -33,13 +33,13 @@ $(document).ready(function(){
             contentType: "application/json",
 			data: JSON.stringify(reclamaciones),
 			success: function (response) {
-                var mensaje = JSON.parse(response);
-                if(mensaje=="Registrado"){
+                var respuesta = JSON.parse(response);
+                if(!respuesta.mensaje){
                     Swal.fire({
-                        title: 'Registro exitoso',
+                        title: 'Registro denegado',
                         confirmButtonText: 'Aceptar',
-                        text: mensaje,
-                        icon: 'success',
+                        text: respuesta.mensaje,
+                        icon: 'error',
                         buttonsStyling: true,
                         didClose: () => {
                             window.location.href = 'reclamacion';
@@ -47,10 +47,10 @@ $(document).ready(function(){
                     });
                 }else{
                     Swal.fire({
-                        title: 'Registro denegado',
+                        title: 'Registro exitoso',
                         confirmButtonText: 'Aceptar',
-                        text: mensaje,
-                        icon: 'error',
+                        text: respuesta.mensaje,
+                        icon: 'success',
                         buttonsStyling: true,
                         didClose: () => {
                             window.location.href = 'reclamacion';

@@ -7,7 +7,13 @@ class reclamacion extends Controller
         parent::__construct();
         $this->loadModel('reclamaciones');
         $this->clientes = new ClienteModel();
-        $this->view->mensaje = "";
+        session_start();
+        if (isset($_SESSION['nombrecliente'])) {
+            $nombrecliente = $_SESSION['nombrecliente'];
+            $this->view->nombrecliente = $nombrecliente;
+        } else {
+            $this->view->nombrecliente = null;
+        }
     }
     function render()
     {
@@ -30,9 +36,10 @@ class reclamacion extends Controller
         $tipo_reclamacion_r = isset($datos['tipo_reclamacion_r']) ? $datos['tipo_reclamacion_r'] : null;
         $detalle_r = isset($datos['detalle_r']) ? $datos['detalle_r'] : null;
         $pedido_r = isset($datos['pedido_r']) ? $datos['pedido_r'] : null;
-        
+        $mensaje = "";
         $cliente = $this->clientes->getEspecial($dni_r);
-            if (!empty($cliente)){
+
+            if (empty($cliente)){
                 $mensaje = "Lo sentimos no puede registrar una reclamación porque no es un cliente";
             } else {
                 if($dni_r !== null){
@@ -56,7 +63,7 @@ class reclamacion extends Controller
                         } else {
                             $mensaje = "La reclamación no puede registrarse";
                         }
-                        echo json_encode($mensaje);
+                        echo json_encode(['mensaje' => $mensaje]);
                 } else {
                     echo "Error: Datos incompletos";
                 }
