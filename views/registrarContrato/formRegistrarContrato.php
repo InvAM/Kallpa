@@ -55,6 +55,7 @@
             <div class=grupo1-cont >
                 <label for="">Asesor</label>
                 <select name="asesorSelect" id="asesorSelect" onchange="updateContenedor()">
+                <option value=""></option>
                 <?php
                             include_once 'models/empleado.php';
                             foreach ($this->asesores as $opcion) {
@@ -69,6 +70,7 @@
                 <input type="text" label="" placeholder="Escribir..." name="" id="idnumero">
                 <label for="">Tipo de instalación</label>
                 <select name="tipoInsSelect" id="tipoInsSelect"  onchange="updateContenedor()">
+                <option value=""></option>
                             <?php
                             include_once 'models/tipoinstalacion.php';
                             foreach ($this->tipoinstalaciones as $opcion) {
@@ -87,6 +89,7 @@
                 <input type="number" label="" placeholder="Puntos " name="puntosI" id="puntosI">
                 <label for="">Categoría del Gabinete</label>
                 <select name="gabineteSelect" id="gabineteSelect" onchange="updateContenedor()">
+                <option value=""></option>
                             <?php
                             include_once 'models/categoria_gabinete.php';
                             foreach ($this->gabinetes as $opcion) {
@@ -131,7 +134,7 @@
                         <h4>Asesor :                      <span id="mostrarAsesor"></span>      </h4>
                         <h4>Número de Radicando :         <span id="mostrarNumero"></span>      </h4>
                         <h4>Tipo de instalación :         <span id="mostrarTipo"></span>        </h4>
-                        <h4>Estado :                      <span id="mostrarEstado"></span>      </h4>
+                        <h4>Estado : en revisión          <span id="mostrarEstado"></span>      </h4>
                         <h4>Punto de instalación :        <span id="mostrarPunto"></span>       </h4>
                         <h4>Categoría del Gabinete :      <span id="mostrarCategoria"></span>   </h4>
                         <h4>HUD :                         <span id="mostrarHUD"></span>         </h4>

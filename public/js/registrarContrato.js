@@ -26,27 +26,27 @@ $(document).ready(function () {
       DNI_Em: $("#asesorSelect").val(),
       IDGabineteCategoria: $("#gabineteSelect").val(),
       IDTipoInst: $("#tipoInsSelect").val(),
-   };
+    };
 
-   console.log("Datos para imprimir:", datosParaImprimir);
+    console.log("Datos para imprimir:", datosParaImprimir);
 
     // Enviar la información al controlador mediante Ajax
-   $.ajax({
-         url: "controlpdf/enviarPDF",
-         type: "POST",
-         contentType: "application/json",
-         data: JSON.stringify(datosParaImprimir),
-         dataType: "json",
-         success: function (response) {
-            console.log(response);
-            // Descomenta esta línea si deseas redirigir después de la solicitud AJAX
-            window.location.href = "controlpdf";
-         },
-         error: function (error) {
-            console.error(error);
-         },
-      });
-   });
+    $.ajax({
+          url: "controlpdf/enviarPDF",
+          type: "POST",
+          contentType: "application/json",
+          data: JSON.stringify(datosParaImprimir),
+          dataType: "json",
+          success: function (response) {
+              console.log(response);
+              // Descomenta esta línea si deseas redirigir después de la solicitud AJAX
+              window.location.href = "controlpdf";
+          },
+          error: function (error) {
+              console.error(error);
+          },
+        });
+    });
 
   //LIMPIAR
   $("#btnLimpiar").on("click", function () {

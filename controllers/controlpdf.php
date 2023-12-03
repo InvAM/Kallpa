@@ -29,6 +29,14 @@ class controlpdf extends Controller{
             // Puedes acceder a los datos ahora, por ejemplo:
             $IDContrato = $data['IDContrato'];
             $Fecha_Con = $data['Fecha_Con'];
+            $DNI_cli = $data['DNI_cli'];
+            $NumeroRadicado_Con = $data['NumeroRadicado_Con'];
+            $PuntoInstalacion_Con = $data['PuntoInstalacion_Con'];
+            $numSum = $data['numSum'];
+            $estado = $data['estado'];
+            $IDDomicilio = $data['IDDomicilio'];
+            
+
     
             // Aquí puedes hacer lo que necesites con los datos (por ejemplo, generar un PDF)
     

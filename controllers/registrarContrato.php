@@ -17,11 +17,11 @@ class RegistrarContrato extends Controller
         $this->tipoinstalaciones = new TipoInstalacionModel();
         $this->view->mensaje = "";
 
-        //El usuario debe estar registrado
+       // El usuario debe estar registrado
         session_start();
         if (!isset($_SESSION['dni'])) {
             header("Location:" . constant('URL') . 'Login');
-            exit();
+        exit();
         }
     }
 
