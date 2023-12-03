@@ -38,11 +38,21 @@ $(document).ready(function(){
                     Swal.fire({
                         title: 'Registro denegado',
                         confirmButtonText: 'Aceptar',
-                        text: respuesta.mensaje,
+                        text: "Lo sentimos, no está registrado",
                         icon: 'error',
                         buttonsStyling: true,
                         didClose: () => {
-                            window.location.href = 'reclamacion';
+                            $("#dni_r").val("");
+                            $("#nombre_r").val("");
+                            $("#correo_r").val("");
+                            $("#domicilio_r").val("");
+                            $("#telefono_r").val("");
+                            $("#tipo_servicio_r").prop("selectedIndex", 0);
+                            $("#monto_reclamado_r").val("");
+                            $("#descripcion_r").val("");
+                            $("#tipo_reclamacion_r").prop("selectedIndex", 0);
+                            $("#detalle_r").val("");
+                            $("#pedido_r").val("");
                         }
                     });
                 }else{
@@ -53,7 +63,17 @@ $(document).ready(function(){
                         icon: 'success',
                         buttonsStyling: true,
                         didClose: () => {
-                            window.location.href = 'reclamacion';
+                            $("#dni_r").val("");
+                            $("#nombre_r").val("");
+                            $("#correo_r").val("");
+                            $("#domicilio_r").val("");
+                            $("#telefono_r").val("");
+                            $("#tipo_servicio_r").prop("selectedIndex", 0);
+                            $("#monto_reclamado_r").val("");
+                            $("#descripcion_r").val("");
+                            $("#tipo_reclamacion_r").prop("selectedIndex", 0);
+                            $("#detalle_r").val("");
+                            $("#pedido_r").val("");
                         }
                     });
                 }
