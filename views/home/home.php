@@ -103,7 +103,9 @@
 
         <!-- CONTENEDOR 4 -->
         <div class="home-cont4">
-            <img src="public/Img/fondo.png" alt="">
+            <div class="logobon">
+                <img src="public/Img/fondo.png" alt="">
+            </div>
             <div class="titulo">
                 <p>Gas Natural</p>
             </div>
@@ -120,8 +122,33 @@
                 <p class="titu1">BENEFICIOS DEL</p>
                 <p class="titu2">GAS NATURAL</p>
             </div>
-            <div class="cont-fondo">
-                
+            <div class="descripcion">
+                <div class="familia-logoo">
+                    <i class="mdi mdi-human-male-female-child"></i>
+                </div>
+                <p class="pregunta">¿CUÁLES SON LOS REQUISITOS PARA SER BENEFICIARIO?</p>
+                <p class="respuesta">* La vivienda debe pertenecer a una manzana del estrato
+                    medio, medio bajo o bajo, según la estratificación del INEI.
+                </p>
+            </div>
+            <div class="cont-fondo">            
+            </div>
+            <div class="fondo6-home">
+                <img src="public/Img/fondo_home.png" alt="">
+            </div>
+            <div class=" respuestass">
+                <p class="titu-r">1. Continuidad del servicio para nuestros usuarios</p>
+                <p class="rep-r">Las 24 horas del día</p>
+                <p class="titu-r1">2. Más económico que otros combustibles</p>
+                <p class="rep-r1">Hasta 30% de ahorro respecto al gas de balón (GLP).</p>
+                <p class="rep-r2">Hasta 70% de ahorro frente a la energía eléctrica.</p>
+                <p class="titu-r2">3. Más seguro para ti y tu familia</p>
+                <p class="rep-r3">Es liviano y se disipa rápidamente.</p>
+                <p class="rep-r4">No es tóxico para la salud.</p>
+                <p class="rep-r5">Línea de emergencias gratuita 1808.</p>
+                <p class="titu-r3">4. Más amplio y ecoamigable</p>
+                <p class="rep-r6">En 15 años evitamos 88 millones de toneladas de emisiones de CO.</p>
+                <p class="rep-r7">Su uso reduce el número de enfermedades respiratorias.</p>
             </div>
         </div>
 

@@ -76,7 +76,41 @@ $(document).ready(function () {
 			data: JSON.stringify(DNI),
 			success: function (response) {
 				var cliente = JSON.parse(response);
+		$.ajax({
+			url: "registrarContrato/buscarCliente",
+			type: "POST",
+			contentType: "application/json",
+			data: JSON.stringify(DNI),
+			success: function (response) {
+				var cliente = JSON.parse(response);
 
+				if (cliente.Nombre_cli == undefined) {
+					$("#dniCliente").val("");
+					$("input[name='nombrecli']").val("");
+					$("input[name='nombrecli']").val("");
+					$("input[name='direcDomicilio']").val("");
+					$("input[name='iddomicilio']").val("");
+					alert("Cliente no encontrado, por favor verifique el DNI");
+				} else {
+					// Actualiza el valor del campo de texto
+					$("input[name='nombrecli']").val(cliente.DNI_cli);
+					$("span#mostrarNombres").text(
+						cliente.Nombre_cli + " " + cliente.Apellido_cli
+					);
+					$("input[name='nombrecli']").val(
+						cliente.Nombre_cli + " " + cliente.Apellido_cli
+					);
+					$("input[name='direcDomicilio']").val(cliente.Direccion_Dom);
+					$("span#mostrarDomicilio").text(cliente.Direccion_Dom);
+					$("input[name='iddomicilio']").val(cliente.IDDomicilio);
+					$("span#mostrarIDDom").text(cliente.IDDomicilio);
+				}
+			},
+			error: function (error) {
+				console.error(error);
+			},
+		});
+	});
 				if (cliente.Nombre_cli == undefined) {
 					$("#dniCliente").val("");
 					$("input[name='nombrecli']").val("");
@@ -163,3 +197,4 @@ $(document).ready(function () {
 		});
 	});
 });
+
