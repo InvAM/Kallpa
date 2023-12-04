@@ -48,6 +48,7 @@
                                 id="Nomb_Malla_Dom_reg">
                             <label for="IDCondicion">Condición</label>
                             <select name="IDCondicion" id="IDCondicion" onchange="updateContenedor()">
+                            <option value=""></option>
                                 <?php
                                 include_once 'models/condicion.php';
                                 foreach ($this->condiciones as $opcion) {
@@ -62,6 +63,7 @@
                         <div class="grupo3">
                             <label for="IDEstrato_reg">Estrato</label>
                             <select name="IDEstrato_reg" id="IDEstrato_reg" onchange="updateContenedor()">
+                            <option value=""></option>
                                 <?php
                                 include_once 'models/estrato.php';
                                 foreach ($this->estratos as $opcion) {
@@ -74,6 +76,7 @@
                             </select>
                             <label for="IDPredio_reg">Predio</label>
                             <select name="IDPredio_reg" id="IDPredio_reg"  onchange="updateContenedor()">
+                            <option value=""></option>
                             <?php
                                 include_once 'models/predio.php';
                                 foreach ($this->predios as $opcion) {
@@ -86,6 +89,7 @@
                             </select>
                             <label for="IDDistrito_reg">Distrito</label>
                             <select name="IDDistrito_reg" id="IDDistrito_reg" onchange="updateContenedor()">
+                            <option value=""></option>
                                 <?php
                                 include_once 'models/distrito.php';
                                 foreach ($this->distritos as $opcion) {
@@ -134,6 +138,7 @@
                     <div class="datos_derecha">
                         <label for="IDGenero_reg">Género</label>
                         <select name="IDGenero_reg" id="IDGenero_reg" onchange="updateContenedor()">
+                        <option value=""></option>
                             <?php
                             include_once 'models/genero.php';
                             foreach ($this->generos as $opcion) {
@@ -149,6 +154,7 @@
                             id="Celular_cli_reg">
                         <label for="IDNacionalidad_reg">Nacionalidad</label>
                         <select name="IDNacionalidad_reg" id="IDNacionalidad_reg" onchange="updateContenedor()">
+                        <option value=""></option>
                             <?php
                             include_once 'models/nacionalidad.php';
                             foreach ($this->nacionalidades as $opcion) {
@@ -161,6 +167,7 @@
                         </select>
                         <label for="IDEstadoCivil_reg">Estado Civil</label>
                         <select name="IDEstadoCivil_reg" id="IDEstadoCivil_reg" onchange="updateContenedor()">
+                        <option value=""></option>
                             <?php
                             include_once 'models/estadocivil.php';
                             foreach ($this->estados as $opcion) {
