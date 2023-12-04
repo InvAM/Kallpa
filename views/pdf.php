@@ -13,7 +13,6 @@ if (isset($_SESSION['datosParaImprimir'])) {
     $pdf = new FPDF();
     $pdf->AddPage();
     $pdf->Image('public/Img/Kallpa1.png', 5, 5, 70);
-    $pdf->Image('public/Img/Usuario.jpeg', 180, 8, 20);
     $pdf->SetFont('Arial', 'B', 16);
     $pdf->Ln(25);
     $pdf->Cell(0, 10, utf8_decode('INFORMACIÓN DEL CONTRATO'), 0, 1, 'C');
