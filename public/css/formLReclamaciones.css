@@ -1,6 +1,6 @@
 body {
 	font-family: Arial, sans-serif;
-	background: url("https://d2bqn2kyidxvh4.cloudfront.net/wp-content/uploads/2021/09/NP2-1-808x454.jpeg");
+	background: url("../../public/Img/FONDO-RECLAMACIONES.png");
 	background-size: cover;
 	background-position: center;
 	position: relative;
@@ -11,19 +11,6 @@ body {
 
 .lr .titleBox {
 	margin-right: 280px;
-}
-
-
-body::before {
-	content: "";
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background: rgba(26, 35, 126, 0.7);
-	z-index: -1;
-	background-clip: content-box;
 }
 
 .lr legend{
@@ -64,14 +51,11 @@ body::before {
 .lr .contenedor {
 	width: 1200px;
 	background-color: white;
-	margin: 0 auto;
 	justify-content: center;
 	align-items: center;
-	border-radius: 10px;
 	box-shadow: 0 0 30px white; 
-	margin-top: 40px;
-	z-index: 1; /* Colocar encima del difuminado */
-	margin-bottom: 40px;
+	z-index: 1;
+	margin-left: 701.4px;
 }
 
 .lr .icon {

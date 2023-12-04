@@ -1,10 +1,12 @@
 <?php
+include_once "models/clientemodel.php";
 class reclamacion extends Controller
 {
     public function __construct()
     {
         parent::__construct();
-        $this->loadModel("reclamaciones");
+        $this->loadModel('reclamaciones');
+        $this->clientes = new ClienteModel();
         session_start();
         if (isset($_SESSION['nombrecliente'])) {
             $nombrecliente = $_SESSION['nombrecliente'];
@@ -12,7 +14,6 @@ class reclamacion extends Controller
         } else {
             $this->view->nombrecliente = null;
         }
-
     }
     function render()
     {
@@ -21,37 +22,52 @@ class reclamacion extends Controller
 
     function registrarReclamaciones()
     {
-        $nombre = $_POST['nombre_r'];
-        $dni = $_POST['dni_r'];
-        $correo = $_POST['correo_r'];
-        $domicilio = $_POST['domicilio_r'];
-        $telefono = $_POST['telefono_r'];
-        $tipo_servicio = $_POST['tipo_servicio_r'];
-        $monto_reclamado = $_POST['monto_reclamado_r'];
-        $descripcion = $_POST['descripcion_r'];
-        $tipo_reclamacion = $_POST['tipo_reclamacion_r'];
-        $detalle = $_POST['detalle_r'];
-        $pedido = $_POST['pedido_r'];
-        $mensaje = "";
-        if (
-            $this->model->insert([
-                'nombre_r' => $nombre,
-                'dni_r' => $dni,
-                'correo_r' => $correo,
-                'domicilio_r' => $domicilio,
-                'telefono_r' => $telefono,
-                'tipo_servicio_r' => $tipo_servicio,
-                'monto_reclamado_r' => $monto_reclamado,
-                'descripcion_r' => $descripcion,
-                'tipo_reclamacion_r' => $tipo_reclamacion,
-                'detalle_r' => $detalle,
-                'pedido_r' => $pedido
-            ])
-        ) {
-            $mensaje = 'Registrado';
-            header("Location:" . constant('URL') . 'reclamaciones');
+        $datosJson = file_get_contents("php://input");
+        $datos = json_decode($datosJson, true);
+
+        $dni_r = isset($datos['dni_r']) ? $datos['dni_r'] : null;
+        $nombre_r = isset($datos['nombre_r']) ? $datos['nombre_r'] : null;
+        $correo_r = isset($datos['correo_r']) ? $datos['correo_r'] : null;
+        $domicilio_r = isset($datos['domicilio_r']) ? $datos['domicilio_r'] : null;
+        $telefono_r = isset($datos['telefono_r']) ? $datos['telefono_r'] : null;
+        $tipo_servicio_r = isset($datos['tipo_servicio_r']) ? $datos['tipo_servicio_r'] : null;
+        $monto_reclamado_r = isset($datos['monto_reclamado_r']) ? $datos['monto_reclamado_r'] : null;
+        $descripcion_r = isset($datos['descripcion_r']) ? $datos['descripcion_r'] : null;
+        $tipo_reclamacion_r = isset($datos['tipo_reclamacion_r']) ? $datos['tipo_reclamacion_r'] : null;
+        $detalle_r = isset($datos['detalle_r']) ? $datos['detalle_r'] : null;
+        $pedido_r = isset($datos['pedido_r']) ? $datos['pedido_r'] : null;
+
+        if($dni_r !== null){
+            $cliente = $this->clientes->getEspecial($dni_r);
+
+            if (empty($cliente)){
+                $mensaje = "";
+            } else {
+                        if (
+                            $this->model->insert([
+                                'dni_r' => $dni_r,
+                                'nombre_r' => $nombre_r,
+                                'correo_r' => $correo_r,
+                                'domicilio_r' => $domicilio_r,
+                                'telefono_r' => $telefono_r,
+                                'tipo_servicio_r' => $tipo_servicio_r,
+                                'monto_reclamado_r' => $monto_reclamado_r,
+                                'descripcion_r' => $descripcion_r,
+                                'tipo_reclamacion_r' => $tipo_reclamacion_r,
+                                'detalle_r' => $detalle_r,
+                                'pedido_r' => $pedido_r
+                            ])
+                        ) {
+                            $mensaje = "Registrado";
+                        } else {
+                            $mensaje = "La reclamación no puede registrarse";
+                        }
+                        
+            }
+            echo json_encode(['mensaje' => $mensaje]);
+        }else {
+            echo "Error: Datos incompletos";
         }
-        $this->render();
     }
 
 }

@@ -1,9 +1,9 @@
 <?php
 class Reclamaciones
 {
+    public $DNI_cli;
+    
     public $nombre;
-
-    public $dni;
 
     public $correo;
 
@@ -11,13 +11,13 @@ class Reclamaciones
 
     public $telefono;
 
-    public $tipo_servicio;
+    public $tiposervicio;
 
-    public $monto_reclamado;
+    public $montoreclamado;
 
     public $descripcion;
 
-    public $tipo_reclamacion;
+    public $tiporeclamacion;
 
     public $detalle;
 

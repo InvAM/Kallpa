@@ -53,27 +53,27 @@
                             <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
                                 <ul class="row">
                                     <li class="col">
-                                        <a onclick="scrollToSection('nuestraHistoria')" href="#quienesSomos">
+                                        <a onclick="scrollToSection('nuestraHistoria')" href="infoKallpa#quienesSomos">
                                             <i class="mdi mdi-book-edit-outline"></i><span>Quiénes somos</span>
                                         </a>
                                     </li>
                                     <li class="col">
-                                        <a onclick="scrollToSection('visionYmision')" href="#viymi">
+                                        <a onclick="scrollToSection('visionYmision')" href="infoKallpa#viymi">
                                             <i class="mdi mdi-eye-outline"></i><span>Visión y misión</span>
                                         </a>
                                     </li>
                                     <li class="col">
-                                        <a onclick="scrollToSection('valor')" href="#valores">
+                                        <a onclick="scrollToSection('valor')" href="infoKallpa#valores">
                                             <i class="mdi mdi-handshake-outline"></i><span>Nuestros valores</span>
                                         </a>
                                     </li>
                                     <li class="col">
-                                        <a onclick="scrollToSection('ubicacion')" href="#encuentranos">
+                                        <a onclick="scrollToSection('ubicacion')" href="infoKallpa#encuentranos">
                                             <i class="mdi mdi-map-marker-outline"></i><span>Encuéntranos</span>
                                         </a>
                                     </li>
                                     <li class="col">
-                                        <a onclick="scrollToSection('contacto')" href="#contactanos">
+                                        <a onclick="scrollToSection('contacto')" href="infoKallpa#contactanos">
                                             <i class="mdi mdi-card-account-mail-outline"></i><span>Contáctanos</span>
                                         </a>
                                     </li>
@@ -121,7 +121,7 @@
                                     <li class="col1"><a href="sugerencias"><i
                                                 class="mdi mdi-archive-check-outline"></i><span>Buzón
                                                 de sugerencias</span></a></li>
-                                    <li class="col1"><a href="reclamaciones"><i
+                                    <li class="col1"><a href="reclamacion"><i
                                                 class="mdi mdi-notebook-check-outline"></i><span>Libro de
                                                 reclamaciones</span></a></li>
                                 </ul>

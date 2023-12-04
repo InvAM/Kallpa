@@ -1,5 +1,6 @@
 <?php
 include_once "models/reclamaciones.php";
+include_once "models/reclamaciones.php";
 
 class ReclamacionesModel extends Model
 {
@@ -12,23 +13,23 @@ class ReclamacionesModel extends Model
     {
         try {
             $query = $this->db->connect()->prepare(
-                'INSERT INTO reclamaciones(nombre,dni,correo,domicilio,telefono,tipo_servicio,monto_reclamado,descripcion,tipo_reclamacion,detalle,pedido)
-                VALUES (:nombre,:dni,:correo,:domicilio,:telefono,:tipo_servicio,:monto_reclamado,:descripcion,:tipo_reclamacion,:detalle,:pedido)'
-            );
+                'INSERT INTO reclamaciones (DNI_cli,nombre,correo,domicilio,telefono,tiposervicio,montoreclamado,descripcion,tiporeclamacion,detalle,pedido)
+                VALUES (:dni,:nombre,:correo,:domicilio,:telefono,:tipos,:montor,:descripcion,:tipor,:detalle,:pedido)');
             $query->execute([
-                'nombre' => $datos['nombre_r'],
                 'dni' => $datos['dni_r'],
+                'nombre' => $datos['nombre_r'],
                 'correo' => $datos['correo_r'],
                 'domicilio' => $datos['domicilio_r'],
                 'telefono' => $datos['telefono_r'],
-                'tipo_servicio' => $datos['tipo_servicio_r'],
-                'monto_reclamado' => $datos['monto_reclamado_r'],
+                'tipos' => $datos['tipo_servicio_r'],
+                'montor' => $datos['monto_reclamado_r'],
                 'descripcion' => $datos['descripcion_r'],
-                'tipo_reclamacion' => $datos['tipo_reclamacion_r'],
+                'tipor' => $datos['tipo_reclamacion_r'],
                 'detalle' => $datos['detalle_r'],
                 'pedido' => $datos['pedido_r'],
             ]);
-        } catch (PDOException $e) {
+            return true;
+        }catch (PDOException $e) {
             return false;
         }
     }
