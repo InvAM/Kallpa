@@ -103,15 +103,13 @@ body {
     margin-top: -520px;
 }
 
-.registrar_produ .tabla {
-	height: 411px; /*Tamaño de altura de la tabla*/
-	overflow-y: scroll; /*Añade barra de desplazamiento*/
-}
 .registra_produ .table-container {
     box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562);
-    padding: 15px;
     border-radius: 5px;
+    max-height: 411px; /* Establece la altura máxima del contenedor de la tabla */
+    overflow-y: scroll; /* Agrega una barra de desplazamiento vertical si el contenido excede la altura máxima */
 }
+
 .registra_produ .subtitulo-lista {
     color: #203864;
     font-size: 22px;
@@ -121,38 +119,70 @@ body {
     margin-bottom: 7px;
 }
 
-.tabla::-webkit-scrollbar {
-    width: 8px;
-}
-
-.tabla::-webkit-scrollbar-thumb {
-    background-color: #203864;
-}
-
-.tabla::-webkit-scrollbar-track {
-    background-color: #f8f8f8;
-}
-
-table {
+.registra_produ .table-container table {
     width: 100%;
     border-collapse: collapse;
     border: 1px solid #ddd;
+    table-layout: fixed; /* Fija el ancho de la tabla, necesario para el scroll */
 }
 
-th,
-td {
+.registra_produ .table-container th,
+.registra_produ .table-container td {
     padding: 12px;
     text-align: center;
+    border: 1px solid #ddd; /* Agrega bordes a las celdas */
 }
 
-th {
+.registra_produ .table-container th {
     background-color: #203864;
     color: white;
 }
 
-tr:hover {
+.registra_produ .table-container tr:hover {
     background-color: #47d84738;
 }
+
+.registra_produ .table-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.registra_produ .table-container::-webkit-scrollbar-thumb {
+    background-color: #203864;
+}
+
+.registra_produ .table-container::-webkit-scrollbar-track {
+    background-color: #f8f8f8;
+}
+#product-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Asegura que todas las columnas tengan el mismo ancho */
+}
+
+#product-table th {
+    background-color: #203864;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#product-table th,
+#product-table td {
+    padding: 12px;
+    text-align: center;
+    border: none;
+}
+
+#product-table tbody {
+    height: 400px; /* Altura máxima para el área de datos */
+    overflow-y: auto; /* Añade barra de desplazamiento vertical solo para los datos */
+}
+
+#product-table tr:hover {
+    background-color: #47d84738;
+}
+
 
 .registra_produ .boton-opciones {
     background-color: #203864;

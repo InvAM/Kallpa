@@ -1,0 +1,216 @@
+body {
+    margin: 0;
+    font-family: "Times New Roman";
+}
+.mdi {
+    width: 100%;
+}
+.registra_materiales {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    margin-top: 75px;
+    font-size: 25px;
+}
+
+.titulo-1 {
+    color: #203864;
+    margin-right: 10px;
+}
+
+.titulo-2 {
+    color: rgb(62, 207, 62);
+}
+
+.contenedor-principal {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.form-container {
+    width: 17%;
+}
+
+.parte-derecha {
+    float: right;
+    width: 50%; /* Puedes ajustar el ancho según sea necesario */
+    margin-top: -520px;
+}
+
+.caja-material {
+    border: 2px solid #47d847;
+    box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562);
+    padding: 15px;
+    border-radius: 30px;
+}
+
+.contenedor-material {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.input-group {
+    width: 100%;
+    margin-bottom: 25px;
+    margin-left: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 2px;
+    color: #000000;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #000000;
+    font-size: 14px;
+}
+
+.actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    width: 48%;
+    background-color: #203864;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #203864;
+}
+
+.subtitulo-lista {
+    color: #203864;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: -3px;
+    margin-bottom: 7px;
+}
+
+.registra_materiales table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    table-layout: fixed;
+    margin-top: 20px;
+}
+
+.registra_materiales th,
+.registra_materiales td {
+    padding: 12px;
+    text-align: center;
+}
+
+.registra_materiales th {
+    background-color: #203864;
+    color: white;
+}
+
+.registra_materiales tr:hover {
+    background-color: #47d84738;
+}
+
+.boton-opciones {
+    background-color: #203864;
+    color: #ffffff;
+    width: 200px;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid #152c57;
+    padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .form-container,
+    .parte-derecha {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+.registra_materiales .imagen-foto {
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 23px;
+    margin-bottom: 18px;
+}
+
+.registra_materiales .table-container {
+    border-radius: 5px;
+    max-height: 411px;
+    overflow-y: scroll;
+    margin-top: 500px;
+
+}
+
+.registra_materiales .table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    table-layout: fixed;
+}
+
+.registra_materiales .table-container th,
+.registra_materiales .table-container td {
+    padding: 12px;
+    text-align: center;
+}
+
+.registra_materiales .table-container th {
+    background-color: #203864;
+    color: white;
+}
+
+.registra_materiales .table-container tr:hover {
+    background-color: #47d84738;
+}
+
+.registra_materiales .table-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.registra_materiales .table-container::-webkit-scrollbar-thumb {
+    background-color: #203864;
+}
+
+.registra_materiales .table-container::-webkit-scrollbar-track {
+    background-color: #f8f8f8;
+}
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #203864;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}

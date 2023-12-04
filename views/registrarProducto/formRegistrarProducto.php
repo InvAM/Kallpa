@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Registrar Producto</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/formRegistrarProducto.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.all.min.js"></script>
@@ -113,11 +114,35 @@
                                 <th>Marca</th>
                                 <th>Visualizar</th>
                                 <th>Seleccionar</th>
-                                <th></th>
-                                <th></th>
                             </tr>
                         </thead>
-                        <!-- Aquí puedes mostrar los productos existentes si es necesario -->
+                        <tbody>
+                            
+                        <?php  
+                        include_once 'models/categoria_producto.php';
+                        include_once 'models/marca_producto.php';
+                        foreach ($this->productos as $producto) : ?>
+                            <tr>
+                                <td><?php echo $producto->IDProducto; ?></td>
+                                <td><?php echo $producto->nombre; ?></td>
+                                <td><?php echo $producto->precio; ?></td>
+                                <td><?php echo $producto->cuota; ?></td>
+                                <td><?php echo $producto->detalleCategoriaP; ?></td>
+                                <td><?php echo $producto->detalleMarcaP; ?></td>
+                                <td><button ><i class="mdi  mdi-message-image"></i> </button></td>
+                                <td><button class="seleccionar-btn"
+        data-idproducto="<?php echo $producto->IDProducto; ?>"
+        data-nombre="<?php echo $producto->nombre; ?>"
+        data-precio="<?php echo $producto->precio; ?>"
+        data-cuota="<?php echo $producto->cuota; ?>"
+        data-idcategoria="<?php echo $producto->IDCategoriaP; ?>"
+        data-idmarca="<?php echo $producto->IDMarcaP; ?>"
+        onclick="console.log('Categoria:', '<?php echo $producto->detalleCategoriaP; ?>', 'Marca:', '<?php echo $producto->detalleMarcaP; ?>')">
+    <i class="mdi mdi-content-copy mx-1"></i>
+</button></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>                    
                     </table>
                 </div>
             </div>
