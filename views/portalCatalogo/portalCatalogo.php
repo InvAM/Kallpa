@@ -186,10 +186,10 @@
                         echo '<span name="nombre" class="nombre">' . $producto->nombre . '</span><br><br>';
                         echo '<span name="detalle" class="detalle">' . $producto->detalleMarcaP . '</span><br><br><br>';
                         echo '<span class="letra">' . 'Desde ' . '<span>';
-                        echo '<span class="letra1" name="cuota">' . 'S/.' . $producto->cuota . '*' . '</span>';
+                        echo '<span>S/.</span><span class="letra1" name="cuota">' . $producto->cuota . '</span>';
                         echo '<span class="letra">' . ' al mes ' . '<span><br><br>';
-                        echo '<span class="letra" name="precio1">' . 'Precio Regular: S/.' . $producto->precio . '</span><br><br>';
-                        echo '<span name="precio2" class="letra2">' . 'Tienda Virtual: S/.' . (0.95 * $producto->precio) . '</span><br><br>';
+                        echo '<span class="letra">Precio Regular: S/.</span><span class="letra" name="precio1">' . $producto->precio . '</span><br><br>';
+                        echo '<span class="letra2">Tienda Virtual: S/.</span><span name="precio2" class="letra2">' . (0.95 * $producto->precio) . '</span><br><br>';
                         echo '<button class="boton-compra comprar-btn">
                                 <i class="mdi mdi-cart-percent"></i>
                                     ¡Compra Ya!

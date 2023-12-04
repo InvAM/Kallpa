@@ -1,0 +1,88 @@
+.card {
+	background-color: #33cc33;
+	border: 1px solid #e0e0e0;
+	box-shadow: 10px 15px 10px rgba(22, 13, 19, 0.1);
+	padding: 20px;
+	margin: 20px auto;
+	color: #ffffff;
+	transition: background 0.3s ease-in-out;
+	text-align: center;
+	max-width: 1250px;
+}
+
+.tituloProducto {
+	color: #ffffff;
+	font-size: 25px;
+}
+
+.tablaProductos {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 10px;
+}
+
+.tablaProductos th,
+.tablaProductos td {
+	padding: 12px;
+	text-align: center;
+	border-bottom: 1px solid #e0e0e0;
+	background-color: #2c3e50; /* Cambia el color de fondo de las celdas */
+	color: #ffffff;
+}
+
+.tablaProductos th {
+	background-color: #3498db;
+}
+
+.btn {
+	background-color: #3498db;
+	color: #ffffff;
+	padding: 12px 24px;
+	border: 2px solid #3498db;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: background 0.3s ease-in-out, color 0.3s ease-in-out,
+		transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+	font-family: "Arial", sans-serif;
+}
+
+.btn:hover {
+	background-color: #36a862;
+	color: #ffffff;
+	transform: scale(1.1);
+	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3), 0px 6px 25px rgba(0, 0, 0, 0.2);
+	border-color: #36a862;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a.btn {
+	/* Estilos generales para el enlace */
+	background-color: #3498db;
+	color: #ffffff;
+	padding: 8px 16px;
+	border: none;
+	cursor: pointer;
+	border: 2px solid #3498db;
+	border-radius: 10px;
+	transition: background 0.3s ease-in-out, color 0.3s ease-in-out,
+		transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+	font-family: "Arial", sans-serif;
+	text-decoration: none;
+	display: inline-block;
+	position: relative;
+	left: 1180px;
+}
+
+a.btn:hover {
+	background-color: #36a862;
+	transform: scale(1.1);
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.iconoBorrar {
+	font-size: 25px;
+}

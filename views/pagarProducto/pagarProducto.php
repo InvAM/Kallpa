@@ -6,6 +6,8 @@
     <title>Credit Card Form | Nothing4us</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
     <link rel="stylesheet" href="<?php echo constant('URL') ?>public/css/pagarProducto.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -169,13 +171,59 @@
                     </div>
                 </div>
 
-                <button class="card-form__button">Pagar</button>
+                <button class="card-form__button" id="pagar" name="pagar">Pagar</button>
             </div>
         </div>
     </div>
+    <?php
+    // Supongamos que tienes un dato en la sesión llamado 'miDato'
+    $miDato = $_SESSION['carrito'];
+
+    ?>
+
+    <script>
+        $(document).ready(function () {
+            $("#pagar").on("click", function () {
+
+                var cardData = {
+                    cardNumber: $("#cardNumber").val(),
+                    cardName: $("#cardName").val(),
+                    cardMonth: $("#cardMonth").val(),
+                    cardYear: $("#cardYear").val(),
+                    cardCvv: $("#cardCvv").val(),
+                };
+                var datoEnJavaScript = <?php echo json_encode($miDato); ?>;
+                datoEnJavaScript.cardData = cardData;
+                console.log(datoEnJavaScript);
+
+                $.ajax({
+                    url: "pagarPDF/enviarPDF",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(datoEnJavaScript),
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response);
+                        // Verifica si la respuesta indica éxito antes de redirigir
+                        if (response.success) {
+                            // Redirige a la página para mostrar el PDF
+                            window.location.href = "pagarPDF";
+                        } else {
+                            alert(response.message); // Muestra un mensaje en caso de error
+                        }
+                    },
+                    error: function (error) {
+                        console.error(error);
+                    },
+                });
+            });
+        });
+
+    </script>
     <!-- partial -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
     <script src="https://unpkg.com/vue-the-mask@0.11.1/dist/vue-the-mask.js"></script>
+
     <script src="<?php echo constant('URL') ?>public/js/pagarProducto.js"></script>
 </body>
 
