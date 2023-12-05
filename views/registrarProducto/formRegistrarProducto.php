@@ -130,16 +130,15 @@
                                 <td><?php echo $producto->detalleCategoriaP; ?></td>
                                 <td><?php echo $producto->detalleMarcaP; ?></td>
                                 <td><button ><i class="mdi  mdi-message-image"></i> </button></td>
-                                <td><button class="seleccionar-btn"
-        data-idproducto="<?php echo $producto->IDProducto; ?>"
-        data-nombre="<?php echo $producto->nombre; ?>"
-        data-precio="<?php echo $producto->precio; ?>"
-        data-cuota="<?php echo $producto->cuota; ?>"
-        data-idcategoria="<?php echo $producto->IDCategoriaP; ?>"
-        data-idmarca="<?php echo $producto->IDMarcaP; ?>"
-        onclick="console.log('Categoria:', '<?php echo $producto->detalleCategoriaP; ?>', 'Marca:', '<?php echo $producto->detalleMarcaP; ?>')">
-    <i class="mdi mdi-content-copy mx-1"></i>
-</button></td>
+                                <td> <button class="seleccionar-btn"
+                    data-idproducto="<?php echo $producto->IDProducto; ?>"
+                    data-nombre="<?php echo $producto->nombre; ?>"
+                    data-precio="<?php echo $producto->precio; ?>"
+                    data-cuota="<?php echo $producto->cuota; ?>"
+                    data-categoria="<?php echo $producto->IDCategoriaP; ?>"
+                    data-marca="<?php echo $producto->IDMarcaP; ?>">
+                <i class="mdi mdi-content-copy mx-1"></i>
+            </button></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>                    

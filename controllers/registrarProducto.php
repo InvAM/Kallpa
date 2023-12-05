@@ -1,8 +1,6 @@
 <?php
-
 include_once "models/categoria_productomodel.php";
 include_once "models/marca_productomodel.php";
-
 class RegistrarProducto extends Controller
 {
     function __construct()
@@ -25,12 +23,7 @@ class RegistrarProducto extends Controller
         $categorias = $this->categorias->get();
         $this->view->categorias = $categorias;
         $this->view->marcas = $marcas;
-
-        // Cambia la línea siguiente
-        // $this->view->productos = $this->model->getP();
-        // por la siguiente
         $this->view->productos = $this->model->getProductosForTable();
-
         $this->view->render('registrarProducto/formRegistrarProducto');
     }
 
@@ -50,6 +43,8 @@ class RegistrarProducto extends Controller
                 $imagen = isset($datos['imagen']) ? base64_decode($datos['imagen']) : null;
 
                 if ($IDProducto !== null && $nombre != null && $precio !== null && $cuota !== null && $IDCategoriaP !== null && $IDMarcaP !== null && $imagen !== null) {
+
+
 
                     if (
                         $this->model->insert([
@@ -83,4 +78,5 @@ class RegistrarProducto extends Controller
             echo "Error en la consulta: " . $e->getMessage();
         }
     }
+
 }

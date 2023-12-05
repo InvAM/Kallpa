@@ -22,8 +22,7 @@
 
         <div class="contenedor-principal">
             <div class="form-container">
-                <h3 class="subtitulo-empleado">Datos Generales</h3>
-
+                <h3 class="subtitulo-listas">Datos Generales</h3>
                 <div class="caja-material">
                     <img src="<?php echo constant('URL'); ?>public/Img/materias-primas.png" class="imagen-foto">
                     <div class="contenedor-material">
@@ -31,35 +30,30 @@
                             <div class="fila">
                                 <div class="input-group">
                                     <label class="subtitulo-materiales" for="idmateriales">Código de Material:</label>
-                                    <input type="text" id="idmateriales" placeholder="Ingrese Código..."
-                                        name="idmateriales" required>
+                                    <input type="text" id="idmateriales" placeholder="Ingrese Código..." name="idmateriales" required>
                                 </div>
 
                                 <div class="input-group">
                                     <label class="subtitulo-materiales" for="nombre_materiales">Nombre del Material:</label>
-                                    <input type="text" id="nombre_materiales" placeholder="Ingrese Nombre del Material..."
-                                        name="nombre_materiales" required>
+                                    <input type="text" id="nombre_materiales" placeholder="Ingrese Nombre del Material..." name="nombre_materiales" required>
                                 </div>
                             </div>
 
                             <div class="fila">
                                 <div class="input-group">
                                     <label for="Unidad_Ma">Unidad de mediad </label>
-                                    <input type="text" id="Unidad_Ma" placeholder="Ingrese Precio..."
-                                        name="Unidad_Ma"  required>
+                                    <input type="text" id="Unidad_Ma" placeholder="Ingrese Precio..." name="Unidad_Ma" required>
                                 </div>
 
                                 <div class="input-group">
                                     <label for="stock_materiales">Stock del Material:</label>
-                                    <input type="number" id="stock_materiales" placeholder="Ingrese Stock..."
-                                        name="stock_materiales" min="0" required>
+                                    <input type="number" id="stock_materiales" placeholder="Ingrese Stock..." name="stock_materiales" min="0" required>
                                 </div>
                             </div>
 
                             <div class="actions">
                                 <button type="button" id="btnRegistrarMaterial">Registrar</button>
                                 <button type="button" class="boton" id="btnActualizarMaterial">Actualizar</button>
-
                             </div>
                         </form>
                     </div>
@@ -80,30 +74,28 @@
                                 <th>Eliminar</th>
                             </tr>
                         </thead>
-                                            <tbody>
-                                                
-                        <?php 
-                        foreach ($this->materiales as $material) : ?>
-                            <tr>
-                                <td class="idmaterialColumn"><?php echo $material->IDMaterial; ?></td>
-                                <td><?php echo $material->Nombre_Ma; ?></td>
-                                <td><?php echo $material->UnidadMedida_Ma; ?></td>
-                                <td><?php echo $material->Stock_Ma; ?></td>
-                                <!-- Agrega otras columnas según tus datos -->
-                                <td>
-                                    <button class="seleccionar-btn"
-                                            data-idmateriales="<?php echo $material->IDMaterial; ?>"
-                                            data-nombre_materiales="<?php echo $material->Nombre_Ma; ?>"
-                                            data-Unidad_Ma="<?php echo $material->UnidadMedida_Ma; ?>"
-                                            data-stock_materiales="<?php echo $material->Stock_Ma; ?>">
-                                        <i class="mdi mdi-content-copy mx-1"></i>
-                                    </button>
-                                    <td><button id="btnEliminar" class="btnEliminar"><i  class="mdi mdi-delete-forever"></i></button></td>
-
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
+                        <tbody>
+                            <?php foreach ($this->materiales as $material) : ?>
+                                <tr>
+                                    <td class="idmaterialColumn"><?php echo $material->IDMaterial; ?></td>
+                                    <td><?php echo $material->Nombre_Ma; ?></td>
+                                    <td><?php echo $material->UnidadMedida_Ma; ?></td>
+                                    <td><?php echo $material->Stock_Ma; ?></td>
+                                    <td>
+                                        <button class="seleccionar-btn"
+                                                data-idmateriales="<?php echo $material->IDMaterial; ?>"
+                                                data-nombre_materiales="<?php echo $material->Nombre_Ma; ?>"
+                                                data-Unidad_Ma="<?php echo $material->UnidadMedida_Ma; ?>"
+                                                data-stock_materiales="<?php echo $material->Stock_Ma; ?>">
+                                            <i class="mdi mdi-content-copy mx-1"></i>
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button id="btnEliminar" class="btnEliminar"><i  class="mdi mdi-delete-forever"></i></button>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
                     </table>
                 </div>
                 <a href="menu"><button class="boton-opciones">Atras</button></a>

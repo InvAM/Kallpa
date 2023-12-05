@@ -55,22 +55,23 @@ class ProductoModel extends Model
           return [];
       }
   }
-
-  public function insertmateriales($datos)
+  public function insert($datos)
   {
-      try {
-          $query = $this->db->connect()->prepare('INSERT INTO materiales (IDMaterial, Nombre_Ma, Precio_Ma, Stock_Ma) 
-              VALUES (:idmateriales, :nombre_materiales, :precio_materiales, :stock_materiales)');
-          $query->execute([
-              'idmateriales' => isset($datos['codigo_material']) ? $datos['codigo_material'] : '',
-              'nombre_materiales' => isset($datos['nombre_material']) ? $datos['nombre_material'] : '',
-              'precio_materiales' => isset($datos['precio_material']) ? $datos['precio_material'] : '',
-              'stock_materiales' => isset($datos['stock_material']) ? $datos['stock_material'] : '',
-          ]);
-  
-          return json_encode(['success' => true, 'message' => 'Inserción exitosa']);
-      } catch (PDOException $e) {
-          return json_encode(['success' => false, 'message' => 'Error en la inserción']);
-      }
+    try {
+      $query = $this->db->connect()->prepare('INSERT INTO producto (IDProducto, nombre, precio, cuota, IDMarcaP, IDCategoriaP, imagen) VALUES (:IDProducto, :nombre, :precio, :cuota, :IDMarcaP, :IDCategoriaP, :imagen)');
+      $query->execute([
+        'IDProducto' => isset($datos['IDProducto']) ? $datos['IDProducto'] : '',
+        'nombre' => isset($datos['nombre']) ? $datos['nombre'] : '',
+        'precio' => isset($datos['precio']) ? $datos['precio'] : '',
+        'cuota' => isset($datos['cuota']) ? $datos['cuota'] : '',
+        'IDMarcaP' => isset($datos['IDMarcaP']) ? $datos['IDMarcaP'] : '',
+        'IDCategoriaP' => isset($datos['IDCategoriaP']) ? $datos['IDCategoriaP'] : '',
+        'imagen' => isset($datos['imagen']) ? $datos['imagen'] : '',
+      ]);
+      return true;
+    } catch (PDOException $e) {
+      return false;
+    }
   }
+ 
 }
