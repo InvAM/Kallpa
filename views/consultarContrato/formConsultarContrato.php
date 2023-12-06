@@ -86,24 +86,24 @@
                     </table>
                 <div class="Acciones">
                 <button class="boton-opciones1" id="btnLimpiar">
-                     Limpiar<i class="mdi mdi-restore"></i>
+                    Limpiar<i class="mdi mdi-restore"></i>
                 </button>
                 <button class="boton-opciones1" id="btnAtras">
                     Atras
                         <i class="mdi mdi-keyboard-backspace"></i>
                 </button>
                 <div class="especial">
-                    <form method="POST" action="<?php echo constant('URL'); ?>consultarContrato/generarOrdenI" id="formularioCC" name="formularioCC">
-                        <button class="boton-opciones" id="btnOrdenI">
+                        <button class="boton-opciones" id="btnOrdenI" name="btnOrdenI">
                             Orden de Instalación <i class="mdi mdi-skip-next-circle"></i>
                         </button>
-                    </form>
-                    <form method="POST" action="<?php echo constant('URL'); ?>consultarContrato/generarOrdenH" id="formularioCC1" name="formularioCC1">
-                        <button class="boton-opciones" id="btnOrdenH">
+                        <button class="boton-opciones" id="btnOrdenH" name="btnOrdenH">
                             Orden de Habilitación <i class="mdi mdi-skip-next-circle"></i>
                         </button>
-                    </form>
                 </div>
+                <button class="boton-opciones1" id="export" name='export' value="export">
+                    Exportar
+                        <i class="mdi mdi-file-excel"></i>
+                </button>
                 </div>
                 </div>
             </div>
