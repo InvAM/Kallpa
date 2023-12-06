@@ -21,8 +21,11 @@ if (!isset($_SESSION["carrito"])) {
     <?php require_once "views/portalHeader.php"; ?>
     <div class="container">
         <?php if (count($_SESSION["carrito"]) == 0): ?>
-            <p>Carrito Vacío</p>
-            <a href="catalogo" class="btn btn-primary">Ver Catálogo</a>
+            <div class="tooltip-container">
+                <span class="tooltip">Carrito Vacio</span>
+                <span class="text">@</span>
+            </div>
+            <button class="btnCatalogo"><a href="catalogo">Ver Catálogo</a></button>
         <?php else: ?>
             <h3 class="tituloProducto">Productos</h3>
 
@@ -32,6 +35,7 @@ if (!isset($_SESSION["carrito"])) {
                     <table class="tablaProductos">
                         <thead>
                             <tr>
+                                <th>Imagen</th>
                                 <th>Nombre Producto<i></i></th>
                                 <th>Cuota<i></i></th>
                                 <th>Precio Regular<i></i></th>
@@ -43,6 +47,9 @@ if (!isset($_SESSION["carrito"])) {
                             <?php foreach ($_SESSION["carrito"] as $fila): ?>
                                 <tr>
                                     <td>
+                                        <img src="data:image/jpeg;base64,<?php echo $fila["imagen"] ?>" class="imagenProducto">
+                                    </td>
+                                    <td class="nombreProducto">
                                         <?php echo $fila["nombre"]; ?>
                                     </td>
                                     <td>
@@ -54,7 +61,7 @@ if (!isset($_SESSION["carrito"])) {
                                     <td>
                                         <?php echo $fila["precio2"]; ?>
                                     </td>
-                                    <td><button href="#" class="btn btn-secondary"><i
+                                    <td><button class="btn btn-secondary btnEliminar"><i
                                                 class="mdi mdi-delete iconoBorrar"></i></button>
                                     </td>
                                 </tr>
@@ -70,7 +77,10 @@ if (!isset($_SESSION["carrito"])) {
             <a href="catalogo" class="btn btn-p">Ver Catálogo</a>
         <?php endif; ?>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="<?php echo constant('URL'); ?>public/js/carrito.js"></script>
+
 </body>
 
 </html>

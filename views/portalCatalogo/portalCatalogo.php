@@ -178,7 +178,7 @@
                         if (!empty($producto->imagen)) {
                             $imagen_base64 = base64_encode($producto->imagen);
                             $imagen_src = "data:image/jpeg;base64," . $imagen_base64;
-                            echo '<img class="imagen" src="' . $imagen_src . '">';
+                            echo '<img class="imagen" src="' . $imagen_src . '" data-imagen="' . $imagen_base64 . '">';
                         } else {
                             echo '<img class="imagen" src="../../IMG/Kallpa1.png">';
                         }

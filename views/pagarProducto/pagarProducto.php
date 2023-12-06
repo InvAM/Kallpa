@@ -176,15 +176,21 @@
         </div>
     </div>
     <?php
-    // Supongamos que tienes un dato en la sesión llamado 'miDato'
-    $miDato = $_SESSION['carrito'];
+    // Supongamos que tienes un dato en la sesión llamado 'carrito'
+    $carrito = $_SESSION['carrito'];
 
+    // Asegúrate de que $carrito sea un array antes de imprimirlo
+    if (is_array($carrito)) {
+        $datosEnJavaScript = json_encode($carrito);
+    } else {
+        // Si no es un array, inicializa una array vacío
+        $datosEnJavaScript = json_encode([]);
+    }
     ?>
 
     <script>
         $(document).ready(function () {
             $("#pagar").on("click", function () {
-
                 var cardData = {
                     cardNumber: $("#cardNumber").val(),
                     cardName: $("#cardName").val(),
@@ -192,15 +198,16 @@
                     cardYear: $("#cardYear").val(),
                     cardCvv: $("#cardCvv").val(),
                 };
-                var datoEnJavaScript = <?php echo json_encode($miDato); ?>;
-                datoEnJavaScript.cardData = cardData;
-                console.log(datoEnJavaScript);
+
+                var datosEnJavaScript = <?php echo $datosEnJavaScript; ?>;
+                datosEnJavaScript.cardData = cardData;
+                console.log(datosEnJavaScript);
 
                 $.ajax({
                     url: "pagarPDF/enviarPDF",
                     type: "POST",
                     contentType: "application/json",
-                    data: JSON.stringify(datoEnJavaScript),
+                    data: JSON.stringify(datosEnJavaScript),
                     dataType: "json",
                     success: function (response) {
                         console.log(response);
@@ -218,7 +225,6 @@
                 });
             });
         });
-
     </script>
     <!-- partial -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>

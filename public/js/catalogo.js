@@ -2,13 +2,14 @@ $(document).ready(function () {
 	$(".comprar-btn").on("click", function (event) {
 		event.preventDefault();
 
-		var producto = $(this).closest(".producto"); // Obtén el contenedor del producto más cercano
+		var producto = $(this).closest(".producto");
 
 		var formData = {
 			nombre: producto.find("span[name='nombre']").text(),
 			cuota: producto.find("span[name='cuota']").text(),
 			precio1: producto.find("span[name='precio1']").text(),
 			precio2: producto.find("span[name='precio2']").text(),
+			imagenBase64: producto.find(".imagen").data("imagen") || null,
 		};
 		console.log("Antes del ajax", formData);
 		Swal.fire({
