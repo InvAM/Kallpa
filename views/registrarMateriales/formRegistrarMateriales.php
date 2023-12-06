@@ -51,7 +51,7 @@
                         <select id="materialSelect">
                             <?php
                             include_once 'models/material.php';
-                            foreach ($this->material as $opcion) {
+                            foreach($this->material as $opcion) {
                                 $material = new Material();
                                 $material = $opcion; ?>
                                 <option value="<?php echo $opcion->Nombre_Ma; ?>">
@@ -73,33 +73,33 @@
             </div>
             <div class="CajaTabla">
                 <p><strong>Detalle Materiales</strong></p>
-                <form action="<?php echo constant('URL'); ?>registrarMateriales/registrarMateriales"
-                    class="formularioRM" name="formularioRM" id="formularioRM" method="POST">
-                    <div class="tabla">
-                        <table id="tablaMateriales" class="custom-table">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Material</th>
-                                    <th>Cantidad</th>
-                                    <th>Seleccionar</th>
-                                    <th>Eliminar</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <button class="boton-opciones" id="btnAsignarMaterialesBD"> Asignar Materiales
-                        <i class="mdi mdi-book-plus"></i></button>
-                        <button class="boton-opciones" id="btnLimpiar"> Limpiar Lista
+
+                <div class="tabla">
+                    <table id="tablaMateriales" class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Material</th>
+                                <th>Cantidad</th>
+                                <th>Seleccionar</th>
+                                <th>Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button class="boton-opciones" id="btnAsignarMaterialesBD" name="btnAsignarMaterialesBD"> Asignar
+                    Materiales
+                    <i class="mdi mdi-book-plus"></i></button>
+                <button class="boton-opciones" id="btnLimpiar"> Limpiar Lista
                     <i class="mdi mdi-restore"></i></button>
                 <button class="boton-opciones" id="btnAtras"> Atras
                     <i class="mdi mdi-keyboard-backspace"></i></button>
-                </form>
-                
+
+
 
             </div>
         </div>

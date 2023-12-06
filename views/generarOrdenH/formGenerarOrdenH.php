@@ -26,36 +26,35 @@
                 <div class="contenedorS">
                     <p class="tituloS2">Especificaciones de Orden</p>
                     <div class="cajaOrdenH">
-                        <form action="<?php echo constant('URL'); ?>generarOrdenH/registrarOrden" name="formularioGOH1"
-                            id="formularioGOH1" method="POST">
-                            <div class="subcajita">
-                                <label class="Sub">Número de Orden</label><br>
-                                <input type="text" label="numOrden" id="numOrden_G" name="numOrden_G"
-                                    placeholder="Número de Orden">
-                            </div>
-                            <div class="subcajita">
-                                <label class="Sub">Etapa</label><br>
-                                <select name="selectedEtapa" id="selectedEtapa">
-                                    <option value="1">Instalación</option>
-                                    <option value="2">Habilitación</option>
-                                </select>
-                            </div>
-                            <div class="subcajita">
-                                <label class="Sub">ID Etapa</label><br>
-                                <input type="text" label="idEtapa" placeholder="ID Etapa" name="IDEtapa_G"
-                                    id="IDEtapa_G" value="2" readonly>
-                            </div>
-                            <div class="subcajita">
-                                <label class="Sub">ID de Contrato</label><br>
-                                <input type="text" label="idContrato" placeholder="ID Contrato" id="IDContrato_G"
-                                    name="IDContrato_G" readonly>
-                            </div>
-                            <div class="subcajita">
-                                <label class="Sub">Número de Suministro</label><br>
-                                <input type="text" label="numS" placeholder="Número de Suministro" id="NumS_G"
-                                    name="NumS_G" readonly>
-                            </div>
-                        </form>
+
+                        <div class="subcajita">
+                            <label class="Sub">Número de Orden</label><br>
+                            <input type="text" label="numOrden" id="numOrden_G" name="numOrden_G"
+                                placeholder="Número de Orden">
+                        </div>
+                        <div class="subcajita">
+                            <label class="Sub">Etapa</label><br>
+                            <select name="selectedEtapa" id="selectedEtapa">
+                                <option value="1">Instalación</option>
+                                <option value="2">Habilitación</option>
+                            </select>
+                        </div>
+                        <div class="subcajita">
+                            <label class="Sub">ID Etapa</label><br>
+                            <input type="text" label="idEtapa" placeholder="ID Etapa" name="IDEtapa_G" id="IDEtapa_G"
+                                value="2" readonly>
+                        </div>
+                        <div class="subcajita">
+                            <label class="Sub">ID de Contrato</label><br>
+                            <input type="text" label="idContrato" placeholder="ID Contrato" id="IDContrato_G"
+                                name="IDContrato_G" readonly>
+                        </div>
+                        <div class="subcajita">
+                            <label class="Sub">Número de Suministro</label><br>
+                            <input type="text" label="numS" placeholder="Número de Suministro" id="NumS_G" name="NumS_G"
+                                readonly>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -73,15 +72,13 @@
                     <br>
                     <div class="CajaHabilitador">
                         <p class="TI2">Datos del Habilitador</p>
-                        <form action="<?php echo constant('URL'); ?>generarOrdenH/registrarOrden" class="formularioGOH2"
-                            name="formularioGOH2" id="formularioGOH2" method="POST">
-                            <label class="Sub" for="NombreCompleto_Em">Habilitador</label><br>
-                            <input class="I2" type="text" id="NombreCompleto_Em" name="NombreCompleto_Em"
-                                placeholder="Habilitador" value="" readonly>
-                            <label class="Sub" for="DNI_Em_H">Dni del Habilitador</label><br>
-                            <input class="I2" type="text" id="DNI_Em_H" name="DNI_Em_H" placeholder="DNI" value=""
-                                readonly>
-                        </form>
+
+                        <label class="Sub" for="NombreCompleto_Em">Habilitador</label><br>
+                        <input class="I2" type="text" id="NombreCompleto_Em" name="NombreCompleto_Em"
+                            placeholder="Habilitador" value="" readonly>
+                        <label class="Sub" for="DNI_Em_H">Dni del Habilitador</label><br>
+                        <input class="I2" type="text" id="DNI_Em_H" name="DNI_Em_H" placeholder="DNI" value="" readonly>
+
                         <button class="boton" id="btnAgregarHabilitador">
                             Agregar Habilitador
                             <i class="mdi mdi-plus"></i>
@@ -98,14 +95,14 @@
                                     <th>ID Contrato</th>
                                     <th>Fecha de Etapa</th>
                                     <th>DNI Empleado</th>
-                                    <th>Visualizar</th>
+
                                     <th>Agregar Materiales</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 include_once 'models/etapacontrato.php';
-                                foreach ($this->etapa_contrato as $row) {
+                                foreach($this->etapa_contrato as $row) {
                                     $etapa_contrato = new EtapaContrato();
                                     $etapa_contrato = $row; ?>
                                     <tr>
@@ -121,13 +118,7 @@
                                         <td>
                                             <?php echo $etapa_contrato->DNI_Em ?>
                                         </td>
-                                        <td>
-                                            <button class="btn-small btn-primary" type="submit" name="accion"
-                                                value="visualizar">
 
-                                                <i class="mdi mdi-eye-settings mx-1"></i>
-                                            </button>
-                                        </td>
                                         <td>
                                             <button class="btn-small btn-primary" id="btnAsignarMateriales"
                                                 data-idcontrato="<?php echo $etapa_contrato->IDContrato; ?>"
@@ -142,11 +133,10 @@
                             </tbody>
                         </table>
                     </div>
-                    <form action="<?php echo constant('URL'); ?>generarOrdenH/registrarOrden" class="formularioGOH"
-                        name="formularioGOH" id="formularioGOH" method="POST">
-                        <button class="boton-opciones-H" id="btnGenerar"> Generar Orden
-                            <i class="mdi mdi-book-plus"></i></button>
-                    </form>
+
+                    <button class="boton-opciones-H" id="btnGenerar"> Generar Orden
+                        <i class="mdi mdi-book-plus"></i></button>
+
                     <button class="boton-opciones-H" id="btnLimpiar"> Limpiar
                         <i class="mdi mdi-restore"></i></button>
                     <button class="boton-opciones-H" id="btnVolver"> Atras

@@ -36,29 +36,28 @@ function actualizarTabla($lista) {
 		let celdaNombre = fila.insertCell(1);
 		celdaNombre.innerHTML = material.nombre;
 
-        let celdaCantidad = fila.insertCell(2);
-        celdaCantidad.innerHTML = material.cantidad;
-        
-         /*FUNCIONAMIENTO DE BOTON SELECCIONAR*/   
-        let celdaSeleccionar = fila.insertCell(3);
-            //Creando el boton para seleccionar
-            let botonSeleccionar =document.createElement("button");
-            //Creando icono
-            let iconoSeleccionar =document.createElement("i");
-            iconoSeleccionar.className="mdi mdi-content-copy mx-1";
-            //Agregando icono
-            botonSeleccionar.appendChild(iconoSeleccionar);
-            
-            botonSeleccionar.addEventListener("click",function(){
-                $("input[name='Cantidad_Ma']").val(material.cantidad);
-                $("#materialSelect").prop('selectedIndex', material.id -1);
-                botonSeleccionado=1;
-            });
-         celdaSeleccionar.appendChild(botonSeleccionar);
-         /* -----------------------------------------------------*/  
+		let celdaCantidad = fila.insertCell(2);
+		celdaCantidad.innerHTML = material.cantidad;
 
-		/*FUNCIONAMIENTO DE BOTON ELIMINAR*/;
-		let celdaEliminar = fila.insertCell(4);
+		/*FUNCIONAMIENTO DE BOTON SELECCIONAR*/
+		let celdaSeleccionar = fila.insertCell(3);
+		//Creando el boton para seleccionar
+		let botonSeleccionar = document.createElement("button");
+		//Creando icono
+		let iconoSeleccionar = document.createElement("i");
+		iconoSeleccionar.className = "mdi mdi-content-copy mx-1";
+		//Agregando icono
+		botonSeleccionar.appendChild(iconoSeleccionar);
+
+		botonSeleccionar.addEventListener("click", function () {
+			$("input[name='Cantidad_Ma']").val(material.cantidad);
+			$("#materialSelect").prop("selectedIndex", material.id - 1);
+			botonSeleccionado = 1;
+		});
+		celdaSeleccionar.appendChild(botonSeleccionar);
+		/* -----------------------------------------------------*/
+
+		/*FUNCIONAMIENTO DE BOTON ELIMINAR*/ let celdaEliminar = fila.insertCell(4);
 		// Crear el botón y asignar propiedades
 		let botonEliminar = document.createElement("button");
 		// Crear el elemento <i> con la clase del icono
@@ -69,16 +68,15 @@ function actualizarTabla($lista) {
 
 		botonEliminar.addEventListener("click", function () {
 			Swal.fire({
-				title: 'Confirmar eliminación',
-				text: '¿Está seguro de que desea eliminar este material?',
-				icon: 'warning',
+				title: "Confirmar eliminación",
+				text: "¿Está seguro de que desea eliminar este material?",
+				icon: "warning",
 				showCancelButton: true,
-				confirmButtonText: 'Sí,eliminar',
-				cancelButtonText: 'Cancelar',
-				confirmButtonColor: '#d33',
-				cancelButtonColor: '#3085d6',
+				confirmButtonText: "Sí,eliminar",
+				cancelButtonText: "Cancelar",
+				confirmButtonColor: "#d33",
+				cancelButtonColor: "#3085d6",
 				buttonsStyling: true,
-
 			}).then((result) => {
 				if (result.isConfirmed) {
 					// Acción al presionar Aceptar
@@ -94,7 +92,7 @@ function actualizarTabla($lista) {
 				} else {
 					console.log("Eliminación cancelada por el usuario");
 				}
-			});			
+			});
 		});
 
 		// Agregar el botón a la celda
@@ -127,10 +125,13 @@ $(document).ready(function () {
 			if (materialExistente) {
 				// Si el material ya existe, mostrar un mensaje
 				Swal.fire({
-					title: 'Verifique',
-					text: "El material  " +	nombre +" ya está registrado. Por favor, actualízalo en lugar de agregar uno nuevo.",
-					icon: 'info',
-					confirmButtonText: 'Aceptar',
+					title: "Verifique",
+					text:
+						"El material  " +
+						nombre +
+						" ya está registrado. Por favor, actualízalo en lugar de agregar uno nuevo.",
+					icon: "info",
+					confirmButtonText: "Aceptar",
 					buttonsStyling: true,
 				});
 				$("#materialSelect").prop("selectedIndex", 0);
@@ -157,12 +158,12 @@ $(document).ready(function () {
 			}
 		} else {
 			Swal.fire({
-				title: 'Seleccione',
+				title: "Seleccione",
 				text: "Por favor, seleccione un material y proporcione la cantidad.",
-				icon: 'info',
-				confirmButtonText: 'Aceptar',
+				icon: "info",
+				confirmButtonText: "Aceptar",
 				buttonsStyling: true,
-			});	
+			});
 		}
 	});
 
@@ -187,12 +188,12 @@ $(document).ready(function () {
 			$("#Cantidad_Ma").val("");
 		} else {
 			Swal.fire({
-				title: 'Verifique',
+				title: "Verifique",
 				text: "Por favor, ingrese un ID válido.",
-				icon: 'info',
-				confirmButtonText: 'Aceptar',
+				icon: "info",
+				confirmButtonText: "Aceptar",
 				buttonsStyling: true,
-			});	
+			});
 		}
 	});
 
@@ -204,14 +205,14 @@ $(document).ready(function () {
 	//LIMPIAR
 	$("#btnLimpiar").on("click", function () {
 		Swal.fire({
-			title: 'Limpiar',
-			text: '¿Está seguro de que desea limpiar la lista de materiales?',
-			icon: 'warning',
+			title: "Limpiar",
+			text: "¿Está seguro de que desea limpiar la lista de materiales?",
+			icon: "warning",
 			showCancelButton: true,
-			confirmButtonText: 'Sí, limpiar',
-			cancelButtonText: 'Cancelar',
-			confirmButtonColor: '#d33',
-			cancelButtonColor: '#3085d6',
+			confirmButtonText: "Sí, limpiar",
+			cancelButtonText: "Cancelar",
+			confirmButtonColor: "#d33",
+			cancelButtonColor: "#3085d6",
 			buttonsStyling: true,
 		}).then((result) => {
 			if (result.isConfirmed) {
@@ -219,65 +220,65 @@ $(document).ready(function () {
 				console.log("Lista de materiales limpiada");
 				actualizarTabla(listaMateriales);
 			} else {
-			    console.log("Limpieza cancelada por el usuario");
+				console.log("Limpieza cancelada por el usuario");
 			}
 		});
 	});
 
-    $('#formularioRM').submit(function(event){
+	$("#btnAsignarMaterialesBD").on("click", function (event) {
 		var idetapa = $("input[name='IDEtapa_M']").val();
-        event.preventDefault(); 
-       //Enviar mediante Ajax
-       console.log(JSON.stringify(listaMateriales));
-		if(idetapa==""){
+		event.preventDefault();
+		//Enviar mediante Ajax
+		console.log(JSON.stringify(listaMateriales));
+		if (idetapa == "") {
 			Swal.fire({
-				title: 'Verifique',
+				title: "Verifique",
 				text: "Por favor, verifique si seleccionó una orden con anterioridad",
-				icon: 'info',
-				confirmButtonText: 'Aceptar',
+				icon: "info",
+				confirmButtonText: "Aceptar",
 				buttonsStyling: true,
-			});	
-		}else{
-		$.ajax({
-			url: 'registrarMateriales/registrarMateriales',
-			type: 'POST',
-			contentType: 'application/json',
-			data: JSON.stringify(listaMateriales),
-			success:function(response){
-				var mensaje= JSON.parse(response);
-				if(idetapa==1){
-					Swal.fire({
-						title: 'Registro exitoso',
-						confirmButtonText: 'Aceptar',
-						text: mensaje,
-						icon: 'success',
-						buttonsStyling: true,
-						didClose: () => {
-							window.location.href = 'generarOrdenI';
-						}
-					});
-					localStorage.removeItem("IDContrato");
-		            localStorage.removeItem("numSum");
-				}else if(idetapa==2){
-					Swal.fire({
-						title: 'Registro exitoso',
-						confirmButtonText: 'Aceptar',
-						text: mensaje,
-						icon: 'success',
-						buttonsStyling: true,
-						didClose: () => {
-							window.location.href = 'generarOrdenH';
-						}
-					});
-					localStorage.removeItem("IDContrato");
-		            localStorage.removeItem("numSum");
-				}
-			},
-			error: function(error){
-				 //Manejar errores
-				 console.error(error);
-			}
-		});
-	}
-    });
+			});
+		} else {
+			$.ajax({
+				url: "registrarMateriales/registrarMateriales",
+				type: "POST",
+				contentType: "application/json",
+				data: JSON.stringify(listaMateriales),
+				success: function (response) {
+					var mensaje = JSON.parse(response);
+					if (idetapa == 1) {
+						Swal.fire({
+							title: "Registro exitoso",
+							confirmButtonText: "Aceptar",
+							text: mensaje,
+							icon: "success",
+							buttonsStyling: true,
+							didClose: () => {
+								window.location.href = "generarOrdenI";
+							},
+						});
+						localStorage.removeItem("IDContrato");
+						localStorage.removeItem("numSum");
+					} else if (idetapa == 2) {
+						Swal.fire({
+							title: "Registro exitoso",
+							confirmButtonText: "Aceptar",
+							text: mensaje,
+							icon: "success",
+							buttonsStyling: true,
+							didClose: () => {
+								window.location.href = "generarOrdenH";
+							},
+						});
+						localStorage.removeItem("IDContrato");
+						localStorage.removeItem("numSum");
+					}
+				},
+				error: function (error) {
+					//Manejar errores
+					console.error(error);
+				},
+			});
+		}
+	});
 });
