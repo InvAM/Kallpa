@@ -162,7 +162,7 @@
                                     echo '<a href="#" onclick="mostrarVentanaEmergente()"><i class="mdi mdi-account"></i><span>Ingresar como cliente</span></a>';
                                 }
                                 echo '<a href="carrito" style="display: block;"><i class="mdi mdi-cart"></i><span>Ver Carrito</span>
-                                <span id="carritoContador">0</span></a>';
+                                <span id="carritoContador"></span></a>';
                                 ?>
                                 </ul>
                             </div>
