@@ -54,13 +54,13 @@
             <div class="filtrado">
                 <label class="labelSelect">Ordena Por : </label>
                 <div class="select">
-                    <div class="select-selected">Recientes
+                    <div class="select-selected">Precios
                         <i class="mdi mdi-arrow-down-drop-circle"></i>
                     </div>
                     <ul class="select-items">
-                        <li class="items"><a href=""><span>Recientes</span></a></li>
-                        <li class="items"><a href=""><span>De mayor a menor precio</span></a></li>
-                        <li class="items"><a href=""><span>De menor a mayor precio</span></a></li>
+                        <li class="items" id="todos"><a href="#"><span>Todos los precios</span></a></li>
+                        <li class="items" id="mayor-menor"><a href=""><span>De mayor a menor precio</span></a></li>
+                        <li class="items" id="menor-mayor" ><a href=""><span>De menor a mayor precio</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -72,20 +72,20 @@
                     <label class="titulocate">SUB CATEGORÍA </label>
                     <ul class="checklist">
                         <li>
-                            <input type="checkbox" id="item2" name="item2">
-                            <label for="item2">Cocinas</label>
+                            <input type="checkbox" id="Cocinas" name="Cocinas">
+                            <label for="Cocinas">Cocinas</label>
                         </li>
                         <li>
-                            <input type="checkbox" id="item3" name="item3">
-                            <label for="item3">Estufas</label>
+                            <input type="checkbox" id="Estufas" name="Estufas">
+                            <label for="Estufas">Estufas</label>
                         </li>
                         <li>
-                            <input type="checkbox" id="item1" name="item1">
-                            <label for="item1">Secadoras</label>
+                            <input type="checkbox" id="Secadoras" name="Secadoras">
+                            <label for="Secadoras">Secadoras</label>
                         </li>
                         <li>
-                            <input type="checkbox" id="item4" name="item4">
-                            <label for="item4">Termas</label>
+                            <input type="checkbox" id="Termas" name="Termas">
+                            <label for="Termas">Termas</label>
                         </li>
                         <li>
                             <input type="checkbox" id="item5" name="item5">
@@ -98,30 +98,33 @@
                 <div class="Filtro2">
                     <label class="titulocate">MARCA</label>
                     <ul class="checklist">
-
                         <li>
-                            <input type="checkbox" id="itemA" name="itemA">
-                            <label for="itemA">AQUAMAXX</label>
+                            <input type="checkbox" id="AGHASO" name="AGHASO" value="AGHASO">
+                            <label for="AGHASO">AGHASO</label>
                         </li>
                         <li>
-                            <input type="checkbox" id="itemB" name="itemB">
-                            <label for="itemB">HOLI</label>
+                            <input type="checkbox" id="AQUAMAXX" name="AQUAMAXX" value="AQUAMAX">
+                            <label for="AQUAMAXX">AQUAMAXX</label>
                         </li>
                         <li>
-                            <input type="checkbox" id="itemC" name="itemC">
-                            <label for="itemC">MABE</label>
+                            <input type="checkbox" id="HOLI" name="HOLI" value="HOLI">
+                            <label for="HOLI">HOLI</label>
                         </li>
                         <li>
-                            <input type="checkbox" id="itemD" name="itemD">
+                            <input type="checkbox" id="MABE" name="MABE"  value="MABE">
+                            <label for="MABE">MABE</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="itemD" name="itemD"  value="ROTOPLAS">
                             <label for="itemD">ROTOPLAS</label>
                         </li>
                         <li>
-                            <input type="checkbox" id="itemE" name="itemE">
-                            <label for="itemE">SOLE</label>
+                            <input type="checkbox" id="SOLE" name="SOLE"  value="SOLE">
+                            <label for="SOLE">SOLE</label>
                         </li>
                         <li>
-                            <input type="checkbox" id="itemF" name="itemF">
-                            <label for="itemF">SGA</label>
+                            <input type="checkbox" id="SGA" name="SGA" value="SGA">
+                            <label for="SGA">SGA</label>
                         </li>
                     </ul>
                 </div>
@@ -145,32 +148,18 @@
                             <span id="max-valor">5000 </span><span>Soles</span>
                             <br>
                             <br>
-                            <script>
-                                const minPrecioInput = document.getElementById("min-precio");
-                                const maxPrecioInput = document.getElementById("max-precio");
-                                const minValorSpan = document.getElementById("min-valor");
-                                const maxValorSpan = document.getElementById("max-valor");
-
-                                minPrecioInput.addEventListener("input", function () {
-                                    minValorSpan.textContent = this.value;
-                                });
-
-                                maxPrecioInput.addEventListener("input", function () {
-                                    maxValorSpan.textContent = this.value;
-                                });
-                            </script>
                             <hr class="divisor">
                             </hr>
                 </div>
             </div>
             <!--Llenado de Caja-->
             <div class="lista">
-                <fieldset class="cajaCentral">
+            <fieldset class="cajaCentral">
                     <?php
 
                     echo '<div class="central">';
                     include_once 'models/producto.php';
-                    foreach ($this->producto as $fila) {
+                    foreach ($this->productos as $fila) {
 
                         $producto = new Producto();
                         $producto = $fila;
