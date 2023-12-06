@@ -69,7 +69,7 @@
                         <?php } ?>
                     </select>
                     <label for="">Número de Radicando</label>
-                    <input type="text" label="" placeholder="Escribir..." name="" id="idnumero">
+                    <input type="text" label="" placeholder="Escribir..." name="idnumero" id="idnumero">
                     <label for="">Tipo de instalación</label>
                     <select name="tipoInsSelect" id="tipoInsSelect" onchange="updateContenedor()">
                         <option value=""></option>
@@ -157,11 +157,7 @@
                     <i class="mdi mdi-restore"></i>Limpiar</button>
                 <button class="boton1" name="btnAtras" id="btnAtras">
                     <i class="mdi mdi-keyboard-backspace"></i>Atras</button>
-                <button class="boton1" id="imprimir">
-
-                    <i class="mdi mdi-printer"></i>
-                    Imprimir
-                </button>
+            
             </div>
             <br>
             <br>
