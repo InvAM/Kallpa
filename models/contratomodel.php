@@ -60,10 +60,8 @@ class ContratoModel extends Model
                 $contrato->IDTipoInst = $row['IDTipoInst'];
                 array_push($contratos, $contrato);
             }
-            echo '<script> console.log("Hola")</script>';
             return $contratos;
         } catch (PDOException $e) {
-            echo '<script> console.log("Salio Mal")</script>';
             return [];
         }
     }
