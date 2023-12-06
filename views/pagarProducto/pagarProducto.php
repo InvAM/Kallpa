@@ -12,6 +12,7 @@
 
 <body>
     <div class="wrapper" id="app">
+        <h1 class="titulo">Pagar Productos</h1>
         <div class="card-form">
             <div class="card-list">
                 <div class="card-item" v-bind:class="{ '-active' : isCardFlipped }">
