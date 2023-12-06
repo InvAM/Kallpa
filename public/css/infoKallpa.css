@@ -1,5 +1,9 @@
 .info .caja-seccion {
 	border-top: 4px solid #33cc33;
+	background-image: url("../../public/Img/FONDO-MAPA.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .info .caja-seccion1 {
@@ -12,7 +16,10 @@
 
 .info .caja-seccion2 {
 	border-top: 4px solid #33cc33;
-	background-color: #CCCCCC;
+	background-image: url("../../public/Img/FONDO-VALORES1.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .info .cajasobrekallpa1 {
@@ -25,7 +32,7 @@
 }
 
 .info .cajasobrekallpa2 {
-	padding: 80px 0;
+	padding: 100px 0;
 	margin-left: 120px;
 	margin-right: 120px;
 	height: 580px;
@@ -33,12 +40,11 @@
 
 .info .cajasobrekallpa3 {
 	padding: 80px 0;
-	margin-left: 381.5px;
-	margin-right: 381.5px;
+	margin-left: 81.5px;
+	margin-right: 81.5px;
 	flex: 1;
 	text-align: center;
 	display: flex;
-	align-items: center;
 	justify-content: center;
 }
 
@@ -62,9 +68,13 @@
 }
 
 .info .cajasobrekallpa6 {
-	padding: 80px 0;
-	margin-left: 381.5px;
-	margin-right: 381.5px;
+	padding: 120px 0;
+	margin-left: 910.5px;
+}
+
+.info .cajasobrekallpa7 {
+	text-align: -webkit-center;
+	width: 650px;
 }
 
 .info .informacion {
@@ -72,6 +82,11 @@
 	margin-left: 30px;
 	margin-right: 30px;
 	width: 70%;
+}
+
+.info iframe {
+	width: 900px;
+    height: 600px;
 }
 
 .info .informacion1 {
@@ -117,16 +132,16 @@
 	color: #203864;
 	font-size: 64px;
 	font-weight: 700;
-	margin-bottom: 40px;
-	margin-top: 0px;
-	text-align: center;
+	margin-bottom: 45px;
+	margin-top: -44px;
+	margin-left: 452px;
 }
 
 .info .p5-info {
 	color: #33cc33;
 	font-size: 44px;
 	font-weight: 700;
-	margin-bottom: 40px;
+	margin-bottom: 10px;
 	margin-top: 0px;
 	flex: 1;
 	text-align: center;
@@ -139,9 +154,11 @@
 	color: white;
 	font-size: 60px;
 	font-weight: 700;
-	width: 50%;
+	width: 80%;
 	font-family: Candara, "Lucida Sans", "Lucida Sans Regular", Geneva, Verdana,
 		sans-serif;
+	margin-bottom: 15px;
+    margin-top: -5px;
 }
 
 .info .p7-info {
@@ -153,46 +170,59 @@
 	text-align: center;
 }
 
+.info .p8-info {
+	color: #203864;
+	font-size: 15px;
+	font-weight: 700;
+	width: 390px;
+	margin-top: 2px;
+}
+
 .info .c1 {
 	text-align: center;
-	height: 250px;
 	display: flex;
-	flex-direction: column;
 	align-items: center;
-	padding: 0 10px;
+	padding: 0 50px;
 }
 
 .info .centrarsplide {
-	width: 100%;
+	width: 1100px;
 	display: flex;
-	justify-content: center;
 }
 
 .info .c {
-	width: 80%;
+	width: 100%;
 }
 
 .info .valores {
-	font-size: 20px;
+	font-size: 30px;
 	color: #203864;
 	font-weight: 600;
-	margin-top: 15px;
-	margin-bottom: 13px;
+	margin-left: 45px;
 }
 
 .info .desc-val {
-	font-size: 18px;
-	color: #868685;
+	font-size: 24px;
+	color: black;
 	font-weight: 300;
 	line-height: 1.1;
-	text-align: center;
-	margin-top: 0px;
-	margin-left: 40px;
+	margin-left: 100px;
 	margin-right: 40px;
 }
 
 .info .subirimg {
-	margin-top: 5px;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info .img2 {
+	width: 140px;
+    height: auto;
+}
+
+.info .img3 {
+	border-bottom: inset;
 }
 
 .info .desc {
@@ -243,22 +273,11 @@
 	margin-top: 25px;
 }
 
-.info .fondo-cont {
-	max-width: 100%;
-	background: linear-gradient(
-		90deg,
-		rgba(31, 17, 233, 0.577468487394958) 0%,
-		rgba(5, 133, 200, 1) 0%,
-		rgba(18, 214, 54, 1) 100%
-	);
-}
-
 #splide1 .splide__arrow {
 	border-color: transparent;
 	background-color: transparent;
 	font-size: 20px; /* Establece el tamaño de fuente del texto */
 	cursor: pointer;
-	margin-left: -27px;
 }
 
 #splide1 .splide__arrow--prev {
@@ -266,15 +285,19 @@
 	top: 32%;
 	left: 100%;
 	z-index: 1;
+	transform: rotate(90deg);
+	margin-top: 315px;
+	margin-left: -566px;
 }
 
 /* Cambia el contenido de la flecha hacia la derecha */
 #splide1 .splide__arrow--next {
 	position: absolute;
-	top: 30%;
+	top: -25px;
 	left: 0;
 	z-index: 1;
-	transform: rotate(180deg);
+	transform: rotate(270deg);
+	margin-left: 540px;
 }
 
 .info .scale-up-center {
@@ -309,7 +332,7 @@ textarea {
 }
 
 .info textarea {
-	height: 135px;
+	height: 228px;
 }
 
 .info .bton {
@@ -348,7 +371,7 @@ textarea {
 }
 
 .info .fondo1 {
-	background-image: url("../../public/Img/FONDO1.png"); /* Reemplaza 'url_de_tu_imagen.jpg' con la URL de tu imagen de fondo */
+	background-image: url("../../public/Img/FONDO_CONTACTO1.png"); /* Reemplaza 'url_de_tu_imagen.jpg' con la URL de tu imagen de fondo */
 	background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el pie de página */
 	background-position: center; /* Alinea la imagen al centro del pie de página */
 	background-repeat: no-repeat; /* Evita que la imagen se repita */

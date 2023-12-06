@@ -7,20 +7,20 @@ $(document).ready(function () {
 		var estado = $(this).data("estado");
 		var radi = "R23-" + $(this).data("radi");
 
-		$("#formularioVC").find("#IDContrato_VC").val(id);
-		$("#formularioVC").find("#Fecha_VC").val(fecha);
-		$("#formularioVC").find("#NumerodeSuministro_VC").val(sum);
-		$("#formularioVC").find("#Estado_VC").val(estado);
-		$("#formularioVC").find("#NumerodeRadicado_VC").val(radi);
+		$("#IDContrato_VC").val(id);
+		$("#Fecha_VC").val(fecha);
+		$("#NumerodeSuministro_VC").val(sum);
+		$("#Estado_VC").val(estado);
+		$("#NumerodeRadicado_VC").val(radi);
 	});
 
 	//limpiar
 	$("#btnLimpiar").on("click", function () {
-		$("#formularioVC").find("#IDContrato_VC").val("");
-		$("#formularioVC").find("#Fecha_VC").val("");
-		$("#formularioVC").find("#NumerodeSuministro_VC").val("");
-		$("#formularioVC").find("#Estado_VC").val("");
-		$("#formularioVC").find("#NumerodeRadicado_VC").val("");
+		$("#IDContrato_VC").val("");
+		$("#Fecha_VC").val("");
+		$("#NumerodeSuministro_VC").val("");
+		$("#Estado_VC").val("");
+		$("#NumerodeRadicado_VC").val("");
 	});
 
 	//Atras
@@ -31,12 +31,11 @@ $(document).ready(function () {
 	});
 
 	//Orden Instalación
-	$("#formularioCC").submit(function (event) {
+	$("#btnOrdenI").on("click",function (event) {
 		event.preventDefault();
 		var IDContrato = $("#IDContrato_VC").val();
 
 		if (IDContrato !== "") {
-			console.log("Me presione");
 			$.ajax({
 				url: "consultarContrato/generarOrdenI",
 				type: "POST",
@@ -47,8 +46,8 @@ $(document).ready(function () {
 					if (mensaje == "") {
 						//limpiado LocalS
 
-						var IDContrato = $("#formularioVC").find("#IDContrato_VC").val();
-						var NumS = $("#formularioVC").find("#NumerodeSuministro_VC").val();
+						var IDContrato = $("#IDContrato_VC").val();
+						var NumS = $("#NumerodeSuministro_VC").val();
 						localStorage.clear();
 						//Almacenando en el localS
 						localStorage.setItem("IDContrato", IDContrato);
@@ -65,11 +64,11 @@ $(document).ready(function () {
 						});											
 					}
 
-					$("#formularioVC").find("#IDContrato_VC").val("");
-					$("#formularioVC").find("#Fecha_VC").val("");
-					$("#formularioVC").find("#NumerodeSuministro_VC").val("");
-					$("#formularioVC").find("#Estado_VC").val("");
-					$("#formularioVC").find("#NumerodeRadicado_VC").val("");
+					$("#IDContrato_VC").val("");
+					$("#Fecha_VC").val("");
+					$("#NumerodeSuministro_VC").val("");
+					$("#Estado_VC").val("");
+					$("#NumerodeRadicado_VC").val("");
 				},
 				error: function (error) {
 					console.error(error);
@@ -87,12 +86,11 @@ $(document).ready(function () {
 	});
 
 	//Orden de Habilitación
-	$("#formularioCC1").submit(function (event) {
+	$("#btnOrdenH").on("click",function (event) {
 		event.preventDefault();
 		var IDContrato = $("#IDContrato_VC").val();
 
 		if (IDContrato !== "") {
-			console.log("Me presione");
 			$.ajax({
 				url: "consultarContrato/generarOrdenH",
 				type: "POST",
@@ -102,9 +100,8 @@ $(document).ready(function () {
 					var mensaje = JSON.parse(response);
 					if (mensaje == "") {
 						//limpiado LocalS
-
-						var IDContrato = $("#formularioVC").find("#IDContrato_VC").val();
-						var NumS = $("#formularioVC").find("#NumerodeSuministro_VC").val();
+						var IDContrato = $("#IDContrato_VC").val();
+						var NumS = $("#NumerodeSuministro_VC").val();
 						localStorage.clear();
 						//Almacenando en el localS
 						localStorage.setItem("IDContrato", IDContrato);
@@ -120,11 +117,11 @@ $(document).ready(function () {
 						});	
 					}
 
-					$("#formularioVC").find("#IDContrato_VC").val("");
-					$("#formularioVC").find("#Fecha_VC").val("");
-					$("#formularioVC").find("#NumerodeSuministro_VC").val("");
-					$("#formularioVC").find("#Estado_VC").val("");
-					$("#formularioVC").find("#NumerodeRadicado_VC").val("");
+					$("#IDContrato_VC").val("");
+					$("#Fecha_VC").val("");
+					$("#NumerodeSuministro_VC").val("");
+					$("#Estado_VC").val("");
+					$("#NumerodeRadicado_VC").val("");
 				},
 				error: function (error) {
 					console.error(error);
@@ -139,5 +136,44 @@ $(document).ready(function () {
 				buttonsStyling: true,
 			});
 		}
+	});
+
+	$("#export").on("click", function (event) {
+		event.preventDefault();
+		Swal.fire({
+			title: 'Exportar a Excel',
+			text: 'La solicitud ha sido procesada ¿Desea exportar la lista de contratos a Excel?',
+			icon: 'success',
+			showCancelButton: true,
+			confirmButtonText: 'Sí, exportar',
+			cancelButtonText: 'Cancelar',
+			confirmButtonColor: '#d33',
+			cancelButtonColor: '#3085d6',
+			buttonsStyling: true,
+		}).then((result) => {
+			if (result.isConfirmed) {
+				// Utilizar AJAX para obtener el archivo
+				var xhr = new XMLHttpRequest();
+				xhr.open('POST', 'consultarContrato/exportarxls', true);
+				xhr.responseType = 'blob';  // La respuesta esperada es un blob
+				
+				xhr.onload = function () {
+					if (xhr.status === 200) {
+						// Crear un objeto Blob con la respuesta del servidor
+						var blob = new Blob([xhr.response], { type: 'application/vnd.ms-excel' });
+						
+						// Crear un enlace para descargar el archivo
+						var link = document.createElement('a');
+						link.href = window.URL.createObjectURL(blob);
+						link.download = 'ReporteContrato.xls';
+						
+						// Hacer clic en el enlace para iniciar la descarga
+						link.click();
+					}
+				};
+	
+				xhr.send();
+			}
+		});
 	});
 });

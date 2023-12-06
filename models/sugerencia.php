@@ -1,9 +1,7 @@
 <?php
 class Sugerencia
 {
-    public $nombres;
-
-    public $apelidos;
+    public $DNI_cli;
 
     public $email;
 

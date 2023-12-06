@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="public/Img/KallpaC.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
+    
     <title>Registrar Cliente</title>
     <link rel="stylesheet" href="public/css/formRegistrarCliente.css">
 </head>
@@ -27,7 +28,6 @@
                 <h3 class="subtitulo-domicilio">Datos del domicilio</h3>
 
                 <div class="cont-datos-domicilio">
-
                     <div class="posicion-letra">
                         <div class="grupo1">
                             <label for="IDDomicilio_reg">ID Domicilio</label>
@@ -49,6 +49,7 @@
                                 id="Nomb_Malla_Dom_reg">
                             <label for="IDCondicion">Condición</label>
                             <select name="IDCondicion" id="IDCondicion" onchange="updateContenedor()">
+                            <option value=""></option>
                                 <?php
                                 include_once 'models/condicion.php';
                                 foreach ($this->condiciones as $opcion) {
@@ -63,6 +64,7 @@
                         <div class="grupo3">
                             <label for="IDEstrato_reg">Estrato</label>
                             <select name="IDEstrato_reg" id="IDEstrato_reg" onchange="updateContenedor()">
+                            <option value=""></option>
                                 <?php
                                 include_once 'models/estrato.php';
                                 foreach ($this->estratos as $opcion) {
@@ -75,6 +77,7 @@
                             </select>
                             <label for="IDPredio_reg">Predio</label>
                             <select name="IDPredio_reg" id="IDPredio_reg"  onchange="updateContenedor()">
+                            <option value=""></option>
                             <?php
                                 include_once 'models/predio.php';
                                 foreach ($this->predios as $opcion) {
@@ -87,6 +90,7 @@
                             </select>
                             <label for="IDDistrito_reg">Distrito</label>
                             <select name="IDDistrito_reg" id="IDDistrito_reg" onchange="updateContenedor()">
+                            <option value=""></option>
                                 <?php
                                 include_once 'models/distrito.php';
                                 foreach ($this->distritos as $opcion) {
@@ -97,6 +101,10 @@
                                     </option>
                                 <?php } ?>
                             </select>
+                        </div>
+
+                        <div class="icono-dom">
+                            <i class="mdi mdi-home-assistant"></i>
                         </div>
                     </div>
 
@@ -131,6 +139,7 @@
                     <div class="datos_derecha">
                         <label for="IDGenero_reg">Género</label>
                         <select name="IDGenero_reg" id="IDGenero_reg" onchange="updateContenedor()">
+                        <option value=""></option>
                             <?php
                             include_once 'models/genero.php';
                             foreach ($this->generos as $opcion) {
@@ -146,6 +155,7 @@
                             id="Celular_cli_reg">
                         <label for="IDNacionalidad_reg">Nacionalidad</label>
                         <select name="IDNacionalidad_reg" id="IDNacionalidad_reg" onchange="updateContenedor()">
+                        <option value=""></option>
                             <?php
                             include_once 'models/nacionalidad.php';
                             foreach ($this->nacionalidades as $opcion) {
@@ -158,6 +168,7 @@
                         </select>
                         <label for="IDEstadoCivil_reg">Estado Civil</label>
                         <select name="IDEstadoCivil_reg" id="IDEstadoCivil_reg" onchange="updateContenedor()">
+                        <option value=""></option>
                             <?php
                             include_once 'models/estadocivil.php';
                             foreach ($this->estados as $opcion) {
@@ -228,9 +239,6 @@
                     <i class="mdi mdi-restore"></i>Limpiar</button>
                 <button class="boton1" name="btnAtras" id="btnAtras">
                     <i class="mdi mdi-keyboard-backspace"></i>Atras</button>
-                <button class="boton1">
-                    <i class="mdi mdi-printer"></i>
-                    Imprimir</button>
             </div>
 
         </div>
@@ -242,120 +250,10 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="<?php echo constant('URL'); ?>public/js/registrarCliente.js"></script>
-
+    <script src="<?php echo constant('URL'); ?>public/js/cliente.js"></script>
 
     
 </body>
 
 
 </html>
-
-<script>
-    //DATOS DOMICILIO
-    const IDDomicilioInput = document.getElementById("IDDomicilio_reg");
-    const mostrarIDDomicilio = document.getElementById("mostrarIDDomicilio");
-
-    const DireccionInput = document.getElementById("Direccion_Dom_reg");
-    const mostrarDirec = document.getElementById("mostrarDirec");
-
-    const InteriorInput = document.getElementById("Interior_Dom_reg");
-    const mostrarInterior = document.getElementById("mostrarInterior");
-
-    const PisoInput = document.getElementById("Piso_Dom_reg");
-    const mostrarPiso = document.getElementById("mostrarPiso");
-
-    const MallaInput = document.getElementById("Nomb_Malla_Dom_reg");
-    const mostrarMalla = document.getElementById("mostrarMalla");
-
-    //DATOS CLIENTE
-    const NombreInput = document.getElementById("Nombre_cli_reg");
-    const mostrarNombre = document.getElementById("mostrarNombre");
-
-    const ApellidoInput = document.getElementById("Apellido_cli_reg");
-    const mostrarApellido = document.getElementById("mostrarApellido");
-
-    const DNIInput = document.getElementById("DNI_cli_reg");
-    const mostrarDNI = document.getElementById("mostrarDNI");
-
-    const CelularInput = document.getElementById("Celular_cli_reg");
-    const mostrarCelular = document.getElementById("mostrarCelular")
-    ;
-    const FechaInput = document.getElementById("FechaNacimiento");
-    const mostrarFecha = document.getElementById("mostrarFecha");
-
-        // Datos domicilio
-        IDDomicilioInput.addEventListener("input", () => {
-            mostrarIDDomicilio.textContent = IDDomicilioInput.value;
-        });
-
-        DireccionInput.addEventListener("input", () => {
-            mostrarDirec.textContent = DireccionInput.value;
-        })
-
-        InteriorInput.addEventListener("input", () => {
-            mostrarInterior.textContent = InteriorInput.value;
-        })
-
-        PisoInput.addEventListener("input", () => {
-            mostrarPiso.textContent = PisoInput.value;
-        })
-
-        MallaInput.addEventListener("input", () => {
-            mostrarMalla.textContent = MallaInput.value;
-        })
-
-        //Datos cliente
-        NombreInput.addEventListener("input", () => {
-            mostrarNombre.textContent = NombreInput.value;
-        })
-
-        ApellidoInput.addEventListener("input", () => {
-            mostrarApellido.textContent = ApellidoInput.value;
-        })
-
-        DNIInput.addEventListener("input", () => {
-            mostrarDNI.textContent = DNIInput.value;
-        })
-
-        CelularInput.addEventListener("input", () => {
-            mostrarCelular.textContent = CelularInput.value;
-        })
-
-        FechaInput.addEventListener("input", () => {
-            mostrarFecha.textContent = FechaInput.value;
-        })
-
-        function updateContenedor() {
-        //Datos domicilio
-        var condicionSelect = document.getElementById("IDCondicion");
-        var estratoSelect = document.getElementById("IDEstrato_reg");
-        var predioSelect = document.getElementById("IDPredio_reg");
-        var distritoSelect = document.getElementById("IDDistrito_reg");
-
-        var mostrarCondicion = document.getElementById("mostrarCondicion");
-        var mostrarEstrato = document.getElementById("mostrarEstrato");
-        var mostrarPredio = document.getElementById("mostrarPredio");
-        var mostrarDistrito = document.getElementById("mostrarDistrito");
-
-        mostrarCondicion.textContent = condicionSelect.options[condicionSelect.selectedIndex].text;
-        mostrarEstrato.textContent = estratoSelect.options[estratoSelect.selectedIndex].text;
-        mostrarPredio.textContent = predioSelect.options[predioSelect.selectedIndex].text;
-        mostrarDistrito.textContent = distritoSelect.options[distritoSelect.selectedIndex].text;
-
-        //Datos cliente 
-        var generoSelect = document.getElementById("IDGenero_reg");
-        var nacionalidadSelect = document.getElementById("IDNacionalidad_reg");
-        var estadoSelect = document.getElementById("IDEstadoCivil_reg");
-
-        var mostrarGenero = document.getElementById("mostrarGenero");
-        var mostrarNacionalidad = document.getElementById("mostrarNacionalidad");
-        var mostrarEstado = document.getElementById("mostrarEstado");
-
-        mostrarGenero.textContent = generoSelect.options[generoSelect.selectedIndex].text;
-        mostrarNacionalidad.textContent = nacionalidadSelect.options[nacionalidadSelect.selectedIndex].text;
-        mostrarEstado.textContent = estadoSelect.options[estadoSelect.selectedIndex].text;
-    }
-
-
-        
-</script>

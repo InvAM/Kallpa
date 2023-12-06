@@ -1,5 +1,5 @@
 body {
-	margin: 0; /*Quita espacio exterior*/
+	margin: 0; 
 	font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -9,24 +9,24 @@ body {
 
 .evaluar-c .contenedor-principal2 {
 	padding: 20px;
-	margin-top: -28px;
+	margin-top: 338px;
 }
 
 .evaluar-c .titulo {
-	display: flex; /*Permite alinear el contenido en una línea*/
-	justify-content: center; /*Centra el elemento*/
-	margin-top: 75px; /*Añadir espacio con el elemento de arriba*/
-	font-size: 20px; /*Establece el tamaño a la letra*/
+	display: flex; 
+	justify-content: center;
+	margin-top: 75px; 
+	font-size: 20px;
 	margin-bottom: 20px;
 }
 
 .evaluar-c .titulo-1 {
-	color: #203864; /*Da color a las letras*/
-	margin-right: 10px; /*Añadir esapacio con el elemento de la derecha*/
+	color: #203864;
+	margin-right: 10px; 
 }
 
 .evaluar-c .titulo-2 {
-	color: rgb(62, 207, 62); /*Da color a las letras*/
+	color: rgb(62, 207, 62); 
 }
 
 .evaluar-c .subtitulo_1 {
@@ -82,24 +82,24 @@ body {
 	display: inline-block;
     width: 40% !important;
 	margin-top: -150px !important;
-	margin-left: 1080px;
+	margin-left: 1120px;
 }
 
 .tabla::-webkit-scrollbar {
-	width: 8px; /* Ancho de la barra de desplazamiento */
+	width: 8px; /
 }
 
 .tabla::-webkit-scrollbar-thumb {
-	background-color: #203864; /* Color de la barra de desplazamiento */
+	background-color: #203864;
 }
 
 .tabla::-webkit-scrollbar-track {
-	background-color: #f8f8f8; /* Color del fondo de la barra de desplazamiento */
+	background-color: #f8f8f8;
 }
 
 table {
-	width: 100%; /*Establecer ancho del objeto*/
-	border-collapse: collapse; /*Junta los campos de la tabla*/
+	width: 100%; 
+	border-collapse: collapse; 
 	border: 0px;
 }
 
@@ -262,6 +262,7 @@ tr:hover {
 .evaluar-c .table-container {
 	height: 320px;
     overflow-y: scroll;
+	margin-top: 45px;
 }
 
 .table-container::-webkit-scrollbar-track {

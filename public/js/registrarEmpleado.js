@@ -68,7 +68,7 @@ $(document).ready(function () {
 			},
 		});
 	});
-	$("#btnEliminar").on("click", function () {
+	$(".btnEliminar").on("click", function () {
 		var formData = {
 			dni: $(this).closest("tr").find(".dniColumn").text().trim(),
 		};
@@ -90,7 +90,9 @@ $(document).ready(function () {
 					contentType: "application/json",
 					dataType: "json",
 					success: function (response) {
+						console.log(response);
 						if (response.success) {
+							console.log("entre antes del sweet alert");
 							Swal.fire({
 								icon: "success",
 								title: "Empleado eliminado correctamente",

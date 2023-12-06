@@ -8,13 +8,12 @@ class SugerenciaModel extends Model {
 
     public function insert ($datos){
         try{
-            $query = $this->db->connect()->prepare('INSERT INTO sugerencia(nombres,apellidos,email,comentario) 
-                VALUES (:nombres,:apellidos,:email,:comentario)');
+            $query = $this->db->connect()->prepare('INSERT INTO sugerencia(DNI_cli,correo,comentario) 
+                VALUES (:dni,:email,:comentario)');
             $query->execute([
-                'nombres'=> $datos['nombres_s'],
-                'apellidos'=> $datos['apellidos_s'],
-                'email'=> $datos['email_s'],
-                'comentario'=> $datos['comentario_s'],
+                'dni'=> $datos['dni'],
+                'email'=> $datos['email'],
+                'comentario'=> $datos['comentario'],
             ]);
             return true;
         }catch (PDOException $e) {

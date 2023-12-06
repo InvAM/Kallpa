@@ -53,27 +53,27 @@
                             <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
                                 <ul class="row">
                                     <li class="col">
-                                        <a onclick="scrollToSection('nuestraHistoria')" href="#quienesSomos">
+                                        <a onclick="scrollToSection('nuestraHistoria')" href="infoKallpa#quienesSomos">
                                             <i class="mdi mdi-book-edit-outline"></i><span>Quiénes somos</span>
                                         </a>
                                     </li>
                                     <li class="col">
-                                        <a onclick="scrollToSection('visionYmision')" href="#viymi">
+                                        <a onclick="scrollToSection('visionYmision')" href="infoKallpa#viymi">
                                             <i class="mdi mdi-eye-outline"></i><span>Visión y misión</span>
                                         </a>
                                     </li>
                                     <li class="col">
-                                        <a onclick="scrollToSection('valor')" href="#valores">
+                                        <a onclick="scrollToSection('valor')" href="infoKallpa#valores">
                                             <i class="mdi mdi-handshake-outline"></i><span>Nuestros valores</span>
                                         </a>
                                     </li>
                                     <li class="col">
-                                        <a onclick="scrollToSection('ubicacion')" href="#encuentranos">
+                                        <a onclick="scrollToSection('ubicacion')" href="infoKallpa#encuentranos">
                                             <i class="mdi mdi-map-marker-outline"></i><span>Encuéntranos</span>
                                         </a>
                                     </li>
                                     <li class="col">
-                                        <a onclick="scrollToSection('contacto')" href="#contactanos">
+                                        <a onclick="scrollToSection('contacto')" href="infoKallpa#contactanos">
                                             <i class="mdi mdi-card-account-mail-outline"></i><span>Contáctanos</span>
                                         </a>
                                     </li>
@@ -121,35 +121,49 @@
                                     <li class="col1"><a href="sugerencias"><i
                                                 class="mdi mdi-archive-check-outline"></i><span>Buzón
                                                 de sugerencias</span></a></li>
-                                    <li class="col1"><a href="reclamaciones"><i
+                                    <li class="col1"><a href="reclamacion"><i
                                                 class="mdi mdi-notebook-check-outline"></i><span>Libro de
                                                 reclamaciones</span></a></li>
                                 </ul>
                             </div>
                         </li>
-                        <li class="menu-item">
-                            <div class="item-label-icon" data-toggle="collapse" href="#submenu4" role="button"
-                                aria-expanded="false" aria-controls="submenu4">
-                                <!-- Icono para la nueva opción -->
-                                <!-- Texto de la nueva opción -->
+                        <li class="clientGuess">
+                            <h3 class="nameCliente">
+                                <?php
 
-                                <a href="#" class="logo-usuario ">
-                                    <img class="imglogin" src="public/Img/usuario (3).png">
-                                </a>
-                            </div>
-                            <!-- Submenú de la nueva opción -->
-                            <div id="submenu4" class="submenuContenedor contenedor-menu collapse">
-                                <ul class="row">
-                                    <li class="col">
-                                        <a href="#" onclick="mostrarVentanaEmergente()">
-                                            <i class="mdi mdi-account"></i><span>Ingresar como cliente</span>
-                                        </a>
-                                    </li>
-                                    <li class="col">
-                                        <a href="cerrarSesionC">
-                                            <i class="mdi mdi-account"></i><span>Cerrar Sesion</span>
-                                        </a>
-                                    </li>
+                                if ($this->nombrecliente)
+                                    echo $this->nombrecliente;
+                                else
+                                    echo "Invitado"
+                                        ?>
+                                </h3>
+                            </li>
+                            <li class="menu-item">
+                                <div class="item-label-icon" data-toggle="collapse" href="#submenu4" role="button"
+                                    aria-expanded="false" aria-controls="submenu4">
+                                    <!-- Icono para la nueva opción -->
+
+                                    <!-- Texto de la nueva opción -->
+
+                                    <a href="#" class="logo-usuario ">
+
+                                        <img class="imglogin" src="public/Img/usuario (3).png">
+                                    </a>
+                                </div>
+                                <!-- Submenú de la nueva opción -->
+                                <div id="submenu4" class="submenuContenedor contenedor-menu collapse">
+                                    <ul class="row">
+                                        <?php
+                                if ($this->nombrecliente) {
+                                    // Si la sesión 'nombrecliente' está presente, el usuario está conectado
+                                    echo '<a href="cerrarSesionC"><i class="mdi mdi-account"></i><span>Cerrar Sesión</span></a>';
+                                } else {
+                                    // Si la sesión 'nombrecliente' no está presente, el usuario no está conectado
+                                    echo '<a href="#" onclick="mostrarVentanaEmergente()"><i class="mdi mdi-account"></i><span>Ingresar como cliente</span></a>';
+                                }
+                                echo '<a href="carrito" style="display: block;"><i class="mdi mdi-cart"></i><span>Ver Carrito</span>
+                                <span id="carritoContador"></span></a>';
+                                ?>
                                 </ul>
                             </div>
                         </li>
@@ -170,6 +184,13 @@
             background: transparent !important;
         }
     </style>
+    <!-- <script>
+        // Restaurar el contador al cargar la página
+        $(document).ready(function () {
+
+            updateCartCounter();
+        });
+    </script> -->
 </body>
 
 </html>

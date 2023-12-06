@@ -6,8 +6,6 @@
     <link rel="stylesheet" href="public/css/formLReclamaciones.css">
     <link rel="icon" href="public/Img/KallpaC.png" type="image/x-icon">
     <title>Libro de reclamaciones</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css" rel="stylesheet">
 </head>
 
@@ -15,7 +13,6 @@
     <?php require_once "views/portalHeader.php"; ?>
     <div class="lr">
     <div class="contenedor">
-        <form action="<?php echo constant('URL'); ?>reclamaciones/registrarReclamaciones" method="POST" id="formReclamaciones">
             <fieldset class="cajita1">
                 <h1 class="titulo">Libro de reclamaciones</h1>
                 <fieldset class="cajas">
@@ -63,7 +60,7 @@
                                 <i class="mdi mdi-cash icon"></i>
                                 <label>Monto reclamado</label>
                             </div>
-                            <input class="especial2" type="text" name="monto_reclamado_r" id="monto_reclamado_r" placeholder="Ingrese su tipo de bien" required>
+                            <input class="especial2" type="text" name="monto_reclamado_r" id="monto_reclamado_r" placeholder="Ingrese su monto reclamado" required>
                         </div>
                     </div>
                     <div>
@@ -112,9 +109,10 @@
                 </fieldset>
                 <br>
                 <br>
-                <input class="Botones" type="submit" value="Enviar hoja de reclamación">
+                <form method="POST" id="formReclamaciones" name="formReclamaciones">
+                    <input class="Botones" type="submit" value="Enviar hoja de reclamación" name="btnReg" id="btnReg">
+                </form>
             </fieldset>
-        </form>
     </div>
 
     <footer>
@@ -125,6 +123,10 @@
 
     </div>
     <?php require_once "views/chatbot.php"; ?>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="<?php echo constant('URL'); ?>public/js/reclamaciones.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 
 </html>

@@ -52,4 +52,54 @@ class ConsultarContrato extends Controller
 
         echo json_encode($mensaje);
     }
+
+    function exportarxls() {
+        $contratos = $this->model->getExcel();
+    
+        if (!empty($contratos)) {
+            $filename = "ReporteContrato.xls";
+    
+            // Configurar las cabeceras para la descarga del archivo
+            header("Content-Type: application/vnd.ms-excel");
+            header("Content-Disposition: attachment; filename=" . $filename);
+            header("Pragma: no-cache");
+            header("Expires: 0");
+    
+            $mostrar_columnas = false;
+    
+            echo '<html xmlns:x="urn:schemas-microsoft-com:office:excel">';
+            echo '<head><meta http-equiv="content-type" content="application/vnd.ms-excel; charset=UTF-8"></head>';
+            echo '<body>';
+    
+            echo '<table>';
+    
+            foreach ($contratos as $contrato) {
+                if (!$mostrar_columnas) {
+                    $columnas = array_keys(get_object_vars($contrato));
+                    echo '<tr>';
+                    foreach ($columnas as $columna) {
+                        echo '<th style="background-color: #203864; color: #ffffff;">' . $columna . '</th>';
+                    }
+                    echo '</tr>';
+                    $mostrar_columnas = true;
+                }
+    
+                echo '<tr>';
+                foreach ($columnas as $columna) {
+                    echo '<td>' . $contrato->$columna . '</td>';
+                }
+                echo '</tr>';
+            }
+    
+            echo '</table>';
+            echo '</body>';
+            echo '</html>';
+    
+            exit;
+        } else {
+            echo "No hay datos a exportar";
+        }
+    }
+    
+
 }

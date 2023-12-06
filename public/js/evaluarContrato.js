@@ -33,8 +33,6 @@ $(document).ready(function () {
 		$("#filtroIDContrato, #searchEstado, #searchFecha").trigger("input");
 	});
 
-	//Atras
-	//Atras
 	$("#volverMenu").on("click", function () {
 		window.location.href = "menu";
 		exit();

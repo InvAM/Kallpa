@@ -50,35 +50,6 @@
 
                         <button class="boton-css" id="btn-borrar" name="btn-borrar"><i
                                 class="mdi mdi-broom"></i></button>
-
-                        <form action="" method="post" id="formularioF">
-                            <div class="caja_filtro_1">
-                                <div class="subcajita">
-                                    <label class="label-styled" for="filtroIDContrato">ID Contrato:</label>
-                                    <input type="text" class="input-field" id="filtroIDContrato" name="filtroIDContrato"
-                                        placeholder="Buscar por ID">
-                                </div>
-                                <div class="subcajita">
-                                    <label class="label-styled" for="searchEstado">Seleccione un estado:</label>
-                                    <select class="input-field cbx" id="searchEstado" name="searchEstado"
-                                        placeholder="Estados">
-                                        <option value="">Seleccionar estado</option>
-                                        <option value="En revisión">En revisión</option>
-                                        <option value="Observado">Observado</option>
-                                        <option value="Aprobado">Aprobado</option>
-                                        <option value="Desaprobado">Desaprobado</option>
-                                    </select>
-                                </div>
-                                <div class="subcajita">
-                                    <label class="label-styled" for="searchFecha">Selecciona una fecha:</label><br>
-                                    <input type="date" id="searchFecha" name="searchFecha">
-                                </div>
-
-                                <button class="boton-css" id="btn-borrar" name="btn-borrar"><i
-                                        class="mdi mdi-broom"></i></button>
-
-                            </div>
-                        </form>
                 </form>
 
             </div>
@@ -103,7 +74,7 @@
                         <tr>
                             <?php
                             include_once 'models/contrato.php';
-                            foreach ($this->contrato as $row) {
+                            foreach($this->contrato as $row) {
                                 $contrato = new Contrato();
                                 $contrato = $row; ?>
                                 <td>
@@ -165,8 +136,6 @@
                             <label class="label-styled" for="IDContrato">ID Contrato:</label>
                             <input type="text" class="input-field2" name="IDContrato" id="IDContrato"
                                 placeholder="IDContrato" readonly>
-                            <input type="text" class="input-field2" name="IDContrato" id="IDContrato"
-                                placeholder="IDContrato" readonly>
                         </div>
                         <div class="subcajita2">
                             <label class="label-styled" for="numSum">Número de Suministro:</label>
@@ -184,12 +153,7 @@
                                 <option value="Observado">Observado</option>
                                 <option value="Aprobado">Aprobado</option>
                                 <option value="Desaprobado">Desaprobado</option>
-                                <select class="input-field2 cbx" id="selectedEstado" name="selectedEstado">
-                                    <option value="En revisión">En revisión</option>
-                                    <option value="Observado">Observado</option>
-                                    <option value="Aprobado">Aprobado</option>
-                                    <option value="Desaprobado">Desaprobado</option>
-                                </select>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -205,9 +169,8 @@
 
         </div>
 
-        <?php require_once "views/footer.php" ?>
     </div>
-
+    <?php require_once "views/footer.php" ?>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="<?php echo constant('URL'); ?>public/js/evaluarContrato.js"></script>
