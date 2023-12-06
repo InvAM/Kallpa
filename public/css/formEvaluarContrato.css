@@ -9,7 +9,7 @@ body {
 
 .evaluar-c .contenedor-principal2 {
 	padding: 20px;
-	margin-top: -28px;
+	margin-top: 338px;
 }
 
 .evaluar-c .titulo {
@@ -82,7 +82,7 @@ body {
 	display: inline-block;
     width: 40% !important;
 	margin-top: -150px !important;
-	margin-left: 1080px;
+	margin-left: 1120px;
 }
 
 .tabla::-webkit-scrollbar {
@@ -262,6 +262,7 @@ tr:hover {
 .evaluar-c .table-container {
 	height: 320px;
     overflow-y: scroll;
+	margin-top: 45px;
 }
 
 .table-container::-webkit-scrollbar-track {

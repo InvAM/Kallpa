@@ -20,10 +20,10 @@
             <div class="splide">
                 <div class="splide__track">
                     <ul class="splide__list">
-                        <li class="splide__slide"><img src="public/Img/ATCL1.png" alt="" /></li>
-                        <li class="splide__slide"><img src="public/Img/ATCL2.png" alt="" /></li>
-                        <li class="splide__slide"><img src="public/Img/ATCL3.png" alt="" /></li>
-                        <li class="splide__slide"><img src="public/Img/ATCL4.png" alt="" /></li>
+                        <li class="splide__slide"><img class="imagen" src="public/Img/ATCL1.png" alt="" /></li>
+                        <li class="splide__slide"><img class="imagen" src="public/Img/ATCL2.png" alt="" /></li>
+                        <li class="splide__slide"><img class="imagen" src="public/Img/ATCL3.png" alt="" /></li>
+                        <li class="splide__slide"><img class="imagen" src="public/Img/ATCL4.png" alt="" /></li>
                     </ul>
                 </div>
             </div>

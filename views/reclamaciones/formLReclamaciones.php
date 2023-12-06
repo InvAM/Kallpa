@@ -60,7 +60,7 @@
                                 <i class="mdi mdi-cash icon"></i>
                                 <label>Monto reclamado</label>
                             </div>
-                            <input class="especial2" type="text" name="monto_reclamado_r" id="monto_reclamado_r" placeholder="Ingrese su tipo de bien" required>
+                            <input class="especial2" type="text" name="monto_reclamado_r" id="monto_reclamado_r" placeholder="Ingrese su monto reclamado" required>
                         </div>
                     </div>
                     <div>
