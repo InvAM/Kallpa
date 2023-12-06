@@ -136,26 +136,26 @@
         <section id="contacto" class="caja-seccion fondo1">
             <div class="cajasobrekallpa6">
                 <p class="p5-info">Contáctanos</p>
-                <form id="contact-form" method="post">
                     <div class="cajasobrekallpa4">
                         <div class="contcontac">
-                            <label for="nombre">Nombre:</label>
-                            <input type="text" id="nombre" name="nombre" required>
+                            <label for="nombre_c">Nombre:</label>
+                            <input type="text" id="nombre_c" name="nombre_c">
 
-                            <label for="celular">Número de Celular:</label>
-                            <input type="tel" id="celular" name="celular" required>
+                            <label for="celular_c">Número de Celular:</label>
+                            <input type="tel" id="celular_c" name="celular_c">
 
-                            <label for="correo">Correo Electrónico:</label>
-                            <input type="email" id="correo" name="correo" required>
+                            <label for="correo_c">Correo Electrónico:</label>
+                            <input type="email" id="correo_c" name="correo_c">
+
+                            <label for="direccion">Dirección de Domicilio:</label>
+                            <input type="text" id="direccion_c" name="direccion_c">
                         </div>
                         <div class="contcontac">
-                            <label for="mensaje">Mensaje:</label>
-                            <textarea id="mensaje" name="mensaje" rows="4" required class="txtarea"></textarea>
-
-                            <button type="submit" class="bton">Enviar</button>
+                            <label for="mensaje_c">Mensaje:</label>
+                            <textarea id="mensaje_c" name="mensaje_c" rows="4" class="txtarea"></textarea>
+                            <button id="btnEnviar" name="btnEnviar" class="bton">Enviar</button>
                         </div>
                     </div>
-                </form>
             </div>
         </section>
 
@@ -184,5 +184,9 @@
         splide.mount();
     });
 </script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+                integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="<?php echo constant('URL'); ?>public/js/contactanos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 </html>

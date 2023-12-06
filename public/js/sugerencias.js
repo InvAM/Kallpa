@@ -1,22 +1,22 @@
 $(document).ready(function(){
     $("#btnRegistrarS").on("click", function(){
-      //Recopilando datos
-       var DNI_cli= $("#Dni").val();
-       var nombres= $("#nombres_s").val();
-       var apellidos= $("#apellidos_s").val();
-       var email= $("#email_s").val();
-       var comentario= $("#comentario_s").val();
+        //Recopilando datos
+        var DNI_cli= $("#Dni").val();
+        var nombres= $("#nombres_s").val();
+        var apellidos= $("#apellidos_s").val();
+        var email= $("#email_s").val();
+        var comentario= $("#comentario_s").val();
 
-       var sugerenciaactual={
-           DNI_cli: DNI_cli,
-           nombres: nombres,
-           apellidos: apellidos,
-           email: email,
-           comentario: comentario
-       }
+        var sugerenciaactual={
+            DNI_cli: DNI_cli,
+            nombres: nombres,
+            apellidos: apellidos,
+            email: email,
+            comentario: comentario
+        }
 
        //Comprobando campos
-       if(comentario=="" || comentario==" "){
+        if(comentario=="" || comentario==" "){
             Swal.fire({
                 title: 'Verifique',
                 confirmButtonText: 'Aceptar',
@@ -24,8 +24,8 @@ $(document).ready(function(){
                 icon: 'info',
                 buttonsStyling: true,
             });
-       }else{
-         $.ajax({
+        }else{
+        $.ajax({
             url: "sugerencias/registrarSugerencia",
 			type: "POST",
 			contentType: "application/json",
@@ -67,9 +67,8 @@ $(document).ready(function(){
             error: function(error){
                 console.log(error);
             },
-         });
-          
-       }
+        });
+        }
     });
 
     $("#btnLimpiarS").on("click", function(){
