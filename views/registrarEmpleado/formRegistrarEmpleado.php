@@ -32,17 +32,19 @@
                         <label for="DNI_Em">Dni</label>
                         <input type="text" label="DNI" placeholder="Ingrese el DNI" name="DNI_Em" id="DNI_Em">
                         <label for="Nombre_Em">Nombres</label>
-                        <input type="text" label="Nombre" placeholder="Ingrese los nombres" name="Nombre_Em" id="Nombre_Em">
+                        <input type="text" label="Nombre" placeholder="Ingrese los nombres" name="Nombre_Em"
+                            id="Nombre_Em">
                         <label for="Apellido_Em">Apellidos</label>
                         <input type="text" label="Apellido" placeholder="Ingrese los apellidos" name="Apellido_Em"
                             id="Apellido_Em">
                         <label for="Celular_Em">Celular</label>
-                        <input type="text" label="Celular" placeholder="Ingrese el N° de celular" name="Celular_Em" id="Celular_Em">
+                        <input type="text" label="Celular" placeholder="Ingrese el N° de celular" name="Celular_Em"
+                            id="Celular_Em">
                         <label for="IDCategoria">Categoría</label>
                         <select name="IDCategoria" id="IDCategoria">
                             <?php
                             include_once "models/categoriaempleado.php";
-                            foreach ($this->categoria as $opcion) {
+                            foreach($this->categoria as $opcion) {
                                 $categoria = new Categoriaempleado();
                                 $categoria = $opcion; ?>
                                 <option value="<?php echo $opcion->IDCategoria ?>" ;>
@@ -53,11 +55,11 @@
                             <!-- Seguir con opciones -->
                         </select>
                         <div class="botones">
-                        <button type="button" class="boton" id="btnRegistrar">
-                        <i class="mdi mdi-plus-box"></i>Registrar</button>
+                            <button type="button" class="boton" id="btnRegistrar">
+                                <i class="mdi mdi-plus-box"></i>Registrar</button>
 
-                        <button type="button" class="boton" id="btnActualizar">
-                        <i class="mdi mdi-update"></i>Actualizar</button>
+                            <button type="button" class="boton" id="btnActualizar">
+                                <i class="mdi mdi-update"></i>Actualizar</button>
                         </div>
                     </div>
                 </form>
@@ -83,7 +85,7 @@
                         <tbody>
                             <?php
                             include_once 'models/empleado.php';
-                            foreach ($this->empleado as $row) {
+                            foreach($this->empleado as $row) {
                                 $empleado = new Empleado();
                                 $empleado = $row; ?>
                                 <tr>
@@ -112,8 +114,8 @@
 
                                     </td>
                                     <td>
-                                        <button class="boton-seleccionar boton" id="btnEliminar">
-                                        <i class="mdi mdi-delete-empty"></i>
+                                        <button class="boton-seleccionar boton btnEliminar" id="btnEliminar">
+                                            <i class="mdi mdi-delete-empty"></i>
                                         </button>
                                     </td>
                                 </tr>
@@ -129,8 +131,7 @@
                         <form method="POST" class="FormularioAjax">
                             <div class="campo">
                                 <label for="DNI_Em_c">Dni</label>
-                                <input type="text" label="DNI" placeholder="DNI" name="DNI_Em_c" id="DNI_Em_c"
-                                    required>
+                                <input type="text" label="DNI" placeholder="DNI" name="DNI_Em_c" id="DNI_Em_c" required>
                             </div>
                             <div class="campo">
                                 <label for="nombreusuario">Usuario</label>
@@ -145,11 +146,10 @@
 
                             <button id="btnRegistrarCredenciales" class="boton-credencial">
                                 <i class="mdi mdi-key-plus"></i>
-                            Agregar Credenciales</button>
+                                Agregar Credenciales</button>
                         </form>
                 </div>
-                <button class="boton-opciones" name="btnLimpiar" id="btnLimpiar">
-                    <i class="mdi mdi-restore"></i>Limpiar</button>
+
                 <button class="boton-opciones" name="btnAtras" id="btnAtras">
                     <i class="mdi mdi-keyboard-backspace"></i>Atras</button>
                 <br>
