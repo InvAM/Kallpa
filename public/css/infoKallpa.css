@@ -69,8 +69,7 @@
 
 .info .cajasobrekallpa6 {
 	padding: 120px 0;
-	margin-left: 381.5px;
-	margin-right: 381.5px;
+	margin-left: 910.5px;
 }
 
 .info .cajasobrekallpa7 {
@@ -204,7 +203,7 @@
 
 .info .desc-val {
 	font-size: 24px;
-	color: #525252;
+	color: black;
 	font-weight: 300;
 	line-height: 1.1;
 	margin-left: 100px;
@@ -333,7 +332,7 @@ textarea {
 }
 
 .info textarea {
-	height: 135px;
+	height: 228px;
 }
 
 .info .bton {
@@ -372,7 +371,7 @@ textarea {
 }
 
 .info .fondo1 {
-	background-image: url("../../public/Img/FONDO1.png"); /* Reemplaza 'url_de_tu_imagen.jpg' con la URL de tu imagen de fondo */
+	background-image: url("../../public/Img/FONDO_CONTACTO1.png"); /* Reemplaza 'url_de_tu_imagen.jpg' con la URL de tu imagen de fondo */
 	background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el pie de página */
 	background-position: center; /* Alinea la imagen al centro del pie de página */
 	background-repeat: no-repeat; /* Evita que la imagen se repita */
