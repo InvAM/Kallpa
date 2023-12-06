@@ -35,7 +35,7 @@ class ProductoModel extends Model
   {
       $productos = [];
       try {
-          $query = $this->db->connect()->prepare('SELECT p.IDProducto, p.nombre, p.precio, p.cuota, mp.detalleMarcaP, cp.detalleCategoriaP, p.imagen FROM producto p 
+          $query = $this->db->connect()->prepare('SELECT p.IDProducto, p.nombre, p.precio, p.cuota,mp.IDMarcaP, mp.detalleMarcaP,cp.IDCategoriaP, cp.detalleCategoriaP, p.imagen FROM producto p 
                                                               INNER JOIN categoria_producto cp ON p.IDCategoriaP = cp.IDCategoriaP
                                                               INNER JOIN marca_producto mp ON p.IDMarcaP = mp.IDMarcaP');
           $query->execute();
@@ -45,7 +45,9 @@ class ProductoModel extends Model
               $producto->nombre = $row['nombre'];
               $producto->precio = $row['precio'];
               $producto->cuota = $row['cuota'];
+              $producto->IDMarcaP = $row['IDMarcaP'];
               $producto->detalleMarcaP = $row['detalleMarcaP'];
+              $producto->IDCategoriaP =$row['IDCategoriaP'];
               $producto->detalleCategoriaP = $row['detalleCategoriaP'];
               $producto->imagen = $row['imagen'];
               array_push($productos, $producto);
@@ -73,5 +75,51 @@ class ProductoModel extends Model
       return false;
     }
   }
- 
+  public function actualizarProducto($datos)
+  {
+      $query = $this->db->connect()->prepare('UPDATE producto 
+                                              SET nombre = :nombre, 
+                                                  precio = :precio, 
+                                                  cuota = :cuota, 
+                                                  IDCategoriaP = :categoria, 
+                                                  IDMarcaP = :marca,
+                                                  imagen = :imagen 
+                                              WHERE IDProducto = :idproducto');
+
+      try {
+        if($datos['imagen']!== null){
+          $query->execute([
+              'idproducto' => $datos['IDProducto'],
+              'nombre' => $datos['nombre'],
+              'precio' => $datos['precio'],
+              'cuota' => $datos['cuota'],
+              'categoria' => $datos['IDCategoriaP'],
+              'marca' => $datos['IDMarcaP'],
+              'imagen' => $datos['imagen'],
+          ]);
+          return true;
+        } 
+      } catch (PDOException $e) {
+          return false;
+      }
+  }
+
+  public function obtenerImagenProducto($IDProducto)
+{
+    $query = $this->db->connect()->prepare('SELECT imagen FROM producto WHERE IDProducto = :idproducto');
+    $query->execute(['idproducto' => $IDProducto]);
+
+    $row = $query->fetch();
+    return $row ? $row['imagen'] : null;
+}
+public function delete($IDProducto)
+{
+    $query = $this->db->connect()->prepare('DELETE FROM producto WHERE IDProducto = :idproducto');
+    try {
+        $query->execute(['idproducto' => $IDProducto]);
+        return true;
+    } catch (PDOException $e) {
+        return false;
+    }
+}
 }

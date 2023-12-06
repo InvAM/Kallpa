@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.all.min.js"></script>
 </head>
-
 <body>
     <div class="registra_materiales">
         <?php require_once "views/header.php"; ?>
@@ -52,7 +51,7 @@
                             </div>
 
                             <div class="actions">
-                                <button type="button" id="btnRegistrarMaterial">Registrar</button>
+                                <button type="button" class="boton" id="btnRegistrarMaterial">Registrar</button>
                                 <button type="button" class="boton" id="btnActualizarMaterial">Actualizar</button>
                             </div>
                         </form>

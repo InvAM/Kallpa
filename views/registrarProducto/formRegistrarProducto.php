@@ -96,6 +96,8 @@
 
                         <div class="actions">
                             <button type="submit" id="btnRegistrar">Registrar</button>
+                            <button id="btnActualizar" type="submit">Actualizar</button>
+
                         </div>
                     </form>
                 </div>
@@ -114,33 +116,46 @@
                                 <th>Marca</th>
                                 <th>Visualizar</th>
                                 <th>Seleccionar</th>
+                                <th>Eliminar</th>
                             </tr>
                         </thead>
                         <tbody>
                             
                         <?php  
+                        include_once 'models/producto.php';
                         include_once 'models/categoria_producto.php';
                         include_once 'models/marca_producto.php';
-                        foreach ($this->productos as $producto) : ?>
+                        foreach ($this->productos as $row){
+                            $producto = new Producto();
+                            $producto = $row; ?>
                             <tr>
-                                <td><?php echo $producto->IDProducto; ?></td>
+                                <td class="idproductoColumn" ><?php echo $producto->IDProducto; ?></td>
                                 <td><?php echo $producto->nombre; ?></td>
                                 <td><?php echo $producto->precio; ?></td>
                                 <td><?php echo $producto->cuota; ?></td>
-                                <td><?php echo $producto->detalleCategoriaP; ?></td>
-                                <td><?php echo $producto->detalleMarcaP; ?></td>
-                                <td><button ><i class="mdi  mdi-message-image"></i> </button></td>
-                                <td> <button class="seleccionar-btn"
-                    data-idproducto="<?php echo $producto->IDProducto; ?>"
-                    data-nombre="<?php echo $producto->nombre; ?>"
-                    data-precio="<?php echo $producto->precio; ?>"
-                    data-cuota="<?php echo $producto->cuota; ?>"
-                    data-categoria="<?php echo $producto->IDCategoriaP; ?>"
-                    data-marca="<?php echo $producto->IDMarcaP; ?>">
-                <i class="mdi mdi-content-copy mx-1"></i>
-            </button></td>
+                                <td><?php echo $producto->detalleCategoriaP;
+                                $IDcat=$producto->IDCategoriaP ?></td>
+                                <td><?php echo $producto->detalleMarcaP;
+                                $IDma=$producto->IDMarcaP; 
+                                $imagen=$producto->imagen;?></td>
+                                
+                                <td><button id="btnVisualizar" class="btnVisualizar" ><i class="mdi  mdi-message-image"></i> </button></td>
+                                <td> 
+                                <button class="seleccionar-btn"
+                                data-idproducto="<?php echo $producto->IDProducto; ?>"
+                                data-nombre="<?php echo $producto->nombre; ?>"
+                                data-precio="<?php echo $producto->precio; ?>"
+                                data-cuota="<?php echo $producto->cuota; ?>"
+                                data-categoria="<?php echo $IDcat; ?>"
+                                data-marca="<?php echo $IDma; ?>"
+                                data-imagen="<?php echo base64_encode($imagen); ?>" >
+                                <i class="mdi mdi-content-copy mx-1"></i>
+                            </button></td>
+                            <td>
+                                        <button id="btnEliminar" class="btnEliminar"><i  class="mdi mdi-delete-forever"></i></button>
+                                    </td>
                             </tr>
-                        <?php endforeach; ?>
+                        <?php } ?>
                     </tbody>                    
                     </table>
                 </div>
