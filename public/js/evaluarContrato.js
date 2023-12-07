@@ -16,6 +16,40 @@ $(document).ready(function () {
 			.prop("selected", true);
 	});
 
+	$(".btn-visualizar").on("click", function () {
+		var id = $(this).data("id");
+		var datosParaImprimir = {
+			IDContrato: id,
+		};
+		// Enviar la información al controlador mediante Ajax
+		$.ajax({
+			url: "controlpdf/enviarPDF",
+			type: "POST",
+			contentType: "application/json",
+			data: JSON.stringify(datosParaImprimir),
+			dataType: "json",
+			success: function (response) {
+				console.log(response);
+				Swal.fire({
+					title: 'Visualización',
+					confirmButtonText: 'Aceptar',
+					text: "El archivo a sido generado de forma satisfactoia, se le direccionará a una pagina adyancente para su visualización",
+					icon: 'success',
+					didClose: () => {
+						window.open("controlpdf", "_blank");
+					}
+				});	
+			},
+			error: function (xhr, textStatus, errorThrown) {
+				console.error(
+					"Error en la solicitud AJAX:",
+					textStatus,
+					errorThrown
+				);
+				console.log("Respuesta del servidor:", xhr.responseText);
+			},
+		});
+	});
 	//limpiar
 	$("#limpiar").on("click", function () {
 		$("#IDContrato").val("");

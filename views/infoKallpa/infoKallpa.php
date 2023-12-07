@@ -14,7 +14,6 @@
 
         <section id="nuestraHistoria" class="caja-seccion fondoimg">
             <div class="cajasobrekallpa1">
-
                 <div class="informacion">
                     <p class="p1-info"> ¿Quiénes somos?</p>
                     <p class="p2-info"> Kallpa Contratistas y Suministros en general SAC</p>
