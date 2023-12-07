@@ -23,10 +23,8 @@
             </div>
 
             <div class="search-container-1">
-
                 <p class="subtitulo_1">Filtros de Contratos</p>
-
-                <form action="" method="post" id="formularioF">
+                <div class="divisionPrin">
                     <div class="caja_filtro_1">
                         <div class="subcajita">
                             <label class="label-styled" for="filtroIDContrato">ID Contrato:</label>
@@ -47,12 +45,12 @@
                             <label class="label-styled" for="searchFecha">Selecciona una fecha:</label><br>
                             <input type="date" id="searchFecha" name="searchFecha">
                         </div>
-
+                    </div>
+                    <div class="contenedor-boton-limpiar">
                         <button class="boton-css" id="btn-borrar" name="btn-borrar"><i
-                                class="mdi mdi-broom"></i></button>
-                </form>
-
-            </div>
+                                    class="mdi mdi-broom"></i></button>
+</div>
+                </div>
             <div class="table-container">
                 <table>
                     <thead>
@@ -68,6 +66,7 @@
                             <th>DNI Cliente</th>
                             <th>DNI Empleado</th>
                             <th>Seleccionar</th>
+                            <th>Visualizar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -116,6 +115,13 @@
                                         <i class="mdi mdi-content-copy"></i>
                                     </button>
                                 </td>
+                                <td>
+                                    <button class="boton-opciones btn-visualizar" id="btnVisualizar"
+                                        data-id="<?php echo $contrato->IDContrato; ?>">
+                                        <i class="mdi mdi-eye-check-outline"></i>
+                                     </button>
+                                </td>
+                                </td>
                             </tr>
                         <?php } ?>
                     </tbody>
@@ -130,7 +136,7 @@
 
                 <div class="search-container-2">
                     <p class="subtitulo_1">Campos del contrato seleccionado</p>
-                    <div class="caja_filtro_1">
+                    <div class="caja_filtro_2">
                         <i class="mdi mdi-file-document i-t subcajita3"></i>
                         <div class="subcajita2" style="margin-left:-1px">
                             <label class="label-styled" for="IDContrato">ID Contrato:</label>
@@ -157,16 +163,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="subcajita5">
+                <div class="subcajita5">
                 <button class="action-button" id="confirmar" name="confirmar">Actualizar Estado<i
                         class="mdi mdi-pencil ia"></i></button>
                 <button class="action-button" id="limpiar">Limpiar Campos<i class="mdi mdi-restore ia"></i></button>
                 <button class="action-button" id="volverMenu">Volver a Menú<i
                         class="mdi mdi-keyboard-backspace ia"></i></button>
             </div>
-
+            </div>
         </div>
 
     </div>

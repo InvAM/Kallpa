@@ -42,8 +42,9 @@ body {
 	box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562);
 	padding: 15px;
 	height: 120px;
-	margin-bottom: 25px;
+	margin-bottom: 10px;
 	border-radius: 0px;
+	width: 98%;
 }
 
 .evaluar-c .search-container-2 {
@@ -54,15 +55,25 @@ body {
 	height: 120px;
 	margin-bottom: 25px;
 	border-radius: 0px;
-	width: 100%;
+	width: 80%;
 }
 
+.divisionPrin{
+	display: flex;
+}
+
+.contenedor-boton-limpiar{
+	width: 10%;
+}
 .evaluar-c .subcajita {
 	display: inline-block;
-    margin-left: 35px;
+    margin-left: 20px;
     width: 31% !important;
 }
 
+.caja_filtro_1{
+	width: 90%;
+}
 .evaluar-c .subcajita2 {
 	display: inline-block;
     margin-left: 25px;
@@ -74,19 +85,19 @@ body {
     width: 5% !important;
 }
 .evaluar-c .subcajita4 {
-	display: inline-block;
-    width: 57% !important;
+	display: flex;
+    width: 100% !important;
+	margin-top: 20px;
 }
 
 .evaluar-c .subcajita5 {
 	display: inline-block;
-    width: 40% !important;
-	margin-top: -150px !important;
-	margin-left: 1120px;
+    width: 50% !important;
+	margin-top: 30px !important;
 }
 
 .tabla::-webkit-scrollbar {
-	width: 8px; /
+	width: 8px; 
 }
 
 .tabla::-webkit-scrollbar-thumb {
@@ -151,7 +162,7 @@ tr:hover {
 .evaluar-c .input-field {
 	display: flex;
 	width: 90%;
-	height: 45px;
+	height: 26px;
 	margin-right: 10px;
 	padding: 9px;
 	border: 1px solid #ccc;
@@ -166,7 +177,7 @@ tr:hover {
 .evaluar-c .input-field2 {
 	display: flex;
 	width: 100%;
-	height: 45px;
+	height: 26px;
 	margin-right: 10px;
 	padding: 9px;
 	border: 1px solid #ccc;
@@ -190,7 +201,7 @@ tr:hover {
 	width: 90%;
 	vertical-align: middle;
 	font-family: "Arial";
-	height: 45px;
+	height: 26px;
 	margin-top: 5px;
 }
 
@@ -248,7 +259,6 @@ tr:hover {
 .evaluar-c .boton-css {
 	padding: 10px 20px;
 	font-size: 14px;
-	margin-left: 1796.9px;
 	margin-right: 10px;
 	width: 40px;
 	background-color: #095ba8;
@@ -256,7 +266,8 @@ tr:hover {
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
-	margin-top: -41px;
+	margin-top: 30px;
+	margin-left: 20px;
 }
 
 .evaluar-c .table-container {
@@ -332,4 +343,8 @@ tr:hover {
 	color: #203864;
 	font-weight: bold;
 	margin-right: 10px;
+}
+
+.caja_filtro_2{
+	width: 100%;
 }

@@ -11,6 +11,7 @@ if (!isset($_SESSION["carrito"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Carrito de Compras</title>
+    <link rel="icon" href="public/Img/KallpaC.png" type="image/x-icon">
     <!-- Enlace a Bootstrap CSS -->
     <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"> -->
     <!-- Tu CSS personalizado (pegar esto en otro archivo si lo prefieres) -->
@@ -19,7 +20,7 @@ if (!isset($_SESSION["carrito"])) {
 
 <body>
     <?php require_once "views/portalHeader.php"; ?>
-    <div class="container">
+    <div class="container1">
         <?php if (count($_SESSION["carrito"]) == 0): ?>
             <div class="tooltip-container">
                 <span class="tooltip">Carrito Vacio</span>
@@ -27,8 +28,9 @@ if (!isset($_SESSION["carrito"])) {
             </div>
             <button class="btnCatalogo"><a href="catalogo">Ver Catálogo</a></button>
         <?php else: ?>
-            <h3 class="tituloProducto">Productos</h3>
-
+            <div class="tituloP">
+            <label class="tituloProducto">Productos  <i class="mdi mdi-cart-arrow-down"></i></label>
+            </div>
             <div class="card">
                 <div>
 
@@ -72,9 +74,9 @@ if (!isset($_SESSION["carrito"])) {
             </div>
 
 
-            <a href="pagarProducto" class="btn btn-p">Pagar</a>
+            <a href="pagarProducto" class="btn btn-p">Pagar <i class="mdi mdi-cash"></i></a>
 
-            <a href="catalogo" class="btn btn-p">Ver Catálogo</a>
+            <a href="catalogo" class="btn btn-p">Ver Catálogo <i class="mdi mdi-eye-check-outline"></i></a>
         <?php endif; ?>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
