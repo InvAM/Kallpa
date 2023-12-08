@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="public/Img/KallpaC.png" type="image/x-icon">
     <title>Registrar Producto</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/formRegistrarProducto.css">
@@ -21,6 +22,7 @@
                 <h2 class="titulo-2">Productos</h2>
             </div>
             <div class="caja-empleado">
+            <h3 class="subtitulo-lista">Datos Generales</h3>
                 <div class="contenedor-empleado">
                     <form id="formProducto" method="POST" enctype="multipart/form-data">
                         <div class="fila">
@@ -103,7 +105,7 @@
                 </div>
             </div>
             <div class="parte-derecha">
-                <h3 class="subtitulo-lista">Lista de Productos</h3>
+                <div><h3 class="subtitulo-lista">Lista de Productos</h3></div>
                 <div class="table-container">
                     <table id="product-table">
                         <thead>
@@ -160,10 +162,12 @@
                     </table>
                 </div>
             </div>
-            <a href="menu"><button class="boton-opciones">Atras</button></a>
-
+            <div class= "mover">
+            <div>
+                <a href="menu"><button class="boton-opciones">Atras <i class="mdi mdi-keyboard-backspace"></i></button></a>
+                            </div>
             <?php require_once "views/footer.php"; ?>
-
+            </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"

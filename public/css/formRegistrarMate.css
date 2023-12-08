@@ -4,7 +4,7 @@ body {
 }
 
 .mdi {
-    width: 100%;
+    width: 150%;
 }
 
 .registra_materiales {
@@ -19,16 +19,18 @@ body {
     margin-top: 75px;
     font-size: 25px;
 }
-
+.mover {
+    text-align: right;
+}
 .titulo-1 {
     color: #203864;
     margin-right: 10px;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .titulo-2 {
     color: rgb(62, 207, 62);
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .contenedor-principal {
@@ -51,8 +53,8 @@ body {
 .actions {
     width: 100%;
     display: flex;
-    justify-content: center; /* Centra los elementos horizontalmente */
-    margin-top: 20px;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .caja-material {
@@ -102,7 +104,7 @@ input {
 
 .btn {
     width: 100%;
-    background-color: #203864;
+    background-color: #095ba8;
     color: #fff;
     padding: 12px;
     border: none;
@@ -115,7 +117,7 @@ input {
 }
 .btnEliminar {
     width: 48%;
-    background-color: #203864;
+    background-color: #095ba8;
     color: #fff;
     padding: 12px;
     border: none;
@@ -128,7 +130,7 @@ input {
 }
 .seleccionar-btn {
     width: 48%;
-    background-color: #203864;
+    background-color: #095ba8;
     color: #fff;
     padding: 12px;
     border: none;
@@ -140,21 +142,20 @@ input {
     transition: background-color 0.3s;
 }
 .boton {
-    width: 100%;
-    background-color: #203864;
+    width: 80%;
+    background-color: #47d847;
     color: #fff;
     padding: 12px;
     border: none;
-    margin-right: 4%;
-    margin-top: 10px;
-    border-radius: 5px;
+    margin-left: 55px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #203864;
+    background-color: #095ba8;
 }
 
 .subtitulo-lista {
@@ -167,33 +168,29 @@ button:hover {
 }
 
 .subtitulo-listas {
-    color: #203864;
+    color: #47d847;
     font-size: 22px;
     font-weight: bold;
     margin: 0;
-    margin-top: -3px;
+    margin-top: -50px;
     margin-bottom: 7px;
-    margin-left: 18px;
-}
-    
-
-
-.registra_materiales table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #ddd;
-    table-layout: fixed;
-    margin-top: 20px;
+    margin-left: 38px;
 }
 
-.registra_materiales th,
-.registra_materiales td {
-    padding: 12px;
+#material-table th, #material-table td {
+    padding: 20px;
     text-align: center;
+    border: none;
 }
-
+#material-table th {
+    background-color: #095ba8;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
 .registra_materiales th {
-    background-color: #203864;
+    background-color: #095ba8;
     color: white;
 }
 
@@ -202,14 +199,15 @@ button:hover {
 }
 
 .boton-opciones {
-    background-color: #203864;
+    background-color:#095ba8;
     color: #ffffff;
     width: 200px;
     cursor: pointer;
     font-size: 15px;
     border-radius: 5px;
-    border: 1px solid #152c57;
-    padding: 10px;
+    border: 1px solid #095ba8;
+    padding: 15px;
+    margin-top: 50px;
 }
 
 @media screen and (max-width: 768px) {
@@ -230,9 +228,9 @@ button:hover {
 
 .registra_materiales .table-container {
     border-radius: 5px;
-    max-height: 411px;
+    max-height: 500px;
     overflow-y: scroll;
-    margin-top: -15px;
+    border: 2px solid #095ba8;
 }
 
 .registra_materiales .table-container table {
@@ -249,8 +247,12 @@ button:hover {
 }
 
 .registra_materiales .table-container th {
-    background-color: #203864;
+    background-color: #095ba8;
     color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
 }
 
 .registra_materiales .table-container tr:hover {
@@ -262,7 +264,7 @@ button:hover {
 }
 
 .registra_materiales .table-container::-webkit-scrollbar-thumb {
-    background-color: #203864;
+    background-color: #095ba8;
 }
 
 .registra_materiales .table-container::-webkit-scrollbar-track {
@@ -273,7 +275,7 @@ button:hover {
     display: inline-block;
     padding: 10px;
     cursor: pointer;
-    background-color: #203864;
+    background-color: #095ba8;
     color: #fff;
     border: none;
     border-radius: 5px;

@@ -54,6 +54,8 @@ $(".seleccionar-btn").on("click", function () {
     $("#Unidad_Ma").val(unidadMedida);
     $("#stock_materiales").val(stockMaterial);
 });
+
+
 $("#btnActualizarMaterial").on("click", function () {
     var formData = {
         IDMaterial: $("input[name='idmateriales']").val(),
@@ -150,3 +152,10 @@ $(document).on("click", ".btnEliminar", function()  {
     });
 });
 
+$("#btnLimpiarMaterial").on("click", function () {
+    console.log("Limpiando");
+    $("#idmateriales").val("");
+    $("#nombre_materiales").val("");
+    $("#Unidad_Ma").val("");
+    $("#stock_materiales").val("");
+});

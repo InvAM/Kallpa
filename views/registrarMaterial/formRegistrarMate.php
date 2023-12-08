@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+    <link rel="icon" href="public/Img/KallpaC.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Registrar Material</title>
@@ -28,35 +29,39 @@
                         <form id="formMaterial" method="POST" enctype="multipart/form-data">
                             <div class="fila">
                                 <div class="input-group">
-                                    <label class="subtitulo-materiales" for="idmateriales">Código de Material:</label>
+                                    <label class="subtitulo-materiales">Código de Material:</label>
                                     <input type="text" id="idmateriales" placeholder="Ingrese Código..." name="idmateriales" required>
                                 </div>
 
                                 <div class="input-group">
-                                    <label class="subtitulo-materiales" for="nombre_materiales">Nombre del Material:</label>
+                                    <label class="subtitulo-materiales">Nombre del Material:</label>
                                     <input type="text" id="nombre_materiales" placeholder="Ingrese Nombre del Material..." name="nombre_materiales" required>
                                 </div>
                             </div>
 
                             <div class="fila">
                                 <div class="input-group">
-                                    <label for="Unidad_Ma">Unidad de mediad </label>
+                                    <label >Unidad de mediad </label>
                                     <input type="text" id="Unidad_Ma" placeholder="Ingrese Precio..." name="Unidad_Ma" required>
                                 </div>
 
                                 <div class="input-group">
-                                    <label for="stock_materiales">Stock del Material:</label>
+                                    <label >Stock del Material:</label>
                                     <input type="number" id="stock_materiales" placeholder="Ingrese Stock..." name="stock_materiales" min="0" required>
                                 </div>
-                            </div>
-
-                            <div class="actions">
-                                <button type="button" class="boton" id="btnRegistrarMaterial">Registrar</button>
-                                <button type="button" class="boton" id="btnActualizarMaterial">Actualizar</button>
                             </div>
                         </form>
                     </div>
                 </div>
+                <div class="actions">
+                    <button type="button" class="boton" id="btnRegistrarMaterial">Registrar <i  class="mdi mdi-plus-box"></i> </button>
+                        </div>
+                <div class="actions">
+                    <button type="button" class="boton" id="btnActualizarMaterial">Actualizar <i  class="mdi mdi-update"></i></button>
+                        </div>
+                        <div class="actions">
+                    <button type="button" class="boton" id="btnLimpiarMaterial">Limpiar <i  class="mdi mdi-broom"></i></button>
+                        </div>
             </div>
 
             <div class="parte-derecha">
@@ -67,7 +72,7 @@
                             <tr>
                                 <th>Código de Material</th>
                                 <th>Nombre del Material</th>
-                                <th>Precio</th>
+                                <th>Unidad de mediad</th>
                                 <th>Stock</th>
                                 <th>Seleccionar</th>
                                 <th>Eliminar</th>
@@ -97,7 +102,9 @@
                         </tbody>
                     </table>
                 </div>
-                <a href="menu"><button class="boton-opciones">Atras</button></a>
+                <div class= "mover">
+                <a href="menu"><button class="boton-opciones">Atras <i class="mdi mdi-keyboard-backspace"></i></button></a>
+                            </div>
             </div>
         </div>
 

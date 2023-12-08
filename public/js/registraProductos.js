@@ -23,7 +23,7 @@ $(document).on("click", ".btnVisualizar", function () {
     Swal.fire({
         title: 'Visualización del Producto',
         html: '<img src="data:image/jpeg;base64,' + btoa(imagenDecodificada) + '" alt="Imagen del Producto" style="max-width: 100%;">' +
-            '<p style="margin-top: 10px;"> Producto: ' + nombreProducto + '</p>',
+            '<p style="margin-top: 10px;font-weight: bold;"> Producto: ' + nombreProducto + '</p>',
         showCloseButton: true,
         showConfirmButton: false
     });
