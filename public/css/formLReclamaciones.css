@@ -3,7 +3,6 @@ body {
 	background: url('https://d2bqn2kyidxvh4.cloudfront.net/wp-content/uploads/2021/09/NP2-1-808x454.jpeg');
 	background-size: cover;
 	background-position: center;
-	overflow: hidden;
 }
 
 body::before {
