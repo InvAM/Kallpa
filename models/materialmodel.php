@@ -46,4 +46,50 @@ class MaterialModel extends Model
             return false;
         }
     }
+
+    public function insertmateriales($datos)
+    {
+        try {
+            $query = $this->db->connect()->prepare('INSERT INTO materiales (IDMaterial, Nombre_Ma, UnidadMedida_Ma, Stock_Ma) 
+                VALUES (:idmateriales, :nombre_materiales, :UnidadMedida_Ma, :stock_materiales)');
+            $query->execute([
+                'idmateriales' => isset($datos['IDMaterial']) ? $datos['IDMaterial'] : '',
+                'nombre_materiales' => isset($datos['Nombre_Ma']) ? $datos['Nombre_Ma'] : '',
+                'UnidadMedida_Ma' => isset($datos['UnidadMedida_Ma']) ? $datos['UnidadMedida_Ma'] : '',
+                'stock_materiales' => isset($datos['Stock_Ma']) ? $datos['Stock_Ma'] : '',
+            ]);
+    
+            return true;
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+    public function actualizarMaterial($datos)
+    {
+        try {
+            $query = $this->db->connect()->prepare('UPDATE materiales SET Nombre_Ma = :nombre_materiales, UnidadMedida_Ma = :Unidad_Ma, Stock_Ma = :stock_materiales WHERE IDMaterial = :idmateriales');
+            $query->execute([
+                'idmateriales' => $datos['IDMaterial'],
+                'nombre_materiales' => $datos['Nombre_Ma'],
+                'Unidad_Ma' => $datos['UnidadMedida_Ma'],
+                'stock_materiales' => $datos['Stock_Ma']
+            ]);
+
+            return true;
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+    
+    public function delete($idmateriales)
+    {
+        try {
+            $query = $this->db->connect()->prepare('DELETE FROM materiales WHERE IDMaterial = :idmateriales');
+            $query->execute(['idmateriales' => $idmateriales]);
+    
+            return true;
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
 }

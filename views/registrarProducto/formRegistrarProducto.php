@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="public/Img/KallpaC.png" type="image/x-icon">
     <title>Registrar Producto</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/formRegistrarProducto.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.all.min.js"></script>
@@ -20,6 +22,7 @@
                 <h2 class="titulo-2">Productos</h2>
             </div>
             <div class="caja-empleado">
+            <h3 class="subtitulo-lista">Datos Generales</h3>
                 <div class="contenedor-empleado">
                     <form id="formProducto" method="POST" enctype="multipart/form-data">
                         <div class="fila">
@@ -95,12 +98,14 @@
 
                         <div class="actions">
                             <button type="submit" id="btnRegistrar">Registrar</button>
+                            <button id="btnActualizar" type="submit">Actualizar</button>
+
                         </div>
                     </form>
                 </div>
             </div>
             <div class="parte-derecha">
-                <h3 class="subtitulo-lista">Lista de Productos</h3>
+                <div><h3 class="subtitulo-lista">Lista de Productos</h3></div>
                 <div class="table-container">
                     <table id="product-table">
                         <thead>
@@ -113,18 +118,56 @@
                                 <th>Marca</th>
                                 <th>Visualizar</th>
                                 <th>Seleccionar</th>
-                                <th></th>
-                                <th></th>
+                                <th>Eliminar</th>
                             </tr>
                         </thead>
-                        <!-- Aquí puedes mostrar los productos existentes si es necesario -->
+                        <tbody>
+                            
+                        <?php  
+                        include_once 'models/producto.php';
+                        include_once 'models/categoria_producto.php';
+                        include_once 'models/marca_producto.php';
+                        foreach ($this->productos as $row){
+                            $producto = new Producto();
+                            $producto = $row; ?>
+                            <tr>
+                                <td class="idproductoColumn" ><?php echo $producto->IDProducto; ?></td>
+                                <td><?php echo $producto->nombre; ?></td>
+                                <td><?php echo $producto->precio; ?></td>
+                                <td><?php echo $producto->cuota; ?></td>
+                                <td><?php echo $producto->detalleCategoriaP;
+                                $IDcat=$producto->IDCategoriaP ?></td>
+                                <td><?php echo $producto->detalleMarcaP;
+                                $IDma=$producto->IDMarcaP; 
+                                $imagen=$producto->imagen;?></td>
+                                
+                                <td><button id="btnVisualizar" class="btnVisualizar" ><i class="mdi  mdi-message-image"></i> </button></td>
+                                <td> 
+                                <button class="seleccionar-btn"
+                                data-idproducto="<?php echo $producto->IDProducto; ?>"
+                                data-nombre="<?php echo $producto->nombre; ?>"
+                                data-precio="<?php echo $producto->precio; ?>"
+                                data-cuota="<?php echo $producto->cuota; ?>"
+                                data-categoria="<?php echo $IDcat; ?>"
+                                data-marca="<?php echo $IDma; ?>"
+                                data-imagen="<?php echo base64_encode($imagen); ?>" >
+                                <i class="mdi mdi-content-copy mx-1"></i>
+                            </button></td>
+                            <td>
+                                        <button id="btnEliminar" class="btnEliminar"><i  class="mdi mdi-delete-forever"></i></button>
+                                    </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>                    
                     </table>
                 </div>
             </div>
-            <a href="menu"><button class="boton-opciones">Atras</button></a>
-
+            <div class= "mover">
+            <div>
+                <a href="menu"><button class="boton-opciones">Atras <i class="mdi mdi-keyboard-backspace"></i></button></a>
+                            </div>
             <?php require_once "views/footer.php"; ?>
-
+            </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"

@@ -4,9 +4,9 @@ class Producto
     public $codigo;
     public $nombre;
     public $cuota;
-    public $IDMarca;
+    public $IDMarcaP;
     public $detalleMarcaP;
-    public $IDCategoria;
+    public $IDCategoriaP;
     public $detalleCategoriaP;
     public $imagen;
 
