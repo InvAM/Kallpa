@@ -4,343 +4,343 @@ body {
 }
 
 .registrar-cli .contenedor-principal {
-  padding: 20px;
+	padding: 20px;
 }
 
 .registrar-cli .titulo {
-  display: flex;
-  justify-content: center;
-  margin-top: 75px;
-  font-size: 25px;
-  font-family: Candara;
+	display: flex;
+	justify-content: center;
+	margin-top: 75px;
+	font-size: 25px;
+	font-family: Candara;
 }
 
 .registrar-cli .titulo-1 {
-  font-family: Candara;
-  color: #203864;
-  margin-right: 10px;
+	font-family: Candara;
+	color: #203864;
+	margin-right: 10px;
 }
 
 .registrar-cli .titulo-2 {
-  color: rgb(62, 207, 62);
+	color: rgb(62, 207, 62);
 }
 
 .registrar-cli .parte_izquierda {
-  width: 31.8%;
-  margin-top: -28px;
-  float: left;
+	width: 31.8%;
+	margin-top: -28px;
+	float: left;
 }
 
 .registrar-cli .parte_izquierda p {
-  margin-bottom: 5px;
+	margin-bottom: 5px;
 }
 
 .registrar-cli .imagen-casa {
-  margin-right: 10px;
-  margin-top: 12px;
-  max-height: 110px;
-  max-width: 60px;
+	margin-right: 10px;
+	margin-top: 12px;
+	max-height: 110px;
+	max-width: 60px;
 }
 
 .registrar-cli .cont-datos-domicilio {
-  width: 155%;
-  margin-top: 1%;
-  border: 2px solid #2aa312;
-  background-color: #ffffff;
-  padding: 15px;
-  height: 205px;
-  border-radius: 0px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+	width: 155%;
+	margin-top: 1%;
+	border: 2px solid #2aa312;
+	background-color: #ffffff;
+	padding: 15px;
+	height: 205px;
+	border-radius: 0px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 .registrar-cli .posicion-letra label {
-  display: block;
-  font-weight: bold;
-  color: rgb(78, 72, 72);
-  margin-bottom: 5px;
-  width: 200px;
+	display: block;
+	font-weight: bold;
+	color: rgb(78, 72, 72);
+	margin-bottom: 5px;
+	width: 200px;
 }
 
 .registrar-cli .posicion-letra input {
-  width: calc(100% - 110px);
-  margin-bottom: 10px;
+	width: calc(100% - 110px);
+	margin-bottom: 10px;
 }
 
 .registrar-cli .subtitulo-domicilio {
-  color: #203864;
-  font-size: 22px;
+	color: #203864;
+	font-size: 22px;
 }
 
 .registrar-cli .grupo2 {
-  width: 100%;
-  margin-left: 230px;
-  margin-top: -209px;
-  flex: 1;
+	width: 100%;
+	margin-left: 230px;
+	margin-top: -209px;
+	flex: 1;
 }
 
 .registrar-cli .grupo2 label {
-  display: block;
-  margin-bottom: 5px;
-  width: 200px;
+	display: block;
+	margin-bottom: 5px;
+	width: 200px;
 }
 
 .registrar-cli .grupo2 select {
-  width: 180px !important;
+	width: 180px !important;
 }
 
 .registrar-cli .grupo2 input {
-  margin-bottom: 10px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 178px !important;
-  padding: 8px;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	width: 178px !important;
+	padding: 8px;
 }
 
 .registrar-cli .grupo3 {
-  width: 100%;
-  margin-left: 440px;
-  margin-top: -220px;
+	width: 100%;
+	margin-left: 440px;
+	margin-top: -220px;
 }
 
 .registrar-cli .boton-registrar {
-  background-color: #203864;
-  color: #ffffff;
-  width: 100%;
-  cursor: pointer;
-  font-size: 15px;
-  border-radius: 5px;
-  padding: 9px;
-  font-family: "Times New Roman";
-  margin-top: 30px;
+	background-color: #203864;
+	color: #ffffff;
+	width: 100%;
+	cursor: pointer;
+	font-size: 15px;
+	border-radius: 5px;
+	padding: 9px;
+	font-family: "Times New Roman";
+	margin-top: 30px;
 }
 
 .registrar-cli .posicion-boton {
-  float: right;
-  margin-right: 5%;
-  margin-top: 30px;
-  width: 15%;
+	float: right;
+	margin-right: 5%;
+	margin-top: 30px;
+	width: 15%;
 }
 
 .registrar-cli .subtitulo-cliente {
-  margin-top: 17%;
-  color: #203864;
-  font-size: 22px;
+	margin-top: 17%;
+	color: #203864;
+	font-size: 22px;
 }
 
 .registrar-cli .contenedor-datos {
-  width: 49%;
-  margin-top: 1%;
-  border: 2px solid #2aa312;
-  background-color: #ffffff;
-  padding: 15px;
-  height: 280px;
-  border-radius: 0px;
+	width: 49%;
+	margin-top: 1%;
+	border: 2px solid #2aa312;
+	background-color: #ffffff;
+	padding: 15px;
+	height: 280px;
+	border-radius: 0px;
 }
 
 .registrar-cli .parte_izquierda input {
-  width: 178px;
-  padding: 9px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  color: #333;
-  font-size: 14px;
-  font-family: "Times New Roman";
+	width: 178px;
+	padding: 9px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: #333;
+	font-size: 14px;
+	font-family: "Times New Roman";
 }
 
-.registrar-cli .input-todo{
-  margin-top: 3px;
-  margin-left: 30px;
+.registrar-cli .input-todo {
+	margin-top: 3px;
+	margin-left: 30px;
 }
 
 .registrar-cli .input-todo label {
-  font-weight: bold;
-  color: rgb(78, 72, 72);
-  display: block;
-  margin-bottom: 5px;
-  width: 150px;
+	font-weight: bold;
+	color: rgb(78, 72, 72);
+	display: block;
+	margin-bottom: 5px;
+	width: 150px;
 }
 
 .registrar-cli .input-todo input {
-  width: 650px;
-  margin-bottom: 10px;
+	width: 650px;
+	margin-bottom: 10px;
 }
 
 .registrar-cli .input-todo p,
 .datos_izquierda p,
 .datos_derecha p {
-  margin-bottom: 5px;
+	margin-bottom: 5px;
 }
 
 .registrar-cli .input-todo input,
 .datos_izquierda input {
-  width: 340px;
-  padding: 9px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  color: #333;
-  font-size: 14px;
-  font-family: "Times New Roman";
+	width: 340px;
+	padding: 9px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: #333;
+	font-size: 14px;
+	font-family: "Times New Roman";
 }
 
 .registrar-cli .datos_izquierda {
-  width: 48%;
-  float: left;
+	width: 48%;
+	float: left;
 }
 
 .registrar-cli .datos_derecha {
-  display: flex;
-  flex-direction: column;
-  margin-top: -31.5%;
-  width: 30%;
-  float: right;
-  margin-right: 175px;
+	display: flex;
+	flex-direction: column;
+	margin-top: -31.5%;
+	width: 30%;
+	float: right;
+	margin-right: 175px;
 }
 
 .registrar-cli .datos_derecha label {
-  font-weight: bold;
-  color: rgb(78, 72, 72);
-  margin-bottom: 5px;
+	font-weight: bold;
+	color: rgb(78, 72, 72);
+	margin-bottom: 5px;
 }
 
 .registrar-cli .datos_derecha input {
-  margin-bottom: 5%;
-  width: 370px;
-  padding: 9px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  color: #333;
-  font-size: 14px;
-  font-family: "Times New Roman";
+	margin-bottom: 5%;
+	width: 370px;
+	padding: 9px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: #333;
+	font-size: 14px;
+	font-family: "Times New Roman";
 }
 
 .registrar-cli .datos_izquierda select {
-  width: 104px;
-  padding: 9px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  color: #333;
-  font-size: 14px;
-  font-family: "Times New Roman";
+	width: 104px;
+	padding: 9px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: #333;
+	font-size: 14px;
+	font-family: "Times New Roman";
 }
 
 .registrar-cli .grupo3 select {
-  width: 180px;
-  padding: 8px;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+	width: 180px;
+	padding: 8px;
+	margin-bottom: 16px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
 }
 
 .registrar-cli .grupo2 select {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+	width: 100%;
+	padding: 8px;
+	margin-bottom: 16px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
 }
 
 .registrar-cli .datos_derecha select {
-  margin-bottom: 5px;
-  width: 395px;
-  padding: 9px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  color: #333;
-  font-size: 14px;
-  font-family: "Times New Roman";
+	margin-bottom: 5px;
+	width: 395px;
+	padding: 9px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: #333;
+	font-size: 14px;
+	font-family: "Times New Roman";
 }
 
 .registrar-cli .boton-datos {
-  background-color: #203864;
-  color: #ffffff;
-  width: 100%;
-  cursor: pointer;
-  font-size: 15px;
-  border-radius: 5px;
-  border: 1px solid #152c57;
-  padding: 9px;
-  font-family: "Times New Roman";
-  margin-top: 17px;
+	background-color: #203864;
+	color: #ffffff;
+	width: 100%;
+	cursor: pointer;
+	font-size: 15px;
+	border-radius: 5px;
+	border: 1px solid #152c57;
+	padding: 9px;
+	font-family: "Times New Roman";
+	margin-top: 17px;
 }
 
 .registrar-cli .contenedor-info {
-  width: 45%;
-  margin-top: -620px;
-  border: 2px solid rgb(10, 30, 87);
-  box-shadow: 0px 2px 4px rgba(8, 4, 255, 0.616);
-  padding: 15px;
-  height: 1000px;
-  border-radius: 5px;
-  margin-left: 940px;
+	width: 45%;
+	margin-top: -639px;
+	border: 2px solid rgb(10, 30, 87);
+	box-shadow: 0px 2px 4px rgba(8, 4, 255, 0.616);
+	padding: 15px;
+	height: 1000px;
+	border-radius: 5px;
+	margin-left: 977px;
 }
 
 .registrar-cli .imagen-kallpainfo {
-  max-height: 300px;
-  max-width: 200px;
+	max-height: 300px;
+	max-width: 200px;
 }
 
 .registrar-cli .linea {
-  display: flex;
-  justify-content: space-between;
-  margin-right: 15px;
+	display: flex;
+	justify-content: space-between;
+	margin-right: 15px;
 }
 
 .registrar-cli .espacio {
-  margin-top: -45px;
+	margin-top: -45px;
 }
 
 .registrar-cli .cont-button {
-  margin-top: -380px;
-  width: 1500px;
-  display: flex;
-  margin-left: 30px;
+	margin-top: -380px;
+	width: 1500px;
+	display: flex;
+	margin-left: 30px;
 }
 
 .registrar-cli .cont-button .boton1 {
-  width: 10%;
-  padding: 10px;
-  margin-right: 10px;
-  background-color: #095ba8;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+	width: 10%;
+	padding: 10px;
+	margin-right: 10px;
+	background-color: #095ba8;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
 }
 
 .registrar-cli .boton1 .mdi {
-  font-size: 20px;
-  color: #fff;
+	font-size: 20px;
+	color: #fff;
 }
 .registrar-cli .boton1 .boton1:hover {
-  background-color: #459aa0;
+	background-color: #459aa0;
 }
 
 .formularioRCL1 {
-  width: 300px;
+	width: 300px;
 }
 
 .formularioRCL1 .boton1 {
-  width: 190px !important;
+	width: 190px !important;
 }
 
-.registrar-cli .icono-dom{
-  justify-content: center;
+.registrar-cli .icono-dom {
+	justify-content: center;
 	margin-top: -220px;
 	margin-left: 650px;
 }
 
-.registrar-cli .icono-dom .mdi{
+.registrar-cli .icono-dom .mdi {
 	margin-top: 50px;
 	font-size: 180px;
 	color: #2aa312;
 }
 
-.registrar-cli .contenedor-info span{
-  font-weight: normal;
-  color: #4d4a4a;
+.registrar-cli .contenedor-info span {
+	font-weight: normal;
+	color: #4d4a4a;
 }
