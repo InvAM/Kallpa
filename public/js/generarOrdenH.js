@@ -40,8 +40,7 @@ function handleDateSelection(event) {
 document.addEventListener("DOMContentLoaded", iniciar);
 
 $(document).ready(function () {
-	$("#btnGenerar").submit(function (event) {
-		event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+	$("#btnGenerar").on("click",function () {
 
 		// Recopila los valores de los campos
 		var IDEtapa_G = $("#IDEtapa_G").val();
