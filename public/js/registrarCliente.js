@@ -34,8 +34,7 @@ $(document).ready(function(){
 	});
 
 	//REGISTRAR
-	$("#formularioRCL1").submit(function(event){
-		event.preventDefault();
+	$("#btnRegistrar").on("click",function(){
 		var IDDomicilio = $("#IDDomicilio_reg").val();
 		var Direccion_Dom = $("#Direccion_Dom_reg").val();
 		var Interior_Dom = $("#Interior_Dom_reg").val();
@@ -53,6 +52,15 @@ $(document).ready(function(){
 		var Celular_cli = $("#Celular_cli_reg").val();
 		var IDNacionalidad =$("#IDNacionalidad_reg").val();
 		var IDEstadoCivil = $("#IDEstadoCivil_reg").val();
+		if (IDDomicilio== "" ) {
+			Swal.fire({
+				title: "Seleccione",
+				confirmButtonText: "Aceptar",
+				text: "Por favor verifique los campos",
+				icon: "info",
+				buttonsStyling: true,
+			});
+		} else {
 
 		var registroActual = {
 			IDDomicilio: IDDomicilio,
@@ -78,12 +86,26 @@ $(document).ready(function(){
 		//Envia el formulario mediante Ajax
 
 		$.ajax({
-			url: "registrarCliente/registrarCliente",
+			url: "registrarCliente/registrarCliente", // Verifica que esta URL sea correcta
 			type: "POST",
 			contentType: "application/json",
 			data: JSON.stringify(registroActual),
-			success: function(response){
-				alert(response);
+			success: function(response) {
+				Swal.fire({
+					title: "Registro exitoso",
+					confirmButtonText: "Aceptar",
+					text: response, // Reemplaza 'mensaje' con 'response'
+					icon: "success",
+					buttonsStyling: true,
+					didClose: function () { // Cambia a la forma correcta de didClose
+						window.location.href = "registrarCliente";
+					},
+				});
+			},
+			error: function(error) {
+				console.error(error);
+			},
+		});
 				$("#IDDomicilio_reg").val("");
 				$("#Direccion_Dom_reg").val("");
 				$("#Interior_Dom_reg").val("");
@@ -101,11 +123,7 @@ $(document).ready(function(){
 				$("#Celular_cli_reg").val("");
 				$("#IDNacionalidad_reg").prop("selectedIndex",0);
 				$("#IDEstadoCivil_reg").prop("SelectedIndex",0);
-			},
-			error: function(error){
-				console.error(error);
-			},
-		});
-	});
+	}
+});
 
 });

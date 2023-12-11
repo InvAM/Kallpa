@@ -117,8 +117,7 @@
             <h3 class="subtitulo-cliente">Datos del Cliente</h3>
 
             <div class="contenedor-datos">
-                <form action="<?php echo constant('URL'); ?>registrarCliente/registrarNuevoCliente" method="POST"
-                    autocomplete="off" class="" id="formularioC">
+            
                     <div class="input-todo">
                         <label for="Nombre_cli_reg">Nombre del cliente</label>
                         <input type="text" label="Nombre" placeholder="Escribir..." name="Nombre_cli_reg"
@@ -182,7 +181,7 @@
                     </div>
 
                     
-                </form>
+            
             </div>
 
             <div class="contenedor-info">
@@ -229,11 +228,11 @@
 
             <div class="cont-button">
                 <div class="button1">
-                    <form method="POST" action="<?php echo constant('URL'); ?>registrarCliente/registrarCliente" class="formularioRCL1" name="formularioRCL1" id="formularioRCL1">
+                    
                         <button class="boton1" name="btnRegistrar" id="btnRegistrar">
                         <i class="mdi mdi-book-plus"></i>Registrar</button>
                         </button>
-                    </form>
+                    
                 </div>
                 <button class="boton1" name="btnLimpiar" id="btnLimpiar">
                     <i class="mdi mdi-restore"></i>Limpiar</button>
@@ -251,6 +250,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="<?php echo constant('URL'); ?>public/js/registrarCliente.js"></script>
     <script src="<?php echo constant('URL'); ?>public/js/cliente.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     
 </body>
