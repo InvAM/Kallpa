@@ -86,7 +86,7 @@
                                 <label>Conexiones a puntos de uso</label>
                             </div>
                         </div>
-                        <button class="boton-servicio">
+                        <button class="boton-servicio" id="btnInstalacion" name="btnInstalacion">
                             <i class="mdi mdi-cart-percent"></i>
                             ¡Solicítalo ya!
                         </button>
@@ -128,7 +128,7 @@
                                 <label>Activación de suministro de gas</label>
                             </div>
                         </div>
-                        <button class="boton-servicio">
+                        <button class="boton-servicio" name="btnHabilitacion" id="btnHabilitacion">
                             <i class="mdi mdi-cart-percent"></i>
                             ¡Solicítalo ya!
                         </button>
@@ -148,6 +148,10 @@
             </div>
         </div>
         <?php require_once "views/chatbot.php"; ?>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="<?php echo constant('URL'); ?>public/js/catalogoservicios.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 
 </html>

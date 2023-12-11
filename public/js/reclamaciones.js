@@ -27,6 +27,19 @@ $(document).ready(function(){
             pedido_r: pedido_r
         };
 
+        var camposVacios = Object.values(reclamaciones).some(function (valor) {
+            return valor.trim() === ""; 
+        });
+        
+        if(camposVacios){
+            Swal.fire({
+                title: 'Verifique Campos',
+                confirmButtonText: 'Aceptar',
+                text: "Revise que cada campo haya sido rellenado de forma adecuada",
+                icon: 'info',
+                buttonsStyling: true,
+            });
+        }else{
         $.ajax({
             url: "reclamacion/registrarReclamaciones",
             type: "POST",
@@ -82,6 +95,7 @@ $(document).ready(function(){
                 console.error(error);
             },
         });
+       }
         localStorage.removeItem("dni_r");
     });
 });

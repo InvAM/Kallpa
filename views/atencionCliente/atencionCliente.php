@@ -15,7 +15,7 @@
 <body>
     <div class="atcl">
         <?php require_once "views/portalHeader.php"; ?>
-        
+
         <div class="container">
             <div class="splide">
                 <div class="splide__track">
@@ -51,7 +51,7 @@
                     </div>
                 </a>
 
-                <a class="separar" href="reclamaciones">
+                <a class="separar" href="reclamacion">
                     <div class="informacion pers-mivi scale-up-center">
                         <div class="subirimg2">
                             <img src="public/Img/lr.png">

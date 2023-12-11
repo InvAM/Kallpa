@@ -88,6 +88,25 @@
                                 <i class="mdi mdi-home-heart"></i>
                                 <a href="home" class="menu-link">Hogar</a>
                             </div>
+                            <div id="submenu2" class="submenuContenedor contenedor-menu collapse">
+                                <ul class="row">
+                                    <li class="col">
+                                        <a onclick="scrollToSection('familia')" href="home#1">
+                                            <i class="mdi mdi-human-male-female-child"></i><span>Familia Kallpa</span>
+                                        </a>
+                                    </li>
+                                    <li class="col">
+                                        <a onclick="scrollToSection('beneficiosFamilia')" href="home#2">
+                                            <i class="mdi mdi-home-heart"></i><span>Beneficios para mi Familia</span>
+                                        </a>
+                                    </li>
+                                    <li class="col">
+                                        <a onclick="scrollToSection('beneficiosGas')" href="home#3">
+                                            <i class="mdi mdi-fire"></i><span>Beneficios de Gas Natural</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
 
                         <li class="menu-item">

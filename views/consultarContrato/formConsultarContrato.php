@@ -75,8 +75,8 @@
                                                     </button>
                                         </td>
                                         <td>
-                                                <button class="boton-seleccionar boton" id="btnVisualizar"
-                                                        >
+                                                <button class="boton-Visualizar boton" id="btnVisualizar"
+                                                        data-id="<?php echo $contrato->IDContrato; ?>">
                                                         <i class="mdi mdi-eye-check-outline"></i>
                                                     </button>
                                         </td>

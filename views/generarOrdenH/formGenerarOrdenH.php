@@ -102,7 +102,7 @@
                             <tbody>
                                 <?php
                                 include_once 'models/etapacontrato.php';
-                                foreach($this->etapa_contrato as $row) {
+                                foreach ($this->etapa_contrato as $row) {
                                     $etapa_contrato = new EtapaContrato();
                                     $etapa_contrato = $row; ?>
                                     <tr>
@@ -134,7 +134,7 @@
                         </table>
                     </div>
 
-                    <button class="boton-opciones-H" id="btnGenerar"> Generar Orden
+                    <button class="boton-opciones-H btnGenerar" id="btnGenerar"> Generar Orden
                         <i class="mdi mdi-book-plus"></i></button>
 
                     <button class="boton-opciones-H" id="btnLimpiar"> Limpiar

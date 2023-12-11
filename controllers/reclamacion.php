@@ -37,35 +37,35 @@ class reclamacion extends Controller
         $detalle_r = isset($datos['detalle_r']) ? $datos['detalle_r'] : null;
         $pedido_r = isset($datos['pedido_r']) ? $datos['pedido_r'] : null;
 
-        if($dni_r !== null){
+        if ($dni_r !== null) {
             $cliente = $this->clientes->getEspecial($dni_r);
 
-            if (empty($cliente)){
+            if (empty($cliente)) {
                 $mensaje = "";
             } else {
-                        if (
-                            $this->model->insert([
-                                'dni_r' => $dni_r,
-                                'nombre_r' => $nombre_r,
-                                'correo_r' => $correo_r,
-                                'domicilio_r' => $domicilio_r,
-                                'telefono_r' => $telefono_r,
-                                'tipo_servicio_r' => $tipo_servicio_r,
-                                'monto_reclamado_r' => $monto_reclamado_r,
-                                'descripcion_r' => $descripcion_r,
-                                'tipo_reclamacion_r' => $tipo_reclamacion_r,
-                                'detalle_r' => $detalle_r,
-                                'pedido_r' => $pedido_r
-                            ])
-                        ) {
-                            $mensaje = "Registrado";
-                        } else {
-                            $mensaje = "La reclamación no puede registrarse";
-                        }
-                        
+                if (
+                    $this->model->insert([
+                        'dni_r' => $dni_r,
+                        'nombre_r' => $nombre_r,
+                        'correo_r' => $correo_r,
+                        'domicilio_r' => $domicilio_r,
+                        'telefono_r' => $telefono_r,
+                        'tipo_servicio_r' => $tipo_servicio_r,
+                        'monto_reclamado_r' => $monto_reclamado_r,
+                        'descripcion_r' => $descripcion_r,
+                        'tipo_reclamacion_r' => $tipo_reclamacion_r,
+                        'detalle_r' => $detalle_r,
+                        'pedido_r' => $pedido_r
+                    ])
+                ) {
+                    $mensaje = "Registrado";
+                } else {
+                    $mensaje = "La reclamación no puede registrarse";
+                }
+
             }
             echo json_encode(['mensaje' => $mensaje]);
-        }else {
+        } else {
             echo "Error: Datos incompletos";
         }
     }

@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Credit Card Form | Nothing4us</title>
+    
+    <link rel="icon" href="public/Img/KallpaC.png" type="image/x-icon">
+    <title>Pago de Compra</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
     <link rel="stylesheet" href="<?php echo constant('URL') ?>public/css/pagarProducto.css" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
