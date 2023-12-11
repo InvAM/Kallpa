@@ -164,8 +164,6 @@ body {
 	padding: 10px;
 	text-decoration: none;
 	list-style-type: none;
-	margin-left: -20px;
-	margin-right: 60px;
 	cursor: pointer;
 }
 .menuOpciones .menu-item .submenuContenedor .row .col1 {
@@ -252,9 +250,14 @@ body {
 	width: 150px; /* ancho*/
 	height: 150px; /* alto*/
 	text-align: center;
-	margin-left: 220px;
+	margin-left: 230px;
 	margin-top: 40px;
 	color: #ffffff;
+}
+
+.portal-cont-2 .mover-contenedor{
+	margin-left: 30px;
+	margin-top: -20px;
 }
 
 @-webkit-keyframes custom-btn {
@@ -311,6 +314,10 @@ body {
 	margin-top: 18px;
 	background: rgb(255, 254, 254);
 	height: 480px;
+}
+
+.portal-cont-3 .mover-cont1{
+	margin-left: 50px;
 }
 
 .titulo1-cont3 {
@@ -421,10 +428,28 @@ ul.slider li:target{
 	text-decoration: none;
 	background-color: rgb(255, 255, 255);
 	padding: 15px;
-	width: 30px;
-	height: 30px;
-	font-size: 30px;
+	width: 35px;
+	height: 35px;
+	font-size: 35px;
 	border-radius: 100%;
 	margin-top: 155px;
 }
+
+.menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+.menu li {
+    margin: 0 10px; /* Ajusta el espacio entre los elementos según sea necesario */
+}
+
+.menu i {
+    display: block; /* Convierte el icono en un bloque para poder aplicar márgenes automáticos */
+    text-align: center; /* Centra el contenido dentro del bloque */
+	margin-top: -8px;
+}
+
 

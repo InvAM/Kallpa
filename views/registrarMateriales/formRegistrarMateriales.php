@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="public/Img/KallpaC.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
     <title>Asignar Materiales</title>
@@ -22,9 +22,23 @@
             <div class="contenedorS">
                 <div class="cajaContrato">
                     <p class="tituloS2">Especificaciones de contrato</p>
-                    <input type="text" label="idContrato" placeholder="ID Contrato">
-                    <input type="text" label="fecha" placeholder="Fecha de Orden">
-                    <input type="text" label="idEtapa" placeholder="ID Etapa">
+                    <div class="cajaContratoP">
+                        <div class="subcajita">
+                            <label>ID Contrato<label><br>
+                                    <input type="text" label="idContrato" id="IDContrato_M" name="IDContrato_M"
+                                        placeholder="ID Contrato">
+                        </div>
+                        <div class="subcajita">
+                            <label>Fecha Orden<label><br>
+                                    <input type="text" label="fecha" id="Fecha_O" name="Fecha_O"
+                                        placeholder="Fecha de Orden">
+                        </div>
+                        <div class="subcajita">
+                            <label>ID Etapa<label><br>
+                                    <input type="text" label="idEtapa" id="IDEtapa_M" name="IDEtapa_M"
+                                        placeholder="ID Etapa">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -33,62 +47,68 @@
         <div class="ContenedorP1">
             <div class="CajaMaterial">
                 <p><Strong>Registrar Materiales</Strong></p>
-                <select>
-                    <option value="">Seleccione el material</option>
-                    <option value="1">Cemento</option>
-                    <option value="2">Tubo</option>
-                </select>
-                <input class="n1" type="number" label="cantidad" placeholder="Cantidad">
-                <button class="boton">
-                    Añadir
-                    <i class="mdi mdi-plus"></i>
-                </button>
-                <button class="boton">
-                    Actualizar
-                    <i class="mdi mdi-pencil"></i>
-                </button>
-                <button class="boton">
-                    Eliminar
-                    <i class="mdi mdi-delete-empty"></i>
-                </button>
+                <label>Material<label>
+                        <select id="materialSelect">
+                            <?php
+                            include_once 'models/material.php';
+                            foreach($this->material as $opcion) {
+                                $material = new Material();
+                                $material = $opcion; ?>
+                                <option value="<?php echo $opcion->Nombre_Ma; ?>">
+                                    <?php echo $opcion->Nombre_Ma; ?>
+                                </option>
+                            <?php } ?>
+                        </select>
+                        <label>Cantidad<label>
+                                <input class="n1" type="number" name="Cantidad_Ma" id="Cantidad_Ma" label="cantidad"
+                                    placeholder="Cantidad">
+                                <button class="boton" id="btnAgregar">
+                                    Añadir
+                                    <i class="mdi mdi-plus"></i>
+                                </button>
+                                <button class="boton" id="btnActualizar">
+                                    Actualizar
+                                    <i class="mdi mdi-pencil"></i>
+                                </button>
             </div>
             <div class="CajaTabla">
                 <p><strong>Detalle Materiales</strong></p>
+
                 <div class="tabla">
-                    <table class="custom-table">
+                    <table id="tablaMateriales" class="custom-table">
                         <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Material</th>
                                 <th>Cantidad</th>
                                 <th>Seleccionar</th>
+                                <th>Eliminar</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>Cemento</td>
-                                <td>50</td>
-                                <td>
-                                    <button class="btn-small btn-primary" onclick="seleccionarMaterial(item)">
-                                        <i class="mdi mdi-eye-settings mx-1"></i>
-                                    </button>
-                                </td>
                             </tr>
-                            <!--Más datos -->
                         </tbody>
                     </table>
                 </div>
-                <button class="boton-opciones"> Asignar Materiales
+                <button class="boton-opciones" id="btnAsignarMaterialesBD" name="btnAsignarMaterialesBD"> Asignar
+                    Materiales
                     <i class="mdi mdi-book-plus"></i></button>
-                <button class="boton-opciones"> Limpiar
+                <button class="boton-opciones" id="btnLimpiar"> Limpiar Lista
                     <i class="mdi mdi-restore"></i></button>
-                <button class="boton-opciones"> Atras
+                <button class="boton-opciones" id="btnAtras"> Atras
                     <i class="mdi mdi-keyboard-backspace"></i></button>
+
+
+
             </div>
         </div>
         <?php require_once "views/footer.php"; ?>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="<?php echo constant('URL'); ?>public/js/registrarMaterial.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 
 </html>

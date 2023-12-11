@@ -4,15 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/formEvaluarContrato.css">
+    <link rel="icon" href="public/Img/KallpaC.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
     <title>Evaluar Contrato</title>
-    <link rel="icon" href="public/Img/WhatsApp Image 2023-10-08 at 12.16.04 PM.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="public/css/formEvaluarContrato.css">
 </head>
 
 <body>
     <div class="evaluar-c">
 
         <?php require_once "views/header.php" ?>
+
         <div class="contenedor-principal">
 
             <div class="titulo">
@@ -20,21 +22,37 @@
                 <h2 class="titulo-2"> Contratos</h2>
             </div>
 
-            <div class="search-container">
-                <input type="text" class="input-field" id="searchID" placeholder="Buscar por ID">
-                <select class="input-field" id="searchEstado" placeholder="Estados">
-                    <option value="">En revisión</option>
-                    <option value="">Observado</option>
-                    <option value="">Aprobado</option>
-                    <option value="">Desaprobado</option>
-                    <!-- Opciones de estados se cargarán dinámicamente aquí -->
-                </select>
-                <label class="label-styled" for="searchFecha">Selecciona una fecha:</label>
-                <input type="date" id="searchFecha">
-
-            </div>
+            <div class="search-container-1">
+                <p class="subtitulo_1">Filtros de Contratos</p>
+                <div class="divisionPrin">
+                    <div class="caja_filtro_1">
+                        <div class="subcajita">
+                            <label class="label-styled" for="filtroIDContrato">ID Contrato:</label>
+                            <input type="text" class="input-field" id="filtroIDContrato" name="filtroIDContrato"
+                                placeholder="Buscar por ID">
+                        </div>
+                        <div class="subcajita">
+                            <label class="label-styled" for="searchEstado">Seleccione un estado:</label>
+                            <select class="input-field cbx" id="searchEstado" name="searchEstado" placeholder="Estados">
+                                <option value="">Seleccionar estado</option>
+                                <option value="En revisión">En revisión</option>
+                                <option value="Observado">Observado</option>
+                                <option value="Aprobado">Aprobado</option>
+                                <option value="Desaprobado">Desaprobado</option>
+                            </select>
+                        </div>
+                        <div class="subcajita">
+                            <label class="label-styled" for="searchFecha">Selecciona una fecha:</label><br>
+                            <input type="date" id="searchFecha" name="searchFecha">
+                        </div>
+                    </div>
+                    <div class="contenedor-boton-limpiar">
+                        <button class="boton-css" id="btn-borrar" name="btn-borrar"><i
+                                    class="mdi mdi-broom"></i></button>
+</div>
+                </div>
             <div class="table-container">
-                <table class="custom-table">
+                <table>
                     <thead>
                         <tr>
                             <th>ID Contrato</th>
@@ -48,67 +66,119 @@
                             <th>DNI Cliente</th>
                             <th>DNI Empleado</th>
                             <th>Seleccionar</th>
+                            <th>Visualizar</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td>2023-10-07</td>
-                            <td>12345</td>
-                            <td>67890</td>
-                            <td>Ejemplo 1</td>
-                            <td>Activo</td>
-                            <td>A1</td>
-                            <td>Tipo 1</td>
-                            <td>12345678</td>
-                            <td>87654321</td>
-                            <td>
-                                <button class="action-button select-button"
-                                    @click="seleccionarContrato(item)">Selecionar</button>
-
-                            </td>
-                        </tr>
-                        <!-- Los datos de la tabla se cargarán dinámicamente aquí -->
+                            <?php
+                            include_once 'models/contrato.php';
+                            foreach($this->contrato as $row) {
+                                $contrato = new Contrato();
+                                $contrato = $row; ?>
+                                <td>
+                                    <?php echo $contrato->IDContrato ?>
+                                </td>
+                                <td>
+                                    <?php echo $contrato->Fecha_Con ?>
+                                </td>
+                                <td>
+                                    <?php echo $contrato->NumeroRadicado_Con ?>
+                                </td>
+                                <td>
+                                    <?php echo $contrato->numSum ?>
+                                </td>
+                                <td>
+                                    <?php echo $contrato->PuntoInstalacion_Con ?>
+                                </td>
+                                <td>
+                                    <?php echo $contrato->estado; ?>
+                                </td>
+                                <td>
+                                    <?php echo $contrato->IDGabineteCategoria; ?>
+                                </td>
+                                <td>
+                                    <?php echo $contrato->IDTipoInst; ?>
+                                </td>
+                                <td>
+                                    <?php echo $contrato->DNI_cli; ?>
+                                </td>
+                                <td>
+                                    <?php echo $contrato->DNI_Em; ?>
+                                </td>
+                                <td>
+                                    <button class="boton-opciones btn-selec" id="btn-seleccionar"
+                                        data-id="<?php echo $contrato->IDContrato; ?>"
+                                        data-nums="<?php echo $contrato->numSum; ?>"
+                                        data-dni="<?php echo $contrato->DNI_cli; ?>"
+                                        data-estado="<?php echo $contrato->estado; ?>">
+                                        <i class="mdi mdi-content-copy"></i>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class="boton-opciones btn-visualizar" id="btnVisualizar"
+                                        data-id="<?php echo $contrato->IDContrato; ?>">
+                                        <i class="mdi mdi-eye-check-outline"></i>
+                                     </button>
+                                </td>
+                                </td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
 
+        </div>
 
-            <div class="contract-details">
-                <img src="../../../Img/contrato (2).png" alt="Icono de contrato" class="imagen-contrato">
-                <div class="input-fields">
-                    <input type="text" class="input-field" id="IDContrato" placeholder="IDContrato">
-                    <input type="text" class="input-field" id="numSum" placeholder="Numero de Suministro">
-                    <input type="text" class="input-field" id="DNI_cli" placeholder="DNI del Cliente">
-                    <select class="input-field" id="selectedEstado">
-                        <option value="">En revisión</option>
-                        <option value="">Observado</option>
-                        <option value="">Aprobado</option>
-                        <option value="">Desaprobado</option>
-                        <!-- Opciones del estado del contrato se cargarán dinámicamente aquí -->
-                    </select>
+        <div class="contenedor-principal2">
+
+            <div class="subcajita4">
+
+                <div class="search-container-2">
+                    <p class="subtitulo_1">Campos del contrato seleccionado</p>
+                    <div class="caja_filtro_2">
+                        <i class="mdi mdi-file-document i-t subcajita3"></i>
+                        <div class="subcajita2" style="margin-left:-1px">
+                            <label class="label-styled" for="IDContrato">ID Contrato:</label>
+                            <input type="text" class="input-field2" name="IDContrato" id="IDContrato"
+                                placeholder="IDContrato" readonly>
+                        </div>
+                        <div class="subcajita2">
+                            <label class="label-styled" for="numSum">Número de Suministro:</label>
+                            <input type="text" class="input-field2" id="numSum" placeholder="Número de Suministro"
+                                readonly>
+                        </div>
+                        <div class="subcajita2">
+                            <label class="label-styled" for="DNI_cli">DNI Cliente:</label>
+                            <input type="text" class="input-field2" id="DNI_cli" placeholder="DNI del Cliente" readonly>
+                        </div>
+                        <div class="subcajita2">
+                            <label class="label-styled" for="selectedEstado">Estado del Contrato:</label>
+                            <select class="input-field2 cbx" id="selectedEstado" name="selectedEstado">
+                                <option value="En revisión">En revisión</option>
+                                <option value="Observado">Observado</option>
+                                <option value="Aprobado">Aprobado</option>
+                                <option value="Desaprobado">Desaprobado</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
+                <div class="subcajita5">
+                <button class="action-button" id="confirmar" name="confirmar">Actualizar Estado<i
+                        class="mdi mdi-pencil ia"></i></button>
+                <button class="action-button" id="limpiar">Limpiar Campos<i class="mdi mdi-restore ia"></i></button>
+                <button class="action-button" id="volverMenu">Volver a Menú<i
+                        class="mdi mdi-keyboard-backspace ia"></i></button>
+            </div>
             </div>
         </div>
 
-
-        <div class="buttons-container">
-            <button class="action-button" id="confirmar">Actualizar Estado</button>
-            <button class="action-button" id="limpiar">Limpiar Campos</button>
-            <button class="action-button" id="volverMenu">Volver a Menú</button>
-        </div>
-
-        <div class="confirmation-dialog" id="dialogVisible">
-            <!-- Contenido de la ventana de confirmación se generará dinámicamente aquí -->
-        </div>
-
-        <div class="error-dialog" id="dialogError">
-            <!-- Contenido de la ventana de error se generará dinámicamente aquí -->
-        </div>
-
-
-        <?php require_once "views/footer.php" ?>
     </div>
+    <?php require_once "views/footer.php" ?>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="<?php echo constant('URL'); ?>public/js/evaluarContrato.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 
 </html>

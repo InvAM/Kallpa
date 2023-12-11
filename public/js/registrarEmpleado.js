@@ -1,40 +1,218 @@
-document.addEventListener("DOMContentLoaded", function () {
-	const botonesSeleccionar = document.querySelectorAll(".boton-seleccionar");
+$(document).ready(function () {
+	$(".boton-seleccionar").on("click", function () {
+		var dni = $(this).data("dni");
+		var nombre = $(this).data("nombre");
+		var apellido = $(this).data("apellido");
+		var celular = $(this).data("celular");
+		var categoria = $(this).data("categoria");
 
-	botonesSeleccionar.forEach((boton, index) => {
-		boton.addEventListener("click", function () {
-			// Obtener la fila seleccionada
-			const filaSeleccionada = boton.closest("tr");
+		$("#formularioE").find("#DNI_Em").val(dni);
+		$("#formularioE").find("#Nombre_Em").val(nombre);
+		$("#formularioE").find("#Apellido_Em").val(apellido);
+		$("#formularioE").find("#Celular_Em").val(celular);
+		$("#formularioE").find("#IDCategoria").val(categoria);
+	});
 
-			// Obtener los datos de la fila y eliminar espacios en blanco
-			const dni = filaSeleccionada
-				.querySelector("td:nth-child(1)")
-				.textContent.trim();
-			const nombre = filaSeleccionada
-				.querySelector("td:nth-child(2)")
-				.textContent.trim();
-			const apellido = filaSeleccionada
-				.querySelector("td:nth-child(3)")
-				.textContent.trim();
-			const celular = filaSeleccionada
-				.querySelector("td:nth-child(4)")
-				.textContent.trim();
-			const categoria = filaSeleccionada
-				.querySelector("td:nth-child(5)")
-				.textContent.trim();
+	//Manejar el clic del boton "Atrás"
+	$("#btnAtras").on("click", function () {
+		window.location.href = "menu";
+	});
 
-			// Rellenar el formulario con los datos
-			document.getElementById("DNI_Em_reg").value = dni;
-			document.getElementById("Nombre_Em_reg").value = nombre;
-			document.getElementById("Apellido_Em_reg").value = apellido;
-			document.getElementById("Celular_Em_reg").value = celular;
-			document.getElementById("IDCategoria_reg").value = categoria;
+	$("#btnLimpiar").on("click", function () {
+		$("#DNI_Em_reg").val("");
+		$("#Nombre_Em_reg").val("");
+		$("#Apellido_Em_reg").val("");
+		$("#Celular_Em_reg").val("");
+		$("#IDCategoria_reg").val("");
+		$("#DNI_Em_cre").val("");
+		$("#username").val("");
+		$("#password").val("");
+	});
+	$("#btnRegistrar").on("click", function (event) {
+		event.preventDefault();
+		var formData = {
+			DNI_Em: $("input[name='DNI_Em']").val(),
+			Nombre_Em: $("input[name='Nombre_Em']").val(),
+			Apellido_Em: $("input[name='Apellido_Em']").val(),
+			Celular_Em: $("input[name='Celular_Em']").val(),
+			IDCategoria: $("select[name='IDCategoria']").val(),
+		};
+		console.log(formData);
+		$.ajax({
+			type: "POST",
+			url: "registrarEmpleado/registrarNuevoEmpleado",
+			data: JSON.stringify(formData),
+			contentType: "application/json",
+			dataType: "json",
+			success: function (response) {
+				console.log("Respuesta del servidor", response);
 
-			// Deshabilitar los campos
-			document.getElementById("DNI_Em_reg").disabled = true;
+				if (response.success) {
+					Swal.fire({
+						icon: "success",
+						title: "Empleado registrado correctamente",
+						text: response.message,
+					}).then(() => {
+						location.reload();
+					});
+				} else {
+					Swal.fire({
+						icon: "error",
+						title: "No se puede registrar al empleado",
+						text: response.message,
+					});
+				}
+			},
+			error: function (error) {
+				console.error("Error en la petición AJAX", error);
+			},
+		});
+	});
+	$(".btnEliminar").on("click", function () {
+		var formData = {
+			dni: $(this).closest("tr").find(".dniColumn").text().trim(),
+		};
 
-			// Prevenir el comportamiento predeterminado del botón
-			event.preventDefault();
+		Swal.fire({
+			title: "¿Estás seguro?",
+			text: "¡No podrás revertir esto!",
+			icon: "warning",
+			showCancelButton: true,
+			confirmButtonColor: "#d33",
+			cancelButtonColor: "#3085d6",
+			confirmButtonText: "Sí, eliminarlo",
+		}).then((result) => {
+			if (result.isConfirmed) {
+				$.ajax({
+					type: "POST",
+					url: "registrarEmpleado/eliminarEmpleado",
+					data: JSON.stringify(formData),
+					contentType: "application/json",
+					dataType: "json",
+					success: function (response) {
+						console.log(response);
+						if (response.success) {
+							console.log("entre antes del sweet alert");
+							Swal.fire({
+								icon: "success",
+								title: "Empleado eliminado correctamente",
+								text: response.message,
+							}).then(() => {
+								location.reload();
+							});
+						} else {
+							Swal.fire({
+								icon: "error",
+								title: "No se puede eliminar al empleado",
+								text: response.message,
+							});
+						}
+					},
+					error: function (error) {
+						console.error("Error en la petición AJAX", error);
+						console.log("Respuesta del servidor:", error.responseText);
+					},
+				});
+			}
+		});
+	});
+
+	$("#btnActualizar").on("click", function () {
+		var formData = {
+			DNI_Em: $("input[name='DNI_Em']").val(),
+			Nombre_Em: $("input[name='Nombre_Em']").val(),
+			Apellido_Em: $("input[name='Apellido_Em']").val(),
+			Celular_Em: $("input[name='Celular_Em']").val(),
+			IDCategoria: $("select[name='IDCategoria']").val(),
+		};
+		console.log(formData);
+		Swal.fire({
+			title: "Estás por actualizar",
+			icon: "warning",
+			showCancelButton: true,
+			confirmButtonColor: "#33cc33",
+			cancelButtonColor: "red",
+			confirmButtonText: "Sí, actualizar",
+		}).then((result) => {
+			if (result.isConfirmed) {
+				$.ajax({
+					type: "POST",
+					url: "registrarEmpleado/actualizarEmpleado",
+					data: JSON.stringify(formData),
+					contentType: "application/json",
+					dataType: "json",
+					success: function (response) {
+						if (response.success) {
+							Swal.fire({
+								icon: "success",
+								title: "Empleado actualizado correctamente",
+								text: response.message,
+							}).then(() => {
+								location.reload();
+							});
+						} else {
+							Swal.fire({
+								icon: "error",
+								title: "No se puede actualizar al empleado",
+								text: response.message,
+							});
+						}
+					},
+					error: function (error) {
+						console.error("Error en la petición AJAX", error);
+						console.log("Respuesta del servidor:", error.responseText);
+					},
+				});
+			}
+		});
+	});
+
+	$("#btnRegistrarCredenciales").on("click", function (event) {
+		event.preventDefault();
+		var formData = {
+			DNI_Em: $("input[name='DNI_Em_c']").val(),
+			nombreusuario: $("input[name='nombreusuario']").val(),
+			password: $("input[name='password']").val(),
+		};
+		console.log(formData);
+		Swal.fire({
+			title: "Estás por agregar credenciale",
+			icon: "warning",
+			showCancelButton: true,
+			confirmButtonColor: "#33cc33",
+			cancelButtonColor: "red",
+			confirmButtonText: "Sí, agregar",
+		}).then((result) => {
+			if (result.isConfirmed) {
+				$.ajax({
+					type: "POST",
+					url: "registrarEmpleado/registrarCredenciales",
+					data: JSON.stringify(formData),
+					contentType: "application/json",
+					dataType: "json",
+					success: function (response) {
+						if (response.success) {
+							Swal.fire({
+								icon: "success",
+								title: "Credenciales del empleado agregadas correctamente",
+								text: response.message,
+							}).then(() => {
+								location.reload();
+							});
+						} else {
+							Swal.fire({
+								icon: "error",
+								title: "No se puedieron agregar las credenciales al empleado",
+								text: response.message,
+							});
+						}
+					},
+					error: function (error) {
+						console.error("Error en la petición AJAX", error);
+						console.log("Respuesta del servidor:", error.responseText);
+					},
+				});
+			}
 		});
 	});
 });

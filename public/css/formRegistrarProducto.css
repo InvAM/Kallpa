@@ -1,0 +1,275 @@
+body {
+    margin: 0;
+    font-family: "Candara";
+}
+
+.mdi{
+    width: 100%;
+}
+.registra_produ .contenedor-principal {
+    padding: 20px;
+    
+}
+
+.registra_produ .titulo {
+    display: flex;
+    justify-content: center;
+    margin-top: 75px;
+    font-size: 25px;
+}
+
+.registra_produ .titulo-1,
+.registra_produ .titulo-2 {
+    font-weight: bold;
+}
+
+.registra_produ .titulo-1 {
+    color: #203864;
+    margin-right: 10px;
+}
+
+.registra_produ .titulo-2 {
+    color: rgb(62, 207, 62);
+}
+
+.registra_produ .caja-empleado {
+    width: 24%;
+    position: absolute;
+    z-index: 50;
+}
+
+.registra_produ .contenedor-empleado {
+    margin-top: 20px;
+    border: 2px solid #47d847;
+    box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.registra_produ .input-group {
+    width: 100%;
+}
+
+.registra_produ input,
+.registra_produ select {
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    font-size: 14px;
+    font-family: "Times New Roman";
+}
+
+.registra_produ .file-container {
+    width: 100%;
+}
+
+.registra_produ .file-container input {
+    width: 70%;
+}
+
+.registra_produ .file-container .image-container {
+    width: 100%;
+}
+
+.registra_produ .file-container .image-container img {
+    max-width: 40%;
+    max-height: 100%;
+}
+.actions {
+    width: 100%;
+    display: flex;
+    flex-direction: row; /* Cambiado a row para alinear en filas */
+    justify-content: space-around; /* Alinea los elementos horizontalmente */
+    margin-top: 20px;
+}
+
+.boton {
+    width: 40%; /* Ajusta el ancho del botón según sea necesario */
+    background-color: #203864;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+.registra_produ .actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.registra_produ button {
+    width: 48%;
+}
+.fila {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .fila {
+        flex-direction: column;
+    }
+}
+
+.registra_produ .parte-derecha {
+    float: right; /*Posiciona el objeto a la derecha*/
+	width: 70%; /*Establecer ancho del objeto*/
+    position: absolute;
+    margin-left: 500px;
+}
+
+.registra_produ .table-container {
+    box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562);
+    border-radius: 5px;
+    max-height: 411px; 
+    overflow-y: scroll; 
+}
+
+.registra_produ .subtitulo-lista {
+    color: #095ba8;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: -5px;
+}
+
+.registra_produ .table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    table-layout: fixed; /* Fija el ancho de la tabla, necesario para el scroll */
+}
+
+.registra_produ .table-container th,
+.registra_produ .table-container td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd; /* Agrega bordes a las celdas */
+}
+
+.registra_produ .table-container th {
+    background-color: #095ba8;
+    color: white;
+}
+
+.registra_produ .table-container tr:hover {
+    background-color: #47d84738;
+}
+
+.registra_produ .table-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.registra_produ .table-container::-webkit-scrollbar-thumb {
+    background-color: #095ba8;
+}
+
+.registra_produ .table-container::-webkit-scrollbar-track {
+    background-color: #f8f8f8;
+}
+#product-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Asegura que todas las columnas tengan el mismo ancho */
+}
+
+#product-table th {
+    background-color: #095ba8;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#product-table th,
+#product-table td {
+    padding: 12px;
+    text-align: center;
+    border: none;
+}
+
+#product-table tbody {
+    height: 400px; /* Altura máxima para el área de datos */
+    overflow-y: auto; /* Añade barra de desplazamiento vertical solo para los datos */
+}
+
+#product-table tr:hover {
+    background-color: #47d84738;
+}
+
+.registra_produ .boton-opciones {
+    background-color: #095ba8;
+    color: #ffffff;
+    width: 200px;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid #095ba8;
+    padding: 10px;
+    margin-top: 500px;
+    margin-right: 50px;
+
+
+}
+
+button {
+    background-color: #095ba8;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #203864;
+}
+
+button,
+.boton-opciones {
+    width: 100%;
+}
+
+.boton-opciones {
+    background-color: #095ba8;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.boton-opciones:hover {
+    background-color: #333;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #095ba8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+.mover {
+    text-align: right;
+}

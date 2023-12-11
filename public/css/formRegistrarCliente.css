@@ -1,209 +1,345 @@
 body {
-	margin: 0; /*Quita espacio exterior*/
+	margin: 0;
+	font-family: Candara;
 }
 
 .registrar-cli .contenedor-principal {
-	padding: 20px; /*Agrega espacio en el interior*/
+	padding: 20px;
 }
 
 .registrar-cli .titulo {
-	display: flex; /*Permite alinear el contenido en una línea*/
-	justify-content: center; /*Centra el elemento*/
-	margin-top: 75px; /*Añadir espacio con el elemento de arriba*/
-	font-size: 25px; /*Establece el tamaño a la letra*/
+	display: flex;
+	justify-content: center;
+	margin-top: 75px;
+	font-size: 25px;
+	font-family: Candara;
 }
 
 .registrar-cli .titulo-1 {
-	color: #203864; /*Da color a las letras*/
-	margin-right: 10px; /*Añadir esapacio con el elemento de la derecha*/
+	font-family: Candara;
+	color: #203864;
+	margin-right: 10px;
 }
 
 .registrar-cli .titulo-2 {
-	color: rgb(62, 207, 62); /*Da color a las letras*/
+	color: rgb(62, 207, 62);
 }
 
 .registrar-cli .parte_izquierda {
-	width: 31.8%; /*Establecer ancho de la caja*/
-	margin-top: -28px; /*Eliminar espacio con el elemento de arriba*/
-	float: left; /*Posiciona el objeto a la izquierda*/
+	width: 31.8%;
+	margin-top: -28px;
+	float: left;
 }
 
 .registrar-cli .parte_izquierda p {
-	margin-bottom: 5px; /*Añadir espacio con el elemento de abajo*/
-}
-
-.registrar-cli .posicion-letra {
-	float: left; /*Posiciona el objeto a la izquierda*/
-	margin-top: -5px; /*Eliminar espacio con el elemento de arriba*/
-	width: 44%; /*Establecer ancho de la caja*/
+	margin-bottom: 5px;
 }
 
 .registrar-cli .imagen-casa {
-	margin-left: 14px; /*Añadir espacio con el elemento de la izquierda*/
-	margin-top: 12px; /*Añade espacio con el elemento de arriba*/
-	max-height: 110px; /*Definir altura de la imagen*/
-	max-width: 60px; /*Definir ancho de la imagen*/
+	margin-right: 10px;
+	margin-top: 12px;
+	max-height: 110px;
+	max-width: 60px;
+}
+
+.registrar-cli .cont-datos-domicilio {
+	width: 155%;
+	margin-top: 1%;
+	border: 2px solid #2aa312;
+	background-color: #ffffff;
+	padding: 15px;
+	height: 205px;
+	border-radius: 0px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.registrar-cli .posicion-letra label {
+	display: block;
+	font-weight: bold;
+	color: rgb(78, 72, 72);
+	margin-bottom: 5px;
+	width: 200px;
+}
+
+.registrar-cli .posicion-letra input {
+	width: calc(100% - 110px);
+	margin-bottom: 10px;
+}
+
+.registrar-cli .subtitulo-domicilio {
+	color: #203864;
+	font-size: 22px;
+}
+
+.registrar-cli .grupo2 {
+	width: 100%;
+	margin-left: 230px;
+	margin-top: -209px;
+	flex: 1;
+}
+
+.registrar-cli .grupo2 label {
+	display: block;
+	margin-bottom: 5px;
+	width: 200px;
+}
+
+.registrar-cli .grupo2 select {
+	width: 180px !important;
+}
+
+.registrar-cli .grupo2 input {
+	margin-bottom: 10px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	width: 178px !important;
+	padding: 8px;
+}
+
+.registrar-cli .grupo3 {
+	width: 100%;
+	margin-left: 440px;
+	margin-top: -220px;
 }
 
 .registrar-cli .boton-registrar {
-	background-color: #47d847; /*Color del botón*/
-	color: #ffffff; /*Cambia el color del texto */
-	width: 100%; /*Establecer ancho del objeto*/
-	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
-	font-size: 15px; /*Ajusta el tamaño de fuente */
-	border-radius: 5px; /*Agrega bordes redondeados */
-	border: 1px solid #39a805; /*Añade un borde */
-	padding: 9px; /*Agranda espacio en el interior de los inputs*/
-	font-family: "Times New Roman"; /*Fuente de letra*/
-	margin-top: 33px; /*Añade espacio con el elemento de arriba*/
+	background-color: #203864;
+	color: #ffffff;
+	width: 100%;
+	cursor: pointer;
+	font-size: 15px;
+	border-radius: 5px;
+	padding: 9px;
+	font-family: "Times New Roman";
+	margin-top: 30px;
 }
 
 .registrar-cli .posicion-boton {
-	float: right; /*Posiciona el objeto a la derecha*/
-	width: 40%; /*Establecer ancho del objeto*/
+	float: right;
+	margin-right: 5%;
+	margin-top: 30px;
+	width: 15%;
 }
 
 .registrar-cli .subtitulo-cliente {
-	margin-top: 55px; /*Añade espacio con el elemento de arriba*/
-	color: #203864; /*Da color a las letras*/
-	font-size: 22px; /*Establece el tamaño a la letra*/
+	margin-top: 17%;
+	color: #203864;
+	font-size: 22px;
 }
 
 .registrar-cli .contenedor-datos {
-	width: 30%; /*Establecer ancho de la caja*/
-	margin-top: -10px; /*Elimina espacio con el elemento de arriba*/
-	border: 2px solid #47d847; /*Línea de la caja*/
-	box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562); /*Agregar sombra*/
-	padding: 15px; /*Agrega espacio en el interior*/
-	height: 420px; /*Establece la altura del objeto*/
-	border-radius: 5px; /*Redondea las esquinas*/
+	width: 49%;
+	margin-top: 1%;
+	border: 2px solid #2aa312;
+	background-color: #ffffff;
+	padding: 15px;
+	height: 280px;
+	border-radius: 0px;
 }
 
 .registrar-cli .parte_izquierda input {
-	width: 90%; /*Establecer ancho del objeto*/
-	padding: 9px; /*Agranda espacio en el interior de los inputs*/
-	border: 1px solid #ccc; /*Añade un borde */
-	border-radius: 5px; /*Agrega bordes redondeados */
-	color: #333; /*Cambia el color del texto */
-	font-size: 14px; /*Ajusta el tamaño de fuente */
-	font-family: "Times New Roman"; /*Fuente de letra*/
+	width: 178px;
+	padding: 9px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: #333;
+	font-size: 14px;
+	font-family: "Times New Roman";
 }
 
 .registrar-cli .input-todo {
-	margin-top: 27px; /*Añade espacio con el elemento de arriba*/
+	margin-top: 3px;
+	margin-left: 30px;
+}
+
+.registrar-cli .input-todo label {
+	font-weight: bold;
+	color: rgb(78, 72, 72);
+	display: block;
+	margin-bottom: 5px;
+	width: 150px;
+}
+
+.registrar-cli .input-todo input {
+	width: 650px;
+	margin-bottom: 10px;
 }
 
 .registrar-cli .input-todo p,
 .datos_izquierda p,
 .datos_derecha p {
-	margin-bottom: 5px; /*Añadir espacio con el elemento de abajo*/
+	margin-bottom: 5px;
 }
 
 .registrar-cli .input-todo input,
 .datos_izquierda input {
-	width: 96.7%; /*Establecer ancho del objeto*/
-	padding: 9px; /*Agranda espacio en el interior de los inputs*/
-	border: 1px solid #ccc; /*Añade un borde */
-	border-radius: 5px; /*Agrega bordes redondeados */
-	color: #333; /*Cambia el color del texto */
-	font-size: 14px; /*Ajusta el tamaño de fuente */
-	font-family: "Times New Roman"; /*Fuente de letra*/
+	width: 340px;
+	padding: 9px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: #333;
+	font-size: 14px;
+	font-family: "Times New Roman";
 }
 
 .registrar-cli .datos_izquierda {
-	width: 48%; /*Establecer ancho de la caja*/
-	float: left; /*Posiciona el objeto a la izquierda*/
+	width: 48%;
+	float: left;
 }
 
 .registrar-cli .datos_derecha {
-	width: 48%; /*Establecer ancho de la caja*/
-	float: right; /*Posiciona el objeto a la izquierda*/
+	display: flex;
+	flex-direction: column;
+	margin-top: -31.5%;
+	width: 30%;
+	float: right;
+	margin-right: 175px;
+}
+
+.registrar-cli .datos_derecha label {
+	font-weight: bold;
+	color: rgb(78, 72, 72);
+	margin-bottom: 5px;
 }
 
 .registrar-cli .datos_derecha input {
-	width: 92.9%; /*Establecer ancho del objeto*/
-	padding: 9px; /*Agranda espacio en el interior de los inputs*/
-	border: 1px solid #ccc; /*Añade un borde */
-	border-radius: 5px; /*Agrega bordes redondeados */
-	color: #333; /*Cambia el color del texto */
-	font-size: 14px; /*Ajusta el tamaño de fuente */
-	font-family: "Times New Roman"; /*Fuente de letra*/
+	margin-bottom: 5%;
+	width: 370px;
+	padding: 9px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: #333;
+	font-size: 14px;
+	font-family: "Times New Roman";
 }
 
 .registrar-cli .datos_izquierda select {
-	width: 104%; /*Establecer ancho del objeto*/
-	padding: 9px; /*Agranda espacio en el interior de los inputs*/
-	border: 1px solid #ccc; /*Añade un borde */
-	border-radius: 5px; /*Agrega bordes redondeados */
-	color: #333; /*Cambia el color del texto */
-	font-size: 14px; /*Ajusta el tamaño de fuente */
-	font-family: "Times New Roman"; /*Fuente de letra*/
+	width: 104px;
+	padding: 9px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: #333;
+	font-size: 14px;
+	font-family: "Times New Roman";
+}
+
+.registrar-cli .grupo3 select {
+	width: 180px;
+	padding: 8px;
+	margin-bottom: 16px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.registrar-cli .grupo2 select {
+	width: 100%;
+	padding: 8px;
+	margin-bottom: 16px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
 }
 
 .registrar-cli .datos_derecha select {
-	width: 100.5%; /*Establecer ancho del objeto*/
-	padding: 9px; /*Agranda espacio en el interior de los inputs*/
-	border: 1px solid #ccc; /*Añade un borde */
-	border-radius: 5px; /*Agrega bordes redondeados */
-	color: #333; /*Cambia el color del texto */
-	font-size: 14px; /*Ajusta el tamaño de fuente */
-	font-family: "Times New Roman"; /*Fuente de letra*/
-}
-
-.registrar-cli .contenedor-botones {
-	width: 31.8%; /*Establecer ancho del objeto*/
+	margin-bottom: 5px;
+	width: 395px;
+	padding: 9px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: #333;
+	font-size: 14px;
+	font-family: "Times New Roman";
 }
 
 .registrar-cli .boton-datos {
-	background-color: #203864; /*Color del botón*/
-	color: #ffffff; /*Cambia el color del texto */
-	width: 100%; /*Establecer ancho del objeto*/
-	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
-	font-size: 15px; /*Ajusta el tamaño de fuente */
-	border-radius: 5px; /*Agrega bordes redondeados */
-	border: 1px solid #152c57; /*Añade un borde */
-	padding: 9px; /*Agranda espacio en el interior de los inputs*/
-	font-family: "Times New Roman"; /*Fuente de letra*/
-	margin-top: 17px; /*Añade espacio con el elemento de arriba*/
+	background-color: #203864;
+	color: #ffffff;
+	width: 100%;
+	cursor: pointer;
+	font-size: 15px;
+	border-radius: 5px;
+	border: 1px solid #152c57;
+	padding: 9px;
+	font-family: "Times New Roman";
+	margin-top: 17px;
 }
 
 .registrar-cli .contenedor-info {
-	width: 65%; /*Establecer ancho de la caja*/
-	margin-top: -660px; /*Elimina espacio con el elemento de arriba*/
-	border: 2px solid #47d847; /*Línea de la caja*/
-	box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562); /*Agregar sombra*/
-	padding: 15px; /*Agrega espacio en el interior*/
-	height: 518px; /*Establece la altura del objeto*/
-	border-radius: 5px; /*Redondea las esquinas*/
-	float: right; /*Posiciona el objeto a la izquierda*/
+	width: 45%;
+	margin-top: -639px;
+	border: 2px solid rgb(10, 30, 87);
+	box-shadow: 0px 2px 4px rgba(8, 4, 255, 0.616);
+	padding: 15px;
+	height: 1000px;
+	border-radius: 5px;
+	margin-left: 977px;
 }
 
 .registrar-cli .imagen-kallpainfo {
-	max-height: 300px; /*Definir altura de la imagen*/
-	max-width: 200px; /*Definir ancho de la imagen*/
+	max-height: 300px;
+	max-width: 200px;
 }
 
 .registrar-cli .linea {
-	display: flex; /*Permite alinear el contenido de la barra*/
-	justify-content: space-between; /*Separa imagen*/
-	margin-right: 15px; /*Añadir espacio con elemento de la derecha*/
+	display: flex;
+	justify-content: space-between;
+	margin-right: 15px;
 }
 
 .registrar-cli .espacio {
-	margin-top: -45px; /*Elimina espacio con el elemento de arriba*/
+	margin-top: -45px;
 }
 
-.registrar-cli .boton-atras {
-	background-color: #47d847; /*Color del botón*/
-	color: #ffffff; /*Cambia el color del texto */
-	width: 20%; /*Establecer ancho del objeto*/
-	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
-	font-size: 15px; /*Ajusta el tamaño de fuente */
-	border-radius: 5px; /*Agrega bordes redondeados */
-	border: 1px solid #39a805; /*Añade un borde */
-	padding: 9px; /*Agranda espacio en el interior de los inputs*/
-	font-family: "Times New Roman"; /*Fuente de letra*/
-	margin-top: 83px; /*Añade espacio con el elemento de arriba*/
-	margin-left: -16px; /*Elimina el espacio con el elemento izquierdo*/
-	margin-right: 35px; /*Añadir espacio con elemento de la derecha*/
+.registrar-cli .cont-button {
+	margin-top: -380px;
+	width: 1500px;
+	display: flex;
+	margin-left: 30px;
+}
+
+.registrar-cli .cont-button .boton1 {
+	padding: 10px;
+	margin-right: 10px;
+	background-color: #095ba8;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.registrar-cli .boton1 .mdi {
+	font-size: 20px;
+	color: #fff;
+}
+.registrar-cli .boton1 .boton1:hover {
+	background-color: #459aa0;
+}
+
+.formularioRCL1 {
+	width: 300px;
+}
+
+.formularioRCL1 .boton1 {
+	width: 190px !important;
+}
+
+.registrar-cli .icono-dom {
+	justify-content: center;
+	margin-top: -220px;
+	margin-left: 650px;
+}
+
+.registrar-cli .icono-dom .mdi {
+	margin-top: 50px;
+	font-size: 180px;
+	color: #2aa312;
+}
+
+.registrar-cli .contenedor-info span {
+	font-weight: normal;
+	color: #4d4a4a;
 }

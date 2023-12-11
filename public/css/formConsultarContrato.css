@@ -1,5 +1,8 @@
 body {
 	margin: 0px;
+	font-family: Candara;
+	
+	color:#333;
 }
 
 .consultar-co .contenedor-principal {
@@ -9,31 +12,48 @@ body {
 	display: flex; /*Permite alinear el contenido en una línea*/
 	justify-content: center; /*Centra el elemento*/
 	margin-top: 75px; /*Añadir espacio con el elemento de arriba*/
-	font-size: 25px; /*Establece el tamaño a la letra*/
+	font-size: 20px; /*Establece el tamaño a la letra*/
 }
 
 .consultar-co .titulo-1 {
-	color: #203864; /*Da color a las letras*/
+	color: #0d3458; /*Da color a las letras*/
 	margin-right: 10px; /*Añadir esapacio con el elemento de la derecha*/
+}
+.especial{
+	display: flex;
+	width: 590px;
+}
+
+.boton-Visualizar i{
+	font-size: 18px; /*Ajusta el tamaño de fuente */
+}
+
+#formularioCC{
+	width: 400px !important;
+}
+
+#formularioCC1{
+	width: 400px !important;
 }
 
 .consultar-co .titulo-2 {
 	color: rgb(62, 207, 62); /*Da color a las letras*/
 }
 .consultar-co .subtitulo-lista {
-	color: #203864; /*Da color a las letras*/
-	font-size: 22px; /*Establece el tamaño a la letra*/
+	color: #333; /*Da color a las letras*/
+	font-size: 16px; /*Establece el tamaño a la letra*/
 }
 .consultar-co .tabla {
 	height: 520px; /*Tamaño de altura de la tabla*/
 	overflow-y: scroll; /*Añade barra de desplazamiento*/
+	
 }
 .tabla::-webkit-scrollbar {
 	width: 8px; /* Ancho de la barra de desplazamiento */
 }
 
 .tabla::-webkit-scrollbar-thumb {
-	background-color: #203864; /* Color de la barra de desplazamiento */
+	background-color: #095ba8; /* Color de la barra de desplazamiento */
 }
 
 .tabla::-webkit-scrollbar-track {
@@ -43,7 +63,6 @@ body {
 table {
 	width: 100%; /*Establecer ancho del objeto*/
 	border-collapse: collapse; /*Junta los campos de la tabla*/
-	border: 1px solid #ddd; /*Color del borde de la tabla*/
 }
 
 th,
@@ -53,73 +72,103 @@ td {
 }
 
 th {
-	background-color: #203864; /*Color de la cabecera*/
+	background-color: #095ba8; /*Color de la cabecera*/
 	color: white; /*Color de la letra*/
+	font-size: 12px;
 }
 
 tr:hover {
-	background-color: #47d84738; /*Color del contenido*/
+	background-color: #ccc; /*Color del contenido*/
 }
-.consultar-co .boton {
-	background-color: #47d847; /*Color del botón*/
-	color: #ffffff; /*Cambia el color del texto */
-	width: 100%; /*Establecer ancho del objeto*/
-	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
-	font-size: 15px; /*Ajusta el tamaño de fuente */
-	border-radius: 5px; /*Agrega bordes redondeados */
-	border: 1px solid #39a805; /*Añade un borde */
-	padding: 9px; /*Agranda espacio en el interior de los inputs*/
-	font-family: "Times New Roman"; /*Fuente de letra*/
+
+.tabla button {
+	padding: 5px 10px;
+	cursor: pointer;
+	border: 0px;
+	width: 40px;
+	border-radius: 5px;
+	background-color: #095ba8;
+	color: white;
 }
+
 .consultar-co .boton-opciones {
 	background-color: #47d847; /*Color del botón*/
+	height: 40px;
 	color: #ffffff; /*Cambia el color del texto */
-	width: 15%; /*Establecer ancho del objeto*/
+	width: 95%; /*Establecer ancho del objeto*/
 	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
-	font-size: 15px; /*Ajusta el tamaño de fuente */
+	font-size: 16px; /*Ajusta el tamaño de fuente */
 	border-radius: 5px; /*Agrega bordes redondeados */
-	border: 1px solid #39a805; /*Añade un borde */
+	border: 0px; /*Añade un borde */
 	padding: 9px; /*Agranda espacio en el interior de los inputs*/
-	font-family: "Times New Roman"; /*Fuente de letra*/
+	font-family: "Arial"; /*Fuente de letra*/
+	margin-right: 10px;
 }
 .consultar-co .boton-opciones1 {
-	background-color: #203864; /*Color del botón*/
+	background-color: #095ba8; /*Color del botón*/
+	height: 40px;
 	color: #ffffff; /*Cambia el color del texto */
-	width: 15%; /*Establecer ancho del objeto*/
+	width: 19%; /*Establecer ancho del objeto*/
 	cursor: pointer; /*Cambia el cursor al pasar el ratón sobre el botón */
-	font-size: 15px; /*Ajusta el tamaño de fuente */
+	border: 0px;
+	font-size: 16px; /*Ajusta el tamaño de fuente */
 	border-radius: 5px; /*Agrega bordes redondeados */
-	border: 1px solid #152c57; /*Añade un borde */
-	padding: 9px; /*Agranda espacio en el interior de los inputs*/
-	font-family: "Times New Roman"; /*Fuente de letra*/
+	padding: 10px; /*Agranda espacio en el interior de los inputs*/
+	font-family: "Arial"; /*Fuente de letra*/
+	margin-right: 10px;
+}
+.consultar-co .boton-seleccionar i{
+	font-size: 18px; /*Ajusta el tamaño de fuente */
+}
+
+.consultar-co .boton-opciones1 i{
+	margin-left: 10px;
+	font-size: 18px; /*Ajusta el tamaño de fuente */
+}
+
+.consultar-co .boton-opciones i{
+	margin-left: 10px;
+	font-size: 18px; /*Ajusta el tamaño de fuente */
 }
 .consultar-co .parte-izq {
-	width: 70%; /*Establecer ancho de la caja*/
+	width: 77%; /*Establecer ancho de la caja*/
 	float: left; /*Posiciona el objeto a la izquierda*/
 }
 .consultar-co .contenedor {
 	width: 100%; /*Establecer ancho de la caja*/
 	margin-top: 20px; /*Elimina espacio con el elemento de arriba*/
 	border: 2px solid #47d847; /*Línea de la caja*/
-	box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562); /*Agregar sombra*/
 	padding: 15px; /*Agrega espacio en el interior*/
-	height: 518px; /*Establece la altura del objeto*/
-	border-radius: 5px; /*Redondea las esquinas*/
+	height: 540px; /*Establece la altura del objeto*/
+	border-radius: 0px; /*Redondea las esquinas*/
 }
 .consultar-co .contenedor-info {
-	width: 27%; /*Establecer ancho de la caja*/
+	width: 20%; /*Establecer ancho de la caja*/
 	float: right; /*Posiciona el objeto a la izquierda*/
 	margin-right: 35px;
 }
+
+.consultar-co .contenedor-info .contenedor i{
+	margin-left: 130px;
+	color:#47d847;
+	font-size:80px; /*Ajusta el tamaño de fuente */
+}
+
 .consultar-co .contenedor p {
 	margin-bottom: 5px; /*Añadir espacio con el elemento de abajo*/
 }
 .consultar-co input {
 	width: 93%; /*Establecer ancho del objeto*/
+	height: 50px;
 	padding: 9px; /*Agranda espacio en el interior de los inputs*/
 	border: 1px solid #ccc; /*Añade un borde */
 	border-radius: 5px; /*Agrega bordes redondeados */
 	color: #333; /*Cambia el color del texto */
 	font-size: 14px; /*Ajusta el tamaño de fuente */
-	font-family: "Times New Roman"; /*Fuente de letra*/
+	font-family: "Arial"; /*Fuente de letra*/
 }
+.Acciones {
+	margin-top: 20px;
+	display: flex;
+}
+

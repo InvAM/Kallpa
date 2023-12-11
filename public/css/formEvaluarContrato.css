@@ -1,115 +1,145 @@
 body {
-	margin: 0; /*Quita espacio exterior*/
+	margin: 0; 
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .evaluar-c .contenedor-principal {
 	padding: 20px;
 }
-.evaluar-c .titulo {
-	display: flex; /*Permite alinear el contenido en una línea*/
-	justify-content: center; /*Centra el elemento*/
-	margin-top: 75px; /*Añadir espacio con el elemento de arriba*/
-	font-size: 25px; /*Establece el tamaño a la letra*/
-}
 
-.evaluar-c .titulo-1 {
-	color: #203864; /*Da color a las letras*/
-	margin-right: 10px; /*Añadir esapacio con el elemento de la derecha*/
-}
-
-.evaluar-c .titulo-2 {
-	color: rgb(62, 207, 62); /*Da color a las letras*/
-}
-
-.evaluar-c .search-container {
-	display: flex;
-	align-items: center;
-	background-color: #f0f0f0;
-	box-shadow: 0px 4px 6px #45a049;
-	max-width: 1000px;
-	white-space: nowrap; /* Evita el salto de línea en el contenedor */
-}
-
-/* Estilos para los campos de entrada y botones dentro del contenedor de búsqueda */
-.evaluar-c .search-container .input-field {
-	flex: 1;
-	margin-right: 20px;
+.evaluar-c .contenedor-principal2 {
 	padding: 20px;
-	background-color: #fdfdfd;
-	border: 2px solid #ffffff;
-	border-radius: 20px;
+	margin-top: 338px;
 }
 
-.evaluar-c .search-container .action-button:hover {
-	background-color: #33cc33;
-}
-
-/* Estilos para el contenedor de búsqueda */
-.evaluar-c .search-container {
-	position: relative;
-	border: 1px solid #ddd;
-	border-radius: 4px;
-	padding: 10px;
-	background-color: #dfedd6;
-	box-shadow: 0px 2px 4px #33cc33;
-	max-height: 300px;
+.evaluar-c .titulo {
+	display: flex; 
+	justify-content: center;
+	margin-top: 75px; 
+	font-size: 20px;
 	margin-bottom: 20px;
 }
 
-/* Estilos para el texto en el borde superior */
-.evaluar-c .search-container::before {
-	content: "Filtros de Contratos";
-	position: absolute;
-	top: -20px;
-	left: 0%;
-	transform: translateX(0%);
-	background-color: #dfedd6;
-	padding: 5px 25px;
-	border: 1px solid #dfedd6;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	font-weight: bold;
-	color: #000000;
+.evaluar-c .titulo-1 {
+	color: #203864;
+	margin-right: 10px; 
 }
 
-/* Estilos para la tabla */
+.evaluar-c .titulo-2 {
+	color: rgb(62, 207, 62); 
+}
 
-.evaluar-c .tabla {
-	height: 40px; /*Tamaño de altura de la tabla*/
-	overflow-y: scroll; /*Añade barra de desplazamiento*/
+.evaluar-c .subtitulo_1 {
+	color: #33cc33;
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 4px;
+}
+
+.evaluar-c .search-container-1 {
+	margin-top: -25px;
+	border: 2px solid #abf5b7;
+	box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562);
+	padding: 15px;
+	height: 120px;
+	margin-bottom: 10px;
+	border-radius: 0px;
+	width: 98%;
+}
+
+.evaluar-c .search-container-2 {
+	margin-top: 10px;
+	border: 2px solid #abf5b7;
+	box-shadow: 0px 2px 4px rgba(15, 182, 71, 0.562);
+	padding: 15px;
+	height: 120px;
+	margin-bottom: 25px;
+	border-radius: 0px;
+	width: 80%;
+}
+
+.divisionPrin{
+	display: flex;
+}
+
+.contenedor-boton-limpiar{
+	width: 10%;
+}
+.evaluar-c .subcajita {
+	display: inline-block;
+    margin-left: 20px;
+    width: 31% !important;
+}
+
+.caja_filtro_1{
+	width: 90%;
+}
+.evaluar-c .subcajita2 {
+	display: inline-block;
+    margin-left: 25px;
+    width: 21.3% !important;
+}
+
+.evaluar-c .subcajita3 {
+	display: inline-block;
+    width: 5% !important;
+}
+.evaluar-c .subcajita4 {
+	display: flex;
+    width: 100% !important;
+	margin-top: 20px;
+}
+
+.evaluar-c .subcajita5 {
+	display: inline-block;
+    width: 50% !important;
+	margin-top: 30px !important;
 }
 
 .tabla::-webkit-scrollbar {
-	width: 8px; /* Ancho de la barra de desplazamiento */
+	width: 8px; 
 }
 
 .tabla::-webkit-scrollbar-thumb {
-	background-color: #203864; /* Color de la barra de desplazamiento */
+	background-color: #203864;
 }
 
 .tabla::-webkit-scrollbar-track {
-	background-color: #f8f8f8; /* Color del fondo de la barra de desplazamiento */
+	background-color: #f8f8f8;
 }
 
 table {
-	width: 100%; /*Establecer ancho del objeto*/
-	border-collapse: collapse; /*Junta los campos de la tabla*/
-	border: 1px solid #ddd; /*Color del borde de la tabla*/
+	width: 100%; 
+	border-collapse: collapse; 
+	border: 0px;
 }
 
 th,
 td {
-	padding: 12px; /*Agranda espacio en el interior de la celda*/
-	text-align: center; /*Alinea el texto al centro*/
+	border: 0px solid;
+	padding: 10px;
+	text-align: center;
+}
+
+.evaluar-c thead th {
+	position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 th {
-	background-color: #203864; /*Color de la cabecera*/
-	color: #f0f0f0;
+	background-color: #095ba8;
+	color: white;
+	height: 32px;
+	font-size: 12px;
+}
+
+tr:nth-child(even) {
+	background-color: #f9f9f9;
 }
 
 tr:hover {
-	background-color: #dfedd6; /*Color del contenido*/
+	background-color: #e0e0e0;
 }
 
 .evaluar-c .imagen-contrato {
@@ -129,13 +159,50 @@ tr:hover {
 	white-space: nowrap; /* Evita el salto de línea en el contenedor */
 }
 
-/* Estilos para los campos de entrada y botones dentro del contenedor de búsqueda */
-.evaluar-c .contract-details .input-field {
-	flex: 1;
-	margin-right: 20px;
-	padding: 20px;
-	border: 1px solid #ddd;
-	border-radius: 4px;
+.evaluar-c .input-field {
+	display: flex;
+	width: 90%;
+	height: 26px;
+	margin-right: 10px;
+	padding: 9px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: #333;
+	font-size: 14px;
+	font-family: "Arial";
+	flex-wrap: nowrap;
+	margin-top: 5px;
+}
+
+.evaluar-c .input-field2 {
+	display: flex;
+	width: 100%;
+	height: 26px;
+	margin-right: 10px;
+	padding: 9px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: #333;
+	font-size: 14px;
+	font-family: "Arial";
+	flex-wrap: nowrap;
+	margin-top: 5px;
+}
+
+.evaluar-c .cbx {
+	height: 45px;
+}
+
+#searchFecha {
+	padding: 9px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 14px;
+	width: 90%;
+	vertical-align: middle;
+	font-family: "Arial";
+	height: 26px;
+	margin-top: 5px;
 }
 
 .evaluar-c .contract-details .action-button:hover {
@@ -154,111 +221,130 @@ tr:hover {
 	margin-bottom: 20px;
 }
 
-/* Estilos para el texto en el borde superior */
-.evaluar-c .contract-details::before {
-	content: "Campos del contrato seleccionado"; /* Agrega el texto que desees */
-	position: absolute;
-	top: -20px;
-	left: 0%;
-	transform: translateX(0%);
-	background-color: #dfedd6;
-	padding: 5px 25px;
-	border: 1px solid #dfedd6;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	font-weight: bold;
-	color: #000000;
-}
-
-.evaluar-c .input-fields {
-	display: flex;
-	flex-wrap: nowrap;
-	align-items: center;
-	justify-content: center;
-}
-
-/* Estilos para las cajas de texto y el select */
-.evaluar-c .input-field {
-	display: flex;
-	flex-wrap: nowrap;
-	align-items: center;
-	justify-content: center;
-	margin-top: 1%;
-}
-.evaluar-c .buttons-container {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: flex-end; /* Alinea los elementos a la derecha */
-	margin-top: 20px;
-}
-
 /* Estilos para el contenedor de búsqueda y botones */
-.evaluar-c .search-container,
 .evaluar-c .buttons-container {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: flex-end; /* Alinea los elementos a la derecha */
 	margin-top: 20px; /* Ajusta la separación superior */
+	margin-right: -35px;
+}
+
+.evaluar-c .buttons-container2 {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-end; /* Alinea los elementos a la derecha */
+	margin-top: 20px; /* Ajusta la separación superior */
+	margin-right: -35px;
+	width: 41.8%;
+	margin-left: 1074px;
+	margin-top: -54.4px;
+}
+
+.evaluar-c .boton-opciones {
+	padding: 10px 20px;
+	font-size: 14px;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 30%;
+	background-color: #095ba8;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.evaluar-c .boton-css {
+	padding: 10px 20px;
+	font-size: 14px;
+	margin-right: 10px;
+	width: 40px;
+	background-color: #095ba8;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 30px;
+	margin-left: 20px;
+}
+
+.evaluar-c .table-container {
+	height: 320px;
+    overflow-y: scroll;
+	margin-top: 45px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background-color: #f8f8f8;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background-color: #095ba8;
+}
+
+.table-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.evaluar-c i {
+	font-size: 18px;
+	margin-left: -8px;
+}
+
+.evaluar-c .ia{
+	margin-left: 8px;
 }
 
 /* Estilos para los botones */
 .evaluar-c .action-button {
-	background-color: #203864;
-	color: #fff;
+	padding: 10px 20px;
+	font-size: 14px;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 28%;
+	background-color: #095ba8;
+	color: white;
 	border: none;
-	border-radius: 4px;
-	padding: 20px 40px;
-	font-size: 16px;
+	border-radius: 5px;
 	cursor: pointer;
-	transition: background-color 0.3s ease;
-	margin-top: -220px; /* Mueve los botones hacia arriba */
-	margin-left: 10px; /* Añade separación entre los botones */
-	margin-right: 45px; /* Añade separación entre los botones */
+}
+
+.evaluar-c .action-button1 {
+	padding: 10px 20px;
+	font-size: 14px;
+	margin-left: 10px;
+	margin-right: 500px;
+	width: 28%;
+	background-color: #095ba8;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 .evaluar-c .action-button:hover {
-	background-color: #12213b;
+	background-color: rgb(37, 219, 77);
 }
 
-/* Estilo para el botón "Seleccionar" */
-.evaluar-c .select-button {
-	background-color: #33cc33; /* Color verde */
-	color: #fff; /* Texto en color blanco */
-	border: none;
-	border-radius: 4px;
-	padding: 10px 20px;
-	font-size: 16px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
+.evaluar-c .i-t {
+	font-size: 50px;
+	color: #203864;
+	margin-left: 2px;
 }
 
 .evaluar-c .select-button:hover {
 	background-color: #45a049; /* Cambia de color al pasar el mouse */
 }
-/* Estilo para la etiqueta */
-/* Estilo para la etiqueta */
+
 .label-styled {
 	font-size: 16px;
-	color: #000000;
+	color: #203864;
 	font-weight: bold;
 	margin-right: 10px;
 }
 
-/* Estilo para el campo de fecha */
-#searchFecha {
-	padding: 10px;
-	border: 1px solid #fff;
-	border-radius: 20px;
-	font-size: 16px;
-	width: auto;
-	vertical-align: middle;
-}
-
-/* Estilo para el campo de fecha cuando está enfocado (focus) */
-#searchFecha:focus {
-	border-color: #45a049; /* Cambia el color del borde cuando está enfocado */
-	outline: none; /* Elimina el borde de enfoque predeterminado */
-	box-shadow: 0 0 5px #45a049; /* Agrega una sombra cuando está enfocado */
+.caja_filtro_2{
+	width: 100%;
 }

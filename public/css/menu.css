@@ -1,17 +1,83 @@
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; /* Adjust the gap between columns */
+    list-style: none;
+	margin-top: 80px;
+}
 
+.tximg{
+	width: 265px;
+	color: #FFFFFF;
+	font-family: "Candara";
+	font-weight: 700;
+	font-size: 30px;
+	text-align: center;
+	margin-top: 7px;
+	margin-left: 30px;
+}
+
+.boton{
+		width: 225px;
+		height: 246px;
+		padding: 0px 10px 0px 10px;
+		background: #FFFFFF;
+		color: #FFFFFF;
+		border-color: #032F76;
+		border-width: 8px;
+		border-style: solid;
+		border-radius: 23px 23px 23px 23px;
+		font-family: "Helvetica";
+		font-weight: bold;
+		font-size: 30px;
+		text-align: center;
+}
+.button-grid li {
+    text-align: center;
+}
 .contenedorP{
 	display: flex;
 	margin-right: -10px;
 
 }
+.moverbtncerrar{
+	text-align: right;
+    margin-top: -110px;
+    margin-right: 20px;
+}
+.cerrar-container {
+    text-align: right; /* Align the container to the right */
+    margin-bottom: 10px; /* Adjust the margin as needed */
+}
 .contenedorP .contenedor1{
     align-items: center;
     width: 25%;
-	margin-top: -10px;
+	margin-top: -35px;
 	background-color: white;
 }
+.imgbtn {
+	width: 180px ;
+	height:	180px ;
+}
+.imgbtncerrar {
+	width: 50px ;
+	height:	50px ;
+}
 
-
+.botoncerrar{
+		height: 73px;
+		padding: 0px 10px 0px 10px;
+		background: #E61610;
+		color: #FFFFFF;
+		border-color: #E61610;
+		border-width: 8px;
+		border-style: solid;
+		border-radius: 12px 12px 12px 12px;
+		font-family: "Helvetica";
+		font-weight: 700;
+		font-size: 10px;
+		text-align: center;
+}
 .contenedor1 .titulo-bien {
 	font-size: 50px;
 	font-family: Tahoma !important;
@@ -35,7 +101,7 @@
 .Img2{
    width:100px;
    margin-top: -12%;
-    margin-left: 150px
+    margin-left: 167px
 }
 
 .contenedor1 .border-bien {
@@ -112,10 +178,10 @@
 
 .contenedor2 .titulo{
 	margin-top: 30px;
-	font-size: 20px;
-	margin-left: 350px;
-	font-family: Tahoma !important;
-	color: #ffffff;
+    font-size: 25px;
+    margin-left: 430px;
+    font-family: Tahoma !important;
+    color: #ffffff;
 }
 
 .centro{
