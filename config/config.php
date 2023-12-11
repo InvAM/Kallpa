@@ -1,5 +1,5 @@
 <?php
-define('URL', 'http://localhost:8080/KALLPA/');
+define('URL', 'https://kallpa-dev-ngap.1.us-1.fl0.io');
 
 define('HOST', 'localhost');
 
