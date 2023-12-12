@@ -1,8 +1,8 @@
 body {
 	margin: 0px;
 	font-family: Candara;
-	
-	color:#333;
+
+	color: #333;
 }
 
 .consultar-co .contenedor-principal {
@@ -19,20 +19,20 @@ body {
 	color: #0d3458; /*Da color a las letras*/
 	margin-right: 10px; /*Añadir esapacio con el elemento de la derecha*/
 }
-.especial{
+.especial {
 	display: flex;
 	width: 590px;
 }
 
-.boton-Visualizar i{
+.boton-Visualizar i {
 	font-size: 18px; /*Ajusta el tamaño de fuente */
 }
 
-#formularioCC{
+#formularioCC {
 	width: 400px !important;
 }
 
-#formularioCC1{
+#formularioCC1 {
 	width: 400px !important;
 }
 
@@ -46,7 +46,6 @@ body {
 .consultar-co .tabla {
 	height: 520px; /*Tamaño de altura de la tabla*/
 	overflow-y: scroll; /*Añade barra de desplazamiento*/
-	
 }
 .tabla::-webkit-scrollbar {
 	width: 8px; /* Ancho de la barra de desplazamiento */
@@ -117,16 +116,16 @@ tr:hover {
 	font-family: "Arial"; /*Fuente de letra*/
 	margin-right: 10px;
 }
-.consultar-co .boton-seleccionar i{
+.consultar-co .boton-seleccionar i {
 	font-size: 18px; /*Ajusta el tamaño de fuente */
 }
 
-.consultar-co .boton-opciones1 i{
+.consultar-co .boton-opciones1 i {
 	margin-left: 10px;
 	font-size: 18px; /*Ajusta el tamaño de fuente */
 }
 
-.consultar-co .boton-opciones i{
+.consultar-co .boton-opciones i {
 	margin-left: 10px;
 	font-size: 18px; /*Ajusta el tamaño de fuente */
 }
@@ -139,7 +138,7 @@ tr:hover {
 	margin-top: 20px; /*Elimina espacio con el elemento de arriba*/
 	border: 2px solid #47d847; /*Línea de la caja*/
 	padding: 15px; /*Agrega espacio en el interior*/
-	height: 540px; /*Establece la altura del objeto*/
+	height: 658px; /*Establece la altura del objeto*/
 	border-radius: 0px; /*Redondea las esquinas*/
 }
 .consultar-co .contenedor-info {
@@ -148,10 +147,10 @@ tr:hover {
 	margin-right: 35px;
 }
 
-.consultar-co .contenedor-info .contenedor i{
+.consultar-co .contenedor-info .contenedor i {
 	margin-left: 130px;
-	color:#47d847;
-	font-size:80px; /*Ajusta el tamaño de fuente */
+	color: #47d847;
+	font-size: 80px; /*Ajusta el tamaño de fuente */
 }
 
 .consultar-co .contenedor p {
@@ -171,4 +170,3 @@ tr:hover {
 	margin-top: 20px;
 	display: flex;
 }
-
