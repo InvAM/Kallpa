@@ -14,22 +14,18 @@ function iniciar() {
 
 document.addEventListener("DOMContentLoaded", iniciar);
 
-//Actualizar Tabla
 function actualizarTabla($lista) {
 	var listaMateriales = $lista;
-	// Obtener el tbody de la tabla
+
 	let tbodyTabla = document
 		.getElementById("tablaMateriales")
 		.getElementsByTagName("tbody")[0];
 
-	// Limpiar contenido existente en el tbody
 	tbodyTabla.innerHTML = "";
 
-	// Iterar sobre el array y agregar filas al tbody
 	listaMateriales.forEach((material) => {
-		let fila = tbodyTabla.insertRow(); // Crear una nueva fila
+		let fila = tbodyTabla.insertRow();
 
-		// Crear celdas y asignar valores
 		let celdaID = fila.insertCell(0);
 		celdaID.innerHTML = material.id;
 
@@ -39,14 +35,13 @@ function actualizarTabla($lista) {
 		let celdaCantidad = fila.insertCell(2);
 		celdaCantidad.innerHTML = material.cantidad;
 
-		/*FUNCIONAMIENTO DE BOTON SELECCIONAR*/
 		let celdaSeleccionar = fila.insertCell(3);
-		//Creando el boton para seleccionar
+
 		let botonSeleccionar = document.createElement("button");
-		//Creando icono
+
 		let iconoSeleccionar = document.createElement("i");
 		iconoSeleccionar.className = "mdi mdi-content-copy mx-1";
-		//Agregando icono
+
 		botonSeleccionar.appendChild(iconoSeleccionar);
 
 		botonSeleccionar.addEventListener("click", function () {
@@ -57,13 +52,13 @@ function actualizarTabla($lista) {
 		celdaSeleccionar.appendChild(botonSeleccionar);
 		/* -----------------------------------------------------*/
 
-		/*FUNCIONAMIENTO DE BOTON ELIMINAR*/ let celdaEliminar = fila.insertCell(4);
-		// Crear el botón y asignar propiedades
+		let celdaEliminar = fila.insertCell(4);
+
 		let botonEliminar = document.createElement("button");
-		// Crear el elemento <i> con la clase del icono
+
 		let iconoEliminar = document.createElement("i");
 		iconoEliminar.className = "mdi mdi-delete-empty";
-		// Agregar el icono al botón
+
 		botonEliminar.appendChild(iconoEliminar);
 
 		botonEliminar.addEventListener("click", function () {
@@ -102,28 +97,20 @@ function actualizarTabla($lista) {
 	});
 }
 
-//ACCIONES DE BOTONES
-// Lista de materiales persistente
 var listaMateriales = [];
 
 $(document).ready(function () {
-	//AGREGAR
 	$("#btnAgregar").on("click", function () {
 		var id = $("#materialSelect").prop("selectedIndex") + 1;
 		var nombre = $("#materialSelect").val();
 		var cantidad = $("#Cantidad_Ma").val();
 		var idcontrato = localStorage.getItem("IDContrato");
 		var idetapa = localStorage.getItem("IDEtapa");
-
-		// Validar que se haya seleccionado un material y la cantidad
 		if (nombre && cantidad) {
-			// Verificar si ya existe un material con el mismo ID
 			var materialExistente = listaMateriales.find(
 				(material) => material.id === id
 			);
-
 			if (materialExistente) {
-				// Si el material ya existe, mostrar un mensaje
 				Swal.fire({
 					title: "Verifique",
 					text:
@@ -137,7 +124,6 @@ $(document).ready(function () {
 				$("#materialSelect").prop("selectedIndex", 0);
 				$("#Cantidad_Ma").val("");
 			} else {
-				// Crear el objeto material
 				var material = {
 					id,
 					idcontrato,
@@ -145,15 +131,10 @@ $(document).ready(function () {
 					nombre,
 					cantidad,
 				};
-
-				// Agregar el nuevo objeto al arreglo persistente
 				listaMateriales.push(material);
-
-				// Limpiar los campos después de agregar el material
 				$("#materialSelect").prop("selectedIndex", 0);
 				$("#Cantidad_Ma").val("");
 				console.log(listaMateriales);
-				// Actualizar la tabla en tiempo real
 				actualizarTabla(listaMateriales);
 			}
 		} else {
